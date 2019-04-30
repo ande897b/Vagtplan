@@ -8,6 +8,7 @@ namespace Model
 {
     public class Roster
     {
-
+        public int RosterId;
+        public enum Period { }
     }
 }
