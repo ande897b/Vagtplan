@@ -3,10 +3,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Model;
 
 namespace Controller
 {
-    public class DatabaseController
+    public static class DatabaseController
     {
+        public static void GetRosters(Roster roster)
+        {
+
+        }
+        public static void CreateRoster(Roster roster)
+        {
+
+        }
+        public static void DeleteRoster(Roster roster)
+        {
+
+        }
     }
 }
