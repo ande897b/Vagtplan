@@ -6,6 +6,12 @@ using System.Threading.Tasks;
 
 namespace Model
 {
+    public enum Period
+    {
+        oneMonth,
+        twoMonth,
+        threeMonth
+    }
     public class Roster
     {
 
