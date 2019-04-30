@@ -20,8 +20,8 @@ namespace Model
     
     public class Roster
     {
-        public int RosterID;
-        public Period ;
-
+        public int RosterID { get; set; }
+        public Period Period { get; set; }
+        public Shop Shop { get; set; }
     }
 }
