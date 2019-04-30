@@ -7,24 +7,20 @@ using Model;
 
 namespace Controller
 {
-    public static class RosterRepository
+    static class RosterRepository
     {
+        private static List<Roster> rosters = new List<Roster>();
         public static void AddRoster(Roster roster)
         {
-
+            rosters.Add(roster);
         }
-        public static Roster GetRoster(int id)
+        public static List<Roster> GetRosters()
         {
-            return Roster roster;
+            return rosters;
         }
-        public static Roster GetRosters()
+        public static void RemoveRoster()
         {
-
-            return Roster;
-        }
-        public static void RemoveRoster(int id)
-        {
-
+            
         }
     }
 }
