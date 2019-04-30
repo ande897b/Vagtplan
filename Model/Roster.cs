@@ -6,15 +6,22 @@ using System.Threading.Tasks;
 
 namespace Model
 {
+    public enum Shop
+    {
+        skibhusvej,
+        kongensgade
+    }
     public enum Period
     {
         oneMonth,
         twoMonth,
         threeMonth
     }
+    
     public class Roster
     {
-        public int RosterId;
-        public enum Period { }
+        public int RosterID;
+        public Period ;
+
     }
 }
