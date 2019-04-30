@@ -7,21 +7,22 @@ using Model;
 
 namespace Controller
 {
-    static class RosterRepository
+    public static class RosterRepository
     {
         public static void AddRoster(Roster roster)
         {
 
         }
-        public static Roster GetRoster()
+        public static Roster GetRoster(int id)
         {
-            return Roster;
+            return Roster roster;
         }
         public static Roster GetRosters()
         {
+
             return Roster;
         }
-        public static void RemoveRoster()
+        public static void RemoveRoster(int id)
         {
 
         }

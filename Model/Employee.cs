@@ -6,7 +6,14 @@ using System.Threading.Tasks;
 
 namespace Model
 {
-    class Employee
+    public enum Rank
     {
+        deltidmedarbejder,
+        butikschef
+    }
+    public class Employee
+    {
+        public string Name { get; set; }
+        public Rank Rank { get; set; }
     }
 }
