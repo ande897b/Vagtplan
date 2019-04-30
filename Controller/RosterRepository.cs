@@ -9,21 +9,18 @@ namespace Controller
 {
     static class RosterRepository
     {
+        private static List<Roster> rosters = new List<Roster>();
         public static void AddRoster(Roster roster)
         {
-
+            rosters.Add(roster);
         }
-        public static Roster GetRoster()
+        public static List<Roster> GetRosters()
         {
-            return Roster;
-        }
-        public static Roster GetRosters()
-        {
-            return Roster;
+            return rosters;
         }
         public static void RemoveRoster()
         {
-
+            
         }
     }
 }
