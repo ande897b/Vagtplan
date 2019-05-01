@@ -10,27 +10,24 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Vagtplan
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for MenuWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MenuWindow : Window
     {
-        public MainWindow()
+        public MenuWindow()
         {
             InitializeComponent();
         }
-
-        private void button_Click(object sender, RoutedEventArgs e)
+        private void CreateRosterBtn_Click(object sender, RoutedEventArgs e)
         {
-            MenuWindow menuWindow = new MenuWindow();
-            menuWindow.Show();
-            this.Hide();
-            
+            CreateRosterWindow createRosterWindow = new CreateRosterWindow();
+            createRosterWindow.Show();
+
         }
     }
 }
