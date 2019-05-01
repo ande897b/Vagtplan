@@ -11,25 +11,17 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using Controller;
 
 namespace Vagtplan
 {
     /// <summary>
-    /// Interaction logic for CreateRosterWindow.xaml
+    /// Interaction logic for ShowRosterWindow.xaml
     /// </summary>
-    public partial class CreateRosterWindow : Window
+    public partial class ShowRosterWindow : Window
     {
-        public CreateRosterWindow()
+        public ShowRosterWindow()
         {
             InitializeComponent();
-        }
-
-        private void button_Click(object sender, RoutedEventArgs e)
-        {
-            
-            MessageBox.Show("Vagtplan med " + comboBoxCreateRoster.Text + " oprettet. Du kan nu indsætte vagter", "Success");
-            this.Close();
         }
     }
 }

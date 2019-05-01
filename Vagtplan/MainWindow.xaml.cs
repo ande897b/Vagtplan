@@ -20,6 +20,7 @@ namespace Vagtplan
     /// </summary>
     public partial class MainWindow : Window
     {
+
         public MainWindow()
         {
             InitializeComponent();
@@ -27,10 +28,48 @@ namespace Vagtplan
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            MenuWindow menuWindow = new MenuWindow();
-            menuWindow.Show();
-            this.Hide();
-            
+            if (userNameTxtBox.Text.ToUpper() == "USER" && passwordBox.Password.ToUpper() == "USER")
+            {
+                MenuWindow menuWindow = new MenuWindow();
+                menuWindow.Show();
+                menuWindow.AddShiftsBtn.IsEnabled = false;
+                menuWindow.CreateRosterBtn.IsEnabled = false;
+                this.Hide();
+            }
+           else if (userNameTxtBox.Text.ToUpper() == "ADMIN" && passwordBox.Password.ToUpper() == "ADMIN")
+            {
+                MenuWindow menuWindow = new MenuWindow();
+                menuWindow.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Forkert Brugernavn eller Password");
+            }
+
+        }
+        private void tb_GotFocus(object sender, RoutedEventArgs e)
+        {
+            TextBox tb = sender as TextBox;
+            if (tb != null)
+            {
+                tb.SelectAll(); 
+            }
+        }
+        private void password_GotFocus(object sender, RoutedEventArgs e)
+        {
+            PasswordBox tb = sender as PasswordBox;
+            if (tb != null)
+            {
+                tb.SelectAll();
+            }
+        }
+        private void Window_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                button_Click(sender,e);
+            }
         }
     }
 }

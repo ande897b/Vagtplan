@@ -5,9 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Vagtplan"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Menu" Height="450" Width="800">
     <Grid>
-        <Button x:Name="CreateRosterBtn" Content="Opret Vagtplan" HorizontalAlignment="Left" Margin="285,152,0,0" VerticalAlignment="Top" Width="204" Height="104" Click="CreateRosterBtn_Click"/>
+        <Button x:Name="CreateRosterBtn" Content="Opret Vagtplan" HorizontalAlignment="Left" Margin="574,62,0,0" VerticalAlignment="Top" Width="144" Height="55" Click="CreateRosterBtn_Click"/>
+        <Button x:Name="AddShiftsBtn" Content="Tilføj vagter til vagtplan" HorizontalAlignment="Left" Margin="574,149,0,0" VerticalAlignment="Top" Width="144" Height="55" Click="AddShiftsBtn_Click"/>
+        <Button x:Name="ShowRostersBtn" Content="Se Vagtplan" HorizontalAlignment="Left" VerticalAlignment="Top" Width="144" Margin="91,62,0,0" Height="55" Click="ShowRostersBtn_Click"/>
+        <Button x:Name="LogOutBtn" Content="Log Ud" HorizontalAlignment="Left" Margin="681,383,0,0" VerticalAlignment="Top" Width="101" Height="26" Click="LogOutBtn_Click"/>
 
     </Grid>
 </Window>

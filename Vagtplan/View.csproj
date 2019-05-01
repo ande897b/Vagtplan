@@ -55,6 +55,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ShowRosterWindow.xaml.cs">
+      <DependentUpon>ShowRosterWindow.xaml</DependentUpon>
+    </Compile>
     <Page Include="CreateRosterWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -74,7 +77,7 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="MakeRosterWindow.xaml">
+    <Page Include="AddShiftsWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -82,10 +85,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="ShowRosterWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MakeRosterWindow.xaml.cs">
-      <DependentUpon>MakeRosterWindow.xaml</DependentUpon>
+    <Compile Include="AddShiftsWindow.xaml.cs">
+      <DependentUpon>AddShiftsWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="MenuWindow.xaml.cs">
       <DependentUpon>MenuWindow.xaml</DependentUpon>
@@ -114,6 +121,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Controller\Controller.csproj">
+      <Project>{2f210cbc-0319-4ff4-a50d-dfe3fe603d9d}</Project>
+      <Name>Controller</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -29,5 +29,25 @@ namespace Vagtplan
             createRosterWindow.Show();
 
         }
+
+        private void AddShiftsBtn_Click(object sender, RoutedEventArgs e)
+        {
+            AddShiftsWindow addShiftsWindow = new AddShiftsWindow();
+            addShiftsWindow.Show();
+            
+        }
+
+        private void ShowRostersBtn_Click(object sender, RoutedEventArgs e)
+        {
+            ShowRosterWindow showRosterWindow = new ShowRosterWindow();
+            showRosterWindow.Show();
+        }
+
+        private void LogOutBtn_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+                this.Close();
+        }
     }
 }
