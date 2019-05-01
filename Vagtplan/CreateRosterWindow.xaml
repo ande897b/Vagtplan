@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Vagtplan"
         mc:Ignorable="d"
-        Title="CreateRosterWindow" Height="450" Width="800">
+        Title="Opret Vagtplan" Height="450" Width="800">
     <Grid>
         <ComboBox x:Name="comboBoxCreateRoster" HorizontalAlignment="Left" Margin="243,175,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="1">
             <ComboBoxItem x:Name="comboBox1Month" Content="1 Måned" HorizontalAlignment="Left" Width="118"/>
@@ -13,7 +13,7 @@
             <ComboBoxItem x:Name="comboBox3Months" Content="3 Måneder" HorizontalAlignment="Left" Width="118"/>
         </ComboBox>
         <Label x:Name="label" Content="Vælg Varighed af Vagtplan" HorizontalAlignment="Left" Margin="223,134,0,0" VerticalAlignment="Top" Height="36" Width="172"/>
-        <Button x:Name="button" Content="Opret" HorizontalAlignment="Left" Margin="383,175,0,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
+        <Button x:Name="CreatRosterbtn" Content="Opret" HorizontalAlignment="Left" Margin="383,175,0,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
 
     </Grid>
 </Window>

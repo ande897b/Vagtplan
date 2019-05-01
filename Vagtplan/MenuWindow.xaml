@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Vagtplan"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Menu" Height="450" Width="800">
     <Grid>
         <Button x:Name="CreateRosterBtn" Content="Opret Vagtplan" HorizontalAlignment="Left" Margin="285,152,0,0" VerticalAlignment="Top" Width="204" Height="104" Click="CreateRosterBtn_Click"/>
 

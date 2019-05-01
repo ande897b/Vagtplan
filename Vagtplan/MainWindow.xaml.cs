@@ -27,10 +27,40 @@ namespace Vagtplan
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            MenuWindow menuWindow = new MenuWindow();
-            menuWindow.Show();
-            this.Hide();
-            
+            if (userNameTxtBox.Text.ToUpper() == "TEST" || passwordBox.Password.ToUpper() == "TEST")
+            {
+                MenuWindow menuWindow = new MenuWindow();
+                menuWindow.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Forkert Brugernavn eller Password");
+            }
+
+        }
+        private void tb_GotFocus(object sender, RoutedEventArgs e)
+        {
+            TextBox tb = sender as TextBox;
+            if (tb != null)
+            {
+                tb.SelectAll(); //select all text in TextBox
+            }
+        }
+        private void tb_GotFocus2(object sender, RoutedEventArgs e)
+        {
+            PasswordBox tb = sender as PasswordBox;
+            if (tb != null)
+            {
+                tb.SelectAll(); //select all text in TextBox
+            }
+        }
+        private void Window_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                button_Click(sender,e);
+            }
         }
     }
 }
