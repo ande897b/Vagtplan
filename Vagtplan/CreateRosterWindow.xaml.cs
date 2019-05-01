@@ -26,12 +26,9 @@ namespace Vagtplan
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-
-
-
-
-
-            MessageBox.Show("Vagtplan med " + comboBoxCreateRoster.Text + " Oprettet", "Success");
+            
+            MessageBox.Show("Vagtplan med " + comboBoxCreateRoster.Text + " oprettet. Du kan nu indsætte vagter", "Success");
+            this.Close();
         }
     }
 }
