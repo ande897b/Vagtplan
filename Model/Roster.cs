@@ -23,5 +23,12 @@ namespace Model
         public int RosterID { get; set; }
         public Period Period { get; set; }
         public Shop Shop { get; set; }
+
+        public Roster(int rosterID, Period period, Shop shop)
+        {
+            RosterID = rosterID;
+            Period = period;
+            Shop = shop;
+        }
     }
 }
