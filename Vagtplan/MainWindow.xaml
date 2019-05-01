@@ -13,6 +13,6 @@
         <Label x:Name="label_Copy" Content="Password" HorizontalAlignment="Left" Margin="211,197,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="userNameTxtBox" HorizontalAlignment="Left" Height="23" Margin="298,142,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TabIndex="1"  GotFocus=" tb_GotFocus"/>
         <PasswordBox x:Name="passwordBox" HorizontalAlignment="Left" Margin="298,197,0,0" VerticalAlignment="Top" Width="134" Height="26" TabIndex="2"  GotFocus=" password_GotFocus"/>
-        <Label x:Name="label1" Content="Log er test og test" HorizontalAlignment="Left" Margin="581,139,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label1" Content="Login er user/user Eller admin/admin&#xD;&#xA;" HorizontalAlignment="Left" Margin="477,111,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>

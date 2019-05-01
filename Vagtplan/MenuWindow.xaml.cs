@@ -36,5 +36,11 @@ namespace Vagtplan
             addShiftsWindow.Show();
             
         }
+
+        private void ShowRostersBtn_Click(object sender, RoutedEventArgs e)
+        {
+            ShowRosterWindow showRosterWindow = new ShowRosterWindow();
+            showRosterWindow.Show();
+        }
     }
 }

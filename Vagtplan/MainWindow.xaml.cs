@@ -20,6 +20,7 @@ namespace Vagtplan
     /// </summary>
     public partial class MainWindow : Window
     {
+
         public MainWindow()
         {
             InitializeComponent();
@@ -27,7 +28,15 @@ namespace Vagtplan
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            if (userNameTxtBox.Text.ToUpper() == "TEST" && passwordBox.Password.ToUpper() == "TEST")
+            if (userNameTxtBox.Text.ToUpper() == "USER" && passwordBox.Password.ToUpper() == "USER")
+            {
+                MenuWindow menuWindow = new MenuWindow();
+                menuWindow.Show();
+                menuWindow.AddShiftsBtn.IsEnabled = false;
+                menuWindow.CreateRosterBtn.IsEnabled = false;
+                this.Hide();
+            }
+           else if (userNameTxtBox.Text.ToUpper() == "ADMIN" && passwordBox.Password.ToUpper() == "ADMIN")
             {
                 MenuWindow menuWindow = new MenuWindow();
                 menuWindow.Show();
