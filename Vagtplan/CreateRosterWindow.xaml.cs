@@ -27,7 +27,7 @@ namespace Vagtplan
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            Controller.Controller.CreateRoster(comboBoxShop.Text.ToLower(), comboBoxDuration.Text.ToLower());
+            Controller.Controller.CreateRoster(comboBoxDuration.Text.ToLower(), comboBoxShop.Text.ToLower());
             MessageBox.Show("Vagtplan med " + comboBoxDuration.Text + " i "+ comboBoxShop.Text+" oprettet. Du kan nu indsætte vagter", "Success");
             this.Close();
         }
