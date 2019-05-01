@@ -7,7 +7,7 @@ using Model;
 
 namespace Controller
 {
-    public static class DatabaseController
+    public static class RosterDatabaseController
     {
         public static void GetRosters(Roster roster)
         {

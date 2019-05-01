@@ -7,7 +7,7 @@ using Model;
 
 namespace Controller
 {
-    static class RosterRepository
+    public static class RosterRepository
     {
         private static List<Roster> rosters = new List<Roster>();
         public static void AddRoster(Roster roster)
