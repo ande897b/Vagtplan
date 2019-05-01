@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using Model;
 using Database;
+using System.Data;
 
 namespace Controller
 {
@@ -18,12 +19,12 @@ namespace Controller
             string period = null;
             string shop = null;
 
-            DBConnection.DatabaseName = "EALSQL1.eal.local";
+            DBConnection.DatabaseName = "CANE";
             if (DBConnection.IsConnect())
             {
                 string query = "SELECT * FROM Roster";
-                var cmd = new SqlCommand(query, DBConnection.Connection);
-                var reader = cmd.ExecuteReader();
+                SqlCommand cmd = new SqlCommand(query, DBConnection.Connection);
+                SqlDataReader reader = cmd.ExecuteReader();
                 if (reader.HasRows)
                 {
                     while (reader.Read())
@@ -31,14 +32,14 @@ namespace Controller
                         rosterID = reader["RosterID"].ToString();
                         int.TryParse(rosterID, out int rosterIDint);
 
-                        period = reader["PeriodID"].ToString();
-                        int.TryParse(period, out int periodID);
+                        period = reader["Period"].ToString();
+
                         Period newPeriod;
-                        if (periodID == 1)
+                        if (period == "oneMonth")
                         {
                             newPeriod = Period.oneMonth;
                         }
-                        else if (periodID == 3)
+                        else if (period == "threeMonth")
                         {
                             newPeriod = Period.threeMonth;
                         }
@@ -69,7 +70,17 @@ namespace Controller
         }
         public static void CreateRoster(Roster roster)
         {
-
+            DBConnection.DatabaseName = "CANE";
+            if (DBConnection.IsConnect())
+            {
+                string query = "Create_Roster";
+                var cmd = new SqlCommand(query, DBConnection.Connection);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add(new SqlParameter("@Period_IN", roster.Period));
+                cmd.Parameters.Add(new SqlParameter("@Shop_IN", roster.Shop));
+                cmd.ExecuteReader();
+                DBConnection.Close();
+            }
         }
         public static void DeleteRoster(Roster roster)
         {
