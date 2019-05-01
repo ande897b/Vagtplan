@@ -42,5 +42,12 @@ namespace Vagtplan
             ShowRosterWindow showRosterWindow = new ShowRosterWindow();
             showRosterWindow.Show();
         }
+
+        private void LogOutBtn_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+                this.Close();
+        }
     }
 }
