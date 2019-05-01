@@ -76,8 +76,8 @@ namespace Controller
                 string query = "Create_Roster";
                 var cmd = new SqlCommand(query, DBConnection.Connection);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.Add(new SqlParameter("@Period_IN", roster.Period));
-                cmd.Parameters.Add(new SqlParameter("@Shop_IN", roster.Shop));
+                cmd.Parameters.Add(new SqlParameter("@Period_IN", roster.Period.ToString()));
+                cmd.Parameters.Add(new SqlParameter("@Shop_IN", roster.Shop.ToString()));
                 cmd.ExecuteReader();
                 DBConnection.Close();
             }
