@@ -13,7 +13,8 @@ namespace Model
     }
     public class Employee
     {
-        public string Name { get; set; }
+		public int EmployeeID { get; set; }
+		public string Name { get; set; }
         public Rank Rank { get; set; }
     }
 }
