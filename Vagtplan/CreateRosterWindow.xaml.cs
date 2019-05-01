@@ -10,26 +10,28 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Vagtplan
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for CreateRosterWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class CreateRosterWindow : Window
     {
-        public MainWindow()
+        public CreateRosterWindow()
         {
             InitializeComponent();
         }
 
-        private void CreateRosterBtn_Click(object sender, RoutedEventArgs e)
+        private void button_Click(object sender, RoutedEventArgs e)
         {
-            CreateRosterWindow createRosterWindow = new CreateRosterWindow();
-            createRosterWindow.Show();
 
+
+
+
+
+            MessageBox.Show("Vagtplan med " + comboBoxCreateRoster.Text + " Oprettet", "Success");
         }
     }
 }
