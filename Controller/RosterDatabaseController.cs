@@ -7,6 +7,7 @@ using System.Data.SqlClient;
 using Model;
 using Database;
 using System.Data;
+using System.IO;
 
 namespace Controller
 {
@@ -82,9 +83,11 @@ namespace Controller
                 DBConnection.Close();
             }
         }
+        
         public static void DeleteRoster(Roster roster)
         {
 
         }
+        
     }
 }

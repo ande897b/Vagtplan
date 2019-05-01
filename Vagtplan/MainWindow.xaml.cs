@@ -68,7 +68,7 @@ namespace Vagtplan
         {
             if (e.Key == Key.Enter)
             {
-                button_Click(sender,e);
+                button_Click(sender, e);
             }
         }
     }
