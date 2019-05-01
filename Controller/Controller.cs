@@ -12,11 +12,11 @@ namespace Controller
         public static void CreateRoster(string period, string shop)
         {
             Period newPeriod;
-            if (period == "oneMonth")
+            if (period == "1 måned")
             {
                 newPeriod = Period.oneMonth;
             }
-            else if (period == "threeMonth")
+            else if (period == "3 måneder")
             {
                 newPeriod = Period.threeMonth;
             }
