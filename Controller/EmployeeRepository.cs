@@ -14,17 +14,17 @@ namespace Controller
 		{
 			employees.Add(employee);
 		}
-		public  int GetEmployeeID()
+		public static int GetEmployeeID(Employee employee)
 		{
-
+			return employee.EmployeeID;
 		}
-		public List<Employee> GetEmployees()
+		public static List<Employee> GetEmployees()
 		{
-			return List<Employee> employees;
+			return employees;
 		}
-		public void RemoveEmployee()
+		public static void RemoveEmployee(Employee employee)
 		{
-
+			employees.Remove(employee);
 		}
     }
 }

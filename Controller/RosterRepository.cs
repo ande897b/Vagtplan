@@ -18,9 +18,9 @@ namespace Controller
         {
             return rosters;
         }
-        public static void RemoveRoster()
+        public static void RemoveRoster(Roster roster)
         {
-            
+			rosters.Remove(roster);
         }
     }
 }
