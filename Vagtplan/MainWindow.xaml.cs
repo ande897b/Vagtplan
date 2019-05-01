@@ -27,7 +27,7 @@ namespace Vagtplan
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            if (userNameTxtBox.Text.ToUpper() == "TEST" || passwordBox.Password.ToUpper() == "TEST")
+            if (userNameTxtBox.Text.ToUpper() == "TEST" && passwordBox.Password.ToUpper() == "TEST")
             {
                 MenuWindow menuWindow = new MenuWindow();
                 menuWindow.Show();
@@ -44,15 +44,15 @@ namespace Vagtplan
             TextBox tb = sender as TextBox;
             if (tb != null)
             {
-                tb.SelectAll(); //select all text in TextBox
+                tb.SelectAll(); 
             }
         }
-        private void tb_GotFocus2(object sender, RoutedEventArgs e)
+        private void password_GotFocus(object sender, RoutedEventArgs e)
         {
             PasswordBox tb = sender as PasswordBox;
             if (tb != null)
             {
-                tb.SelectAll(); //select all text in TextBox
+                tb.SelectAll();
             }
         }
         private void Window_PreviewKeyDown(object sender, KeyEventArgs e)

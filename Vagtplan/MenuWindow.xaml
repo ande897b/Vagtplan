@@ -7,7 +7,8 @@
         mc:Ignorable="d"
         Title="Menu" Height="450" Width="800">
     <Grid>
-        <Button x:Name="CreateRosterBtn" Content="Opret Vagtplan" HorizontalAlignment="Left" Margin="285,152,0,0" VerticalAlignment="Top" Width="204" Height="104" Click="CreateRosterBtn_Click"/>
+        <Button x:Name="CreateRosterBtn" Content="Opret Vagtplan" HorizontalAlignment="Left" Margin="81,76,0,0" VerticalAlignment="Top" Width="123" Height="55" Click="CreateRosterBtn_Click"/>
+        <Button x:Name="AddShiftsBtn" Content="Tilføj vagter til vagtplan" HorizontalAlignment="Left" Margin="567,76,0,0" VerticalAlignment="Top" Width="144" Height="55" Click="AddShiftsBtn_Click"/>
 
     </Grid>
 </Window>

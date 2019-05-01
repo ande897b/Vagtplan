@@ -17,11 +17,12 @@ namespace Vagtplan
     /// <summary>
     /// Interaction logic for MakeRosterWindow.xaml
     /// </summary>
-    public partial class MakeRosterWindow : Window
+    public partial class AddShiftsWindow : Window
     {
-        public MakeRosterWindow()
+        public AddShiftsWindow()
         {
             InitializeComponent();
         }
+
     }
 }

@@ -74,7 +74,7 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="MakeRosterWindow.xaml">
+    <Page Include="AddShiftsWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -84,8 +84,8 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MakeRosterWindow.xaml.cs">
-      <DependentUpon>MakeRosterWindow.xaml</DependentUpon>
+    <Compile Include="AddShiftsWindow.xaml.cs">
+      <DependentUpon>AddShiftsWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="MenuWindow.xaml.cs">
       <DependentUpon>MenuWindow.xaml</DependentUpon>
