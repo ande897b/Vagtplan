@@ -30,5 +30,10 @@ namespace Model
             Period = period;
             Shop = shop;
         }
+        public Roster(Period period, Shop shop)
+        {
+            Period = period;
+            Shop = shop;
+        }
     }
 }
