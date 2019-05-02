@@ -18,10 +18,6 @@ namespace Application.Repositories
 		{
 			return rosters;
 		}
-		public static void RemoveRoster(Roster roster)
-		{
-			rosters.Remove(roster);
-		}
 
 		public static DateTime GetEndDate(string shop)
 		{
@@ -48,9 +44,7 @@ namespace Application.Repositories
 					exists = true;
 				}
 			}
-
 			return exists;
-			
 		}
 	}
 }

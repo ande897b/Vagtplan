@@ -18,7 +18,7 @@ namespace Application
             get { return connection; }
         }
 
-        public static bool IsConnect()
+        public static bool IsConnected()
         {
             if (Connection == null)
             {

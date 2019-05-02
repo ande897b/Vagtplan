@@ -7,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Application
+namespace Application.ViewControllers
 {
-    public static class Controller
+    public static class ViewRosterController
     {
         public static void CreateRoster(DateTime startDate, DateTime endDate, string shop)
         {
@@ -24,7 +24,7 @@ namespace Application
             }
 
             Roster roster = new Roster(startDate, endDate, newShop);
-            RosterDatabaseController.CreateRoster(roster);
+            DBRosterController.CreateRoster(roster);
             RosterRepository.AddRoster(roster);
         }
     }

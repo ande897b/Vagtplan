@@ -11,7 +11,7 @@ using Application.Repositories;
 
 namespace Application.DatabaseControllers
 {
-    public static class RosterDatabaseController
+    public static class DBRosterController
     {
         public static List<Roster> GetRosters()
         {
@@ -22,7 +22,7 @@ namespace Application.DatabaseControllers
             string shop = null;
 
             DBConnection.DatabaseName = "CANE";
-            if (DBConnection.IsConnect())
+            if (DBConnection.IsConnected())
             {
                 string query = "SELECT * FROM Roster";
                 SqlCommand cmd = new SqlCommand(query, DBConnection.Connection);
@@ -62,7 +62,7 @@ namespace Application.DatabaseControllers
         public static void CreateRoster(Roster roster)
         {
             DBConnection.DatabaseName = "CANE";
-            if (DBConnection.IsConnect())
+            if (DBConnection.IsConnected())
             {
                 string query = "Create_Roster";
                 var cmd = new SqlCommand(query, DBConnection.Connection);
