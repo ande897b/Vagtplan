@@ -42,7 +42,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Employee.cs" />
-    <Compile Include="Roster2.cs" />
     <Compile Include="Roster.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

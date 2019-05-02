@@ -21,18 +21,21 @@ namespace Model
     public class Roster
     {
         public int RosterID { get; set; }
-        public Period Period { get; set; }
+        public DateTime StartDate { get; set; }
+        public DateTime EndDate { get; set; }
         public Shop Shop { get; set; }
 
-        public Roster(int rosterID, Period period, Shop shop)
+        public Roster(int rosterID, DateTime startDate, DateTime endDate, Shop shop)
         {
             RosterID = rosterID;
-            Period = period;
+            StartDate = startDate;
+            EndDate = endDate;
             Shop = shop;
         }
-        public Roster(Period period, Shop shop)
+        public Roster(DateTime startDate, DateTime endDate, Shop shop)
         {
-            Period = period;
+            StartDate = startDate;
+            EndDate = endDate;
             Shop = shop;
         }
     }

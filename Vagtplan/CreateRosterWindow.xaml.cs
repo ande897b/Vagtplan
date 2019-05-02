@@ -24,7 +24,7 @@ namespace Vagtplan
         {
             InitializeComponent();
         }
-
+        public CalendarDateRange
         private void button_Click(object sender, RoutedEventArgs e)
         {
             Controller.Controller.CreateRoster(comboBoxDuration.Text.ToString().ToLower(), comboBoxShop.Text.ToString().ToLower());
