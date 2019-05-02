@@ -11,30 +11,14 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using Controller;
 
-namespace Vagtplan
+namespace UI.Views
 {
-    /// <summary>
-    /// Interaction logic for ShowRosterWindow.xaml
-    /// </summary>
     public partial class ShowRosterWindow : Window
     {
         public ShowRosterWindow()
         {
-            //if (RosterRepository.GetCountOfRosterMonths().ToString() == "0")
-            //{
-            //    textBox.Text = DateTime.Today.ToString();
-            //}
-            //else
-            //{
-
-            //}
-            //textBox.Text = RosterRepository.GetCountOfRosterMonths().ToString();
             InitializeComponent();
         }
-
-
     }
-
 }

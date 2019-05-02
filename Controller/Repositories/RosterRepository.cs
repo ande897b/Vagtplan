@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Model;
+using Domain.Models;
 
-namespace Controller
+namespace Application.Repositories
 {
 	public static class RosterRepository
 	{

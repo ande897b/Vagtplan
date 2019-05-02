@@ -55,10 +55,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="ShowRosterWindow.xaml.cs">
+    <Compile Include="Views\ShowRosterWindow.xaml.cs">
       <DependentUpon>ShowRosterWindow.xaml</DependentUpon>
     </Compile>
-    <Page Include="CreateRosterWindow.xaml">
+    <Page Include="Views\CreateRosterWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -70,31 +70,31 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="CreateRosterWindow.xaml.cs">
+    <Compile Include="Views\CreateRosterWindow.xaml.cs">
       <DependentUpon>CreateRosterWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="AddShiftsWindow.xaml">
+    <Page Include="Views\AddShiftsWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MenuWindow.xaml">
+    <Page Include="Views\MenuWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ShowRosterWindow.xaml">
+    <Page Include="Views\ShowRosterWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddShiftsWindow.xaml.cs">
+    <Compile Include="Views\AddShiftsWindow.xaml.cs">
       <DependentUpon>AddShiftsWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MenuWindow.xaml.cs">
+    <Compile Include="Views\MenuWindow.xaml.cs">
       <DependentUpon>MenuWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -123,9 +123,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Controller\Controller.csproj">
+    <ProjectReference Include="..\Controller\Application.csproj">
       <Project>{2f210cbc-0319-4ff4-a50d-dfe3fe603d9d}</Project>
-      <Name>Controller</Name>
+      <Name>Application</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

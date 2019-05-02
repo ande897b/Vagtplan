@@ -1,11 +1,13 @@
-﻿using Model;
+﻿using Domain.Models;
+using Application.DatabaseControllers;
+using Application.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Controller
+namespace Application
 {
     public static class Controller
     {

@@ -11,9 +11,10 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using Controller;
+using Application;
+using Application.Repositories;
 
-namespace Vagtplan
+namespace UI.Views
 {
     public partial class CreateRosterWindow : Window
     {
@@ -24,7 +25,7 @@ namespace Vagtplan
 
         private void CreateRosterBtn_Click(object sender, RoutedEventArgs e)
         {
-            Controller.Controller.CreateRoster(DatePickerStart.SelectedDate.Value, DatePickerEnd.SelectedDate.Value, comboBoxShop.Text.ToString().ToLower());
+            Controller.CreateRoster(DatePickerStart.SelectedDate.Value, DatePickerEnd.SelectedDate.Value, comboBoxShop.Text.ToString().ToLower());
             MessageBox.Show("Vagtplan med " + " i "+ comboBoxShop.Text +" oprettet. Du kan nu indsætte vagter", "Success");
             this.Close();
         }

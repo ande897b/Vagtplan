@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
-using Model;
-using Database;
+using Domain.Models;
 using System.Data;
 using System.IO;
+using Application.Repositories;
 
-namespace Controller
+namespace Application.DatabaseControllers
 {
     public static class RosterDatabaseController
     {

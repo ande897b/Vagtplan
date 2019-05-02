@@ -1,7 +1,7 @@
 ﻿using System.Data;
 using System.Data.SqlClient;
 
-namespace Database
+namespace Application
 {
     public static class DBConnection
     {
