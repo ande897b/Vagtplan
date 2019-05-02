@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="ShowRosterWindow" Height="450" Width="800">
     <Grid>
-        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="162" Margin="128,89,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="342"/>
+        <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="162" Margin="128,89,0,0" TextWrapping="Wrap" Text="123" VerticalAlignment="Top" Width="342"/>
 
     </Grid>
 </Window>
