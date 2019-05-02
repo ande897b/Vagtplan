@@ -45,14 +45,15 @@ namespace Vagtplan
 
         private void ComboBoxShop_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            string shop = (comboBoxShop.SelectedItem as ComboBoxItem).Content.ToString().ToLower();
             DateTime startDate;
-            if (RosterRepository.CurrentRosterExist2() == false)
+            if (RosterRepository.CurrentRosterExist(shop) == false)
             {
                 startDate = DateTime.Now;
             }
             else
             {
-                startDate = RosterRepository.GetEndDate(comboBoxShop.Text.ToLower());
+                startDate = RosterRepository.GetEndDate(shop);
             }
             DatePickerStart.SelectedDate = startDate;
         }
