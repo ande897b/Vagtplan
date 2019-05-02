@@ -23,6 +23,7 @@ namespace Controller
 
             Roster roster = new Roster(startDate, endDate, newShop);
             RosterDatabaseController.CreateRoster(roster);
+            RosterRepository.AddRoster(roster);
         }
     }
 }
