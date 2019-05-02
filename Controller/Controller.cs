@@ -9,22 +9,8 @@ namespace Controller
 {
     public static class Controller
     {
-        public static void CreateRoster(string period, string shop)
+        public static void CreateRoster(DateTime startDate, DateTime endDate, string shop)
         {
-            Period newPeriod;
-            if (period == "1 måned")
-            {
-                newPeriod = Period.oneMonth;
-            }
-            else if (period == "3 måneder")
-            {
-                newPeriod = Period.threeMonth;
-            }
-            else
-            {
-                newPeriod = Period.twoMonth;
-            }
-
             Shop newShop;
             if (shop == "kongensgade")
             {
@@ -35,7 +21,7 @@ namespace Controller
                 newShop = Shop.skibhusvej;
             }
 
-            Roster roster = new Roster(newPeriod, newShop);
+            Roster roster = new Roster(startDate, endDate, newShop);
             RosterDatabaseController.CreateRoster(roster);
         }
     }

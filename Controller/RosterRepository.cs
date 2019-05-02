@@ -9,7 +9,6 @@ namespace Controller
 {
     public static class RosterRepository
     {
-        private static int count = 0;
         private static List<Roster> rosters = new List<Roster>();
         public static void AddRoster(Roster roster)
         {
@@ -23,26 +22,22 @@ namespace Controller
         {
 			rosters.Remove(roster);
         }
-        public static int GetCountOfRosterMonths()
+
+
+        public static DateTime GetEndDate()
         {
-            
-            foreach (var roster in rosters)
+            return rosters[rosters.Count - 1].EndDate;
+        }
+
+        public static bool CurrentRosterExist()
+        {
+            bool exists = false;
+            if (rosters.Count > 0)
             {
-                if (roster.Period == Period.oneMonth)
-                {
-                    count += 1;
-                }
-                if (roster.Period == Period.twoMonth)
-                {
-                    count += 2;
-                }
-                else
-                {
-                    count += 3;
-                }
-               
+                exists = true;
             }
-            return count;
+
+            return exists;
         }
     }
 }
