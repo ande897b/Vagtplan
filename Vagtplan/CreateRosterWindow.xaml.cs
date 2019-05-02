@@ -34,6 +34,7 @@ namespace Vagtplan
                 startDate = RosterRepository.GetEndDate();
             }
             DatePickerStart.SelectedDate = startDate;
+            DatePickerEnd.SelectedDate = startDate;
             
         }
 
@@ -41,6 +42,7 @@ namespace Vagtplan
         {
             Controller.Controller.CreateRoster(DatePickerStart.SelectedDate.Value, DatePickerEnd.SelectedDate.Value, comboBoxShop.Text.ToString().ToLower());
             MessageBox.Show("Vagtplan med " + " i "+ comboBoxShop.Text+" oprettet. Du kan nu indsætte vagter", "Success");
+            
             this.Close();
         }
     }
