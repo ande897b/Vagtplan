@@ -24,23 +24,38 @@ namespace Vagtplan
         {
             InitializeComponent();
 
-            DateTime startDate;
-            if (!RosterRepository.CurrentRosterExist())
-            {
-                startDate = DateTime.Today;
-            }
-            else
-            {
-                startDate = RosterRepository.GetEndDate();
-            }
-            DatePickerStart.SelectedDate = startDate;
+            //DateTime startDate;
+            //if (!RosterRepository.CurrentRosterExist2())
+            //{
+            //    startDate = DateTime.Today;
+            //}
+            //else
+            //{
+            //    startDate = RosterRepository.GetEndDate(comboBoxShop.Text);
+            //}
+            //DatePickerStart.SelectedDate = startDate;
         }
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
             Controller.Controller.CreateRoster(DatePickerStart.SelectedDate.Value, DatePickerEnd.SelectedDate.Value, comboBoxShop.Text.ToString().ToLower());
-            MessageBox.Show("Vagtplan med " + " i "+ comboBoxShop.Text+" oprettet. Du kan nu indsætte vagter", "Success");
+            MessageBox.Show("Vagtplan med " + " i "+ comboBoxShop.Text +" oprettet. Du kan nu indsætte vagter", "Success");
             this.Close();
+        }
+
+        private void ComboBoxShop_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            DateTime startDate;
+            if (RosterRepository.CurrentRosterExist2() == false)
+            {
+                startDate = DateTime.Now;
+            }
+            else
+            {
+                startDate = RosterRepository.GetEndDate(comboBoxShop.Text.ToLower());
+            }
+            DatePickerStart.SelectedDate = startDate;
         }
     }
 }
+

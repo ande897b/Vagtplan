@@ -12,7 +12,7 @@ namespace Controller
         public static void CreateRoster(DateTime startDate, DateTime endDate, string shop)
         {
             Shop newShop;
-            if (shop == "kongensgade")
+            if (shop == Shop.kongensgade.ToString())
             {
                 newShop = Shop.kongensgade;
             }

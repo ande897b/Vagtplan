@@ -23,16 +23,54 @@ namespace Controller
 			rosters.Remove(roster);
         }
 
-
-        public static DateTime GetEndDate()
+        public static DateTime GetEndDate(string shop)
         {
-            return rosters[rosters.Count - 1].EndDate;
+            DateTime endDate = DateTime.Now;
+            int i = rosters.Count;
+            while (endDate == DateTime.Now)
+            {
+
+                if (rosters[i-1].Shop.ToString().ToLower() == shop)
+                {
+                    endDate = rosters[i-1].EndDate;
+                }
+              
+            }
+
+            return endDate;
         }
 
-        public static bool CurrentRosterExist()
+        public static bool CurrentRosterExist(string shop)
         {
             bool exists = false;
-            if (rosters.Count > 0)
+            if(shop == Shop.kongensgade.ToString())
+            {
+                foreach (Roster roster in rosters)
+                {
+                    if (roster.Shop == Shop.skibhusvej)
+                    {
+                        exists = true;
+                    }
+                }
+            }
+            else if (shop == Shop.skibhusvej.ToString())
+            {
+                foreach (Roster roster in rosters)
+                {
+                    if (roster.Shop == Shop.kongensgade)
+                    {
+                        exists = true;
+                    }
+                }
+            }
+            return exists;
+            
+        }
+        public static bool CurrentRosterExist2()
+        {
+            bool exists = false;
+
+            if(rosters.Count > 0)
             {
                 exists = true;
             }
