@@ -34,6 +34,7 @@ namespace Vagtplan
                 startDate = RosterRepository.GetEndDate();
             }
             DatePickerStart.SelectedDate = startDate;
+            
         }
 
         private void button_Click(object sender, RoutedEventArgs e)
