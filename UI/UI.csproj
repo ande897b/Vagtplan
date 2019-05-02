@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6B2BF0C0-1314-471A-BAD2-60F5FC8F1ED1}</ProjectGuid>
+    <ProjectGuid>{0C9638B7-788C-4875-978A-F71C14DA8A27}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>Vagtplan</RootNamespace>
     <AssemblyName>Vagtplan</AssemblyName>
@@ -123,8 +123,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Controller\Application.csproj">
-      <Project>{2f210cbc-0319-4ff4-a50d-dfe3fe603d9d}</Project>
+    <ProjectReference Include="..\Application\Application.csproj">
+      <Project>{9cb25806-e669-44be-af35-4384326c3056}</Project>
       <Name>Application</Name>
     </ProjectReference>
   </ItemGroup>

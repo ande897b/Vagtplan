@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{2F210CBC-0319-4FF4-A50D-DFE3FE603D9D}</ProjectGuid>
+    <ProjectGuid>{9CB25806-E669-44BE-AF35-4384326C3056}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Controller</RootNamespace>
@@ -49,8 +49,8 @@
     <Compile Include="Repositories\RosterRepository.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Model\Domain.csproj">
-      <Project>{143a45bd-7703-44b5-9444-6609dc4e9fa1}</Project>
+    <ProjectReference Include="..\Domain\Domain.csproj">
+      <Project>{ee211ec8-0900-45b9-9dfd-44e5f306c0af}</Project>
       <Name>Domain</Name>
     </ProjectReference>
   </ItemGroup>
