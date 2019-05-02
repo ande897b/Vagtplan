@@ -13,62 +13,62 @@ namespace Controller
 {
     public static class RosterDatabaseController
     {
-        public static List<Roster> GetRosters(Roster roster)
-        {
-            List<Roster> rosterList = new List<Roster>();
-            string rosterID = null;
-            string period = null;
-            string shop = null;
+        //public static List<Roster> GetRosters(Roster roster)
+        //{
+        //    List<Roster> rosterList = new List<Roster>();
+        //    string rosterID = null;
+        //    string period = null;
+        //    string shop = null;
 
-            DBConnection.DatabaseName = "CANE";
-            if (DBConnection.IsConnect())
-            {
-                string query = "SELECT * FROM Roster";
-                SqlCommand cmd = new SqlCommand(query, DBConnection.Connection);
-                SqlDataReader reader = cmd.ExecuteReader();
-                if (reader.HasRows)
-                {
-                    while (reader.Read())
-                    {
-                        rosterID = reader["RosterID"].ToString();
-                        int.TryParse(rosterID, out int rosterIDint);
+        //    DBConnection.DatabaseName = "CANE";
+        //    if (DBConnection.IsConnect())
+        //    {
+        //        string query = "SELECT * FROM Roster";
+        //        SqlCommand cmd = new SqlCommand(query, DBConnection.Connection);
+        //        SqlDataReader reader = cmd.ExecuteReader();
+        //        if (reader.HasRows)
+        //        {
+        //            while (reader.Read())
+        //            {
+        //                rosterID = reader["RosterID"].ToString();
+        //                int.TryParse(rosterID, out int rosterIDint);
 
-                        period = reader["Period"].ToString();
+        //                period = reader["Period"].ToString();
 
-                        Period newPeriod;
-                        if (period == "oneMonth")
-                        {
-                            newPeriod = Period.oneMonth;
-                        }
-                        else if (period == "threeMonth")
-                        {
-                            newPeriod = Period.threeMonth;
-                        }
-                        else
-                        {
-                            newPeriod = Period.twoMonth;
-                        }
+        //                Period newPeriod;
+        //                if (period == "oneMonth")
+        //                {
+        //                    newPeriod = Period.oneMonth;
+        //                }
+        //                else if (period == "threeMonth")
+        //                {
+        //                    newPeriod = Period.threeMonth;
+        //                }
+        //                else
+        //                {
+        //                    newPeriod = Period.twoMonth;
+        //                }
 
-                        shop = reader["Shop"].ToString();
-                        Shop newShop;
-                        if (shop == "kongensgade")
-                        {
-                            newShop = Shop.kongensgade;
-                        }
-                        else
-                        {
-                            newShop = Shop.skibhusvej;
-                        }
+        //                shop = reader["Shop"].ToString();
+        //                Shop newShop;
+        //                if (shop == "kongensgade")
+        //                {
+        //                    newShop = Shop.kongensgade;
+        //                }
+        //                else
+        //                {
+        //                    newShop = Shop.skibhusvej;
+        //                }
 
-                        Roster addRoster = new Roster(rosterIDint, newPeriod, newShop);
-                        RosterRepository.AddRoster(addRoster);
-                        rosterList.Add(addRoster);
-                    }
-                }
-                DBConnection.Close();
-            }
-            return rosterList;
-        }
+        //                Roster addRoster = new Roster(rosterIDint, newPeriod, newShop);
+        //                RosterRepository.AddRoster(addRoster);
+        //                rosterList.Add(addRoster);
+        //            }
+        //        }
+        //        DBConnection.Close();
+        //    }
+        //    return rosterList;
+        //}
         public static void CreateRoster(Roster roster)
         {
             DBConnection.DatabaseName = "CANE";
@@ -77,7 +77,8 @@ namespace Controller
                 string query = "Create_Roster";
                 var cmd = new SqlCommand(query, DBConnection.Connection);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.Add(new SqlParameter("@Period_IN", roster.Period.ToString()));
+                cmd.Parameters.Add(new SqlParameter("@StartDate_IN", roster.StartDate));
+                cmd.Parameters.Add(new SqlParameter("@EndDate_IN", roster.EndDate));
                 cmd.Parameters.Add(new SqlParameter("@Shop_IN", roster.Shop.ToString()));
                 cmd.ExecuteReader();
                 DBConnection.Close();

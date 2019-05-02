@@ -7,18 +7,20 @@
         mc:Ignorable="d"
         Title="Opret Vagtplan" Height="450" Width="800">
     <Grid>
-        <ComboBox x:Name="comboBoxDuration" HorizontalAlignment="Left" Margin="243,175,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="1">
-            <ComboBoxItem x:Name="comboBox1Month" Content="1 Måned" HorizontalAlignment="Left" Width="118"/>
-            <ComboBoxItem x:Name="comboBox2Months" Content="2 Måneder" HorizontalAlignment="Left" Width="118"/>
-            <ComboBoxItem x:Name="comboBox3Months" Content="3 Måneder" HorizontalAlignment="Left" Width="118"/>
-        </ComboBox>
-        <Label x:Name="label" Content="Vælg Varighed af Vagtplan" HorizontalAlignment="Left" Margin="223,134,0,0" VerticalAlignment="Top" Height="36" Width="172"/>
-        <Button x:Name="CreatRosterbtn" Content="Opret" HorizontalAlignment="Left" Margin="383,175,0,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
+
+        <Button x:Name="CreatRosterbtn" Content="Opret" HorizontalAlignment="Left" Margin="538,175,0,0" VerticalAlignment="Top" Width="74" Click="button_Click"/>
+        
         <ComboBox x:Name="comboBoxShop" HorizontalAlignment="Left" Margin="98,178,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="0">
             <ComboBoxItem x:Name="comboBox1KongensGade" Content="Kongensgade" HorizontalAlignment="Left" Width="118"/>
             <ComboBoxItem x:Name="comboBox2Skibhusvej" Content="Skibhusvej" HorizontalAlignment="Left" Width="118"/>
-           
         </ComboBox>
+        
+        <Label x:Name="label_StartDato" Content="StartDato" HorizontalAlignment="Left" Margin="243,134,0,0" VerticalAlignment="Top" Height="36" Width="120"/>
 
+        <Label x:Name="label_SlutDato" Content="SlutDato" HorizontalAlignment="Left" Margin="384,134,0,0" VerticalAlignment="Top" Height="36" Width="120"/>
+        
+        <DatePicker IsEnabled="False" Name="DatePickerStart" HorizontalAlignment="Left" Margin="243,178,0,0" VerticalAlignment="Top"/>
+        
+        <DatePicker Name="DatePickerEnd" HorizontalAlignment="Left" Margin="384,178,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>

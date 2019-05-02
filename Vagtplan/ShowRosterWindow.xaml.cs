@@ -22,15 +22,15 @@ namespace Vagtplan
     {
         public ShowRosterWindow()
         {
-            if (RosterRepository.GetCountOfRosterMonths().ToString() == "0")
-            {
-                textBox.Text = DateTime.Today.ToString();
-            }
-            else
-            {
+            //if (RosterRepository.GetCountOfRosterMonths().ToString() == "0")
+            //{
+            //    textBox.Text = DateTime.Today.ToString();
+            //}
+            //else
+            //{
 
-            }
-            textBox.Text = RosterRepository.GetCountOfRosterMonths().ToString();
+            //}
+            //textBox.Text = RosterRepository.GetCountOfRosterMonths().ToString();
             InitializeComponent();
         }
 
