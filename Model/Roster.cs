@@ -25,13 +25,6 @@ namespace Model
         public DateTime EndDate { get; set; }
         public Shop Shop { get; set; }
 
-        public Roster(int rosterID, DateTime startDate, DateTime endDate, Shop shop)
-        {
-            RosterID = rosterID;
-            StartDate = startDate;
-            EndDate = endDate;
-            Shop = shop;
-        }
         public Roster(DateTime startDate, DateTime endDate, Shop shop)
         {
             StartDate = startDate;

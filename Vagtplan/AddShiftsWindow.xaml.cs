@@ -14,9 +14,6 @@ using System.Windows.Shapes;
 
 namespace Vagtplan
 {
-    /// <summary>
-    /// Interaction logic for MakeRosterWindow.xaml
-    /// </summary>
     public partial class AddShiftsWindow : Window
     {
         public AddShiftsWindow()

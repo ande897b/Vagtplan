@@ -15,9 +15,6 @@ using System.Windows.Shapes;
 
 namespace Vagtplan
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
 
@@ -26,7 +23,7 @@ namespace Vagtplan
             InitializeComponent();
         }
 
-        private void button_Click(object sender, RoutedEventArgs e)
+        private void LoginBtn_Click(object sender, RoutedEventArgs e)
         {
             if (userNameTxtBox.Text.ToUpper() == "USER" && passwordBox.Password.ToUpper() == "USER")
             {
@@ -68,7 +65,7 @@ namespace Vagtplan
         {
             if (e.Key == Key.Enter)
             {
-                button_Click(sender, e);
+                LoginBtn_Click(sender, e);
             }
         }
     }

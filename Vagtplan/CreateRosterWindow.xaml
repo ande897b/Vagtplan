@@ -8,7 +8,7 @@
         Title="Opret Vagtplan" Height="450" Width="800">
     <Grid>
 
-        <Button x:Name="CreatRosterbtn" Content="Opret" HorizontalAlignment="Left" Margin="538,175,0,0" VerticalAlignment="Top" Width="74" Click="button_Click"/>
+        <Button x:Name="CreatRosterbtn" Content="Opret" HorizontalAlignment="Left" Margin="538,175,0,0" VerticalAlignment="Top" Width="74" Click="CreateRosterBtn_Click"/>
         
         <ComboBox x:Name="comboBoxShop" HorizontalAlignment="Left" Margin="98,178,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ComboBoxShop_SelectionChanged">
             <ComboBoxItem x:Name="comboBox1KongensGade" Content="Kongensgade" HorizontalAlignment="Left" Width="118"/>
