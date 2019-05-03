@@ -23,13 +23,20 @@
         <Label x:Name="weekday6label" Content="Label" HorizontalAlignment="Left" Margin="661,114,0,0" VerticalAlignment="Top" Width="75"/>
         <Label x:Name="weekday7label" Content="Label" HorizontalAlignment="Left" Margin="785,114,0,0" VerticalAlignment="Top" Width="78"/>
         <TabControl x:Name="tabControl" HorizontalAlignment="Left" Height="60" Margin="-4,-3,0,0" VerticalAlignment="Top" Width="886" SelectionChanged="TabControl_SelectionChanged">
+
             <TabItem x:Name="JanuarTab" Header="Januar" Height="22" VerticalAlignment="Top" >
                 <Grid Background="#FFE5E5E5">
-                    <TabControl x:Name="tabControl1" HorizontalAlignment="Left" Height="40" Margin="1,4,0,0" VerticalAlignment="Top" Width="879">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="44*"/>
+                        <ColumnDefinition Width="26*"/>
+                        <ColumnDefinition Width="17*"/>
+                        <ColumnDefinition Width="89*"/>
+                        <ColumnDefinition Width="52*"/>
+                        <ColumnDefinition Width="35*"/>
+                    </Grid.ColumnDefinitions>
+                    <TabControl x:Name="JanuaryTabControl" HorizontalAlignment="Left" Height="40" Margin="1,4,0,-14" VerticalAlignment="Top" Width="879" Grid.ColumnSpan="7">
                         <TabItem Header="uge 1">
-                            <Grid Background="#FFE5E5E5">                              
-                                
-                            </Grid>
+                            <Grid Background="#FFE5E5E5"/>
                         </TabItem>
                         <TabItem Header="uge 2">
                             <Grid Background="#FFE5E5E5"/>
@@ -40,47 +47,343 @@
                         <TabItem Header="uge 4">
                             <Grid Background="#FFE5E5E5"/>
                         </TabItem>
+                        <TabItem Header="uge 5">
+                            <Grid Background="#FFE5E5E5"/>
+                        </TabItem>
                     </TabControl>
-
                 </Grid>
-
             </TabItem>
+
             <TabItem Header="Februar">
-                <Grid Background="#FFE5E5E5"/>
+                <Grid Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="44*"/>
+                        <ColumnDefinition Width="26*"/>
+                        <ColumnDefinition Width="17*"/>
+                        <ColumnDefinition Width="89*"/>
+                        <ColumnDefinition Width="52*"/>
+                        <ColumnDefinition Width="35*"/>
+                    </Grid.ColumnDefinitions>
+                    <TabControl x:Name="FebruaryTabControl" HorizontalAlignment="Left" Height="40" Margin="1,4,0,-14" VerticalAlignment="Top" Width="879" Grid.ColumnSpan="7">
+                        <TabItem Header="uge 1">
+                            <Grid Background="#FFE5E5E5"/>
+                        </TabItem>
+                        <TabItem Header="uge 2">
+                            <Grid Background="#FFE5E5E5"/>
+                        </TabItem>
+                        <TabItem Header="uge 3">
+                            <Grid Background="#FFE5E5E5"/>
+                        </TabItem>
+                        <TabItem Header="uge 4">
+                            <Grid Background="#FFE5E5E5"/>
+                        </TabItem>
+                        <TabItem Header="uge 5">
+                            <Grid Background="#FFE5E5E5"/>
+                        </TabItem>
+                    </TabControl>
+                </Grid>
             </TabItem>
+
             <TabItem Header="Marts">
-                <Grid Background="#FFE5E5E5"/>                
+                <Grid Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="44*"/>
+                        <ColumnDefinition Width="26*"/>
+                        <ColumnDefinition Width="17*"/>
+                        <ColumnDefinition Width="89*"/>
+                        <ColumnDefinition Width="52*"/>
+                        <ColumnDefinition Width="35*"/>
+                    </Grid.ColumnDefinitions>
+                    <TabControl x:Name="MarchTabControl" HorizontalAlignment="Left" Height="40" Margin="1,4,0,-14" VerticalAlignment="Top" Width="879" Grid.ColumnSpan="7">
+                        <TabItem Header="uge 1">
+                            <Grid Background="#FFE5E5E5"/>
+                        </TabItem>
+                        <TabItem Header="uge 2">
+                            <Grid Background="#FFE5E5E5"/>
+                        </TabItem>
+                        <TabItem Header="uge 3">
+                            <Grid Background="#FFE5E5E5"/>
+                        </TabItem>
+                        <TabItem Header="uge 4">
+                            <Grid Background="#FFE5E5E5"/>
+                        </TabItem>
+                        <TabItem Header="uge 5">
+                            <Grid Background="#FFE5E5E5"/>
+                        </TabItem>
+                    </TabControl>
+                </Grid>
             </TabItem>
+
             <TabItem Header="April">
-                <Grid Background="#FFE5E5E5"/>
+                <Grid Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="44*"/>
+                        <ColumnDefinition Width="26*"/>
+                        <ColumnDefinition Width="17*"/>
+                        <ColumnDefinition Width="89*"/>
+                        <ColumnDefinition Width="52*"/>
+                        <ColumnDefinition Width="35*"/>
+                    </Grid.ColumnDefinitions>
+                    <TabControl x:Name="AprilTabControl" HorizontalAlignment="Left" Height="40" Margin="1,4,0,-14" VerticalAlignment="Top" Width="879" Grid.ColumnSpan="7">
+                        <TabItem Header="uge 1">
+                            <Grid Background="#FFE5E5E5"/>
+                        </TabItem>
+                        <TabItem Header="uge 2">
+                            <Grid Background="#FFE5E5E5"/>
+                        </TabItem>
+                        <TabItem Header="uge 3">
+                            <Grid Background="#FFE5E5E5"/>
+                        </TabItem>
+                        <TabItem Header="uge 4">
+                            <Grid Background="#FFE5E5E5"/>
+                        </TabItem>
+                        <TabItem Header="uge 5">
+                            <Grid Background="#FFE5E5E5"/>
+                        </TabItem>
+                    </TabControl>
+                </Grid>
             </TabItem>
+
             <TabItem Header="Maj">
-                <Grid Background="#FFE5E5E5"/>
+                <Grid Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="44*"/>
+                        <ColumnDefinition Width="26*"/>
+                        <ColumnDefinition Width="17*"/>
+                        <ColumnDefinition Width="89*"/>
+                        <ColumnDefinition Width="52*"/>
+                        <ColumnDefinition Width="35*"/>
+                    </Grid.ColumnDefinitions>
+                    <TabControl x:Name="MayTabControl" HorizontalAlignment="Left" Height="40" Margin="1,4,0,-14" VerticalAlignment="Top" Width="879" Grid.ColumnSpan="7">
+                        <TabItem Header="uge 1">
+                            <Grid Background="#FFE5E5E5"/>
+                        </TabItem>
+                        <TabItem Header="uge 2">
+                            <Grid Background="#FFE5E5E5"/>
+                        </TabItem>
+                        <TabItem Header="uge 3">
+                            <Grid Background="#FFE5E5E5"/>
+                        </TabItem>
+                        <TabItem Header="uge 4">
+                            <Grid Background="#FFE5E5E5"/>
+                        </TabItem>
+                        <TabItem Header="uge 5">
+                            <Grid Background="#FFE5E5E5"/>
+                        </TabItem>
+                    </TabControl>
+                </Grid>
             </TabItem>
+
             <TabItem Header="Juni">
-                <Grid Background="#FFE5E5E5"/>
+                <Grid Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="44*"/>
+                        <ColumnDefinition Width="26*"/>
+                        <ColumnDefinition Width="17*"/>
+                        <ColumnDefinition Width="89*"/>
+                        <ColumnDefinition Width="52*"/>
+                        <ColumnDefinition Width="35*"/>
+                    </Grid.ColumnDefinitions>
+                    <TabControl x:Name="JuneTabControl" HorizontalAlignment="Left" Height="40" Margin="1,4,0,-14" VerticalAlignment="Top" Width="879" Grid.ColumnSpan="7">
+                        <TabItem Header="uge 1">
+                            <Grid Background="#FFE5E5E5"/>
+                        </TabItem>
+                        <TabItem Header="uge 2">
+                            <Grid Background="#FFE5E5E5"/>
+                        </TabItem>
+                        <TabItem Header="uge 3">
+                            <Grid Background="#FFE5E5E5"/>
+                        </TabItem>
+                        <TabItem Header="uge 4">
+                            <Grid Background="#FFE5E5E5"/>
+                        </TabItem>
+                        <TabItem Header="uge 5">
+                            <Grid Background="#FFE5E5E5"/>
+                        </TabItem>
+                    </TabControl>
+                </Grid>
             </TabItem>
+
             <TabItem Header="Juli">
-                <Grid Background="#FFE5E5E5"/>
+                <Grid Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="44*"/>
+                        <ColumnDefinition Width="26*"/>
+                        <ColumnDefinition Width="17*"/>
+                        <ColumnDefinition Width="89*"/>
+                        <ColumnDefinition Width="52*"/>
+                        <ColumnDefinition Width="35*"/>
+                    </Grid.ColumnDefinitions>
+                    <TabControl x:Name="JulyTabControl" HorizontalAlignment="Left" Height="40" Margin="1,4,0,-14" VerticalAlignment="Top" Width="879" Grid.ColumnSpan="7">
+                        <TabItem Header="uge 1">
+                            <Grid Background="#FFE5E5E5"/>
+                        </TabItem>
+                        <TabItem Header="uge 2">
+                            <Grid Background="#FFE5E5E5"/>
+                        </TabItem>
+                        <TabItem Header="uge 3">
+                            <Grid Background="#FFE5E5E5"/>
+                        </TabItem>
+                        <TabItem Header="uge 4">
+                            <Grid Background="#FFE5E5E5"/>
+                        </TabItem>
+                        <TabItem Header="uge 5">
+                            <Grid Background="#FFE5E5E5"/>
+                        </TabItem>
+                    </TabControl>
+                </Grid>
             </TabItem>
+
             <TabItem Header="August">
-                <Grid Background="#FFE5E5E5"/>
+                <Grid Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="44*"/>
+                        <ColumnDefinition Width="26*"/>
+                        <ColumnDefinition Width="17*"/>
+                        <ColumnDefinition Width="89*"/>
+                        <ColumnDefinition Width="52*"/>
+                        <ColumnDefinition Width="35*"/>
+                    </Grid.ColumnDefinitions>
+                    <TabControl x:Name="AugustTabControl" HorizontalAlignment="Left" Height="40" Margin="1,4,0,-14" VerticalAlignment="Top" Width="879" Grid.ColumnSpan="7">
+                        <TabItem Header="uge 1">
+                            <Grid Background="#FFE5E5E5"/>
+                        </TabItem>
+                        <TabItem Header="uge 2">
+                            <Grid Background="#FFE5E5E5"/>
+                        </TabItem>
+                        <TabItem Header="uge 3">
+                            <Grid Background="#FFE5E5E5"/>
+                        </TabItem>
+                        <TabItem Header="uge 4">
+                            <Grid Background="#FFE5E5E5"/>
+                        </TabItem>
+                        <TabItem Header="uge 5">
+                            <Grid Background="#FFE5E5E5"/>
+                        </TabItem>
+                    </TabControl>
+                </Grid>
             </TabItem>
+
             <TabItem Header="Septemper">
-                <Grid Background="#FFE5E5E5"/>
+                <Grid Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="44*"/>
+                        <ColumnDefinition Width="26*"/>
+                        <ColumnDefinition Width="17*"/>
+                        <ColumnDefinition Width="89*"/>
+                        <ColumnDefinition Width="52*"/>
+                        <ColumnDefinition Width="35*"/>
+                    </Grid.ColumnDefinitions>
+                    <TabControl x:Name="SeptemberTabControl" HorizontalAlignment="Left" Height="40" Margin="1,4,0,-14" VerticalAlignment="Top" Width="879" Grid.ColumnSpan="7">
+                        <TabItem Header="uge 1">
+                            <Grid Background="#FFE5E5E5"/>
+                        </TabItem>
+                        <TabItem Header="uge 2">
+                            <Grid Background="#FFE5E5E5"/>
+                        </TabItem>
+                        <TabItem Header="uge 3">
+                            <Grid Background="#FFE5E5E5"/>
+                        </TabItem>
+                        <TabItem Header="uge 4">
+                            <Grid Background="#FFE5E5E5"/>
+                        </TabItem>
+                        <TabItem Header="uge 5">
+                            <Grid Background="#FFE5E5E5"/>
+                        </TabItem>
+                    </TabControl>
+                </Grid>
             </TabItem>
+
             <TabItem Header="Oktober">
-                <Grid Background="#FFE5E5E5"/>
+                <Grid Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="44*"/>
+                        <ColumnDefinition Width="26*"/>
+                        <ColumnDefinition Width="17*"/>
+                        <ColumnDefinition Width="89*"/>
+                        <ColumnDefinition Width="52*"/>
+                        <ColumnDefinition Width="35*"/>
+                    </Grid.ColumnDefinitions>
+                    <TabControl x:Name="OctoberTabControl" HorizontalAlignment="Left" Height="40" Margin="1,4,0,-14" VerticalAlignment="Top" Width="879" Grid.ColumnSpan="7">
+                        <TabItem Header="uge 1">
+                            <Grid Background="#FFE5E5E5"/>
+                        </TabItem>
+                        <TabItem Header="uge 2">
+                            <Grid Background="#FFE5E5E5"/>
+                        </TabItem>
+                        <TabItem Header="uge 3">
+                            <Grid Background="#FFE5E5E5"/>
+                        </TabItem>
+                        <TabItem Header="uge 4">
+                            <Grid Background="#FFE5E5E5"/>
+                        </TabItem>
+                        <TabItem Header="uge 5">
+                            <Grid Background="#FFE5E5E5"/>
+                        </TabItem>
+                    </TabControl>
+                </Grid>
             </TabItem>
+
             <TabItem Header="November">
-                <Grid Background="#FFE5E5E5"/>
+                <Grid Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="44*"/>
+                        <ColumnDefinition Width="26*"/>
+                        <ColumnDefinition Width="17*"/>
+                        <ColumnDefinition Width="89*"/>
+                        <ColumnDefinition Width="52*"/>
+                        <ColumnDefinition Width="35*"/>
+                    </Grid.ColumnDefinitions>
+                    <TabControl x:Name="NovemberTabControl" HorizontalAlignment="Left" Height="40" Margin="1,4,0,-14" VerticalAlignment="Top" Width="879" Grid.ColumnSpan="7">
+                        <TabItem Header="uge 1">
+                            <Grid Background="#FFE5E5E5"/>
+                        </TabItem>
+                        <TabItem Header="uge 2">
+                            <Grid Background="#FFE5E5E5"/>
+                        </TabItem>
+                        <TabItem Header="uge 3">
+                            <Grid Background="#FFE5E5E5"/>
+                        </TabItem>
+                        <TabItem Header="uge 4">
+                            <Grid Background="#FFE5E5E5"/>
+                        </TabItem>
+                        <TabItem Header="uge 5">
+                            <Grid Background="#FFE5E5E5"/>
+                        </TabItem>
+                    </TabControl>
+                </Grid>
             </TabItem>
+
             <TabItem Header="December">
-                <Grid Background="#FFE5E5E5"/>
+                <Grid Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="44*"/>
+                        <ColumnDefinition Width="26*"/>
+                        <ColumnDefinition Width="17*"/>
+                        <ColumnDefinition Width="89*"/>
+                        <ColumnDefinition Width="52*"/>
+                        <ColumnDefinition Width="35*"/>
+                    </Grid.ColumnDefinitions>
+                    <TabControl x:Name="DecemberTabControl" HorizontalAlignment="Left" Height="40" Margin="1,4,0,-14" VerticalAlignment="Top" Width="879" Grid.ColumnSpan="7">
+                        <TabItem Header="uge 1">
+                            <Grid Background="#FFE5E5E5"/>
+                        </TabItem>
+                        <TabItem Header="uge 2">
+                            <Grid Background="#FFE5E5E5"/>
+                        </TabItem>
+                        <TabItem Header="uge 3">
+                            <Grid Background="#FFE5E5E5"/>
+                        </TabItem>
+                        <TabItem Header="uge 4">
+                            <Grid Background="#FFE5E5E5"/>
+                        </TabItem>
+                        <TabItem Header="uge 5">
+                            <Grid Background="#FFE5E5E5"/>
+                        </TabItem>
+                    </TabControl>
+                </Grid>
             </TabItem>
+
         </TabControl>
-
-
-
     </Grid>
 </Window>
