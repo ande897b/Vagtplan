@@ -19,14 +19,15 @@ namespace UI.Views
 {
     public partial class ShowRosterWindow : Window
     {
+        int x = 0;
+        List<Roster> rosters = RosterRepository.GetRosters();
+        bool isDone = false;
+  
+        List<DateTime> dates = new List<DateTime>();
         public ShowRosterWindow()
         {
             InitializeComponent();
-            int x = 0;
-            List<Roster> rosters = RosterRepository.GetRosters(); 
-            bool isDone = false;
 
-            List<DateTime> dates = new List<DateTime>();
             for (DateTime start = rosters[0].StartDate; start <= rosters[0].EndDate; start = start.AddDays(1))
             {
                 dates.Add(start);
@@ -52,9 +53,15 @@ namespace UI.Views
 
         void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (e.Source == JanuarTab.Content)
+            if (tabControl.SelectedIndex == 0)
             {
-                
+                weekday1label.Content = rosters[1].StartDate.AddDays(x);
+                weekday2label.Content = rosters[1].StartDate.AddDays(1 + x);
+                weekday3label.Content = rosters[1].StartDate.AddDays(2 + x);
+                weekday4label.Content = rosters[1].StartDate.AddDays(3 + x);
+                weekday5label.Content = rosters[1].StartDate.AddDays(4 + x);
+                weekday6label.Content = rosters[1].StartDate.AddDays(5 + x);
+                weekday7label.Content = rosters[1].StartDate.AddDays(6 + x);
             }
         }
     }
