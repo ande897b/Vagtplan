@@ -22,23 +22,61 @@ namespace UI.Views
         public ShowRosterWindow()
         {
             InitializeComponent();
-            int i = 1;
             int x = 0;
             List<Roster> rosters =  RosterRepository.GetRosters();
-            // weekday1label.Content = (rosters[1].StartDate.ToString()+ rosters[1].Shop);
-            while (rosters[i].StartDate.AddDays(x) <= rosters[i].EndDate)
+            bool isDone = false;
+            while (!isDone)
             {
-                weekday1label.Content = rosters[i].StartDate.AddDays(0+x);
-                weekday2label.Content = rosters[i].StartDate.AddDays(1 + x);
-                weekday3label.Content = rosters[i].StartDate.AddDays(2 + x);
-                weekday4label.Content = rosters[i].StartDate.AddDays(3 + x);
-                weekday5label.Content = rosters[i].StartDate.AddDays(4 + x);
-                weekday6label.Content = rosters[i].StartDate.AddDays(5 + x);
-                weekday7label.Content = rosters[i].StartDate.AddDays(6 + x);
+                if(rosters[1].StartDate.AddDays(x) == rosters[1].EndDate.AddDays(0))
+                {
+                    isDone = true;
+                }
+                weekday1label.Content = rosters[1].StartDate.AddDays(x);
+                weekday2label.Content = rosters[1].StartDate.AddDays(1 + x);
+                weekday3label.Content = rosters[1].StartDate.AddDays(2 + x);
+                weekday4label.Content = rosters[1].StartDate.AddDays(3 + x);
+                weekday5label.Content = rosters[1].StartDate.AddDays(4 + x);
+                weekday6label.Content = rosters[1].StartDate.AddDays(5 + x);
+                weekday7label.Content = rosters[1].StartDate.AddDays(6 + x);
                 x = x + 7;
-
-
             }
         }
     }
 }
+
+// weekday1label.Content = (rosters[1].StartDate.ToString()+ rosters[1].Shop);
+
+
+
+
+
+
+
+
+
+
+//public partial class ShowRosterWindow : Window
+//{
+//    public ShowRosterWindow()
+//    {
+//        InitializeComponent();
+//        int x = 0;
+//        List<Roster> rosters = RosterRepository.GetRosters();
+//        bool isDone = false;
+//        while (!isDone)
+//        {
+//            if (rosters[1].StartDate.AddDays(x) == rosters[1].EndDate.AddDays(0))
+//            {
+//                isDone = true;
+//            }
+//            weekday1label.Content = rosters[1].StartDate.AddDays(x);
+//            weekday2label.Content = rosters[1].StartDate.AddDays(1 + x);
+//            weekday3label.Content = rosters[1].StartDate.AddDays(2 + x);
+//            weekday4label.Content = rosters[1].StartDate.AddDays(3 + x);
+//            weekday5label.Content = rosters[1].StartDate.AddDays(4 + x);
+//            weekday6label.Content = rosters[1].StartDate.AddDays(5 + x);
+//            weekday7label.Content = rosters[1].StartDate.AddDays(6 + x);
+//            x = x + 7;
+//        }
+//    }
+//}
