@@ -21,6 +21,7 @@ namespace UI.Views
         public CreateRosterWindow()
         {
             InitializeComponent();
+            
         }
 
         private void CreateRosterBtn_Click(object sender, RoutedEventArgs e)
@@ -32,6 +33,7 @@ namespace UI.Views
 
         private void ComboBoxShop_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+
             string shop = (comboBoxShop.SelectedItem as ComboBoxItem).Content.ToString().ToLower();
             DateTime startDate;
             if (RosterRepository.CurrentRosterExist(shop) == false)
@@ -42,7 +44,9 @@ namespace UI.Views
             {
                 startDate = RosterRepository.GetEndDate(shop);
             }
+
             DatePickerStart.SelectedDate = startDate;
+            DatePickerEnd.SelectedDate = DatePickerStart.SelectedDate;
         }
     }
 }

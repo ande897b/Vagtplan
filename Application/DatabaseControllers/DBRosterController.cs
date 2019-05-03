@@ -30,8 +30,7 @@ namespace Application.DatabaseControllers
                 {
                     while (reader.Read())
                     {
-                        rosterID = reader["RosterID"].ToString();
-                        int.TryParse(rosterID, out int rosterIDint);
+                      
 
                         startDate = (DateTime)reader["StartDate"];
 
