@@ -25,12 +25,20 @@ namespace UI.Views
             int x = 0;
             List<Roster> rosters = RosterRepository.GetRosters();
             bool isDone = false;
+
+            List<DateTime> dates = new List<DateTime>();
+            for (DateTime start = rosters[0].StartDate; start <= rosters[0].EndDate; start = start.AddDays(1))
+            {
+                dates.Add(start);
+            }
+
             while (!isDone)
             {
-                if (rosters[1].StartDate.AddDays(x) <= rosters[1].EndDate.AddDays(0))
+                if (dates[0] <= dates[dates.Count - 1])
                 {
                     isDone = true;
                 }
+
                 weekday1label.Content = rosters[1].StartDate.AddDays(x);
                 weekday2label.Content = rosters[1].StartDate.AddDays(1 + x);
                 weekday3label.Content = rosters[1].StartDate.AddDays(2 + x);
@@ -40,17 +48,6 @@ namespace UI.Views
                 weekday7label.Content = rosters[1].StartDate.AddDays(6 + x);
                 x = x + 7;
             }
-
-            //List<DateTime> dates = new List<DateTime>();
-            //for (DateTime start = rosters[0].StartDate; start <= rosters[0].EndDate; start = start.AddDays(1))
-            //{
-            //    dates.Add(start);
-            //}
-
-
-
-
-
         }
     }
 }
