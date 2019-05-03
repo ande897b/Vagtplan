@@ -23,7 +23,7 @@ namespace UI.Views
         {
             InitializeComponent();
             int x = 0;
-            List<Roster> rosters = RosterRepository.GetRosters();
+            List<Roster> rosters = RosterRepository.GetRosters(); 
             bool isDone = false;
 
             List<DateTime> dates = new List<DateTime>();
@@ -47,6 +47,14 @@ namespace UI.Views
                 weekday6label.Content = rosters[1].StartDate.AddDays(5 + x);
                 weekday7label.Content = rosters[1].StartDate.AddDays(6 + x);
                 x = x + 7;
+            }
+        }
+
+        void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (e.Source == JanuarTab.Content)
+            {
+                
             }
         }
     }
