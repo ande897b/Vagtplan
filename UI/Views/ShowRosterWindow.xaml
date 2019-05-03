@@ -5,9 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UI.Views"
         mc:Ignorable="d"
-        Title="ShowRosterWindow" Height="450" Width="800">
-    <Grid>
-        <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="162" Margin="128,89,0,0" TextWrapping="Wrap" Text="123" VerticalAlignment="Top" Width="342"/>
+        Title="ShowRosterWindow" Height="450" Width="925">
+    <Grid Margin="0,0,2,0">
+        <TextBox x:Name="weekday1txtbox" HorizontalAlignment="Left" Height="236" Margin="22,22,0,0" TextWrapping="Wrap" Text="123" VerticalAlignment="Top" Width="100"/>
+        <TextBox x:Name="weekday2txtbox" HorizontalAlignment="Left" Height="236" Margin="149,22,0,0" TextWrapping="Wrap" Text="123" VerticalAlignment="Top" Width="100"/>
+        <TextBox x:Name="weekday3txtbox" HorizontalAlignment="Left" Height="236" Margin="279,22,0,0" TextWrapping="Wrap" Text="123" VerticalAlignment="Top" Width="100"/>
+        <TextBox x:Name="weekday4txtbox" HorizontalAlignment="Left" Height="236" Margin="409,22,0,0" TextWrapping="Wrap" Text="123" VerticalAlignment="Top" Width="100"/>
+        <TextBox x:Name="weekday5txtbox" HorizontalAlignment="Left" Height="236" Margin="532,22,0,0" TextWrapping="Wrap" Text="123" VerticalAlignment="Top" Width="100"/>
+        <TextBox x:Name="weekday6txtbox" HorizontalAlignment="Left" Height="236" Margin="658,22,0,0" TextWrapping="Wrap" Text="123" VerticalAlignment="Top" Width="100"/>
+        <TextBox x:Name="weekday7txtbox" HorizontalAlignment="Left" Height="236" Margin="784,22,0,0" TextWrapping="Wrap" Text="123" VerticalAlignment="Top" Width="100"/>
 
     </Grid>
 </Window>
