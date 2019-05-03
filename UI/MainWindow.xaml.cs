@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using UI.Views;
+using Application;
+using Application.DatabaseControllers;
 
 namespace UI
 {
@@ -21,7 +23,10 @@ namespace UI
 
         public MainWindow()
         {
+
             InitializeComponent();
+            
+            
         }
 
         private void LoginBtn_Click(object sender, RoutedEventArgs e)
