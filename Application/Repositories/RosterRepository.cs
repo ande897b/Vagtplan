@@ -18,7 +18,6 @@ namespace Application.Repositories
 		{
 			return rosters;
 		}
-
 		public static DateTime GetEndDate(string shop)
 		{
 			DateTime endDate = DateTime.Now;
@@ -29,11 +28,10 @@ namespace Application.Repositories
 				{
 					endDate = rosters[i-1].EndDate;
 				}
-                i--;
+				i--;
 			}
 			return endDate;
 		}
-
 		public static bool CurrentRosterExist(string shop)
 		{
 			bool exists = false;

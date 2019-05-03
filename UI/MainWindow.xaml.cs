@@ -20,13 +20,10 @@ namespace UI
 {
     public partial class MainWindow : Window
     {
-
         public MainWindow()
         {
-
             InitializeComponent();
             DBRosterController.LoadRosters();
-            
         }
 
         private void LoginBtn_Click(object sender, RoutedEventArgs e)
