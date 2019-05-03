@@ -29,6 +29,7 @@ namespace Application.Repositories
 				{
 					endDate = rosters[i-1].EndDate;
 				}
+                i--;
 			}
 			return endDate;
 		}
