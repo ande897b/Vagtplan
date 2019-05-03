@@ -12,7 +12,6 @@
         <TabControl x:Name="tabControl" HorizontalAlignment="Left" Height="817" Margin="-1,-1,0,0" VerticalAlignment="Top" Width="1858">
             <TabItem Header="TabItem">
                 <Grid Background="#FFE5E5E5">
-                    <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="107,360,0,0" VerticalAlignment="Top" Width="75"/>
                     <TextBox x:Name="weekday1txtbox" HorizontalAlignment="Left" Height="236" Margin="20,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" IsEnabled="False"/>
                     <TextBox x:Name="weekday2txtbox" HorizontalAlignment="Left" Height="236" Margin="149,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" IsEnabled="False"/>
                     <TextBox x:Name="weekday3txtbox" HorizontalAlignment="Left" Height="236" Margin="277,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" IsEnabled="False"/>
