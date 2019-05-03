@@ -13,7 +13,7 @@ namespace Application.DatabaseControllers
 {
     public static class DBRosterController
     {
-        public static void GetRosters()
+        public static void LoadRosters()
         {
             string rosterID = null;
             DateTime startDate = DateTime.Now;

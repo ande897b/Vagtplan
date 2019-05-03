@@ -25,7 +25,7 @@ namespace UI
         {
 
             InitializeComponent();
-            
+            DBRosterController.LoadRosters();
             
         }
 
