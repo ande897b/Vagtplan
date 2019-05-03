@@ -360,41 +360,76 @@ namespace UI.Views
             else if (i == 15)
                 j = 105;
 
-            if(dates[0 + j] != null)
+            List<Roster> rosters = RosterRepository.GetRosters();
+
+            bool isDone = false;
+            while (!isDone)
             {
-                weekday1txtbox.Text = "test0";
-                weekday1label.Content = dates[0 + j];
+                if(dates[0 + j] == rosters[1].EndDate)
+                {
+                    isDone = true;
+                }
+                else
+                {
+                    weekday1txtbox.Text = "test0";
+                    weekday1label.Content = dates[0 + j];
+                }
+                if (dates[1 + j] == rosters[1].EndDate)
+                {
+                    isDone = true;
+                }
+                else
+                {
+                    weekday2txtbox.Text = "test1";
+                    weekday2label.Content = dates[1 + j];
+                }
+                if (dates[2 + j] == rosters[1].EndDate)
+                {
+                    isDone = true;
+                }
+                else
+                {
+                    weekday3txtbox.Text = "test2";
+                    weekday3label.Content = dates[2 + j];
+                }
+                if (dates[3 + j] == rosters[1].EndDate)
+                {
+                    isDone = true;
+                }
+                else
+                {
+                    weekday4label.Content = dates[3 + j];
+                    weekday4txtbox.Text = "test3";
+                }
+                if (dates[4 + j] == rosters[1].EndDate)
+                {
+                    isDone = true;
+                }
+                else
+                {
+                    weekday5label.Content = dates[4 + j];
+                    weekday5txtbox.Text = "test4";
+                }
+                if (dates[5 + j] == rosters[1].EndDate)
+                {
+                    isDone = true;
+                }
+                else
+                {
+                    weekday6label.Content = dates[5 + j];
+                    weekday6txtbox.Text = "test5";
+                }
+                if (dates[6 + j] == rosters[1].EndDate)
+                {
+                    isDone = true;
+                }
+                else
+                {
+                    weekday7label.Content = dates[6 + j];
+                    weekday7txtbox.Text = "test6";
+                }
             }
-            if (dates[1 + j] != null)
-            {
-                weekday2txtbox.Text = "test1";
-                weekday2label.Content = dates[1 + j];
-            }
-            if (dates[2 + j] != null)
-            {
-                weekday3txtbox.Text = "test2";
-                weekday3label.Content = dates[2 + j];
-            }
-            if (dates[3 + j] != null)
-            {
-                weekday4label.Content = dates[3 + j];
-                weekday4txtbox.Text = "test3";
-            }
-            if (dates[4 + j] != null)
-            {
-                weekday5label.Content = dates[4 + j];
-                weekday5txtbox.Text = "test4";
-            }
-            if (dates[5 + j] != null)
-            {
-                weekday6label.Content = dates[5 + j];
-                weekday6txtbox.Text = "test5";
-            }
-            if (dates[6 + j] != null)
-            {
-                weekday7label.Content = dates[6 + j];
-                weekday7txtbox.Text = "test6";
-            }
+
         }
     }
 }
