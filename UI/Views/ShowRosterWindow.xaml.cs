@@ -25,6 +25,7 @@ namespace UI.Views
             int x = 0;
             List<Roster> rosters = RosterRepository.GetRosters(); 
             bool isDone = false;
+                             tabControl.SelectedIndex = DateTime.Now.Month - 1;
 
             List<DateTime> dates = new List<DateTime>();
             for (DateTime start = rosters[0].StartDate; start <= rosters[0].EndDate; start = start.AddDays(1))
@@ -50,11 +51,11 @@ namespace UI.Views
             }
         }
 
-        void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        void TabJanuar_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (e.Source == JanuarTab.Content)
+            if (tabControl.SelectedIndex == 0)
             {
-                
+                weekday1txtbox.Text = "test";
             }
         }
     }
