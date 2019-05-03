@@ -13,9 +13,8 @@ namespace Application.DatabaseControllers
 {
     public static class DBRosterController
     {
-        public static List<Roster> GetRosters()
+        public static void GetRosters()
         {
-            List<Roster> rosterList = new List<Roster>();
             string rosterID = null;
             DateTime startDate = DateTime.Now;
             DateTime endDate = DateTime.Now;
@@ -51,12 +50,10 @@ namespace Application.DatabaseControllers
 
                         Roster addRoster = new Roster(startDate, endDate, newShop);
                         RosterRepository.AddRoster(addRoster);
-                        rosterList.Add(addRoster);
                     }
                 }
                 DBConnection.Close();
             }
-            return rosterList;
         }
 
         public static void CreateRoster(Roster roster)
