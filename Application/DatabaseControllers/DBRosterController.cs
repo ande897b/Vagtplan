@@ -15,7 +15,7 @@ namespace Application.DatabaseControllers
     {
         public static void LoadRosters()
         {
-            string rosterID = null;
+           
             DateTime startDate = DateTime.Now;
             DateTime endDate = DateTime.Now;
             string shop = null;
