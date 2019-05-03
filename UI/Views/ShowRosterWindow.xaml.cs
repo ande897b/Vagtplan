@@ -26,7 +26,7 @@ namespace UI.Views
             int x = 0;
             List<Roster> rosters =  RosterRepository.GetRosters();
             // weekday1label.Content = (rosters[1].StartDate.ToString()+ rosters[1].Shop);
-            while (rosters[i].StartDate.AddDays(1) != rosters[i].EndDate)
+            while (rosters[i].StartDate.AddDays(x) <= rosters[i].EndDate)
             {
                 weekday1label.Content = rosters[i].StartDate.AddDays(0+x);
                 weekday2label.Content = rosters[i].StartDate.AddDays(1 + x);
