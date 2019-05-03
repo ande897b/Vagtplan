@@ -24,34 +24,36 @@ namespace UI.Views
             InitializeComponent();
             int x = 0;
             List<Roster> rosters = RosterRepository.GetRosters();
-            //bool isDone = false;
-            //while (!isDone)
-            //{
-            //    if(rosters[1].StartDate.AddDays(x) == rosters[1].EndDate.AddDays(0))
-            //    {
-            //        isDone = true;
-            //    }
-            //    weekday1label.Content = rosters[1].StartDate.AddDays(x);
-            //    weekday2label.Content = rosters[1].StartDate.AddDays(1 + x);
-            //    weekday3label.Content = rosters[1].StartDate.AddDays(2 + x);
-            //    weekday4label.Content = rosters[1].StartDate.AddDays(3 + x);
-            //    weekday5label.Content = rosters[1].StartDate.AddDays(4 + x);
-            //    weekday6label.Content = rosters[1].StartDate.AddDays(5 + x);
-            //    weekday7label.Content = rosters[1].StartDate.AddDays(6 + x);
-            //    x = x + 7;
-            var dates = new List<DateTime>();
-            for (var start = rosters[0].StartDate; start <= rosters[0].EndDate; start = start.AddDays(1))
+            bool isDone = false;
+            while (!isDone)
             {
-                dates.Add(start);
+                if (rosters[1].StartDate.AddDays(x) <= rosters[1].EndDate.AddDays(0))
+                {
+                    isDone = true;
+                }
+                weekday1label.Content = rosters[1].StartDate.AddDays(x);
+                weekday2label.Content = rosters[1].StartDate.AddDays(1 + x);
+                weekday3label.Content = rosters[1].StartDate.AddDays(2 + x);
+                weekday4label.Content = rosters[1].StartDate.AddDays(3 + x);
+                weekday5label.Content = rosters[1].StartDate.AddDays(4 + x);
+                weekday6label.Content = rosters[1].StartDate.AddDays(5 + x);
+                weekday7label.Content = rosters[1].StartDate.AddDays(6 + x);
+                x = x + 7;
             }
-           
+
+            //List<DateTime> dates = new List<DateTime>();
+            //for (DateTime start = rosters[0].StartDate; start <= rosters[0].EndDate; start = start.AddDays(1))
+            //{
+            //    dates.Add(start);
+            //}
 
 
 
-        }
+
+
         }
     }
-
+}
 
 // weekday1label.Content = (rosters[1].StartDate.ToString()+ rosters[1].Shop);
 
