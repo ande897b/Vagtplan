@@ -5,84 +5,45 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UI.Views"
         mc:Ignorable="d"
-        Title="ShowRosterWindow" Height="900" Width="1850"
+        Title="ShowRosterWindow" Height="450" Width="900"
 >
     <Grid>
-
-        <TabControl x:Name="tabControl" HorizontalAlignment="Left" Height="817" Margin="-1,-1,0,0" VerticalAlignment="Top" Width="1858">
-            <TabItem Header="TabItem">
+        <TabControl x:Name="tabControl" HorizontalAlignment="Left" Height="300" Margin="-4,-3,0,0" VerticalAlignment="Top" Width="886">
+            <TabItem Header="Januar">
                 <Grid Background="#FFE5E5E5">
-                    <TextBox x:Name="weekday1txtbox" HorizontalAlignment="Left" Height="236" Margin="20,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" IsEnabled="False"/>
-                    <TextBox x:Name="weekday2txtbox" HorizontalAlignment="Left" Height="236" Margin="149,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" IsEnabled="False"/>
-                    <TextBox x:Name="weekday3txtbox" HorizontalAlignment="Left" Height="236" Margin="277,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" IsEnabled="False"/>
-                    <TextBox x:Name="weekday4txtbox" HorizontalAlignment="Left" Height="236" Margin="412,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" IsEnabled="False"/>
-                    <TextBox x:Name="weekday5txtbox" HorizontalAlignment="Left" Height="236" Margin="538,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" IsEnabled="False"/>
-                    <TextBox x:Name="weekday6txtbox" HorizontalAlignment="Left" Height="236" Margin="661,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" IsEnabled="False"/>
-                    <TextBox x:Name="weekday7txtbox" HorizontalAlignment="Left" Height="236" Margin="785,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100"/>
-                    <Label x:Name="weekday1label" Content="Label" HorizontalAlignment="Left" Margin="20,10,0,0" VerticalAlignment="Top" Width="80"/>
-                    <Label x:Name="weekday2label" Content="Label" HorizontalAlignment="Left" Margin="149,10,0,0" VerticalAlignment="Top" Width="73"/>
-                    <Label x:Name="weekday3label" Content="Label" HorizontalAlignment="Left" Margin="277,14,0,0" VerticalAlignment="Top" Width="77"/>
-                    <Label x:Name="weekday4label" Content="Label" HorizontalAlignment="Left" Margin="412,14,0,0" VerticalAlignment="Top" Width="68"/>
-                    <Label x:Name="weekday5label" Content="Label" HorizontalAlignment="Left" Margin="538,14,0,0" VerticalAlignment="Top" Width="75"/>
-                    <Label x:Name="weekday6label" Content="Label" HorizontalAlignment="Left" Margin="661,14,0,0" VerticalAlignment="Top" Width="75"/>
-                    <Label x:Name="weekday7label" Content="Label" HorizontalAlignment="Left" Margin="785,14,0,0" VerticalAlignment="Top" Width="78"/>
-                    <TextBox x:Name="weekday8txt" HorizontalAlignment="Left" Height="236" Margin="918,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" IsEnabled="False"/>
-                    <TextBox x:Name="weekday9txt" HorizontalAlignment="Left" Height="236" Margin="1047,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" IsEnabled="False"/>
-                    <TextBox x:Name="weekday10txt" HorizontalAlignment="Left" Height="236" Margin="1175,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" IsEnabled="False"/>
-                    <TextBox x:Name="weekday11txt" HorizontalAlignment="Left" Height="236" Margin="1310,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" IsEnabled="False"/>
-                    <TextBox x:Name="weekday12txt" HorizontalAlignment="Left" Height="236" Margin="1436,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" IsEnabled="False"/>
-                    <TextBox x:Name="weekday13txt" HorizontalAlignment="Left" Height="236" Margin="1559,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" IsEnabled="False"/>
-                    <TextBox x:Name="weekday14txt" HorizontalAlignment="Left" Height="236" Margin="1683,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100"/>
-                    <Label x:Name="weekday8label" Content="Label" HorizontalAlignment="Left" Margin="918,10,0,0" VerticalAlignment="Top" Width="73"/>
-                    <Label x:Name="weekday9label" Content="Label" HorizontalAlignment="Left" Margin="1047,10,0,0" VerticalAlignment="Top" Width="67"/>
-                    <Label x:Name="weekday10label" Content="Label" HorizontalAlignment="Left" Margin="1175,14,0,0" VerticalAlignment="Top" Width="68"/>
-                    <Label x:Name="weekday11label" Content="Label" HorizontalAlignment="Left" Margin="1310,14,0,0" VerticalAlignment="Top" Width="81"/>
-                    <Label x:Name="weekday12label" Content="Label" HorizontalAlignment="Left" Margin="1436,14,0,0" VerticalAlignment="Top" Width="79"/>
-                    <Label x:Name="weekday13label" Content="Label" HorizontalAlignment="Left" Margin="1559,14,0,0" VerticalAlignment="Top" Width="79"/>
-                    <Label x:Name="weekday14label" Content="Label" HorizontalAlignment="Left" Margin="1683,14,0,0" VerticalAlignment="Top" Width="69"/>
-                    <TextBox x:Name="weekday15txtbox" HorizontalAlignment="Left" Height="236" Margin="20,398,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" IsEnabled="False"/>
-                    <TextBox x:Name="weekday16txtbox" HorizontalAlignment="Left" Height="236" Margin="149,398,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" IsEnabled="False"/>
-                    <TextBox x:Name="weekday17txtbox" HorizontalAlignment="Left" Height="236" Margin="277,398,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" IsEnabled="False"/>
-                    <TextBox x:Name="weekday18txtbox" HorizontalAlignment="Left" Height="236" Margin="412,398,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" IsEnabled="False"/>
-                    <TextBox x:Name="weekday19txtbox" HorizontalAlignment="Left" Height="236" Margin="538,398,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" IsEnabled="False"/>
-                    <TextBox x:Name="weekday20txtbox" HorizontalAlignment="Left" Height="236" Margin="661,398,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" IsEnabled="False"/>
-                    <TextBox x:Name="weekday21txtbox" HorizontalAlignment="Left" Height="236" Margin="785,398,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100"/>
-                    <Label x:Name="weekday15label" Content="Label" HorizontalAlignment="Left" Margin="20,368,0,0" VerticalAlignment="Top" Width="80"/>
-                    <Label x:Name="weekday16label" Content="Label" HorizontalAlignment="Left" Margin="149,368,0,0" VerticalAlignment="Top" Width="73"/>
-                    <Label x:Name="weekday17label" Content="Label" HorizontalAlignment="Left" Margin="277,372,0,0" VerticalAlignment="Top" Width="77"/>
-                    <Label x:Name="weekday18label" Content="Label" HorizontalAlignment="Left" Margin="412,372,0,0" VerticalAlignment="Top" Width="81"/>
-                    <Label x:Name="weekday19label" Content="Label" HorizontalAlignment="Left" Margin="538,372,0,0" VerticalAlignment="Top" Width="75"/>
-                    <Label x:Name="weekday20label" Content="Label" HorizontalAlignment="Left" Margin="661,372,0,0" VerticalAlignment="Top" Width="75"/>
-                    <Label x:Name="weekday21label" Content="Label" HorizontalAlignment="Left" Margin="785,372,0,0" VerticalAlignment="Top" Width="68" RenderTransformOrigin="0.5,0.5">
-                        <Label.RenderTransform>
-                            <TransformGroup>
-                                <ScaleTransform/>
-                                <SkewTransform/>
-                                <RotateTransform Angle="2.772"/>
-                                <TranslateTransform/>
-                            </TransformGroup>
-                        </Label.RenderTransform>
-                    </Label>
-                    <TextBox x:Name="weekday22txtbox" HorizontalAlignment="Left" Height="236" Margin="918,398,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" IsEnabled="False"/>
-                    <TextBox x:Name="weekday23txtbox" HorizontalAlignment="Left" Height="236" Margin="1047,398,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" IsEnabled="False"/>
-                    <TextBox x:Name="weekday24txtbox" HorizontalAlignment="Left" Height="236" Margin="1175,398,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" IsEnabled="False"/>
-                    <TextBox x:Name="weekday25txtbox" HorizontalAlignment="Left" Height="236" Margin="1310,398,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" IsEnabled="False"/>
-                    <TextBox x:Name="weekday26txtbox" HorizontalAlignment="Left" Height="236" Margin="1436,398,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" IsEnabled="False"/>
-                    <TextBox x:Name="weekday27txtbox" HorizontalAlignment="Left" Height="236" Margin="1559,398,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" IsEnabled="False"/>
-                    <TextBox x:Name="weekday28txtbox" HorizontalAlignment="Left" Height="236" Margin="1683,403,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100"/>
-                    <Label x:Name="weekday22label" Content="Label" HorizontalAlignment="Left" Margin="918,368,0,0" VerticalAlignment="Top" Width="73"/>
-                    <Label x:Name="weekday23label" Content="Label" HorizontalAlignment="Left" Margin="1047,368,0,0" VerticalAlignment="Top" Width="79"/>
-                    <Label x:Name="weekday24label" Content="Label" HorizontalAlignment="Left" Margin="1175,372,0,0" VerticalAlignment="Top" Width="80"/>
-                    <Label x:Name="weekday25label" Content="Label" HorizontalAlignment="Left" Margin="1310,372,0,0" VerticalAlignment="Top" Width="67"/>
-                    <Label x:Name="weekday26label" Content="Label" HorizontalAlignment="Left" Margin="1436,372,0,0" VerticalAlignment="Top" Width="79"/>
-                    <Label x:Name="weekday27label" Content="Label" HorizontalAlignment="Left" Margin="1559,372,0,0" VerticalAlignment="Top" Width="64"/>
-                    <Label x:Name="weekday28label" Content="Label" HorizontalAlignment="Left" Margin="1683,372,0,0" VerticalAlignment="Top" Width="79"/>
+                    <TabControl x:Name="tabControl1" HorizontalAlignment="Left" Height="268" Margin="1,4,0,0" VerticalAlignment="Top" Width="879">
+                        <TabItem Header="uge 1">
+                            <Grid Background="#FFE5E5E5">                              
+                                <TextBox x:Name="weekday1txtbox" HorizontalAlignment="Left" Height="200" Margin="20,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" IsEnabled="False"/>
+                                <TextBox x:Name="weekday2txtbox" HorizontalAlignment="Left" Height="200" Margin="149,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" IsEnabled="False"/>
+                                <TextBox x:Name="weekday3txtbox" HorizontalAlignment="Left" Height="200" Margin="277,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" IsEnabled="False"/>
+                                <TextBox x:Name="weekday4txtbox" HorizontalAlignment="Left" Height="200" Margin="412,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" IsEnabled="False"/>
+                                <TextBox x:Name="weekday5txtbox" HorizontalAlignment="Left" Height="200" Margin="538,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" IsEnabled="False"/>
+                                <TextBox x:Name="weekday6txtbox" HorizontalAlignment="Left" Height="200" Margin="661,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" IsEnabled="False"/>
+                                <TextBox x:Name="weekday7txtbox" HorizontalAlignment="Left" Height="200" Margin="785,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100"/>
+                                <Label x:Name="weekday1label" Content="Label" HorizontalAlignment="Left" Margin="20,10,0,0" VerticalAlignment="Top" Width="80"/>
+                                <Label x:Name="weekday2label" Content="Label" HorizontalAlignment="Left" Margin="149,10,0,0" VerticalAlignment="Top" Width="73"/>
+                                <Label x:Name="weekday3label" Content="Label" HorizontalAlignment="Left" Margin="277,14,0,0" VerticalAlignment="Top" Width="77"/>
+                                <Label x:Name="weekday4label" Content="Label" HorizontalAlignment="Left" Margin="412,14,0,0" VerticalAlignment="Top" Width="68"/>
+                                <Label x:Name="weekday5label" Content="Label" HorizontalAlignment="Left" Margin="538,14,0,0" VerticalAlignment="Top" Width="75"/>
+                                <Label x:Name="weekday6label" Content="Label" HorizontalAlignment="Left" Margin="661,14,0,0" VerticalAlignment="Top" Width="75"/>
+                                <Label x:Name="weekday7label" Content="Label" HorizontalAlignment="Left" Margin="785,14,0,0" VerticalAlignment="Top" Width="78"/>
+                            </Grid>
+                        </TabItem>
+                        <TabItem Header="uge 2">
+                            <Grid Background="#FFE5E5E5"/>
+                        </TabItem>
+                    </TabControl>
+
                 </Grid>
+
             </TabItem>
-            <TabItem Header="TabItem">
+            <TabItem Header="Februar">
                 <Grid Background="#FFE5E5E5"/>
             </TabItem>
         </TabControl>
+
+
 
     </Grid>
 </Window>
