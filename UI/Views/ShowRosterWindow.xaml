@@ -34,12 +34,48 @@
                         <TabItem Header="uge 2">
                             <Grid Background="#FFE5E5E5"/>
                         </TabItem>
+                        <TabItem Header="uge 3">
+                            <Grid Background="#FFE5E5E5"/>
+                        </TabItem>
+                        <TabItem Header="uge 4">
+                            <Grid Background="#FFE5E5E5"/>
+                        </TabItem>
                     </TabControl>
 
                 </Grid>
 
             </TabItem>
             <TabItem Header="Februar">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+            <TabItem Header="Marts">
+                <Grid Background="#FFE5E5E5"/>                
+            </TabItem>
+            <TabItem Header="April">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+            <TabItem Header="Maj">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+            <TabItem Header="Juni">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+            <TabItem Header="Juli">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+            <TabItem Header="August">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+            <TabItem Header="Septemper">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+            <TabItem Header="Oktober">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+            <TabItem Header="November">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+            <TabItem Header="December">
                 <Grid Background="#FFE5E5E5"/>
             </TabItem>
         </TabControl>
