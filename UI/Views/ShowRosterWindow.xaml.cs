@@ -43,11 +43,8 @@ namespace UI.Views
             }
         }
 
-
-
         private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            
             //January
             if (tabControl.SelectedIndex == 0)
             {
@@ -159,7 +156,12 @@ namespace UI.Views
             //May
             //else if (tabControl.SelectedIndex == 4)
             //{
-            //    List<DateTime> dates = monthList[monthList.Count - 1];
+            //    DateTime[] dates = null;
+            //    if (monthList[monthList.Count - 1] != null)
+            //    {
+            //        dates = monthList[monthList.Count - 1];
+            //    }
+
             //    if (MayTabControl.SelectedIndex == 0)
             //    {
             //        UpdateWeedDays420(dates, 16);
@@ -177,11 +179,15 @@ namespace UI.Views
             //        UpdateWeedDays420(dates, 19);
             //    }
             //}
-            
-            //June
+            ////June
             //else if (tabControl.SelectedIndex == 5)
             //{
-            //    List<DateTime> dates = monthList[monthList.Count - 1];
+            //    DateTime[] dates = null;
+            //    if (monthList[monthList.Count - 1] != null)
+            //    {
+            //        dates = monthList[monthList.Count - 1];
+            //    }
+
             //    if (JuneTabControl.SelectedIndex == 0)
             //    {
             //        UpdateWeedDays420(dates, 20);
@@ -199,10 +205,15 @@ namespace UI.Views
             //        UpdateWeedDays420(dates, 23);
             //    }
             //}
-            //July
+            ////July
             //else if (tabControl.SelectedIndex == 6)
             //{
-            //    List<DateTime> dates = monthList[monthList.Count - 1];
+            //    DateTime[] dates = null;
+            //    if (monthList[monthList.Count - 1] != null)
+            //    {
+            //        dates = monthList[monthList.Count - 1];
+            //    }
+
             //    if (JulyTabControl.SelectedIndex == 0)
             //    {
             //        UpdateWeedDays420(dates, 24);
@@ -220,10 +231,15 @@ namespace UI.Views
             //        UpdateWeedDays420(dates, 27);
             //    }
             //}
-            //August
+            ////August
             //else if (tabControl.SelectedIndex == 7)
             //{
-            //    List<DateTime> dates = monthList[monthList.Count - 1];
+            //    DateTime[] dates = null;
+            //    if (monthList[monthList.Count - 1] != null)
+            //    {
+            //        dates = monthList[monthList.Count - 1];
+            //    }
+
             //    if (AugustTabControl.SelectedIndex == 0)
             //    {
             //        UpdateWeedDays420(dates, 28);
@@ -241,10 +257,15 @@ namespace UI.Views
             //        UpdateWeedDays420(dates, 31);
             //    }
             //}
-            //September
+            ////September
             //else if (tabControl.SelectedIndex == 8)
             //{
-            //    List<DateTime> dates = monthList[monthList.Count - 1];
+            //    DateTime[] dates = null;
+            //    if (monthList[monthList.Count - 1] != null)
+            //    {
+            //        dates = monthList[monthList.Count - 1];
+            //    }
+
             //    if (SeptemberTabControl.SelectedIndex == 0)
             //    {
             //        UpdateWeedDays420(dates, 32);
@@ -262,10 +283,15 @@ namespace UI.Views
             //        UpdateWeedDays420(dates, 4);
             //    }
             //}
-            //October
+            ////October
             //else if (tabControl.SelectedIndex == 9)
             //{
-            //    List<DateTime> dates = monthList[monthList.Count - 1];
+            //    DateTime[] dates = null;
+            //    if (monthList[monthList.Count - 1] != null)
+            //    {
+            //        dates = monthList[monthList.Count - 1];
+            //    }
+
             //    if (OctoberTabControl.SelectedIndex == 0)
             //    {
             //        UpdateWeedDays420(dates, 4);
@@ -283,10 +309,15 @@ namespace UI.Views
             //        UpdateWeedDays420(dates, 4);
             //    }
             //}
-            //November
+            ////November
             //else if (tabControl.SelectedIndex == 10)
             //{
-            //    List<DateTime> dates = monthList[monthList.Count - 1];
+            //    DateTime[] dates = null;
+            //    if (monthList[monthList.Count - 1] != null)
+            //    {
+            //        dates = monthList[monthList.Count - 1];
+            //    }
+
             //    if (NovemberTabControl.SelectedIndex == 0)
             //    {
             //        UpdateWeedDays420(dates, 4);
@@ -304,10 +335,15 @@ namespace UI.Views
             //        UpdateWeedDays420(dates, 4);
             //    }
             //}
-            //December
+            ////December
             //else if (tabControl.SelectedIndex == 11)
             //{
-            //    List<DateTime> dates = monthList[monthList.Count - 1];
+            //    DateTime[] dates = null;
+            //    if (monthList[monthList.Count - 1] != null)
+            //    {
+            //        dates = monthList[monthList.Count - 1];
+            //    }
+
             //    if (DecemberTabControl.SelectedIndex == 0)
             //    {
             //        UpdateWeedDays420(dates, 4);
@@ -362,12 +398,42 @@ namespace UI.Views
                 j = 98;
             else if (i == 15)
                 j = 105;
+            else if (i == 16)
+                j = 112;
+            else if (i == 17)
+                j = 119;
+            else if (i == 18)
+                j = 126;
+            else if (i == 19)
+                j = 133;
+            else if (i == 20)
+                j = 140;
+            else if (i == 21)
+                j = 147;
+            else if (i == 22)
+                j = 154;
+            else if (i == 23)
+                j = 161;
+            else if (i == 24)
+                j = 168;
+            else if (i == 25)
+                j = 175;
+            else if (i == 26)
+                j = 182;
+            else if (i == 27)
+                j = 189;
+            else if (i == 28)
+                j = 196;
+            else if (i == 29)
+                j = 203;
+            else if (i == 30)
+                j = 210;
 
-    
 
 
 
-                    weekday1txtbox.Text = "test0";
+
+            weekday1txtbox.Text = "test0";
                     weekday1label.Content = dates[0 + j].ToString();
 
                     weekday2txtbox.Text = "test1";
