@@ -32,12 +32,12 @@ namespace UI.Views
             for(int i = 0; i < rosters.Count; i++)
             {
                 DateTime start = rosters[i].StartDate;
-                DateTime[] dates = new DateTime[100];
+                DateTime[] dates = new DateTime[360];
 
-                for (int j = 1; start <= rosters[i].EndDate; j++)
+                for (int j = 0; start <= rosters[i].EndDate; j++)
                 {
                     dates[j] = start;
-                    start = start.AddDays(j);
+                    start = start.AddDays(1);
                 }
                 monthList.Add(dates);
             }
