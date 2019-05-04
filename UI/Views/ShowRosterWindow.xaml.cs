@@ -19,7 +19,7 @@ namespace UI.Views
 {
     public partial class ShowRosterWindow : Window
     {
-        List<List<DateTime>> monthList;
+        List<DateTime []> monthList;
         public ShowRosterWindow()
         {
             InitializeComponent();
@@ -27,14 +27,17 @@ namespace UI.Views
 
             tabControl.SelectedIndex = DateTime.Now.Month - 1;
 
-            monthList = new List<List<DateTime>>();
+            monthList = new List<DateTime []>();
 
             for(int i = 0; i < rosters.Count; i++)
             {
-                List<DateTime> dates = new List<DateTime>();
-                for (DateTime start = rosters[i].StartDate; start <= rosters[i].EndDate; start = start.AddDays(1))
+                DateTime start = DateTime.Now;
+                DateTime[] dates = new DateTime[100];
+
+                for (int j = 0; start <= rosters[i].EndDate; j++)
                 {
-                    dates.Add(start);
+                    dates[j] = start;
+                    start = start.AddDays(j);
                 }
                 monthList.Add(dates);
             }
@@ -48,7 +51,7 @@ namespace UI.Views
             //January
             if (tabControl.SelectedIndex == 0)
             {
-                List<DateTime> dates = null;
+                DateTime [] dates = null;
                 if (monthList[monthList.Count - 1] != null)
                 {
                     dates = monthList[monthList.Count - 1];
@@ -78,10 +81,10 @@ namespace UI.Views
             //Febuary
             else if (tabControl.SelectedIndex == 1)
             {
-                List<DateTime> dates = null;
-                if (monthList[monthList.Count - 2] != null)
+                DateTime[] dates = null;
+                if (monthList[monthList.Count - 1] != null)
                 {
-                    dates = monthList[monthList.Count - 2];
+                    dates = monthList[monthList.Count - 1];
                 }
                 
                 if (FebruaryTabControl.SelectedIndex == 0)
@@ -104,10 +107,10 @@ namespace UI.Views
             //March
             else if (tabControl.SelectedIndex == 2)
             {
-                List<DateTime> dates = null;
-                if (monthList[monthList.Count - 3] != null)
+                DateTime[] dates = null;
+                if (monthList[monthList.Count - 1] != null)
                 {
-                    dates = monthList[monthList.Count - 3];
+                    dates = monthList[monthList.Count - 1];
                 }
 
                 if (MarchTabControl.SelectedIndex == 0)
@@ -130,10 +133,10 @@ namespace UI.Views
             //April
             else if (tabControl.SelectedIndex == 3)
             {
-                List<DateTime> dates = null;
-                if (monthList[monthList.Count - 4] != null)
+                DateTime[] dates = null;
+                if (monthList[monthList.Count - 1] != null)
                 {
-                    dates = monthList[monthList.Count - 4];
+                    dates = monthList[monthList.Count - 1];
                 }
 
                 if (AprilTabControl.SelectedIndex == 0)
@@ -323,7 +326,7 @@ namespace UI.Views
             //    }
             //}
         }
-        private void UpdateWeedDays420(List<DateTime> dates, int i)
+        private void UpdateWeedDays420(DateTime [] dates , int i)
         {
             int j = 0;
 
@@ -365,24 +368,24 @@ namespace UI.Views
 
 
                     weekday1txtbox.Text = "test0";
-                    weekday1label.Content = dates[0 + j];
+                    weekday1label.Content = dates[0 + j].ToString();
 
                     weekday2txtbox.Text = "test1";
-                    weekday2label.Content = dates[1 + j];
+                    weekday2label.Content = dates[1 + j].ToString();
 
                     weekday3txtbox.Text = "test2";
-                    weekday3label.Content = dates[2 + j];
+                    weekday3label.Content = dates[2 + j].ToString();
                 
-                    weekday4label.Content = dates[3 + j];
+                    weekday4label.Content = dates[3 + j].ToString();
                     weekday4txtbox.Text = "test3";
 
-                    weekday5label.Content = dates[4 + j];
+                    weekday5label.Content = dates[4 + j].ToString();
                     weekday5txtbox.Text = "test4";
 
-                    weekday6label.Content = dates[5 + j];
+                    weekday6label.Content = dates[5 + j].ToString();
                     weekday6txtbox.Text = "test5";
 
-                    weekday7label.Content = dates[6 + j];
+                    weekday7label.Content = dates[6 + j].ToString();
                     weekday7txtbox.Text = "test6";
                 
             
