@@ -25,7 +25,7 @@ namespace UI.Views
             InitializeComponent();
             List<Roster> rosters = RosterRepository.GetRosters(); 
 
-            tabControl.SelectedIndex = DateTime.Now.Month - 1;
+         //   tabControl.SelectedIndex = DateTime.Now.Month - 1;
 
             monthList = new List<DateTime[]>();
 
@@ -46,8 +46,8 @@ namespace UI.Views
 
         private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            
-            
+
+            int i = 0;
             DateTime[] dates = null;
            
           // januar
@@ -190,41 +190,44 @@ namespace UI.Views
                     UpdateWeedDays420(dates, 17);
                 }
             }
-            //if (tabControl.SelectedIndex == 4) // May
-            //{
-            //    dates = null;
-            //    foreach (var date in monthList)
-            //    {
-            //        if (date.ToString().Substring(3, 2) == "05")
-            //        {
-            //            dates = date;
-            //        }
-            //        else
-            //        {
-            //            dates = GetDates(2019, 01).ToArray();
-            //        }
-            //    }
-            //    if (AprilTabControl.SelectedIndex == 0)
-            //    {
-            //        UpdateWeedDays420(dates, 12);
-            //    }
-            //    else if (AprilTabControl.SelectedIndex == 1)
-            //    {
-            //        UpdateWeedDays420(dates, 13);
-            //    }
-            //    else if (AprilTabControl.SelectedIndex == 2)
-            //    {
-            //        UpdateWeedDays420(dates, 14);
-            //    }
-            //    else if (AprilTabControl.SelectedIndex == 3)
-            //    {
-            //        UpdateWeedDays420(dates, 15);
-            //    }
-            //    else if (AprilTabControl.SelectedIndex == 4)
-            //    {
-            //        UpdateWeedDays420(dates, 16);
-            //    }
-            //}
+            if (tabControl.SelectedIndex == 4) // May
+            {
+          
+                dates = null;
+                foreach (var date in monthList)
+                {
+                    if (date.GetValue(i).ToString().Substring(3, 2) == "05")
+                    {
+                        weekday1txtbox.Text = "sucess";
+                        dates = date;
+                        i++;
+                    }
+                    else
+                    {
+                        dates = GetDates(2019, 01).ToArray();
+                    }
+                }
+                if (MayTabControl.SelectedIndex == 0)
+                {
+                    UpdateWeedDays420(dates, 17);
+                }
+                else if (MayTabControl.SelectedIndex == 1)
+                {
+                    UpdateWeedDays420(dates, 18);
+                }
+                else if (MayTabControl.SelectedIndex == 2)
+                {
+                    UpdateWeedDays420(dates, 19);
+                }
+                else if (MayTabControl.SelectedIndex == 3)
+                {
+                    UpdateWeedDays420(dates, 20);
+                }
+                else if (MayTabControl.SelectedIndex == 4)
+                {
+                    UpdateWeedDays420(dates, 21);
+                }
+            }
 
 
 
