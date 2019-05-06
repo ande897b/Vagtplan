@@ -46,7 +46,7 @@ namespace UI.Views
         private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             //January
-            if (tabControl.SelectedIndex == 0)
+            if (tabControl.SelectedIndex == 0 && monthList[0].GetValue(0).ToString().Substring(3, 2) == "01")
             {
                 DateTime [] dates = null;
                 if (monthList[monthList.Count - 1] != null)
@@ -54,7 +54,7 @@ namespace UI.Views
                     dates = monthList[monthList.Count - 1];
                 }
 
-                if (JanuaryTabControl.SelectedIndex == 0)
+                if (JanuaryTabControl.SelectedIndex == 0 )
                 {
                     UpdateWeedDays420(dates, 0);
                 }
@@ -76,7 +76,7 @@ namespace UI.Views
                 }
             }
             //Febuary
-            else if (tabControl.SelectedIndex == 1)
+            else if (tabControl.SelectedIndex == 1 && monthList[1].GetValue(1).ToString().Substring(3, 2) == "02")
             {
                 DateTime[] dates = null;
                 if (monthList[monthList.Count - 1] != null)
@@ -102,7 +102,7 @@ namespace UI.Views
                 }
             }
             //March
-            else if (tabControl.SelectedIndex == 2)
+            else if (tabControl.SelectedIndex == 2 && monthList[2].GetValue(2).ToString().Substring(3, 2) == "03")
             {
                 DateTime[] dates = null;
                 if (monthList[monthList.Count - 1] != null)
@@ -128,7 +128,7 @@ namespace UI.Views
                 }
             }
             //April
-            else if (tabControl.SelectedIndex == 3)
+            else if (tabControl.SelectedIndex == 3 && monthList[3].GetValue(3).ToString().Substring(3, 2) == "04")
             {
                 DateTime[] dates = null;
                 if (monthList[monthList.Count - 1] != null)
@@ -153,59 +153,59 @@ namespace UI.Views
                     UpdateWeedDays420(dates, 15);
                 }
             }
-            //May
-            //else if (tabControl.SelectedIndex == 4)
-            //{
-            //    DateTime[] dates = null;
-            //    if (monthList[monthList.Count - 1] != null)
-            //    {
-            //        dates = monthList[monthList.Count - 1];
-            //    }
+         //   May
+            else if (tabControl.SelectedIndex == 4 && monthList[4].GetValue(4).ToString().Substring(3, 2) == "05")
+            {
+                DateTime[] dates = null;
+                if (monthList[monthList.Count - 1] != null)
+                {
+                    dates = monthList[monthList.Count - 1];
+                }
 
-            //    if (MayTabControl.SelectedIndex == 0)
-            //    {
-            //        UpdateWeedDays420(dates, 16);
-            //    }
-            //    else if (MayTabControl.SelectedIndex == 1)
-            //    {
-            //        UpdateWeedDays420(dates, 17);
-            //    }
-            //    else if (MayTabControl.SelectedIndex == 2)
-            //    {
-            //        UpdateWeedDays420(dates, 18);
-            //    }
-            //    else if (MayTabControl.SelectedIndex == 3)
-            //    {
-            //        UpdateWeedDays420(dates, 19);
-            //    }
-            //}
-            ////June
-            //else if (tabControl.SelectedIndex == 5)
-            //{
-            //    DateTime[] dates = null;
-            //    if (monthList[monthList.Count - 1] != null)
-            //    {
-            //        dates = monthList[monthList.Count - 1];
-            //    }
+                if (MayTabControl.SelectedIndex == 0)
+                {
+                    UpdateWeedDays420(dates, 16);
+                }
+                else if (MayTabControl.SelectedIndex == 1)
+                {
+                    UpdateWeedDays420(dates, 17);
+                }
+                else if (MayTabControl.SelectedIndex == 2)
+                {
+                    UpdateWeedDays420(dates, 18);
+                }
+                else if (MayTabControl.SelectedIndex == 3)
+                {
+                    UpdateWeedDays420(dates, 19);
+                }
+            }
+            //June
+            else if (tabControl.SelectedIndex == 5 && monthList[5].GetValue(5).ToString().Substring(3, 2) == "06")
+            {
+                DateTime[] dates = null;
+                if (monthList[monthList.Count - 1] != null)
+                {
+                    dates = monthList[monthList.Count - 1];
+                }
 
-            //    if (JuneTabControl.SelectedIndex == 0)
-            //    {
-            //        UpdateWeedDays420(dates, 20);
-            //    }
-            //    else if (JuneTabControl.SelectedIndex == 1)
-            //    {
-            //        UpdateWeedDays420(dates, 21);
-            //    }
-            //    else if (JuneTabControl.SelectedIndex == 2)
-            //    {
-            //        UpdateWeedDays420(dates, 22);
-            //    }
-            //    else if (JuneTabControl.SelectedIndex == 3)
-            //    {
-            //        UpdateWeedDays420(dates, 23);
-            //    }
-            //}
-            ////July
+                if (JuneTabControl.SelectedIndex == 0)
+                {
+                    UpdateWeedDays420(dates, 20);
+                }
+                else if (JuneTabControl.SelectedIndex == 1)
+                {
+                    UpdateWeedDays420(dates, 21);
+                }
+                else if (JuneTabControl.SelectedIndex == 2)
+                {
+                    UpdateWeedDays420(dates, 22);
+                }
+                else if (JuneTabControl.SelectedIndex == 3)
+                {
+                    UpdateWeedDays420(dates, 23);
+                }
+            }
+            //July
             //else if (tabControl.SelectedIndex == 6)
             //{
             //    DateTime[] dates = null;
