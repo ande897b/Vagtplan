@@ -503,8 +503,15 @@ namespace UI.Views
            
             
                     weekday1label.Content = dates[0].AddDays(i*7).ToString();
-                    weekday1txtbox.Text = "test0";
-                    weekday2txtbox.Text = "test1";
+            if (RosterRepository.CheckIfExists(dates[0].AddDays(i * 7)) == true)
+            {
+                weekday1txtbox.Text = "IT WORKS";
+            }
+            else
+            {
+                weekday1txtbox.Text = "IT DOESNT WORK";
+            }
+            weekday2txtbox.Text = "test1";
                     weekday2label.Content = dates[1].AddDays(i * 7).ToString();
 
                     weekday3txtbox.Text = "test2";

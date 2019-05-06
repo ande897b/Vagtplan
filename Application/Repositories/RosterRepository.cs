@@ -45,10 +45,10 @@ namespace Application.Repositories
 			}
 			return exists;
 		}
-        public static bool CheckIfExists(DateTime[] date)
+        public static bool CheckIfExists(DateTime date)
         {
             bool exists = false;
-
+            int x = 0;
             List<DateTime[]> monthList;
             List<Roster> rosters = GetRosters();
 
@@ -71,10 +71,11 @@ namespace Application.Repositories
             }
             foreach (var dates in monthList)
             {
-                if (dates == date)
+                if (dates[x] == date)
                 {
                     exists = true;
                 }
+                x++;
             }
             return exists;
         }
