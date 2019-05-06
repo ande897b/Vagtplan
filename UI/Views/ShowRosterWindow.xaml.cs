@@ -25,7 +25,7 @@ namespace UI.Views
             InitializeComponent();
             List<Roster> rosters = RosterRepository.GetRosters(); 
 
-         //   tabControl.SelectedIndex = DateTime.Now.Month - 1;
+    
 
             monthList = new List<DateTime[]>();
 
@@ -505,31 +505,77 @@ namespace UI.Views
                     weekday1label.Content = dates[0].AddDays(i*7).ToString();
             if (RosterRepository.CheckIfExists(dates[0].AddDays(i * 7)) == true)
             {
-                weekday1txtbox.Text = "IT WORKS";
+                weekday1txtbox.Text = "Vagtplan Found";
+               
             }
-            else
+            else if (RosterRepository.CheckIfExists(dates[0].AddDays(i * 7)) == false)
             {
-                weekday1txtbox.Text = "IT DOESNT WORK";
+                weekday1txtbox.Text = "Vagtplan Not found";
             }
-            weekday2txtbox.Text = "test1";
+           
                     weekday2label.Content = dates[1].AddDays(i * 7).ToString();
+            if (RosterRepository.CheckIfExists(dates[1].AddDays(i * 7)) == true)
+            {
+                weekday2txtbox.Text = "Vagtplan Found";
 
-                    weekday3txtbox.Text = "test2";
+            }
+            else if(RosterRepository.CheckIfExists(dates[1].AddDays(i * 7)) == false)
+            {
+                weekday2txtbox.Text = "Vagtplan Not found";
+            }            
                     weekday3label.Content = dates[02].AddDays(i * 7).ToString();
+            if (RosterRepository.CheckIfExists(dates[2].AddDays(i * 7)) == true)
+            {
+                weekday3txtbox.Text = "Vagtplan Found";
+            }
+            else if(RosterRepository.CheckIfExists(dates[2].AddDays(i * 7)) == false)
+            {
+                weekday3txtbox.Text = "Vagtplan Not found";
+            }
+
 
             weekday4label.Content = dates[03].AddDays(i * 7).ToString();
-            weekday4txtbox.Text = "test3";
+            if (RosterRepository.CheckIfExists(dates[3].AddDays(i * 7)) == true)
+            {
+                weekday4txtbox.Text = "Vagtplan Found";
+            }
+            else if(RosterRepository.CheckIfExists(dates[3].AddDays(i * 7)) == false)
+            {
+                weekday4txtbox.Text = "Vagtplan Not found";
+            }
 
-                    weekday5label.Content = dates[04].AddDays(i * 7).ToString();
-            weekday5txtbox.Text = "test4";
+            weekday5label.Content = dates[04].AddDays(i * 7).ToString();
+            if (RosterRepository.CheckIfExists(dates[4].AddDays(i * 7)) == true)
+            {
+                weekday5txtbox.Text = "Vagtplan Found";
 
-                    weekday6label.Content = dates[05].AddDays(i * 7).ToString();
-            weekday6txtbox.Text = "test5";
+            }
+            else if(RosterRepository.CheckIfExists(dates[04].AddDays(i * 7)) == false)
+            {
+                weekday5txtbox.Text = "Vagtplan Not found";
+            }
 
-                    weekday7label.Content = dates[06].AddDays(i * 7).ToString();
-            weekday7txtbox.Text = "test6";
-                
-            
+            weekday6label.Content = dates[05].AddDays(i * 7).ToString();
+            if (RosterRepository.CheckIfExists(dates[5].AddDays(i * 7)) == true)
+            {
+                weekday6txtbox.Text = "Vagtplan Found";
+            }
+            else if(RosterRepository.CheckIfExists(dates[5].AddDays(i * 7)) == false)
+            {
+                weekday6txtbox.Text = "Vagtplan Not found";
+            }
+
+            weekday7label.Content = dates[06].AddDays(i * 7).ToString();
+            if (RosterRepository.CheckIfExists(dates[6].AddDays(i * 7)) == true)
+            {
+                weekday7txtbox.Text = "Vagtplan Found";
+            }
+            else if(RosterRepository.CheckIfExists(dates[06].AddDays(i * 7)) == false)
+            {
+                weekday7txtbox.Text = "Vagtplan Not found";
+            }
+
+
 
         }
     }

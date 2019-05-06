@@ -47,8 +47,7 @@ namespace Application.Repositories
 		}
         public static bool CheckIfExists(DateTime date)
         {
-            bool exists = false;
-            int x = 0;
+            bool exists = false;            
             List<DateTime[]> monthList;
             List<Roster> rosters = GetRosters();
 
@@ -65,18 +64,15 @@ namespace Application.Repositories
                 {
                     dates[j] = start;
                     start = start.AddDays(1);
+                    if (start == date)
+                    {
+                        exists = true;
+                    }
                 }
                 monthList.Add(dates);
 
             }
-            foreach (var dates in monthList)
-            {
-                if (dates[x] == date)
-                {
-                    exists = true;
-                }
-                x++;
-            }
+      
             return exists;
         }
 	}
