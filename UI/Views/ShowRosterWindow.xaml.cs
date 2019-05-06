@@ -500,78 +500,10 @@ namespace UI.Views
         }
         private void UpdateWeedDays420(DateTime [] dates , int i)
         {
-            //int j = 0;
-
-            //if (i == 0)
-            //    j = 0;
-            //else if (i == 1)
-            //    j = 7;
-            //else if (i == 2)
-            //    j = 14;
-            //else if (i == 3)
-            //    j = 21;
-            //else if (i == 4)
-            //    j = 28;
-            //else if (i == 5)
-            //    j = 35;
-            //else if (i == 6)
-            //    j = 42;
-            //else if (i == 7)
-            //    j = 49;
-            //else if (i == 8)
-            //    j = 56;
-            //else if (i == 9)
-            //    j = 63;
-            //else if (i == 10)
-            //    j = 70;
-            //else if (i == 11)
-            //    j = 77;
-            //else if (i == 12)
-            //    j = 84;
-            //else if (i == 13)
-            //    j = 91;
-            //else if (i == 14)
-            //    j = 98;
-            //else if (i == 15)
-            //    j = 105;
-            //else if (i == 16)
-            //    j = 112;
-            //else if (i == 17)
-            //    j = 119;
-            //else if (i == 18)
-            //    j = 126;
-            //else if (i == 19)
-            //    j = 133;
-            //else if (i == 20)
-            //    j = 140;
-            //else if (i == 21)
-            //    j = 147;
-            //else if (i == 22)
-            //    j = 154;
-            //else if (i == 23)
-            //    j = 161;
-            //else if (i == 24)
-            //    j = 168;
-            //else if (i == 25)
-            //    j = 175;
-            //else if (i == 26)
-            //    j = 182;
-            //else if (i == 27)
-            //    j = 189;
-            //else if (i == 28)
-            //    j = 196;
-            //else if (i == 29)
-            //    j = 203;
-            //else if (i == 30)
-            //    j = 210;
-
-
-
-
-
-            weekday1txtbox.Text = "test0";
+           
+            
                     weekday1label.Content = dates[0].AddDays(i*7).ToString();
-
+                    weekday1txtbox.Text = "test0";
                     weekday2txtbox.Text = "test1";
                     weekday2label.Content = dates[1].AddDays(i * 7).ToString();
 
