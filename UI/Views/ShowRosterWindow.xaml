@@ -77,9 +77,7 @@
                         <TabItem Header="uge 4">
                             <Grid Background="#FFE5E5E5"/>
                         </TabItem>
-                        <TabItem Header="uge 5">
-                            <Grid Background="#FFE5E5E5"/>
-                        </TabItem>
+
                     </TabControl>
                 </Grid>
             </TabItem>

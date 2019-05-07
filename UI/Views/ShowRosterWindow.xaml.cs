@@ -113,10 +113,7 @@ namespace UI.Views
                 {
                     UpdateWeedDays420(dates, 3);
                 }
-                else if (FebruaryTabControl.SelectedIndex == 4)
-                {
-                    UpdateWeedDays420(dates, 4);
-                }
+               
             }
 
             if (tabControl.SelectedIndex == 2) // March
