@@ -83,7 +83,6 @@ namespace UI.Views
             if (tabControl.SelectedIndex == 1) // Februar
             {
                 DateTime[] dates = null;
-                dates = null;
                 foreach (var date in monthList)
                 {
                     if (date.GetValue(i).ToString().Substring(3, 2) == "02")
@@ -121,7 +120,6 @@ namespace UI.Views
             if (tabControl.SelectedIndex == 2) // March
             {
                 DateTime[] dates = null;
-                dates = null;
                 foreach (var date in monthList)
                 {
                     if (date.GetValue(i).ToString().Substring(3, 2) == "03")
@@ -159,7 +157,6 @@ namespace UI.Views
             if (tabControl.SelectedIndex == 3) // April
             {
                 DateTime[] dates = null;
-                dates = null;
                 foreach (var date in monthList)
                 {
                     if (date.GetValue(i).ToString().Substring(3, 2) == "04")
@@ -197,7 +194,6 @@ namespace UI.Views
             if (tabControl.SelectedIndex == 4) // May
             {
                 DateTime[] dates = null;
-                dates = null;
                 foreach (var date in monthList)
                 {
                     if (date.GetValue(i).ToString().Substring(3, 2) == "05")
@@ -235,7 +231,6 @@ namespace UI.Views
             if (tabControl.SelectedIndex == 5) // June
             {
                 DateTime[] dates = null;
-                dates = null;
                 foreach (var date in monthList)
                 {
                     if (date.GetValue(i).ToString().Substring(3, 2) == "06")
@@ -273,7 +268,6 @@ namespace UI.Views
             if (tabControl.SelectedIndex == 6) // July
             {
                 DateTime[] dates = null;
-                dates = null;
                 foreach (var date in monthList)
                 {
                     if (date.GetValue(i).ToString().Substring(3, 2) == "07")
@@ -311,7 +305,6 @@ namespace UI.Views
             if (tabControl.SelectedIndex == 7) // August
             {
                 DateTime[] dates = null;
-                dates = null;
                 foreach (var date in monthList)
                 {
                     if (date.GetValue(i).ToString().Substring(3, 2) == "08")
@@ -349,7 +342,6 @@ namespace UI.Views
             if (tabControl.SelectedIndex == 8) // September
             {
                 DateTime[] dates = null;
-                dates = null;
                 foreach (var date in monthList)
                 {
                     if (date.GetValue(i).ToString().Substring(3, 2) == "09")
@@ -387,7 +379,6 @@ namespace UI.Views
             if (tabControl.SelectedIndex == 9) // Kotober
             {
                 DateTime[] dates = null;
-                dates = null;
                 foreach (var date in monthList)
                 {
                     if (date.GetValue(i).ToString().Substring(3, 2) == "10")
@@ -425,7 +416,6 @@ namespace UI.Views
             if (tabControl.SelectedIndex == 10) // november
             {
                 DateTime[] dates = null;
-                dates = null;
                 foreach (var date in monthList)
                 {
                     if (date.GetValue(i).ToString().Substring(3, 2) == "11")
@@ -463,7 +453,6 @@ namespace UI.Views
             if (tabControl.SelectedIndex == 11) // December
             {
                 DateTime[] dates = null;
-                dates = null;
                 foreach (var date in monthList)
                 {
                     if (date.GetValue(i).ToString().Substring(3, 2) == "12")
