@@ -229,7 +229,6 @@ namespace UI.Views
             }
             if (tabControl.SelectedIndex == 5) // June
             {
-
                 dates = null;
                 foreach (var date in monthList)
                 {
@@ -266,7 +265,6 @@ namespace UI.Views
             }
             if (tabControl.SelectedIndex == 6) // July
             {
-
                 dates = null;
                 foreach (var date in monthList)
                 {
@@ -486,11 +484,6 @@ namespace UI.Views
                     UpdateWeedDays420(dates, 52);
                 }
             }
-
-
-
-
-
         }
         public static List<DateTime> GetDates(int year, int month)
         {
@@ -500,20 +493,17 @@ namespace UI.Views
         }
         private void UpdateWeedDays420(DateTime [] dates , int i)
         {
-           
-            
-                    weekday1label.Content = dates[0].AddDays(i*7).ToString();
+            weekday1label.Content = dates[0].AddDays(i*7).ToString();
             if (RosterRepository.CheckIfExists(dates[0].AddDays(i * 7)) == true)
             {
                 weekday1txtbox.Text = "Vagtplan Found";
-               
             }
             else if (RosterRepository.CheckIfExists(dates[0].AddDays(i * 7)) == false)
             {
                 weekday1txtbox.Text = "Vagtplan Not found";
             }
            
-                    weekday2label.Content = dates[1].AddDays(i * 7).ToString();
+            weekday2label.Content = dates[1].AddDays(i * 7).ToString();
             if (RosterRepository.CheckIfExists(dates[1].AddDays(i * 7)) == true)
             {
                 weekday2txtbox.Text = "Vagtplan Found";
@@ -522,8 +512,9 @@ namespace UI.Views
             else if(RosterRepository.CheckIfExists(dates[1].AddDays(i * 7)) == false)
             {
                 weekday2txtbox.Text = "Vagtplan Not found";
-            }            
-                    weekday3label.Content = dates[02].AddDays(i * 7).ToString();
+            }        
+            
+            weekday3label.Content = dates[02].AddDays(i * 7).ToString();
             if (RosterRepository.CheckIfExists(dates[2].AddDays(i * 7)) == true)
             {
                 weekday3txtbox.Text = "Vagtplan Found";
@@ -532,7 +523,6 @@ namespace UI.Views
             {
                 weekday3txtbox.Text = "Vagtplan Not found";
             }
-
 
             weekday4label.Content = dates[03].AddDays(i * 7).ToString();
             if (RosterRepository.CheckIfExists(dates[3].AddDays(i * 7)) == true)
@@ -574,9 +564,6 @@ namespace UI.Views
             {
                 weekday7txtbox.Text = "Vagtplan Not found";
             }
-
-
-
         }
     }
     
