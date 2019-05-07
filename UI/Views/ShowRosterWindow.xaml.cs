@@ -42,7 +42,6 @@ namespace UI.Views
                 monthList.Add(dates);
             }
         }
-       
 
         private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -50,8 +49,7 @@ namespace UI.Views
             int i = 0;
             DateTime[] dates = null;
            
-          // januar
-            if (tabControl.SelectedIndex == 0)
+            if (tabControl.SelectedIndex == 0) // januar
             {
                 foreach (var date in monthList)
                 {
@@ -485,12 +483,14 @@ namespace UI.Views
                 }
             }
         }
+
         public static List<DateTime> GetDates(int year, int month)
         {
             return Enumerable.Range(1, DateTime.DaysInMonth(year, month))  // Days: 1, 2 ... 31 etc.
                              .Select(day => new DateTime(year, month, day)) // Map each day to a date
                              .ToList(); // Load dates into a list
         }
+
         private void UpdateWeedDays420(DateTime [] dates , int i)
         {
             weekday1label.Content = dates[0].AddDays(i*7).ToString();
@@ -566,11 +566,9 @@ namespace UI.Views
             }
         }
     }
-    
 }
 
 // weekday1label.Content = (rosters[1].StartDate.ToString()+ rosters[1].Shop);
-
 
 //public partial class ShowRosterWindow : Window
 //{
@@ -597,7 +595,6 @@ namespace UI.Views
 //        }
 //    }
 //}
-
 
 //bool isDone = false;
 //                    while (!isDone)
