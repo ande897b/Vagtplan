@@ -42,9 +42,10 @@ namespace UI.Views
 
         private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            int i = 0;
+            
             if (tabControl.SelectedIndex == 0) // januar
             {
+                int i = 0;
                 DateTime[] dates = null;
                 foreach (var date in monthList)
                 {
@@ -82,6 +83,7 @@ namespace UI.Views
 
             if (tabControl.SelectedIndex == 1) // Februar
             {
+                int i = 0;
                 DateTime[] dates = null;
                 foreach (var date in monthList)
                 {
@@ -119,6 +121,7 @@ namespace UI.Views
 
             if (tabControl.SelectedIndex == 2) // March
             {
+                int i = 0;
                 DateTime[] dates = null;
                 foreach (var date in monthList)
                 {
@@ -156,6 +159,7 @@ namespace UI.Views
 
             if (tabControl.SelectedIndex == 3) // April
             {
+                int i = 0;
                 DateTime[] dates = null;
                 foreach (var date in monthList)
                 {
@@ -193,6 +197,7 @@ namespace UI.Views
 
             if (tabControl.SelectedIndex == 4) // May
             {
+                int i = 0;
                 DateTime[] dates = null;
                 foreach (var date in monthList)
                 {
@@ -230,6 +235,7 @@ namespace UI.Views
 
             if (tabControl.SelectedIndex == 5) // June
             {
+                int i = 0;
                 DateTime[] dates = null;
                 foreach (var date in monthList)
                 {
@@ -267,6 +273,7 @@ namespace UI.Views
 
             if (tabControl.SelectedIndex == 6) // July
             {
+                int i = 0;
                 DateTime[] dates = null;
                 foreach (var date in monthList)
                 {
@@ -304,6 +311,7 @@ namespace UI.Views
 
             if (tabControl.SelectedIndex == 7) // August
             {
+                int i = 0;
                 DateTime[] dates = null;
                 foreach (var date in monthList)
                 {
@@ -341,6 +349,7 @@ namespace UI.Views
       
             if (tabControl.SelectedIndex == 8) // September
             {
+                int i = 0;
                 DateTime[] dates = null;
                 foreach (var date in monthList)
                 {
@@ -378,6 +387,7 @@ namespace UI.Views
 
             if (tabControl.SelectedIndex == 9) // Kotober
             {
+                int i = 0;
                 DateTime[] dates = null;
                 foreach (var date in monthList)
                 {
@@ -415,6 +425,7 @@ namespace UI.Views
 
             if (tabControl.SelectedIndex == 10) // november
             {
+                int i = 0;
                 DateTime[] dates = null;
                 foreach (var date in monthList)
                 {
@@ -452,6 +463,7 @@ namespace UI.Views
 
             if (tabControl.SelectedIndex == 11) // December
             {
+                int i = 0;
                 DateTime[] dates = null;
                 foreach (var date in monthList)
                 {
