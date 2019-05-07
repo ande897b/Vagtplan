@@ -54,7 +54,7 @@ namespace UI.Views
                         i++;
                     }
                     else
-                    {
+                    { 
                         dates = GetDates(2019, 01).ToArray();                      
                     }
                 }
@@ -92,28 +92,28 @@ namespace UI.Views
                     }
                     else
                     {
-                        dates = GetDates(2019, 01).ToArray();
+                        dates = GetDates(2019, 02).ToArray();
                     }
                 }
                 if (FebruaryTabControl.SelectedIndex == 0)
                 {
-                    UpdateWeedDays420(dates, 4);
+                    UpdateWeedDays420(dates, 0);
                 }
                 else if (FebruaryTabControl.SelectedIndex == 1)
                 {
-                    UpdateWeedDays420(dates, 5);
+                    UpdateWeedDays420(dates, 1);
                 }
                 else if (FebruaryTabControl.SelectedIndex == 2)
                 {
-                    UpdateWeedDays420(dates, 6);
+                    UpdateWeedDays420(dates, 2);
                 }
                 else if (FebruaryTabControl.SelectedIndex == 3)
                 {
-                    UpdateWeedDays420(dates, 7);
+                    UpdateWeedDays420(dates, 3);
                 }
                 else if (FebruaryTabControl.SelectedIndex == 4)
                 {
-                    UpdateWeedDays420(dates, 8);
+                    UpdateWeedDays420(dates, 4);
                 }
             }
 
@@ -129,28 +129,28 @@ namespace UI.Views
                     }
                     else
                     {
-                        dates = GetDates(2019, 01).ToArray();
+                        dates = GetDates(2019, 03).ToArray();
                     }
                 }
                 if (MarchTabControl.SelectedIndex == 0)
                 {
-                    UpdateWeedDays420(dates, 8);
+                    UpdateWeedDays420(dates, 0);
                 }
                 else if (MarchTabControl.SelectedIndex == 1)
                 {
-                    UpdateWeedDays420(dates, 9);
+                    UpdateWeedDays420(dates, 1);
                 }
                 else if (MarchTabControl.SelectedIndex == 2)
                 {
-                    UpdateWeedDays420(dates, 10);
+                    UpdateWeedDays420(dates, 2);
                 }
                 else if (MarchTabControl.SelectedIndex == 3)
                 {
-                    UpdateWeedDays420(dates, 11);
+                    UpdateWeedDays420(dates, 3);
                 }
                 else if (MarchTabControl.SelectedIndex == 4)
                 {
-                    UpdateWeedDays420(dates, 12);
+                    UpdateWeedDays420(dates, 4);
                 }
             }
 
@@ -166,28 +166,28 @@ namespace UI.Views
                     }
                     else
                     {
-                        dates = GetDates(2019, 01).ToArray();
+                        dates = GetDates(2019, 04).ToArray();
                     }
                 }
                 if (AprilTabControl.SelectedIndex == 0)
                 {
-                    UpdateWeedDays420(dates, 13);
+                    UpdateWeedDays420(dates, 0);
                 }
                 else if (AprilTabControl.SelectedIndex == 1)
                 {
-                    UpdateWeedDays420(dates, 14);
+                    UpdateWeedDays420(dates, 1);
                 }
                 else if (AprilTabControl.SelectedIndex == 2)
                 {
-                    UpdateWeedDays420(dates, 15);
+                    UpdateWeedDays420(dates, 2);
                 }
                 else if (AprilTabControl.SelectedIndex == 3)
                 {
-                    UpdateWeedDays420(dates, 16);
+                    UpdateWeedDays420(dates, 3);
                 }
                 else if (AprilTabControl.SelectedIndex == 4)
                 {
-                    UpdateWeedDays420(dates, 17);
+                    UpdateWeedDays420(dates, 4);
                 }
             }
 
@@ -201,30 +201,31 @@ namespace UI.Views
                         dates = date;
                         i++;
                     }
-                    else
+                    else 
                     {
-                        dates = GetDates(2019, 01).ToArray();
+                        
+                        dates = GetDates(2019, 05).ToArray();
                     }
                 }
                 if (MayTabControl.SelectedIndex == 0)
                 {
-                    UpdateWeedDays420(dates, 17);
+                    UpdateWeedDays420(dates, 0);
                 }
                 else if (MayTabControl.SelectedIndex == 1)
                 {
-                    UpdateWeedDays420(dates, 18);
+                    UpdateWeedDays420(dates, 1);
                 }
                 else if (MayTabControl.SelectedIndex == 2)
                 {
-                    UpdateWeedDays420(dates, 19);
+                    UpdateWeedDays420(dates, 2);
                 }
                 else if (MayTabControl.SelectedIndex == 3)
                 {
-                    UpdateWeedDays420(dates, 20);
+                    UpdateWeedDays420(dates, 3);
                 }
                 else if (MayTabControl.SelectedIndex == 4)
                 {
-                    UpdateWeedDays420(dates, 21);
+                    UpdateWeedDays420(dates, 4);
                 }
             }
 
@@ -238,30 +239,31 @@ namespace UI.Views
                         dates = date;
                         i++;
                     }
-                    else
+                    else 
                     {
-                        dates = GetDates(2019, 01).ToArray();
+
+                        dates = GetDates(2019, 06).ToArray();
                     }
                 }
                 if (JuneTabControl.SelectedIndex == 0)
                 {
-                    UpdateWeedDays420(dates, 21);
+                    UpdateWeedDays420(dates, 0);
                 }
                 else if (JuneTabControl.SelectedIndex == 1)
                 {
-                    UpdateWeedDays420(dates, 22);
+                    UpdateWeedDays420(dates, 1);
                 }
                 else if (JuneTabControl.SelectedIndex == 2)
                 {
-                    UpdateWeedDays420(dates, 23);
+                    UpdateWeedDays420(dates, 2);
                 }
                 else if (JuneTabControl.SelectedIndex == 3)
                 {
-                    UpdateWeedDays420(dates, 24);
+                    UpdateWeedDays420(dates, 3);
                 }
                 else if (JuneTabControl.SelectedIndex == 4)
                 {
-                    UpdateWeedDays420(dates, 25);
+                    UpdateWeedDays420(dates, 4);
                 }
             }
 
@@ -270,35 +272,37 @@ namespace UI.Views
                 DateTime[] dates = null;
                 foreach (var date in monthList)
                 {
-                    if (date.GetValue(i).ToString().Substring(3, 2) == "07")
+                    
+                    if (date.GetValue(i).ToString().Substring(3, 2) == "07" )
                     {
                         dates = date;
                         i++;
                     }
-                    else
+                   else
                     {
-                        dates = GetDates(2019, 01).ToArray();
+                       
+                        dates = GetDates(2019, 07).ToArray();
                     }
                 }
                 if (JulyTabControl.SelectedIndex == 0)
                 {
-                    UpdateWeedDays420(dates, 26);
+                    UpdateWeedDays420(dates, 0);
                 }
                 else if (JulyTabControl.SelectedIndex == 1)
                 {
-                    UpdateWeedDays420(dates, 27);
+                    UpdateWeedDays420(dates, 1);
                 }
                 else if (JulyTabControl.SelectedIndex == 2)
                 {
-                    UpdateWeedDays420(dates, 28);
+                    UpdateWeedDays420(dates, 2);
                 }
                 else if (JulyTabControl.SelectedIndex == 3)
                 {
-                    UpdateWeedDays420(dates, 29);
+                    UpdateWeedDays420(dates, 3);
                 }
                 else if (JulyTabControl.SelectedIndex == 4)
                 {
-                    UpdateWeedDays420(dates, 30);
+                    UpdateWeedDays420(dates, 4);
                 }
             }
 
@@ -314,28 +318,28 @@ namespace UI.Views
                     }
                     else
                     {
-                        dates = GetDates(2019, 01).ToArray();
+                        dates = GetDates(2019, 08).ToArray();
                     }
                 }
                 if (AugustTabControl.SelectedIndex == 0)
                 {
-                    UpdateWeedDays420(dates, 30);
+                    UpdateWeedDays420(dates, 0);
                 }
                 else if (AugustTabControl.SelectedIndex == 1)
                 {
-                    UpdateWeedDays420(dates, 31);
+                    UpdateWeedDays420(dates, 1);
                 }
                 else if (AugustTabControl.SelectedIndex == 2)
                 {
-                    UpdateWeedDays420(dates, 32);
+                    UpdateWeedDays420(dates, 2);
                 }
                 else if (AugustTabControl.SelectedIndex == 3)
                 {
-                    UpdateWeedDays420(dates, 33);
+                    UpdateWeedDays420(dates, 3);
                 }
                 else if (AugustTabControl.SelectedIndex == 4)
                 {
-                    UpdateWeedDays420(dates, 34);
+                    UpdateWeedDays420(dates, 4);
                 }
             }
       
@@ -351,28 +355,28 @@ namespace UI.Views
                     }
                     else
                     {
-                        dates = GetDates(2019, 01).ToArray();
+                        dates = GetDates(2019, 09).ToArray();
                     }
                 }
                 if (SeptemberTabControl.SelectedIndex == 0)
                 {
-                    UpdateWeedDays420(dates, 34);
+                    UpdateWeedDays420(dates, 0);
                 }
                 else if (SeptemberTabControl.SelectedIndex == 1)
                 {
-                    UpdateWeedDays420(dates, 35);
+                    UpdateWeedDays420(dates, 1);
                 }
                 else if (SeptemberTabControl.SelectedIndex == 2)
                 {
-                    UpdateWeedDays420(dates, 36);
+                    UpdateWeedDays420(dates, 2);
                 }
                 else if (SeptemberTabControl.SelectedIndex == 3)
                 {
-                    UpdateWeedDays420(dates, 37);
+                    UpdateWeedDays420(dates, 3);
                 }
                 else if (SeptemberTabControl.SelectedIndex == 4)
                 {
-                    UpdateWeedDays420(dates, 38);
+                    UpdateWeedDays420(dates, 4);
                 }
             }
 
@@ -388,28 +392,28 @@ namespace UI.Views
                     }
                     else
                     {
-                        dates = GetDates(2019, 01).ToArray();
+                        dates = GetDates(2019, 10).ToArray();
                     }
                 }
                 if (OctoberTabControl.SelectedIndex == 0)
                 {
-                    UpdateWeedDays420(dates, 39);
+                    UpdateWeedDays420(dates, 0);
                 }
                 else if (OctoberTabControl.SelectedIndex == 1)
                 {
-                    UpdateWeedDays420(dates, 40);
+                    UpdateWeedDays420(dates, 1);
                 }
                 else if (OctoberTabControl.SelectedIndex == 2)
                 {
-                    UpdateWeedDays420(dates, 41);
+                    UpdateWeedDays420(dates, 2);
                 }
                 else if (OctoberTabControl.SelectedIndex == 3)
                 {
-                    UpdateWeedDays420(dates, 42);
+                    UpdateWeedDays420(dates, 3);
                 }
                 else if (OctoberTabControl.SelectedIndex == 4)
                 {
-                    UpdateWeedDays420(dates, 43);
+                    UpdateWeedDays420(dates, 4);
                 }
             }
 
@@ -425,28 +429,28 @@ namespace UI.Views
                     }
                     else
                     {
-                        dates = GetDates(2019, 01).ToArray();
+                        dates = GetDates(2019, 11).ToArray();
                     }
                 }
                 if (NovemberTabControl.SelectedIndex == 0)
                 {
-                    UpdateWeedDays420(dates, 43);
+                    UpdateWeedDays420(dates, 0);
                 }
                 else if (NovemberTabControl.SelectedIndex == 1)
                 {
-                    UpdateWeedDays420(dates, 44);
+                    UpdateWeedDays420(dates, 1);
                 }
                 else if (NovemberTabControl.SelectedIndex == 2)
                 {
-                    UpdateWeedDays420(dates, 45);
+                    UpdateWeedDays420(dates, 2);
                 }
                 else if (NovemberTabControl.SelectedIndex == 3)
                 {
-                    UpdateWeedDays420(dates, 46);
+                    UpdateWeedDays420(dates, 3);
                 }
                 else if (NovemberTabControl.SelectedIndex == 4)
                 {
-                    UpdateWeedDays420(dates, 47);
+                    UpdateWeedDays420(dates, 4);
                 }
             }
 
@@ -462,37 +466,41 @@ namespace UI.Views
                     }
                     else
                     {
-                        dates = GetDates(2019, 01).ToArray();
+                        dates = GetDates(2019, 12).ToArray();
                     }
                 }
                 if (DecemberTabControl.SelectedIndex == 0)
                 {
-                    UpdateWeedDays420(dates, 48);
+                    UpdateWeedDays420(dates, 0);
                 }
                 else if (DecemberTabControl.SelectedIndex == 1)
                 {
-                    UpdateWeedDays420(dates, 49);
+                    UpdateWeedDays420(dates, 1);
                 }
                 else if (DecemberTabControl.SelectedIndex == 2)
                 {
-                    UpdateWeedDays420(dates, 50);
+                    UpdateWeedDays420(dates, 2);
                 }
                 else if (DecemberTabControl.SelectedIndex == 3)
                 {
-                    UpdateWeedDays420(dates, 51);
+                    UpdateWeedDays420(dates, 3);
                 }
                 else if (DecemberTabControl.SelectedIndex == 4)
                 {
-                    UpdateWeedDays420(dates, 52);
+                    UpdateWeedDays420(dates, 4);
                 }
             }
         }
 
         public static List<DateTime> GetDates(int year, int month)
         {
-            return Enumerable.Range(1, DateTime.DaysInMonth(year, month))  // Days: 1, 2 ... 31 etc.
+            List<DateTime> test1;
+           
+             test1 = Enumerable.Range(1, DateTime.DaysInMonth(year, month))  // Days: 1, 2 ... 31 etc.
                              .Select(day => new DateTime(year, month, day)) // Map each day to a date
                              .ToList(); // Load dates into a list
+            return test1;
+               
         }
 
         private void UpdateWeedDays420(DateTime [] dates , int i)
