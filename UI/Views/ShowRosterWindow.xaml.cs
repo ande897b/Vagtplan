@@ -231,6 +231,7 @@ namespace UI.Views
             {
 
                 dates = null;
+
                 foreach (var date in monthList)
                 {
                     if (date.GetValue(i).ToString().Substring(3, 2) == "06")
