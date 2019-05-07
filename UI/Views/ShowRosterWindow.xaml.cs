@@ -24,9 +24,6 @@ namespace UI.Views
         {
             InitializeComponent();
             List<Roster> rosters = RosterRepository.GetRosters(); 
-
-    
-
             monthList = new List<DateTime[]>();
 
             for (int i = 0; i < rosters.Count; i++)
@@ -45,7 +42,6 @@ namespace UI.Views
 
         private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
             int i = 0;
             DateTime[] dates = null;
            
@@ -83,6 +79,7 @@ namespace UI.Views
                     UpdateWeedDays420(dates, 4);
                 }
             }
+
             if (tabControl.SelectedIndex == 1) // Februar
             {
                 dates = null;
@@ -118,6 +115,7 @@ namespace UI.Views
                     UpdateWeedDays420(dates, 8);
                 }
             }
+
             if (tabControl.SelectedIndex == 2) // March
             {
                 dates = null;
@@ -153,6 +151,7 @@ namespace UI.Views
                     UpdateWeedDays420(dates, 12);
                 }
             }
+
             if (tabControl.SelectedIndex == 3) // April
             {
                 dates = null;
@@ -188,9 +187,9 @@ namespace UI.Views
                     UpdateWeedDays420(dates, 17);
                 }
             }
+
             if (tabControl.SelectedIndex == 4) // May
             {
-          
                 dates = null;
                 foreach (var date in monthList)
                 {
@@ -225,6 +224,7 @@ namespace UI.Views
                     UpdateWeedDays420(dates, 21);
                 }
             }
+
             if (tabControl.SelectedIndex == 5) // June
             {
                 dates = null;
@@ -261,6 +261,7 @@ namespace UI.Views
                     UpdateWeedDays420(dates, 25);
                 }
             }
+
             if (tabControl.SelectedIndex == 6) // July
             {
                 dates = null;
@@ -297,9 +298,9 @@ namespace UI.Views
                     UpdateWeedDays420(dates, 30);
                 }
             }
+
             if (tabControl.SelectedIndex == 7) // August
             {
-
                 dates = null;
                 foreach (var date in monthList)
                 {
@@ -334,9 +335,9 @@ namespace UI.Views
                     UpdateWeedDays420(dates, 34);
                 }
             }
+      
             if (tabControl.SelectedIndex == 8) // September
             {
-
                 dates = null;
                 foreach (var date in monthList)
                 {
@@ -371,9 +372,9 @@ namespace UI.Views
                     UpdateWeedDays420(dates, 38);
                 }
             }
+
             if (tabControl.SelectedIndex == 9) // Kotober
             {
-
                 dates = null;
                 foreach (var date in monthList)
                 {
@@ -408,9 +409,9 @@ namespace UI.Views
                     UpdateWeedDays420(dates, 43);
                 }
             }
+
             if (tabControl.SelectedIndex == 10) // november
             {
-
                 dates = null;
                 foreach (var date in monthList)
                 {
@@ -445,9 +446,9 @@ namespace UI.Views
                     UpdateWeedDays420(dates, 47);
                 }
             }
+
             if (tabControl.SelectedIndex == 11) // December
             {
-
                 dates = null;
                 foreach (var date in monthList)
                 {
@@ -507,7 +508,6 @@ namespace UI.Views
             if (RosterRepository.CheckIfExists(dates[1].AddDays(i * 7)) == true)
             {
                 weekday2txtbox.Text = "Vagtplan Found";
-
             }
             else if(RosterRepository.CheckIfExists(dates[1].AddDays(i * 7)) == false)
             {
@@ -538,7 +538,6 @@ namespace UI.Views
             if (RosterRepository.CheckIfExists(dates[4].AddDays(i * 7)) == true)
             {
                 weekday5txtbox.Text = "Vagtplan Found";
-
             }
             else if(RosterRepository.CheckIfExists(dates[04].AddDays(i * 7)) == false)
             {
