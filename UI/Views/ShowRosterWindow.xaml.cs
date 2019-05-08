@@ -52,30 +52,56 @@ namespace UI.Views
                              .ToList(); // Load dates into a list
         }
 
-        private DateTime[] GiveMeTheRightMotherFuckingDatesMotherFCUK(DateTime[] dates, string startDate)
+        private DateTime[] GiveMeTheRightMotherFuckingDatesMotherFCUK(DateTime[] roster, string startDate)
         {
-            DateTime[] properFuckingDates = new DateTime[31];
+            DateTime[] properFuckingWeek = new DateTime[7];
             int i = 0;
-            foreach (var day in dates)
+            int startDateAsInt = int.Parse(startDate.ToString().Substring(0, 2));
+            foreach (var day in roster)
             {
-                if(day.ToString().Substring(3, 2) == startDate.Substring(3, 2))
-                {
-                    properFuckingDates[i] = day;
+                int dayAsInt = int.Parse(day.ToString().Substring(0, 2));
+                int monthAsInt = int.Parse(day.ToString().Substring(3, 2));
 
-                    if (i != 30)
+
+                if (monthAsInt == int.Parse(startDate.Substring(3, 2)) && dayAsInt == startDateAsInt || (dayAsInt + 1) == (startDateAsInt + 1) || (dayAsInt + 2) == (startDateAsInt + 2) || (dayAsInt + 3) == (startDateAsInt + 3) || (dayAsInt + 4) == (startDateAsInt + 4) || (dayAsInt + 5) == (startDateAsInt + 5) || (dayAsInt + 6) == (startDateAsInt + 6) || (dayAsInt + 7) == (startDateAsInt + 7))
+                {
+                    properFuckingWeek[i] = day;
+
+                    if (i < 7)
                     {
                         i++;
                     }
-
                 }
             }
-            return properFuckingDates;
+            return properFuckingWeek;
         }
 
         //private string WeekDaysToString(string month, string startDay)
         //{
         //    return ;
         //}
+
+
+        private bool WeedDays420Updated(DateTime day, DateTime[] roster, string startDate)
+        {
+            bool updated = false;
+
+            string rosterDay = day.ToString().Substring(0, 2);
+            string rosterMonth = day.ToString().Substring(3, 2);
+
+            string startday = startDate.Substring(0, 2);
+            int.TryParse(startday, out int startInt);
+           
+
+            if (rosterMonth == $"{startDate.Substring(3,2)}" && rosterDay == $"{startInt.ToString()}" || rosterMonth == $"{startDate.Substring(3, 2)}" && rosterDay == $"{(startInt + 1).ToString()}" || rosterMonth == $"{startDate.Substring(3, 2)}" && rosterDay == $"{(startInt + 2).ToString()}" || rosterMonth == $"{startDate.Substring(3, 2)}" && rosterDay == $"{(startInt + 3).ToString()}" || rosterMonth == $"{startDate.Substring(3, 2)}" && rosterDay == $"{(startInt + 4).ToString()}" || rosterMonth == $"{startDate.Substring(3, 2)}" && rosterDay == $"{(startInt + 5).ToString()}" || rosterMonth == $"{startDate.Substring(3, 2)}" && rosterDay == $"{(startInt + 6).ToString()}")
+            {
+                DateTime newDay = new DateTime(2019, 01, 01);
+                DateTime[] dates = GiveMeTheRightMotherFuckingDatesMotherFCUK(roster, startDate);
+                UpdateWeedDays420(dates, 0);
+                updated = true;
+            }
+            return updated;
+        }
 
         private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -99,13 +125,8 @@ namespace UI.Views
                         int l = 0;
                         while (l <= rosterArrays[j].Length - 1 && dayFound == false)
                         {
-                            string rosterDay = rosterArrays[j].GetValue(l).ToString().Substring(0, 2);
-                            string rosterMonth = rosterArrays[j].GetValue(l).ToString().Substring(3, 2);
-                            if (rosterMonth == "01" && rosterDay == "01" || rosterMonth == "01" && rosterDay == "02" || rosterMonth == "01" && rosterDay == "03" || rosterMonth == "01" && rosterDay == "04" || rosterMonth == "01" && rosterDay == "05" || rosterMonth == "01" && rosterDay == "06" || rosterMonth == "01" && rosterDay == "07")
+                            if(WeedDays420Updated((DateTime)rosterArrays[j].GetValue(l), rosterArrays[j], "01/01"))
                             {
-                                DateTime newDay = new DateTime(2019, 01, 01);
-                                dates = GiveMeTheRightMotherFuckingDatesMotherFCUK(rosterArrays[j], "01/01");
-                                UpdateWeedDays420(dates, 0);
                                 dayFound = true;
                             }
                             l++;
@@ -114,13 +135,9 @@ namespace UI.Views
                     }
                 }
 
-
-
-
-
                 else if (JanuaryTabControl.SelectedIndex == 1)
                 {
-                                        bool dayFound = false;
+                    bool dayFound = false;
                     int j = rosterArrays.Count - 1;
                     
                     while (j >= 0 && dayFound == false)
@@ -130,11 +147,9 @@ namespace UI.Views
                         {
                             string rosterDay = rosterArrays[j].GetValue(l).ToString().Substring(0, 2);
                             string rosterMonth = rosterArrays[j].GetValue(l).ToString().Substring(3, 2);
-                            if (rosterMonth == "01" && rosterDay == "08" || rosterMonth == "01" && rosterDay == "09" || rosterMonth == "01" && rosterDay == "10" || rosterMonth == "01" && rosterDay == "11" || rosterMonth == "01" && rosterDay == "12" || rosterMonth == "01" && rosterDay == "13" || rosterMonth == "01" && rosterDay == "14")
+
+                            if (WeedDays420Updated((DateTime)rosterArrays[j].GetValue(l), rosterArrays[j], "08/01"))
                             {
-                                DateTime newDay = new DateTime(2019, 01, 01);
-                                dates = GiveMeTheRightMotherFuckingDatesMotherFCUK(rosterArrays[j], "08/01");
-                                UpdateWeedDays420(dates, 1);
                                 dayFound = true;
                             }
                             l++;
