@@ -574,314 +574,1025 @@ namespace UI.Views
 
             if (tabControl.SelectedIndex == 4) // May
             {
-                int i = 0;
-                DateTime[] dates = null;
-                foreach (var date in rosterArrays)
-                {
-                    if (date.GetValue(i).ToString().Substring(3, 2) == "05")
-                    {
-                        dates = date;
-                        i++;
-                    }
-                    else
-                    {
-
-                        dates = GetDates(2019, 05).ToArray();
-                    }
-                }
+               DateTime[] dates = GetDates(2019, 05).ToArray();
                 if (MayTabControl.SelectedIndex == 0)
                 {
-                    UpdateWeedDays420(dates, 0);
+                    bool dayFound = false;
+                    int j = rosterArrays.Count - 1;
+
+                    while (j >= 0 && dayFound == false)
+                    {
+                        int l = 0;
+                        while (l <= rosterArrays[j].Length - 1 && dayFound == false)
+                        {
+                            string rosterDay = rosterArrays[j].GetValue(l).ToString().Substring(0, 2);
+                            string rosterMonth = rosterArrays[j].GetValue(l).ToString().Substring(3, 2);
+                            if (rosterMonth == "05" && rosterDay == "01" || rosterMonth == "05" && rosterDay == "02" || rosterMonth == "05" && rosterDay == "03" || rosterMonth == "05" && rosterDay == "04" || rosterMonth == "05" && rosterDay == "05" || rosterMonth == "05" && rosterDay == "06" || rosterMonth == "05" && rosterDay == "07")
+                            {
+                                dates = GiveMeTheRightMotherFuckingDatesMotherFCUK(rosterArrays[j], "01/05/2019");
+                                dayFound = true;
+                            }
+                            l++;
+                        }
+                        j--;
+                    }
+                    UpdateWeedDays420(dates,-1);
                 }
                 else if (MayTabControl.SelectedIndex == 1)
                 {
-                    UpdateWeedDays420(dates, 1);
+                    bool dayFound = false;
+                    int j = rosterArrays.Count - 1;
+
+                    while (j >= 0 && dayFound == false)
+                    {
+                        int l = 0;
+                        while (l <= rosterArrays[j].Length - 1 && dayFound == false)
+                        {
+                            string rosterDay = rosterArrays[j].GetValue(l).ToString().Substring(0, 2);
+                            string rosterMonth = rosterArrays[j].GetValue(l).ToString().Substring(3, 2);
+                            if (rosterMonth == "05" && rosterDay == "08" || rosterMonth == "05" && rosterDay == "09" || rosterMonth == "05" && rosterDay == "10" || rosterMonth == "05" && rosterDay == "11" || rosterMonth == "05" && rosterDay == "12" || rosterMonth == "05" && rosterDay == "13" || rosterMonth == "05" && rosterDay == "14")
+                            {
+
+                                dates = GiveMeTheRightMotherFuckingDatesMotherFCUK(rosterArrays[j], "08/05/2019");
+
+                                dayFound = true;
+                            }
+                            l++;
+                        }
+                        j--;
+                    }
+                    UpdateWeedDays420(dates, 0);
                 }
                 else if (MayTabControl.SelectedIndex == 2)
                 {
-                    UpdateWeedDays420(dates, 2);
+                    bool dayFound = false;
+                    int j = rosterArrays.Count - 1;
+
+                    while (j >= 0 && dayFound == false)
+                    {
+                        int l = 0;
+                        while (l <= rosterArrays[j].Length - 1 && dayFound == false)
+                        {
+                            string rosterDay = rosterArrays[j].GetValue(l).ToString().Substring(0, 2);
+                            string rosterMonth = rosterArrays[j].GetValue(l).ToString().Substring(3, 2);
+                            if (rosterMonth == "05" && rosterDay == "15" || rosterMonth == "05" && rosterDay == "16" || rosterMonth == "05" && rosterDay == "17" || rosterMonth == "05" && rosterDay == "18" || rosterMonth == "05" && rosterDay == "19" || rosterMonth == "05" && rosterDay == "20" || rosterMonth == "05" && rosterDay == "21")
+                            {
+
+                                dates = GiveMeTheRightMotherFuckingDatesMotherFCUK(rosterArrays[j], "15/05");
+
+                                dayFound = true;
+                            }
+                            l++;
+                        }
+                        j--;
+                    }
+                    UpdateWeedDays420(dates, 1);
                 }
                 else if (MayTabControl.SelectedIndex == 3)
                 {
-                    UpdateWeedDays420(dates, 3);
+                    bool dayFound = false;
+                    int j = rosterArrays.Count - 1;
+
+                    while (j >= 0 && dayFound == false)
+                    {
+                        int l = 0;
+                        while (l <= rosterArrays[j].Length - 1 && dayFound == false)
+                        {
+                            string rosterDay = rosterArrays[j].GetValue(l).ToString().Substring(0, 2);
+                            string rosterMonth = rosterArrays[j].GetValue(l).ToString().Substring(3, 2);
+                            if (rosterMonth == "05" && rosterDay == "22" || rosterMonth == "05" && rosterDay == "23" || rosterMonth == "05" && rosterDay == "24" || rosterMonth == "05" && rosterDay == "25" || rosterMonth == "05" && rosterDay == "26" || rosterMonth == "05" && rosterDay == "27" || rosterMonth == "05" && rosterDay == "28")
+                            {
+
+                                dates = GiveMeTheRightMotherFuckingDatesMotherFCUK(rosterArrays[j], "22/05");
+
+                                dayFound = true;
+                            }
+                            l++;
+                        }
+                        j--;
+                    }
+                    UpdateWeedDays420(dates, 2);
                 }
                 else if (MayTabControl.SelectedIndex == 4)
                 {
-                    UpdateWeedDays420(dates, 4);
+                    bool dayFound = false;
+                    int j = rosterArrays.Count - 1;
+
+                    while (j >= 0 && dayFound == false)
+                    {
+                        int l = 0;
+                        while (l <= rosterArrays[j].Length - 1 && dayFound == false)
+                        {
+                            string rosterDay = rosterArrays[j].GetValue(l).ToString().Substring(0, 2);
+                            string rosterMonth = rosterArrays[j].GetValue(l).ToString().Substring(3, 2);
+                            if (rosterMonth == "05" && rosterDay == "29" || rosterMonth == "05" && rosterDay == "30" || rosterMonth == "05" && rosterDay == "31")
+                            {
+                                DateTime newDay = new DateTime(2019, 01, 01);
+                                dates = GiveMeTheRightMotherFuckingDatesMotherFCUK(rosterArrays[j], "29/05");
+
+                                dayFound = true;
+                            }
+                            l++;
+                        }
+                        j--;
+                    }
+                    UpdateWeedDays420(dates, 3);
                 }
             }
 
             if (tabControl.SelectedIndex == 5) // June
             {
-                int i = 0;
-                int j = 0;
-                DateTime[] dates = null;
-
+                DateTime[] dates = GetDates(2019, 06).ToArray();
                 if (JuneTabControl.SelectedIndex == 0)
                 {
-                    foreach (var roster in rosterArrays)
-                    {
-                        foreach (var day in roster)
-                        {
-                            if (roster.GetValue(i).ToString().Substring(3, 2) == "06")
-                            {
-                                dates = roster;
-                                i++;
-                            }
-                            else
-                            {
-                                dates = GetDates(2019, 06).ToArray();
-                            }
-                            j++;
-                        }
-                    }
+                    bool dayFound = false;
+                    int j = rosterArrays.Count - 1;
 
+                    while (j >= 0 && dayFound == false)
+                    {
+                        int l = 0;
+                        while (l <= rosterArrays[j].Length - 1 && dayFound == false)
+                        {
+                            string rosterDay = rosterArrays[j].GetValue(l).ToString().Substring(0, 2);
+                            string rosterMonth = rosterArrays[j].GetValue(l).ToString().Substring(3, 2);
+                            if (rosterMonth == "06" && rosterDay == "01" || rosterMonth == "06" && rosterDay == "02" || rosterMonth == "06" && rosterDay == "03" || rosterMonth == "06" && rosterDay == "04" || rosterMonth == "06" && rosterDay == "05" || rosterMonth == "06" && rosterDay == "06" || rosterMonth == "06" && rosterDay == "07")
+                            {
+                                dates = GiveMeTheRightMotherFuckingDatesMotherFCUK(rosterArrays[j], "01/06/2019");
+                                dayFound = true;
+                            }
+                            l++;
+                        }
+                        j--;
+                    }
                     UpdateWeedDays420(dates, 0);
                 }
                 else if (JuneTabControl.SelectedIndex == 1)
                 {
+                    bool dayFound = false;
+                    int j = rosterArrays.Count - 1;
+
+                    while (j >= 0 && dayFound == false)
+                    {
+                        int l = 0;
+                        while (l <= rosterArrays[j].Length - 1 && dayFound == false)
+                        {
+                            string rosterDay = rosterArrays[j].GetValue(l).ToString().Substring(0, 2);
+                            string rosterMonth = rosterArrays[j].GetValue(l).ToString().Substring(3, 2);
+                            if (rosterMonth == "06" && rosterDay == "08" || rosterMonth == "06" && rosterDay == "09" || rosterMonth == "06" && rosterDay == "10" || rosterMonth == "06" && rosterDay == "11" || rosterMonth == "06" && rosterDay == "12" || rosterMonth == "06" && rosterDay == "13" || rosterMonth == "06" && rosterDay == "14")
+                            {
+
+                                dates = GiveMeTheRightMotherFuckingDatesMotherFCUK(rosterArrays[j], "08/06/2019");
+
+                                dayFound = true;
+                            }
+                            l++;
+                        }
+                        j--;
+                    }
                     UpdateWeedDays420(dates, 1);
                 }
                 else if (JuneTabControl.SelectedIndex == 2)
                 {
+                    bool dayFound = false;
+                    int j = rosterArrays.Count - 1;
+
+                    while (j >= 0 && dayFound == false)
+                    {
+                        int l = 0;
+                        while (l <= rosterArrays[j].Length - 1 && dayFound == false)
+                        {
+                            string rosterDay = rosterArrays[j].GetValue(l).ToString().Substring(0, 2);
+                            string rosterMonth = rosterArrays[j].GetValue(l).ToString().Substring(3, 2);
+                            if (rosterMonth == "06" && rosterDay == "15" || rosterMonth == "06" && rosterDay == "16" || rosterMonth == "06" && rosterDay == "17" || rosterMonth == "06" && rosterDay == "18" || rosterMonth == "06" && rosterDay == "19" || rosterMonth == "06" && rosterDay == "20" || rosterMonth == "06" && rosterDay == "21")
+                            {
+
+                                dates = GiveMeTheRightMotherFuckingDatesMotherFCUK(rosterArrays[j], "15/06");
+
+                                dayFound = true;
+                            }
+                            l++;
+                        }
+                        j--;
+                    }
                     UpdateWeedDays420(dates, 2);
                 }
                 else if (JuneTabControl.SelectedIndex == 3)
                 {
+                    bool dayFound = false;
+                    int j = rosterArrays.Count - 1;
+
+                    while (j >= 0 && dayFound == false)
+                    {
+                        int l = 0;
+                        while (l <= rosterArrays[j].Length - 1 && dayFound == false)
+                        {
+                            string rosterDay = rosterArrays[j].GetValue(l).ToString().Substring(0, 2);
+                            string rosterMonth = rosterArrays[j].GetValue(l).ToString().Substring(3, 2);
+                            if (rosterMonth == "06" && rosterDay == "22" || rosterMonth == "06" && rosterDay == "23" || rosterMonth == "06" && rosterDay == "24" || rosterMonth == "06" && rosterDay == "25" || rosterMonth == "06" && rosterDay == "26" || rosterMonth == "06" && rosterDay == "27" || rosterMonth == "06" && rosterDay == "28")
+                            {
+
+                                dates = GiveMeTheRightMotherFuckingDatesMotherFCUK(rosterArrays[j], "22/06");
+
+                                dayFound = true;
+                            }
+                            l++;
+                        }
+                        j--;
+                    }
                     UpdateWeedDays420(dates, 3);
                 }
                 else if (JuneTabControl.SelectedIndex == 4)
                 {
+                    bool dayFound = false;
+                    int j = rosterArrays.Count - 1;
+
+                    while (j >= 0 && dayFound == false)
+                    {
+                        int l = 0;
+                        while (l <= rosterArrays[j].Length - 1 && dayFound == false)
+                        {
+                            string rosterDay = rosterArrays[j].GetValue(l).ToString().Substring(0, 2);
+                            string rosterMonth = rosterArrays[j].GetValue(l).ToString().Substring(3, 2);
+                            if (rosterMonth == "06" && rosterDay == "29" || rosterMonth == "06" && rosterDay == "30" || rosterMonth == "06" && rosterDay == "31")
+                            {
+                                DateTime newDay = new DateTime(2019, 01, 01);
+                                dates = GiveMeTheRightMotherFuckingDatesMotherFCUK(rosterArrays[j], "29/06");
+
+                                dayFound = true;
+                            }
+                            l++;
+                        }
+                        j--;
+                    }
                     UpdateWeedDays420(dates, 4);
                 }
             }
 
             if (tabControl.SelectedIndex == 6) // July
             {
-                int i = 0;
-                DateTime[] dates = null;
-                foreach (var date in rosterArrays)
-                {
-
-                    if (date.GetValue(i).ToString().Substring(3, 2) == "07")
-                    {
-                        dates = date;
-                        i++;
-                    }
-                    else
-                    {
-
-                        dates = GetDates(2019, 07).ToArray();
-                    }
-                }
+                DateTime[] dates = GetDates(2019, 07).ToArray();
                 if (JulyTabControl.SelectedIndex == 0)
                 {
+                    bool dayFound = false;
+                    int j = rosterArrays.Count - 1;
+
+                    while (j >= 0 && dayFound == false)
+                    {
+                        int l = 0;
+                        while (l <= rosterArrays[j].Length - 1 && dayFound == false)
+                        {
+                            string rosterDay = rosterArrays[j].GetValue(l).ToString().Substring(0, 2);
+                            string rosterMonth = rosterArrays[j].GetValue(l).ToString().Substring(3, 2);
+                            if (rosterMonth == "07" && rosterDay == "01" || rosterMonth == "07" && rosterDay == "02" || rosterMonth == "07" && rosterDay == "03" || rosterMonth == "07" && rosterDay == "04" || rosterMonth == "07" && rosterDay == "05" || rosterMonth == "07" && rosterDay == "06" || rosterMonth == "07" && rosterDay == "07")
+                            {
+                                dates = GiveMeTheRightMotherFuckingDatesMotherFCUK(rosterArrays[j], "01/07/2019");
+                                dayFound = true;
+                            }
+                            l++;
+                        }
+                        j--;
+                    }
                     UpdateWeedDays420(dates, 0);
                 }
                 else if (JulyTabControl.SelectedIndex == 1)
                 {
+                    bool dayFound = false;
+                    int j = rosterArrays.Count - 1;
+
+                    while (j >= 0 && dayFound == false)
+                    {
+                        int l = 0;
+                        while (l <= rosterArrays[j].Length - 1 && dayFound == false)
+                        {
+                            string rosterDay = rosterArrays[j].GetValue(l).ToString().Substring(0, 2);
+                            string rosterMonth = rosterArrays[j].GetValue(l).ToString().Substring(3, 2);
+                            if (rosterMonth == "07" && rosterDay == "08" || rosterMonth == "07" && rosterDay == "09" || rosterMonth == "07" && rosterDay == "10" || rosterMonth == "07" && rosterDay == "11" || rosterMonth == "07" && rosterDay == "12" || rosterMonth == "07" && rosterDay == "13" || rosterMonth == "07" && rosterDay == "14")
+                            {
+
+                                dates = GiveMeTheRightMotherFuckingDatesMotherFCUK(rosterArrays[j], "08/07/2019");
+
+                                dayFound = true;
+                            }
+                            l++;
+                        }
+                        j--;
+                    }
                     UpdateWeedDays420(dates, 1);
                 }
                 else if (JulyTabControl.SelectedIndex == 2)
                 {
+                    bool dayFound = false;
+                    int j = rosterArrays.Count - 1;
+
+                    while (j >= 0 && dayFound == false)
+                    {
+                        int l = 0;
+                        while (l <= rosterArrays[j].Length - 1 && dayFound == false)
+                        {
+                            string rosterDay = rosterArrays[j].GetValue(l).ToString().Substring(0, 2);
+                            string rosterMonth = rosterArrays[j].GetValue(l).ToString().Substring(3, 2);
+                            if (rosterMonth == "07" && rosterDay == "15" || rosterMonth == "07" && rosterDay == "16" || rosterMonth == "07" && rosterDay == "17" || rosterMonth == "07" && rosterDay == "18" || rosterMonth == "07" && rosterDay == "19" || rosterMonth == "07" && rosterDay == "20" || rosterMonth == "07" && rosterDay == "21")
+                            {
+
+                                dates = GiveMeTheRightMotherFuckingDatesMotherFCUK(rosterArrays[j], "15/07");
+
+                                dayFound = true;
+                            }
+                            l++;
+                        }
+                        j--;
+                    }
                     UpdateWeedDays420(dates, 2);
                 }
                 else if (JulyTabControl.SelectedIndex == 3)
                 {
+                    bool dayFound = false;
+                    int j = rosterArrays.Count - 1;
+
+                    while (j >= 0 && dayFound == false)
+                    {
+                        int l = 0;
+                        while (l <= rosterArrays[j].Length - 1 && dayFound == false)
+                        {
+                            string rosterDay = rosterArrays[j].GetValue(l).ToString().Substring(0, 2);
+                            string rosterMonth = rosterArrays[j].GetValue(l).ToString().Substring(3, 2);
+                            if (rosterMonth == "07" && rosterDay == "22" || rosterMonth == "07" && rosterDay == "23" || rosterMonth == "07" && rosterDay == "24" || rosterMonth == "07" && rosterDay == "25" || rosterMonth == "07" && rosterDay == "26" || rosterMonth == "07" && rosterDay == "27" || rosterMonth == "07" && rosterDay == "28")
+                            {
+
+                                dates = GiveMeTheRightMotherFuckingDatesMotherFCUK(rosterArrays[j], "22/07");
+
+                                dayFound = true;
+                            }
+                            l++;
+                        }
+                        j--;
+                    }
                     UpdateWeedDays420(dates, 3);
                 }
                 else if (JulyTabControl.SelectedIndex == 4)
                 {
+                    bool dayFound = false;
+                    int j = rosterArrays.Count - 1;
+
+                    while (j >= 0 && dayFound == false)
+                    {
+                        int l = 0;
+                        while (l <= rosterArrays[j].Length - 1 && dayFound == false)
+                        {
+                            string rosterDay = rosterArrays[j].GetValue(l).ToString().Substring(0, 2);
+                            string rosterMonth = rosterArrays[j].GetValue(l).ToString().Substring(3, 2);
+                            if (rosterMonth == "07" && rosterDay == "29" || rosterMonth == "07" && rosterDay == "30" || rosterMonth == "07" && rosterDay == "31")
+                            {
+                                DateTime newDay = new DateTime(2019, 01, 01);
+                                dates = GiveMeTheRightMotherFuckingDatesMotherFCUK(rosterArrays[j], "29/07");
+
+                                dayFound = true;
+                            }
+                            l++;
+                        }
+                        j--;
+                    }
                     UpdateWeedDays420(dates, 4);
                 }
             }
 
             if (tabControl.SelectedIndex == 7) // August
             {
-                int i = 0;
-                DateTime[] dates = null;
-                foreach (var date in rosterArrays)
-                {
-                    if (date.GetValue(i).ToString().Substring(3, 2) == "08")
-                    {
-                        dates = date;
-                        i++;
-                    }
-                    else
-                    {
-                        dates = GetDates(2019, 08).ToArray();
-                    }
-                }
+                DateTime[] dates = GetDates(2019, 08).ToArray();
                 if (AugustTabControl.SelectedIndex == 0)
                 {
+                    bool dayFound = false;
+                    int j = rosterArrays.Count - 1;
+
+                    while (j >= 0 && dayFound == false)
+                    {
+                        int l = 0;
+                        while (l <= rosterArrays[j].Length - 1 && dayFound == false)
+                        {
+                            string rosterDay = rosterArrays[j].GetValue(l).ToString().Substring(0, 2);
+                            string rosterMonth = rosterArrays[j].GetValue(l).ToString().Substring(3, 2);
+                            if (rosterMonth == "08" && rosterDay == "01" || rosterMonth == "08" && rosterDay == "02" || rosterMonth == "08" && rosterDay == "03" || rosterMonth == "08" && rosterDay == "04" || rosterMonth == "08" && rosterDay == "05" || rosterMonth == "08" && rosterDay == "06" || rosterMonth == "08" && rosterDay == "07")
+                            {
+                                dates = GiveMeTheRightMotherFuckingDatesMotherFCUK(rosterArrays[j], "01/08/2019");
+                                dayFound = true;
+                            }
+                            l++;
+                        }
+                        j--;
+                    }
                     UpdateWeedDays420(dates, 0);
                 }
                 else if (AugustTabControl.SelectedIndex == 1)
                 {
+                    bool dayFound = false;
+                    int j = rosterArrays.Count - 1;
+
+                    while (j >= 0 && dayFound == false)
+                    {
+                        int l = 0;
+                        while (l <= rosterArrays[j].Length - 1 && dayFound == false)
+                        {
+                            string rosterDay = rosterArrays[j].GetValue(l).ToString().Substring(0, 2);
+                            string rosterMonth = rosterArrays[j].GetValue(l).ToString().Substring(3, 2);
+                            if (rosterMonth == "08" && rosterDay == "08" || rosterMonth == "08" && rosterDay == "09" || rosterMonth == "08" && rosterDay == "10" || rosterMonth == "08" && rosterDay == "11" || rosterMonth == "08" && rosterDay == "12" || rosterMonth == "08" && rosterDay == "13" || rosterMonth == "08" && rosterDay == "14")
+                            {
+
+                                dates = GiveMeTheRightMotherFuckingDatesMotherFCUK(rosterArrays[j], "08/08/2019");
+
+                                dayFound = true;
+                            }
+                            l++;
+                        }
+                        j--;
+                    }
                     UpdateWeedDays420(dates, 1);
                 }
                 else if (AugustTabControl.SelectedIndex == 2)
                 {
+                    bool dayFound = false;
+                    int j = rosterArrays.Count - 1;
+
+                    while (j >= 0 && dayFound == false)
+                    {
+                        int l = 0;
+                        while (l <= rosterArrays[j].Length - 1 && dayFound == false)
+                        {
+                            string rosterDay = rosterArrays[j].GetValue(l).ToString().Substring(0, 2);
+                            string rosterMonth = rosterArrays[j].GetValue(l).ToString().Substring(3, 2);
+                            if (rosterMonth == "08" && rosterDay == "15" || rosterMonth == "08" && rosterDay == "16" || rosterMonth == "08" && rosterDay == "17" || rosterMonth == "08" && rosterDay == "18" || rosterMonth == "08" && rosterDay == "19" || rosterMonth == "08" && rosterDay == "20" || rosterMonth == "08" && rosterDay == "21")
+                            {
+
+                                dates = GiveMeTheRightMotherFuckingDatesMotherFCUK(rosterArrays[j], "15/08");
+
+                                dayFound = true;
+                            }
+                            l++;
+                        }
+                        j--;
+                    }
                     UpdateWeedDays420(dates, 2);
                 }
                 else if (AugustTabControl.SelectedIndex == 3)
                 {
+                    bool dayFound = false;
+                    int j = rosterArrays.Count - 1;
+
+                    while (j >= 0 && dayFound == false)
+                    {
+                        int l = 0;
+                        while (l <= rosterArrays[j].Length - 1 && dayFound == false)
+                        {
+                            string rosterDay = rosterArrays[j].GetValue(l).ToString().Substring(0, 2);
+                            string rosterMonth = rosterArrays[j].GetValue(l).ToString().Substring(3, 2);
+                            if (rosterMonth == "08" && rosterDay == "22" || rosterMonth == "08" && rosterDay == "23" || rosterMonth == "08" && rosterDay == "24" || rosterMonth == "08" && rosterDay == "25" || rosterMonth == "08" && rosterDay == "26" || rosterMonth == "08" && rosterDay == "27" || rosterMonth == "08" && rosterDay == "28")
+                            {
+
+                                dates = GiveMeTheRightMotherFuckingDatesMotherFCUK(rosterArrays[j], "22/08");
+
+                                dayFound = true;
+                            }
+                            l++;
+                        }
+                        j--;
+                    }
                     UpdateWeedDays420(dates, 3);
                 }
                 else if (AugustTabControl.SelectedIndex == 4)
                 {
+                    bool dayFound = false;
+                    int j = rosterArrays.Count - 1;
+
+                    while (j >= 0 && dayFound == false)
+                    {
+                        int l = 0;
+                        while (l <= rosterArrays[j].Length - 1 && dayFound == false)
+                        {
+                            string rosterDay = rosterArrays[j].GetValue(l).ToString().Substring(0, 2);
+                            string rosterMonth = rosterArrays[j].GetValue(l).ToString().Substring(3, 2);
+                            if (rosterMonth == "08" && rosterDay == "29" || rosterMonth == "08" && rosterDay == "30" || rosterMonth == "08" && rosterDay == "31")
+                            {
+                                DateTime newDay = new DateTime(2019, 01, 01);
+                                dates = GiveMeTheRightMotherFuckingDatesMotherFCUK(rosterArrays[j], "29/08");
+
+                                dayFound = true;
+                            }
+                            l++;
+                        }
+                        j--;
+                    }
                     UpdateWeedDays420(dates, 4);
                 }
             }
 
             if (tabControl.SelectedIndex == 8) // September
             {
-                int i = 0;
-                DateTime[] dates = null;
-                foreach (var date in rosterArrays)
-                {
-                    if (date.GetValue(i).ToString().Substring(3, 2) == "09")
-                    {
-                        dates = date;
-                        i++;
-                    }
-                    else
-                    {
-                        dates = GetDates(2019, 09).ToArray();
-                    }
-                }
+                DateTime[] dates = GetDates(2019, 09).ToArray();
                 if (SeptemberTabControl.SelectedIndex == 0)
                 {
+                    bool dayFound = false;
+                    int j = rosterArrays.Count - 1;
+
+                    while (j >= 0 && dayFound == false)
+                    {
+                        int l = 0;
+                        while (l <= rosterArrays[j].Length - 1 && dayFound == false)
+                        {
+                            string rosterDay = rosterArrays[j].GetValue(l).ToString().Substring(0, 2);
+                            string rosterMonth = rosterArrays[j].GetValue(l).ToString().Substring(3, 2);
+                            if (rosterMonth == "09" && rosterDay == "01" || rosterMonth == "09" && rosterDay == "02" || rosterMonth == "09" && rosterDay == "03" || rosterMonth == "09" && rosterDay == "04" || rosterMonth == "09" && rosterDay == "05" || rosterMonth == "09" && rosterDay == "06" || rosterMonth == "09" && rosterDay == "07")
+                            {
+                                dates = GiveMeTheRightMotherFuckingDatesMotherFCUK(rosterArrays[j], "01/09/2019");
+                                dayFound = true;
+                            }
+                            l++;
+                        }
+                        j--;
+                    }
                     UpdateWeedDays420(dates, 0);
                 }
                 else if (SeptemberTabControl.SelectedIndex == 1)
                 {
+                    bool dayFound = false;
+                    int j = rosterArrays.Count - 1;
+
+                    while (j >= 0 && dayFound == false)
+                    {
+                        int l = 0;
+                        while (l <= rosterArrays[j].Length - 1 && dayFound == false)
+                        {
+                            string rosterDay = rosterArrays[j].GetValue(l).ToString().Substring(0, 2);
+                            string rosterMonth = rosterArrays[j].GetValue(l).ToString().Substring(3, 2);
+                            if (rosterMonth == "09" && rosterDay == "08" || rosterMonth == "09" && rosterDay == "09" || rosterMonth == "09" && rosterDay == "10" || rosterMonth == "09" && rosterDay == "11" || rosterMonth == "09" && rosterDay == "12" || rosterMonth == "09" && rosterDay == "13" || rosterMonth == "09" && rosterDay == "14")
+                            {
+
+                                dates = GiveMeTheRightMotherFuckingDatesMotherFCUK(rosterArrays[j], "08/09/2019");
+
+                                dayFound = true;
+                            }
+                            l++;
+                        }
+                        j--;
+                    }
                     UpdateWeedDays420(dates, 1);
                 }
                 else if (SeptemberTabControl.SelectedIndex == 2)
                 {
+                    bool dayFound = false;
+                    int j = rosterArrays.Count - 1;
+
+                    while (j >= 0 && dayFound == false)
+                    {
+                        int l = 0;
+                        while (l <= rosterArrays[j].Length - 1 && dayFound == false)
+                        {
+                            string rosterDay = rosterArrays[j].GetValue(l).ToString().Substring(0, 2);
+                            string rosterMonth = rosterArrays[j].GetValue(l).ToString().Substring(3, 2);
+                            if (rosterMonth == "09" && rosterDay == "15" || rosterMonth == "09" && rosterDay == "16" || rosterMonth == "09" && rosterDay == "17" || rosterMonth == "09" && rosterDay == "18" || rosterMonth == "09" && rosterDay == "19" || rosterMonth == "09" && rosterDay == "20" || rosterMonth == "09" && rosterDay == "21")
+                            {
+
+                                dates = GiveMeTheRightMotherFuckingDatesMotherFCUK(rosterArrays[j], "15/09");
+
+                                dayFound = true;
+                            }
+                            l++;
+                        }
+                        j--;
+                    }
                     UpdateWeedDays420(dates, 2);
                 }
                 else if (SeptemberTabControl.SelectedIndex == 3)
                 {
+                    bool dayFound = false;
+                    int j = rosterArrays.Count - 1;
+
+                    while (j >= 0 && dayFound == false)
+                    {
+                        int l = 0;
+                        while (l <= rosterArrays[j].Length - 1 && dayFound == false)
+                        {
+                            string rosterDay = rosterArrays[j].GetValue(l).ToString().Substring(0, 2);
+                            string rosterMonth = rosterArrays[j].GetValue(l).ToString().Substring(3, 2);
+                            if (rosterMonth == "09" && rosterDay == "22" || rosterMonth == "09" && rosterDay == "23" || rosterMonth == "09" && rosterDay == "24" || rosterMonth == "09" && rosterDay == "25" || rosterMonth == "09" && rosterDay == "26" || rosterMonth == "09" && rosterDay == "27" || rosterMonth == "09" && rosterDay == "28")
+                            {
+
+                                dates = GiveMeTheRightMotherFuckingDatesMotherFCUK(rosterArrays[j], "22/09");
+
+                                dayFound = true;
+                            }
+                            l++;
+                        }
+                        j--;
+                    }
                     UpdateWeedDays420(dates, 3);
                 }
                 else if (SeptemberTabControl.SelectedIndex == 4)
                 {
+                    bool dayFound = false;
+                    int j = rosterArrays.Count - 1;
+
+                    while (j >= 0 && dayFound == false)
+                    {
+                        int l = 0;
+                        while (l <= rosterArrays[j].Length - 1 && dayFound == false)
+                        {
+                            string rosterDay = rosterArrays[j].GetValue(l).ToString().Substring(0, 2);
+                            string rosterMonth = rosterArrays[j].GetValue(l).ToString().Substring(3, 2);
+                            if (rosterMonth == "09" && rosterDay == "29" || rosterMonth == "09" && rosterDay == "30" || rosterMonth == "09" && rosterDay == "31")
+                            {
+                                DateTime newDay = new DateTime(2019, 01, 01);
+                                dates = GiveMeTheRightMotherFuckingDatesMotherFCUK(rosterArrays[j], "29/09");
+
+                                dayFound = true;
+                            }
+                            l++;
+                        }
+                        j--;
+                    }
                     UpdateWeedDays420(dates, 4);
                 }
             }
 
             if (tabControl.SelectedIndex == 9) // Kotober
             {
-                int i = 0;
-                DateTime[] dates = null;
-                foreach (var date in rosterArrays)
-                {
-                    if (date.GetValue(i).ToString().Substring(3, 2) == "10")
-                    {
-                        dates = date;
-                        i++;
-                    }
-                    else
-                    {
-                        dates = GetDates(2019, 10).ToArray();
-                    }
-                }
+
+                DateTime[] dates = GetDates(2019, 10).ToArray();
                 if (OctoberTabControl.SelectedIndex == 0)
                 {
+                    bool dayFound = false;
+                    int j = rosterArrays.Count - 1;
+
+                    while (j >= 0 && dayFound == false)
+                    {
+                        int l = 0;
+                        while (l <= rosterArrays[j].Length - 1 && dayFound == false)
+                        {
+                            string rosterDay = rosterArrays[j].GetValue(l).ToString().Substring(0, 2);
+                            string rosterMonth = rosterArrays[j].GetValue(l).ToString().Substring(3, 2);
+                            if (rosterMonth == "10" && rosterDay == "01" || rosterMonth == "10" && rosterDay == "02" || rosterMonth == "10" && rosterDay == "03" || rosterMonth == "10" && rosterDay == "04" || rosterMonth == "10" && rosterDay == "05" || rosterMonth == "10" && rosterDay == "06" || rosterMonth == "10" && rosterDay == "07")
+                            {
+                                dates = GiveMeTheRightMotherFuckingDatesMotherFCUK(rosterArrays[j], "01/10/2019");
+                                dayFound = true;
+                            }
+                            l++;
+                        }
+                        j--;
+                    }
                     UpdateWeedDays420(dates, 0);
                 }
                 else if (OctoberTabControl.SelectedIndex == 1)
                 {
+                    bool dayFound = false;
+                    int j = rosterArrays.Count - 1;
+
+                    while (j >= 0 && dayFound == false)
+                    {
+                        int l = 0;
+                        while (l <= rosterArrays[j].Length - 1 && dayFound == false)
+                        {
+                            string rosterDay = rosterArrays[j].GetValue(l).ToString().Substring(0, 2);
+                            string rosterMonth = rosterArrays[j].GetValue(l).ToString().Substring(3, 2);
+                            if (rosterMonth == "10" && rosterDay == "08" || rosterMonth == "10" && rosterDay == "09" || rosterMonth == "10" && rosterDay == "10" || rosterMonth == "10" && rosterDay == "11" || rosterMonth == "10" && rosterDay == "12" || rosterMonth == "10" && rosterDay == "13" || rosterMonth == "10" && rosterDay == "14")
+                            {
+
+                                dates = GiveMeTheRightMotherFuckingDatesMotherFCUK(rosterArrays[j], "08/10/2019");
+
+                                dayFound = true;
+                            }
+                            l++;
+                        }
+                        j--;
+                    }
                     UpdateWeedDays420(dates, 1);
                 }
                 else if (OctoberTabControl.SelectedIndex == 2)
                 {
+                    bool dayFound = false;
+                    int j = rosterArrays.Count - 1;
+
+                    while (j >= 0 && dayFound == false)
+                    {
+                        int l = 0;
+                        while (l <= rosterArrays[j].Length - 1 && dayFound == false)
+                        {
+                            string rosterDay = rosterArrays[j].GetValue(l).ToString().Substring(0, 2);
+                            string rosterMonth = rosterArrays[j].GetValue(l).ToString().Substring(3, 2);
+                            if (rosterMonth == "10" && rosterDay == "15" || rosterMonth == "10" && rosterDay == "16" || rosterMonth == "10" && rosterDay == "17" || rosterMonth == "10" && rosterDay == "18" || rosterMonth == "10" && rosterDay == "19" || rosterMonth == "10" && rosterDay == "20" || rosterMonth == "10" && rosterDay == "21")
+                            {
+
+                                dates = GiveMeTheRightMotherFuckingDatesMotherFCUK(rosterArrays[j], "15/10");
+
+                                dayFound = true;
+                            }
+                            l++;
+                        }
+                        j--;
+                    }
                     UpdateWeedDays420(dates, 2);
                 }
                 else if (OctoberTabControl.SelectedIndex == 3)
                 {
+                    bool dayFound = false;
+                    int j = rosterArrays.Count - 1;
+
+                    while (j >= 0 && dayFound == false)
+                    {
+                        int l = 0;
+                        while (l <= rosterArrays[j].Length - 1 && dayFound == false)
+                        {
+                            string rosterDay = rosterArrays[j].GetValue(l).ToString().Substring(0, 2);
+                            string rosterMonth = rosterArrays[j].GetValue(l).ToString().Substring(3, 2);
+                            if (rosterMonth == "10" && rosterDay == "22" || rosterMonth == "10" && rosterDay == "23" || rosterMonth == "10" && rosterDay == "24" || rosterMonth == "10" && rosterDay == "25" || rosterMonth == "10" && rosterDay == "26" || rosterMonth == "10" && rosterDay == "27" || rosterMonth == "10" && rosterDay == "28")
+                            {
+
+                                dates = GiveMeTheRightMotherFuckingDatesMotherFCUK(rosterArrays[j], "22/10");
+
+                                dayFound = true;
+                            }
+                            l++;
+                        }
+                        j--;
+                    }
                     UpdateWeedDays420(dates, 3);
                 }
                 else if (OctoberTabControl.SelectedIndex == 4)
                 {
+                    bool dayFound = false;
+                    int j = rosterArrays.Count - 1;
+
+                    while (j >= 0 && dayFound == false)
+                    {
+                        int l = 0;
+                        while (l <= rosterArrays[j].Length - 1 && dayFound == false)
+                        {
+                            string rosterDay = rosterArrays[j].GetValue(l).ToString().Substring(0, 2);
+                            string rosterMonth = rosterArrays[j].GetValue(l).ToString().Substring(3, 2);
+                            if (rosterMonth == "10" && rosterDay == "29" || rosterMonth == "10" && rosterDay == "30" || rosterMonth == "10" && rosterDay == "31")
+                            {
+                                DateTime newDay = new DateTime(2019, 01, 01);
+                                dates = GiveMeTheRightMotherFuckingDatesMotherFCUK(rosterArrays[j], "29/10");
+
+                                dayFound = true;
+                            }
+                            l++;
+                        }
+                        j--;
+                    }
                     UpdateWeedDays420(dates, 4);
                 }
             }
 
             if (tabControl.SelectedIndex == 10) // november
             {
-                int i = 0;
-                DateTime[] dates = null;
-                foreach (var date in rosterArrays)
-                {
-                    if (date.GetValue(i).ToString().Substring(3, 2) == "11")
-                    {
-                        dates = date;
-                        i++;
-                    }
-                    else
-                    {
-                        dates = GetDates(2019, 11).ToArray();
-                    }
-                }
+                DateTime[] dates = GetDates(2019, 11).ToArray();
                 if (NovemberTabControl.SelectedIndex == 0)
                 {
+                    bool dayFound = false;
+                    int j = rosterArrays.Count - 1;
+
+                    while (j >= 0 && dayFound == false)
+                    {
+                        int l = 0;
+                        while (l <= rosterArrays[j].Length - 1 && dayFound == false)
+                        {
+                            string rosterDay = rosterArrays[j].GetValue(l).ToString().Substring(0, 2);
+                            string rosterMonth = rosterArrays[j].GetValue(l).ToString().Substring(3, 2);
+                            if (rosterMonth == "11" && rosterDay == "01" || rosterMonth == "11" && rosterDay == "02" || rosterMonth == "11" && rosterDay == "03" || rosterMonth == "11" && rosterDay == "04" || rosterMonth == "11" && rosterDay == "05" || rosterMonth == "11" && rosterDay == "06" || rosterMonth == "11" && rosterDay == "07")
+                            {
+                                dates = GiveMeTheRightMotherFuckingDatesMotherFCUK(rosterArrays[j], "01/11/2019");
+                                dayFound = true;
+                            }
+                            l++;
+                        }
+                        j--;
+                    }
                     UpdateWeedDays420(dates, 0);
                 }
                 else if (NovemberTabControl.SelectedIndex == 1)
                 {
+                    bool dayFound = false;
+                    int j = rosterArrays.Count - 1;
+
+                    while (j >= 0 && dayFound == false)
+                    {
+                        int l = 0;
+                        while (l <= rosterArrays[j].Length - 1 && dayFound == false)
+                        {
+                            string rosterDay = rosterArrays[j].GetValue(l).ToString().Substring(0, 2);
+                            string rosterMonth = rosterArrays[j].GetValue(l).ToString().Substring(3, 2);
+                            if (rosterMonth == "11" && rosterDay == "08" || rosterMonth == "11" && rosterDay == "09" || rosterMonth == "11" && rosterDay == "10" || rosterMonth == "11" && rosterDay == "11" || rosterMonth == "11" && rosterDay == "12" || rosterMonth == "11" && rosterDay == "13" || rosterMonth == "11" && rosterDay == "14")
+                            {
+
+                                dates = GiveMeTheRightMotherFuckingDatesMotherFCUK(rosterArrays[j], "08/11/2019");
+
+                                dayFound = true;
+                            }
+                            l++;
+                        }
+                        j--;
+                    }
                     UpdateWeedDays420(dates, 1);
                 }
                 else if (NovemberTabControl.SelectedIndex == 2)
                 {
+                    bool dayFound = false;
+                    int j = rosterArrays.Count - 1;
+
+                    while (j >= 0 && dayFound == false)
+                    {
+                        int l = 0;
+                        while (l <= rosterArrays[j].Length - 1 && dayFound == false)
+                        {
+                            string rosterDay = rosterArrays[j].GetValue(l).ToString().Substring(0, 2);
+                            string rosterMonth = rosterArrays[j].GetValue(l).ToString().Substring(3, 2);
+                            if (rosterMonth == "11" && rosterDay == "15" || rosterMonth == "11" && rosterDay == "16" || rosterMonth == "11" && rosterDay == "17" || rosterMonth == "11" && rosterDay == "18" || rosterMonth == "11" && rosterDay == "19" || rosterMonth == "11" && rosterDay == "20" || rosterMonth == "11" && rosterDay == "21")
+                            {
+
+                                dates = GiveMeTheRightMotherFuckingDatesMotherFCUK(rosterArrays[j], "15/11");
+
+                                dayFound = true;
+                            }
+                            l++;
+                        }
+                        j--;
+                    }
                     UpdateWeedDays420(dates, 2);
                 }
                 else if (NovemberTabControl.SelectedIndex == 3)
                 {
+                    bool dayFound = false;
+                    int j = rosterArrays.Count - 1;
+
+                    while (j >= 0 && dayFound == false)
+                    {
+                        int l = 0;
+                        while (l <= rosterArrays[j].Length - 1 && dayFound == false)
+                        {
+                            string rosterDay = rosterArrays[j].GetValue(l).ToString().Substring(0, 2);
+                            string rosterMonth = rosterArrays[j].GetValue(l).ToString().Substring(3, 2);
+                            if (rosterMonth == "11" && rosterDay == "22" || rosterMonth == "11" && rosterDay == "23" || rosterMonth == "11" && rosterDay == "24" || rosterMonth == "11" && rosterDay == "25" || rosterMonth == "11" && rosterDay == "26" || rosterMonth == "11" && rosterDay == "27" || rosterMonth == "11" && rosterDay == "28")
+                            {
+
+                                dates = GiveMeTheRightMotherFuckingDatesMotherFCUK(rosterArrays[j], "22/11");
+
+                                dayFound = true;
+                            }
+                            l++;
+                        }
+                        j--;
+                    }
                     UpdateWeedDays420(dates, 3);
                 }
                 else if (NovemberTabControl.SelectedIndex == 4)
                 {
+                    bool dayFound = false;
+                    int j = rosterArrays.Count - 1;
+
+                    while (j >= 0 && dayFound == false)
+                    {
+                        int l = 0;
+                        while (l <= rosterArrays[j].Length - 1 && dayFound == false)
+                        {
+                            string rosterDay = rosterArrays[j].GetValue(l).ToString().Substring(0, 2);
+                            string rosterMonth = rosterArrays[j].GetValue(l).ToString().Substring(3, 2);
+                            if (rosterMonth == "11" && rosterDay == "29" || rosterMonth == "11" && rosterDay == "30" || rosterMonth == "11" && rosterDay == "31")
+                            {
+                                DateTime newDay = new DateTime(2019, 01, 01);
+                                dates = GiveMeTheRightMotherFuckingDatesMotherFCUK(rosterArrays[j], "29/11");
+
+                                dayFound = true;
+                            }
+                            l++;
+                        }
+                        j--;
+                    }
                     UpdateWeedDays420(dates, 4);
                 }
             }
 
             if (tabControl.SelectedIndex == 11) // December
             {
-                int i = 0;
-                DateTime[] dates = null;
-                foreach (var date in rosterArrays)
-                {
-                    if (date.GetValue(i).ToString().Substring(3, 2) == "12")
-                    {
-                        dates = date;
-                        i++;
-                    }
-                    else
-                    {
-                        dates = GetDates(2019, 12).ToArray();
-                    }
-                }
+                DateTime[] dates = GetDates(2019, 12).ToArray();
                 if (DecemberTabControl.SelectedIndex == 0)
                 {
+                    bool dayFound = false;
+                    int j = rosterArrays.Count - 1;
+
+                    while (j >= 0 && dayFound == false)
+                    {
+                        int l = 0;
+                        while (l <= rosterArrays[j].Length - 1 && dayFound == false)
+                        {
+                            string rosterDay = rosterArrays[j].GetValue(l).ToString().Substring(0, 2);
+                            string rosterMonth = rosterArrays[j].GetValue(l).ToString().Substring(3, 2);
+                            if (rosterMonth == "12" && rosterDay == "01" || rosterMonth == "12" && rosterDay == "02" || rosterMonth == "12" && rosterDay == "03" || rosterMonth == "12" && rosterDay == "04" || rosterMonth == "12" && rosterDay == "05" || rosterMonth == "12" && rosterDay == "06" || rosterMonth == "12" && rosterDay == "07")
+                            {
+                                dates = GiveMeTheRightMotherFuckingDatesMotherFCUK(rosterArrays[j], "01/12/2019");
+                                dayFound = true;
+                            }
+                            l++;
+                        }
+                        j--;
+                    }
                     UpdateWeedDays420(dates, 0);
                 }
                 else if (DecemberTabControl.SelectedIndex == 1)
                 {
+                    bool dayFound = false;
+                    int j = rosterArrays.Count - 1;
+
+                    while (j >= 0 && dayFound == false)
+                    {
+                        int l = 0;
+                        while (l <= rosterArrays[j].Length - 1 && dayFound == false)
+                        {
+                            string rosterDay = rosterArrays[j].GetValue(l).ToString().Substring(0, 2);
+                            string rosterMonth = rosterArrays[j].GetValue(l).ToString().Substring(3, 2);
+                            if (rosterMonth == "12" && rosterDay == "08" || rosterMonth == "12" && rosterDay == "09" || rosterMonth == "12" && rosterDay == "10" || rosterMonth == "12" && rosterDay == "11" || rosterMonth == "12" && rosterDay == "12" || rosterMonth == "12" && rosterDay == "13" || rosterMonth == "12" && rosterDay == "14")
+                            {
+
+                                dates = GiveMeTheRightMotherFuckingDatesMotherFCUK(rosterArrays[j], "08/12/2019");
+
+                                dayFound = true;
+                            }
+                            l++;
+                        }
+                        j--;
+                    }
                     UpdateWeedDays420(dates, 1);
                 }
                 else if (DecemberTabControl.SelectedIndex == 2)
                 {
+                    bool dayFound = false;
+                    int j = rosterArrays.Count - 1;
+
+                    while (j >= 0 && dayFound == false)
+                    {
+                        int l = 0;
+                        while (l <= rosterArrays[j].Length - 1 && dayFound == false)
+                        {
+                            string rosterDay = rosterArrays[j].GetValue(l).ToString().Substring(0, 2);
+                            string rosterMonth = rosterArrays[j].GetValue(l).ToString().Substring(3, 2);
+                            if (rosterMonth == "12" && rosterDay == "15" || rosterMonth == "12" && rosterDay == "16" || rosterMonth == "12" && rosterDay == "17" || rosterMonth == "12" && rosterDay == "18" || rosterMonth == "12" && rosterDay == "19" || rosterMonth == "12" && rosterDay == "20" || rosterMonth == "12" && rosterDay == "21")
+                            {
+
+                                dates = GiveMeTheRightMotherFuckingDatesMotherFCUK(rosterArrays[j], "15/12");
+
+                                dayFound = true;
+                            }
+                            l++;
+                        }
+                        j--;
+                    }
                     UpdateWeedDays420(dates, 2);
                 }
                 else if (DecemberTabControl.SelectedIndex == 3)
                 {
+                    bool dayFound = false;
+                    int j = rosterArrays.Count - 1;
+
+                    while (j >= 0 && dayFound == false)
+                    {
+                        int l = 0;
+                        while (l <= rosterArrays[j].Length - 1 && dayFound == false)
+                        {
+                            string rosterDay = rosterArrays[j].GetValue(l).ToString().Substring(0, 2);
+                            string rosterMonth = rosterArrays[j].GetValue(l).ToString().Substring(3, 2);
+                            if (rosterMonth == "12" && rosterDay == "22" || rosterMonth == "12" && rosterDay == "23" || rosterMonth == "12" && rosterDay == "24" || rosterMonth == "12" && rosterDay == "25" || rosterMonth == "12" && rosterDay == "26" || rosterMonth == "1121" && rosterDay == "27" || rosterMonth == "12" && rosterDay == "28")
+                            {
+
+                                dates = GiveMeTheRightMotherFuckingDatesMotherFCUK(rosterArrays[j], "22/12");
+
+                                dayFound = true;
+                            }
+                            l++;
+                        }
+                        j--;
+                    }
                     UpdateWeedDays420(dates, 3);
                 }
                 else if (DecemberTabControl.SelectedIndex == 4)
                 {
+                    bool dayFound = false;
+                    int j = rosterArrays.Count - 1;
+
+                    while (j >= 0 && dayFound == false)
+                    {
+                        int l = 0;
+                        while (l <= rosterArrays[j].Length - 1 && dayFound == false)
+                        {
+                            string rosterDay = rosterArrays[j].GetValue(l).ToString().Substring(0, 2);
+                            string rosterMonth = rosterArrays[j].GetValue(l).ToString().Substring(3, 2);
+                            if (rosterMonth == "12" && rosterDay == "29" || rosterMonth == "12" && rosterDay == "30" || rosterMonth == "12" && rosterDay == "31")
+                            {
+                                DateTime newDay = new DateTime(2019, 01, 01);
+                                dates = GiveMeTheRightMotherFuckingDatesMotherFCUK(rosterArrays[j], "29/12");
+
+                                dayFound = true;
+                            }
+                            l++;
+                        }
+                        j--;
+                    }
                     UpdateWeedDays420(dates, 4);
                 }
             }
