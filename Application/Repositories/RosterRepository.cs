@@ -50,9 +50,6 @@ namespace Application.Repositories
             bool exists = false;            
             List<DateTime[]> monthList;
             List<Roster> rosters = GetRosters();
-
-          
-
             monthList = new List<DateTime[]>();
 
             for (int i = 0; i < rosters.Count; i++)
