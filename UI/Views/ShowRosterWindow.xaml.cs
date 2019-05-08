@@ -596,19 +596,22 @@ namespace UI.Views
                         }
                         j--;
                     }
-                    UpdateWeedDays420(dates,-1);
+                    UpdateWeedDays420(dates,0);
                 }
                 else if (MayTabControl.SelectedIndex == 1)
                 {
                     bool dayFound = false;
                     int j = rosterArrays.Count - 1;
+                    string rosterDay = "";
+                 
 
                     while (j >= 0 && dayFound == false)
                     {
+                        
                         int l = 0;
                         while (l <= rosterArrays[j].Length - 1 && dayFound == false)
                         {
-                            string rosterDay = rosterArrays[j].GetValue(l).ToString().Substring(0, 2);
+                            rosterDay = rosterArrays[j].GetValue(l).ToString().Substring(0, 2);
                             string rosterMonth = rosterArrays[j].GetValue(l).ToString().Substring(3, 2);
                             if (rosterMonth == "05" && rosterDay == "08" || rosterMonth == "05" && rosterDay == "09" || rosterMonth == "05" && rosterDay == "10" || rosterMonth == "05" && rosterDay == "11" || rosterMonth == "05" && rosterDay == "12" || rosterMonth == "05" && rosterDay == "13" || rosterMonth == "05" && rosterDay == "14")
                             {
@@ -621,7 +624,7 @@ namespace UI.Views
                         }
                         j--;
                     }
-                    UpdateWeedDays420(dates, 0);
+                    UpdateWeedDays420(dates,1);
                 }
                 else if (MayTabControl.SelectedIndex == 2)
                 {
@@ -646,7 +649,7 @@ namespace UI.Views
                         }
                         j--;
                     }
-                    UpdateWeedDays420(dates, 1);
+                    UpdateWeedDays420(dates, 2);
                 }
                 else if (MayTabControl.SelectedIndex == 3)
                 {
@@ -671,7 +674,7 @@ namespace UI.Views
                         }
                         j--;
                     }
-                    UpdateWeedDays420(dates, 2);
+                    UpdateWeedDays420(dates, 3);
                 }
                 else if (MayTabControl.SelectedIndex == 4)
                 {
@@ -696,7 +699,7 @@ namespace UI.Views
                         }
                         j--;
                     }
-                    UpdateWeedDays420(dates, 3);
+                    UpdateWeedDays420(dates, 4);
                 }
             }
 
