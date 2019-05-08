@@ -40,10 +40,7 @@ namespace UI.Views
             }
         }
 
-        //private DateTime[] GetDays()
-        //{
-
-        //}
+       
 
         public static List<DateTime> GetDates(int year, int month)
         {
@@ -71,10 +68,7 @@ namespace UI.Views
             return properFuckingDates;
         }
 
-        //private string WeekDaysToString(string month, string startDay)
-        //{
-        //    return ;
-        //}
+       
 
         private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
