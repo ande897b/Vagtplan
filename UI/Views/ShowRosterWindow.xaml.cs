@@ -224,7 +224,7 @@ namespace UI.Views
                         {
                             string rosterDay = rosterArrays[j].GetValue(l).ToString().Substring(0, 2);
                             string rosterMonth = rosterArrays[j].GetValue(l).ToString().Substring(3, 2);
-                            if (rosterMonth == "01" && rosterDay == "01" || rosterMonth == "01" && rosterDay == "02" || rosterMonth == "01" && rosterDay == "03" || rosterMonth == "01" && rosterDay == "04" || rosterMonth == "01" && rosterDay == "05" || rosterMonth == "01" && rosterDay == "06" || rosterMonth == "01" && rosterDay == "07")
+                            if (rosterMonth == "02" && rosterDay == "01" || rosterMonth == "02" && rosterDay == "02" || rosterMonth == "02" && rosterDay == "03" || rosterMonth == "02" && rosterDay == "04" || rosterMonth == "02" && rosterDay == "05" || rosterMonth == "02" && rosterDay == "06" || rosterMonth == "02" && rosterDay == "07")
                             {
                                 dates = GiveMeTheRightMotherFuckingDatesMotherFCUK(rosterArrays[j], "01/02/2019");
 
@@ -248,7 +248,7 @@ namespace UI.Views
                         {
                             string rosterDay = rosterArrays[j].GetValue(l).ToString().Substring(0, 2);
                             string rosterMonth = rosterArrays[j].GetValue(l).ToString().Substring(3, 2);
-                            if (rosterMonth == "01" && rosterDay == "08" || rosterMonth == "01" && rosterDay == "09" || rosterMonth == "01" && rosterDay == "10" || rosterMonth == "01" && rosterDay == "11" || rosterMonth == "01" && rosterDay == "12" || rosterMonth == "01" && rosterDay == "13" || rosterMonth == "01" && rosterDay == "14")
+                            if (rosterMonth == "02" && rosterDay == "08" || rosterMonth == "02" && rosterDay == "09" || rosterMonth == "02" && rosterDay == "10" || rosterMonth == "02" && rosterDay == "11" || rosterMonth == "02" && rosterDay == "12" || rosterMonth == "02" && rosterDay == "13" || rosterMonth == "02" && rosterDay == "14")
                             {
                                 DateTime newDay = new DateTime(2019, 01, 01);
                                 dates = GiveMeTheRightMotherFuckingDatesMotherFCUK(rosterArrays[j], "08/02/2019");
@@ -273,7 +273,7 @@ namespace UI.Views
                         {
                             string rosterDay = rosterArrays[j].GetValue(l).ToString().Substring(0, 2);
                             string rosterMonth = rosterArrays[j].GetValue(l).ToString().Substring(3, 2);
-                            if (rosterMonth == "01" && rosterDay == "15" || rosterMonth == "01" && rosterDay == "16" || rosterMonth == "01" && rosterDay == "17" || rosterMonth == "01" && rosterDay == "18" || rosterMonth == "01" && rosterDay == "19" || rosterMonth == "01" && rosterDay == "20" || rosterMonth == "01" && rosterDay == "21")
+                            if (rosterMonth == "02" && rosterDay == "15" || rosterMonth == "02" && rosterDay == "16" || rosterMonth == "02" && rosterDay == "17" || rosterMonth == "02" && rosterDay == "18" || rosterMonth == "02" && rosterDay == "19" || rosterMonth == "02" && rosterDay == "20" || rosterMonth == "02" && rosterDay == "21")
                             {
                                 DateTime newDay = new DateTime(2019, 01, 01);
                                 dates = GiveMeTheRightMotherFuckingDatesMotherFCUK(rosterArrays[j], "15/02");
@@ -298,7 +298,7 @@ namespace UI.Views
                         {
                             string rosterDay = rosterArrays[j].GetValue(l).ToString().Substring(0, 2);
                             string rosterMonth = rosterArrays[j].GetValue(l).ToString().Substring(3, 2);
-                            if (rosterMonth == "01" && rosterDay == "22" || rosterMonth == "01" && rosterDay == "23" || rosterMonth == "01" && rosterDay == "24" || rosterMonth == "01" && rosterDay == "25" || rosterMonth == "01" && rosterDay == "26" || rosterMonth == "01" && rosterDay == "27" || rosterMonth == "01" && rosterDay == "28")
+                            if (rosterMonth == "02" && rosterDay == "22" || rosterMonth == "02" && rosterDay == "23" || rosterMonth == "02" && rosterDay == "24" || rosterMonth == "02" && rosterDay == "25" || rosterMonth == "02" && rosterDay == "26" || rosterMonth == "02" && rosterDay == "27" || rosterMonth == "02" && rosterDay == "28")
                             {
                                 DateTime newDay = new DateTime(2019, 01, 01);
                                 dates = GiveMeTheRightMotherFuckingDatesMotherFCUK(rosterArrays[j], "22/02");
@@ -329,7 +329,7 @@ namespace UI.Views
                         {
                             string rosterDay = rosterArrays[j].GetValue(l).ToString().Substring(0, 2);
                             string rosterMonth = rosterArrays[j].GetValue(l).ToString().Substring(3, 2);
-                            if (rosterMonth == "01" && rosterDay == "01" || rosterMonth == "01" && rosterDay == "02" || rosterMonth == "01" && rosterDay == "03" || rosterMonth == "01" && rosterDay == "04" || rosterMonth == "01" && rosterDay == "05" || rosterMonth == "01" && rosterDay == "06" || rosterMonth == "01" && rosterDay == "07")
+                            if (rosterMonth == "03" && rosterDay == "01" || rosterMonth == "03" && rosterDay == "02" || rosterMonth == "03" && rosterDay == "03" || rosterMonth == "03" && rosterDay == "04" || rosterMonth == "03" && rosterDay == "05" || rosterMonth == "03" && rosterDay == "06" || rosterMonth == "03" && rosterDay == "07")
                             {
                                 dates = GiveMeTheRightMotherFuckingDatesMotherFCUK(rosterArrays[j], "01/03/2019");
 
@@ -353,7 +353,7 @@ namespace UI.Views
                         {
                             string rosterDay = rosterArrays[j].GetValue(l).ToString().Substring(0, 2);
                             string rosterMonth = rosterArrays[j].GetValue(l).ToString().Substring(3, 2);
-                            if (rosterMonth == "01" && rosterDay == "08" || rosterMonth == "01" && rosterDay == "09" || rosterMonth == "01" && rosterDay == "10" || rosterMonth == "01" && rosterDay == "11" || rosterMonth == "01" && rosterDay == "12" || rosterMonth == "01" && rosterDay == "13" || rosterMonth == "01" && rosterDay == "14")
+                            if (rosterMonth == "03" && rosterDay == "08" || rosterMonth == "03" && rosterDay == "09" || rosterMonth == "03" && rosterDay == "10" || rosterMonth == "03" && rosterDay == "11" || rosterMonth == "03" && rosterDay == "12" || rosterMonth == "03" && rosterDay == "13" || rosterMonth == "03" && rosterDay == "14")
                             {
                                 DateTime newDay = new DateTime(2019, 01, 01);
                                 dates = GiveMeTheRightMotherFuckingDatesMotherFCUK(rosterArrays[j], "08/03/2019");
@@ -378,7 +378,7 @@ namespace UI.Views
                         {
                             string rosterDay = rosterArrays[j].GetValue(l).ToString().Substring(0, 2);
                             string rosterMonth = rosterArrays[j].GetValue(l).ToString().Substring(3, 2);
-                            if (rosterMonth == "01" && rosterDay == "15" || rosterMonth == "01" && rosterDay == "16" || rosterMonth == "01" && rosterDay == "17" || rosterMonth == "01" && rosterDay == "18" || rosterMonth == "01" && rosterDay == "19" || rosterMonth == "01" && rosterDay == "20" || rosterMonth == "01" && rosterDay == "21")
+                            if (rosterMonth == "03" && rosterDay == "15" || rosterMonth == "03" && rosterDay == "16" || rosterMonth == "03" && rosterDay == "17" || rosterMonth == "03" && rosterDay == "18" || rosterMonth == "03" && rosterDay == "19" || rosterMonth == "03" && rosterDay == "20" || rosterMonth == "03" && rosterDay == "21")
                             {
                                 DateTime newDay = new DateTime(2019, 01, 01);
                                 dates = GiveMeTheRightMotherFuckingDatesMotherFCUK(rosterArrays[j], "15/03");
@@ -403,7 +403,7 @@ namespace UI.Views
                         {
                             string rosterDay = rosterArrays[j].GetValue(l).ToString().Substring(0, 2);
                             string rosterMonth = rosterArrays[j].GetValue(l).ToString().Substring(3, 2);
-                            if (rosterMonth == "01" && rosterDay == "22" || rosterMonth == "01" && rosterDay == "23" || rosterMonth == "01" && rosterDay == "24" || rosterMonth == "01" && rosterDay == "25" || rosterMonth == "01" && rosterDay == "26" || rosterMonth == "01" && rosterDay == "27" || rosterMonth == "01" && rosterDay == "28")
+                            if (rosterMonth == "03" && rosterDay == "22" || rosterMonth == "03" && rosterDay == "23" || rosterMonth == "03" && rosterDay == "24" || rosterMonth == "03" && rosterDay == "25" || rosterMonth == "03" && rosterDay == "26" || rosterMonth == "03" && rosterDay == "27" || rosterMonth == "03" && rosterDay == "28")
                             {
                                 DateTime newDay = new DateTime(2019, 01, 01);
                                 dates = GiveMeTheRightMotherFuckingDatesMotherFCUK(rosterArrays[j], "22/03");
@@ -428,7 +428,7 @@ namespace UI.Views
                         {
                             string rosterDay = rosterArrays[j].GetValue(l).ToString().Substring(0, 2);
                             string rosterMonth = rosterArrays[j].GetValue(l).ToString().Substring(3, 2);
-                            if (rosterMonth == "01" && rosterDay == "29" || rosterMonth == "01" && rosterDay == "30" || rosterMonth == "01" && rosterDay == "31")
+                            if (rosterMonth == "03" && rosterDay == "29" || rosterMonth == "03" && rosterDay == "30" || rosterMonth == "03" && rosterDay == "31")
                             {
                                 DateTime newDay = new DateTime(2019, 01, 01);
                                 dates = GiveMeTheRightMotherFuckingDatesMotherFCUK(rosterArrays[j], "29/03");
@@ -458,7 +458,7 @@ namespace UI.Views
                         {
                             string rosterDay = rosterArrays[j].GetValue(l).ToString().Substring(0, 2);
                             string rosterMonth = rosterArrays[j].GetValue(l).ToString().Substring(3, 2);
-                            if (rosterMonth == "01" && rosterDay == "01" || rosterMonth == "01" && rosterDay == "02" || rosterMonth == "01" && rosterDay == "03" || rosterMonth == "01" && rosterDay == "04" || rosterMonth == "01" && rosterDay == "05" || rosterMonth == "01" && rosterDay == "06" || rosterMonth == "01" && rosterDay == "07")
+                            if (rosterMonth == "04" && rosterDay == "01" || rosterMonth == "04" && rosterDay == "02" || rosterMonth == "04" && rosterDay == "03" || rosterMonth == "04" && rosterDay == "04" || rosterMonth == "04" && rosterDay == "05" || rosterMonth == "04" && rosterDay == "06" || rosterMonth == "04" && rosterDay == "07")
                             {
                                 dates = GiveMeTheRightMotherFuckingDatesMotherFCUK(rosterArrays[j], "01/04/2019");
 
@@ -482,7 +482,7 @@ namespace UI.Views
                         {
                             string rosterDay = rosterArrays[j].GetValue(l).ToString().Substring(0, 2);
                             string rosterMonth = rosterArrays[j].GetValue(l).ToString().Substring(3, 2);
-                            if (rosterMonth == "01" && rosterDay == "08" || rosterMonth == "01" && rosterDay == "09" || rosterMonth == "01" && rosterDay == "10" || rosterMonth == "01" && rosterDay == "11" || rosterMonth == "01" && rosterDay == "12" || rosterMonth == "01" && rosterDay == "13" || rosterMonth == "01" && rosterDay == "14")
+                            if (rosterMonth == "04" && rosterDay == "08" || rosterMonth == "04" && rosterDay == "09" || rosterMonth == "04" && rosterDay == "10" || rosterMonth == "04" && rosterDay == "11" || rosterMonth == "04" && rosterDay == "12" || rosterMonth == "04" && rosterDay == "13" || rosterMonth == "04" && rosterDay == "14")
                             {
                                
                                 dates = GiveMeTheRightMotherFuckingDatesMotherFCUK(rosterArrays[j], "08/04/2019");
@@ -507,7 +507,7 @@ namespace UI.Views
                         {
                             string rosterDay = rosterArrays[j].GetValue(l).ToString().Substring(0, 2);
                             string rosterMonth = rosterArrays[j].GetValue(l).ToString().Substring(3, 2);
-                            if (rosterMonth == "01" && rosterDay == "15" || rosterMonth == "01" && rosterDay == "16" || rosterMonth == "01" && rosterDay == "17" || rosterMonth == "01" && rosterDay == "18" || rosterMonth == "01" && rosterDay == "19" || rosterMonth == "01" && rosterDay == "20" || rosterMonth == "01" && rosterDay == "21")
+                            if (rosterMonth == "04" && rosterDay == "15" || rosterMonth == "04" && rosterDay == "16" || rosterMonth == "04" && rosterDay == "17" || rosterMonth == "04" && rosterDay == "18" || rosterMonth == "04" && rosterDay == "19" || rosterMonth == "04" && rosterDay == "20" || rosterMonth == "04" && rosterDay == "21")
                             {
                                 
                                 dates = GiveMeTheRightMotherFuckingDatesMotherFCUK(rosterArrays[j], "15/04");
@@ -532,7 +532,7 @@ namespace UI.Views
                         {
                             string rosterDay = rosterArrays[j].GetValue(l).ToString().Substring(0, 2);
                             string rosterMonth = rosterArrays[j].GetValue(l).ToString().Substring(3, 2);
-                            if (rosterMonth == "01" && rosterDay == "22" || rosterMonth == "01" && rosterDay == "23" || rosterMonth == "01" && rosterDay == "24" || rosterMonth == "01" && rosterDay == "25" || rosterMonth == "01" && rosterDay == "26" || rosterMonth == "01" && rosterDay == "27" || rosterMonth == "01" && rosterDay == "28")
+                            if (rosterMonth == "04" && rosterDay == "22" || rosterMonth == "04" && rosterDay == "23" || rosterMonth == "04" && rosterDay == "24" || rosterMonth == "04" && rosterDay == "25" || rosterMonth == "04" && rosterDay == "26" || rosterMonth == "04" && rosterDay == "27" || rosterMonth == "04" && rosterDay == "28")
                             {
                               
                                 dates = GiveMeTheRightMotherFuckingDatesMotherFCUK(rosterArrays[j], "22/04");
@@ -557,7 +557,7 @@ namespace UI.Views
                         {
                             string rosterDay = rosterArrays[j].GetValue(l).ToString().Substring(0, 2);
                             string rosterMonth = rosterArrays[j].GetValue(l).ToString().Substring(3, 2);
-                            if (rosterMonth == "01" && rosterDay == "29" || rosterMonth == "01" && rosterDay == "30" || rosterMonth == "01" && rosterDay == "31")
+                            if (rosterMonth == "04" && rosterDay == "29" || rosterMonth == "04" && rosterDay == "30" || rosterMonth == "04" && rosterDay == "31")
                             {
                                 DateTime newDay = new DateTime(2019, 01, 01);
                                 dates = GiveMeTheRightMotherFuckingDatesMotherFCUK(rosterArrays[j], "29/04");
