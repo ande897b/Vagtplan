@@ -26,6 +26,7 @@ namespace UI.Views
 
         private void CreateRosterBtn_Click(object sender, RoutedEventArgs e)
         {
+          
             ViewRosterController.CreateRoster(DatePickerStart.SelectedDate.Value, DatePickerEnd.SelectedDate.Value, comboBoxShop.Text.ToString().ToLower());
             MessageBox.Show("Vagtplan med " + " i "+ comboBoxShop.Text +" oprettet. Du kan nu indsætte vagter", "Success");
             this.Close();
@@ -46,6 +47,7 @@ namespace UI.Views
             }
 
             DatePickerStart.SelectedDate = startDate;
+            
             DatePickerEnd.SelectedDate = DatePickerStart.SelectedDate;
         }
     }

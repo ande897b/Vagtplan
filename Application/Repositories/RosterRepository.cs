@@ -45,5 +45,32 @@ namespace Application.Repositories
 			}
 			return exists;
 		}
+        public static bool CheckIfExists(DateTime date)
+        {
+            bool exists = false;            
+            List<DateTime[]> monthList;
+            List<Roster> rosters = GetRosters();
+            monthList = new List<DateTime[]>();
+
+            for (int i = 0; i < rosters.Count; i++)
+            {
+                DateTime start = rosters[i].StartDate;
+                DateTime[] dates = new DateTime[360];
+
+                for (int j = 0; start <= rosters[i].EndDate; j++)
+                {
+                    dates[j] = start;
+                    start = start.AddDays(1);
+                    if (start == date)
+                    {
+                        exists = true;
+                    }
+                }
+                monthList.Add(dates);
+
+            }
+      
+            return exists;
+        }
 	}
 }

@@ -21,6 +21,8 @@
         
         <DatePicker IsEnabled="False" Name="DatePickerStart" HorizontalAlignment="Left" Margin="243,178,0,0" VerticalAlignment="Top"/>
         
-        <DatePicker Name="DatePickerEnd" HorizontalAlignment="Left" Margin="384,178,0,0" VerticalAlignment="Top"/>
+        <DatePicker Name="DatePickerEnd" HorizontalAlignment="Left" Margin="384,178,0,0" VerticalAlignment="Top" >
+           
+        </DatePicker>
     </Grid>
 </Window>
