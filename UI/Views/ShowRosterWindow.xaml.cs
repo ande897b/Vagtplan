@@ -611,14 +611,23 @@ namespace UI.Views
                             {
 
                                 dates = GiveMeTheRightMotherFuckingDatesMotherFCUK(rosterArrays[j], "08/05/2019");
-
+                                
                                 dayFound = true;
                             }
                             l++;
+
                         }
                         j--;
                     }
-                    UpdateWeedDays420(dates,1);
+                    if (dayFound == true)
+                    {
+                        UpdateWeedDays420(dates, 0);
+                    }
+                    else
+                    {
+                        UpdateWeedDays420(dates, 1);
+                    }
+                   
                 }
                 else if (MayTabControl.SelectedIndex == 2)
                 {
