@@ -1,24 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Application.DatabaseControllers;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using UI.Views;
-using Application;
-using Application.DatabaseControllers;
 
 namespace UI
 {
-    public partial class MainWindow : Window
+	public partial class MainWindow : Window
     {
         public MainWindow()
         {
@@ -48,7 +36,7 @@ namespace UI
             }
 
         }
-        private void tb_GotFocus(object sender, RoutedEventArgs e)
+        private void Textbox_GetFocus(object sender, RoutedEventArgs e)
         {
             TextBox tb = sender as TextBox;
             if (tb != null)
@@ -56,7 +44,7 @@ namespace UI
                 tb.SelectAll(); 
             }
         }
-        private void password_GotFocus(object sender, RoutedEventArgs e)
+        private void Password_GetFocus(object sender, RoutedEventArgs e)
         {
             PasswordBox tb = sender as PasswordBox;
             if (tb != null)

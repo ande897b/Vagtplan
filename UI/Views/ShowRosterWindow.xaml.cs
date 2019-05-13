@@ -1218,7 +1218,7 @@ namespace UI.Views
                 }
             }
 
-            if (tabControl.SelectedIndex == 9) // Kotober
+            if (tabControl.SelectedIndex == 9) // Oktober
             {
 
                 DateTime[] dates = GetDates(2019, 10).ToArray();
@@ -1347,7 +1347,7 @@ namespace UI.Views
                 }
             }
 
-            if (tabControl.SelectedIndex == 10) // november
+            if (tabControl.SelectedIndex == 10) // November
             {
                 DateTime[] dates = GetDates(2019, 11).ToArray();
                 if (NovemberTabControl.SelectedIndex == 0)
