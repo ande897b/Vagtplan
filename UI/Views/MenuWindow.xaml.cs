@@ -24,7 +24,6 @@ namespace UI.Views
         {
             CreateRosterWindow createRosterWindow = new CreateRosterWindow();
             createRosterWindow.Show();
-
         }
 
         private void AddShiftsBtn_Click(object sender, RoutedEventArgs e)
