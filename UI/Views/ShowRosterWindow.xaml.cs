@@ -129,7 +129,7 @@ namespace UI.Views
 
             if (tabControl.SelectedIndex == 1) // Februar
             {
-                if (JanuaryTabControl.SelectedIndex == 0)
+                if (FebruaryTabControl.SelectedIndex == 0)
                 {
                     UpdateSchedule(dates, 0);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
@@ -137,7 +137,7 @@ namespace UI.Views
                         weekday1txtbox.Text = "Fuck yes";
                     }
                 }
-                else if (JanuaryTabControl.SelectedIndex == 1)
+                else if (FebruaryTabControl.SelectedIndex == 1)
                 {
                     UpdateSchedule(dates, 1);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
@@ -145,7 +145,7 @@ namespace UI.Views
                         weekday1txtbox.Text = "Fuck yes";
                     }
                 }
-                else if (JanuaryTabControl.SelectedIndex == 2)
+                else if (FebruaryTabControl.SelectedIndex == 2)
                 {
                     UpdateSchedule(dates, 2);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
@@ -153,7 +153,7 @@ namespace UI.Views
                         weekday1txtbox.Text = "Fuck yes";
                     }
                 }
-                else if (JanuaryTabControl.SelectedIndex == 3)
+                else if (FebruaryTabControl.SelectedIndex == 3)
                 {
                     UpdateSchedule(dates, 3);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
@@ -161,7 +161,7 @@ namespace UI.Views
                         weekday1txtbox.Text = "Fuck yes";
                     }
                 }
-                else if (JanuaryTabControl.SelectedIndex == 4)
+                else if (FebruaryTabControl.SelectedIndex == 4)
                 {
                     UpdateSchedule(dates, 4);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
@@ -173,7 +173,7 @@ namespace UI.Views
 
             if (tabControl.SelectedIndex == 2) // Marts
             {
-                if (JanuaryTabControl.SelectedIndex == 0)
+                if (MarchTabControl.SelectedIndex == 0)
                 {
                     UpdateSchedule(dates, 0);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
@@ -181,7 +181,7 @@ namespace UI.Views
                         weekday1txtbox.Text = "Fuck yes";
                     }
                 }
-                else if (JanuaryTabControl.SelectedIndex == 1)
+                else if (MarchTabControl.SelectedIndex == 1)
                 {
                     UpdateSchedule(dates, 1);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
@@ -189,7 +189,7 @@ namespace UI.Views
                         weekday1txtbox.Text = "Fuck yes";
                     }
                 }
-                else if (JanuaryTabControl.SelectedIndex == 2)
+                else if (MarchTabControl.SelectedIndex == 2)
                 {
                     UpdateSchedule(dates, 2);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
@@ -197,7 +197,7 @@ namespace UI.Views
                         weekday1txtbox.Text = "Fuck yes";
                     }
                 }
-                else if (JanuaryTabControl.SelectedIndex == 3)
+                else if (MarchTabControl.SelectedIndex == 3)
                 {
                     UpdateSchedule(dates, 3);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
@@ -205,7 +205,7 @@ namespace UI.Views
                         weekday1txtbox.Text = "Fuck yes";
                     }
                 }
-                else if (JanuaryTabControl.SelectedIndex == 4)
+                else if (MarchTabControl.SelectedIndex == 4)
                 {
                     UpdateSchedule(dates, 4);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
@@ -217,7 +217,7 @@ namespace UI.Views
 
             if (tabControl.SelectedIndex == 3) // April
             {
-                if (JanuaryTabControl.SelectedIndex == 0)
+                if (AprilTabControl.SelectedIndex == 0)
                 {
                     UpdateSchedule(dates, 0);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
@@ -225,7 +225,7 @@ namespace UI.Views
                         weekday1txtbox.Text = "Fuck yes";
                     }
                 }
-                else if (JanuaryTabControl.SelectedIndex == 1)
+                else if (AprilTabControl.SelectedIndex == 1)
                 {
                     UpdateSchedule(dates, 1);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
@@ -233,7 +233,7 @@ namespace UI.Views
                         weekday1txtbox.Text = "Fuck yes";
                     }
                 }
-                else if (JanuaryTabControl.SelectedIndex == 2)
+                else if (AprilTabControl.SelectedIndex == 2)
                 {
                     UpdateSchedule(dates, 2);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
@@ -241,7 +241,7 @@ namespace UI.Views
                         weekday1txtbox.Text = "Fuck yes";
                     }
                 }
-                else if (JanuaryTabControl.SelectedIndex == 3)
+                else if (AprilTabControl.SelectedIndex == 3)
                 {
                     UpdateSchedule(dates, 3);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
@@ -249,7 +249,7 @@ namespace UI.Views
                         weekday1txtbox.Text = "Fuck yes";
                     }
                 }
-                else if (JanuaryTabControl.SelectedIndex == 4)
+                else if (AprilTabControl.SelectedIndex == 4)
                 {
                     UpdateSchedule(dates, 4);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
@@ -261,7 +261,7 @@ namespace UI.Views
 
             if (tabControl.SelectedIndex == 4) // Maj
             {
-                if (JanuaryTabControl.SelectedIndex == 0)
+                if (MayTabControl.SelectedIndex == 0)
                 {
                     UpdateSchedule(dates, 0);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
@@ -269,7 +269,7 @@ namespace UI.Views
                         weekday1txtbox.Text = "Fuck yes";
                     }
                 }
-                else if (JanuaryTabControl.SelectedIndex == 1)
+                else if (MayTabControl.SelectedIndex == 1)
                 {
                     UpdateSchedule(dates, 1);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
@@ -277,7 +277,7 @@ namespace UI.Views
                         weekday1txtbox.Text = "Fuck yes";
                     }
                 }
-                else if (JanuaryTabControl.SelectedIndex == 2)
+                else if (MayTabControl.SelectedIndex == 2)
                 {
                     UpdateSchedule(dates, 2);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
@@ -285,7 +285,7 @@ namespace UI.Views
                         weekday1txtbox.Text = "Fuck yes";
                     }
                 }
-                else if (JanuaryTabControl.SelectedIndex == 3)
+                else if (MayTabControl.SelectedIndex == 3)
                 {
                     UpdateSchedule(dates, 3);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
@@ -293,7 +293,7 @@ namespace UI.Views
                         weekday1txtbox.Text = "Fuck yes";
                     }
                 }
-                else if (JanuaryTabControl.SelectedIndex == 4)
+                else if (MayTabControl.SelectedIndex == 4)
                 {
                     UpdateSchedule(dates, 4);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
@@ -305,7 +305,7 @@ namespace UI.Views
 
             if (tabControl.SelectedIndex == 5) // Juni
             {
-                if (JanuaryTabControl.SelectedIndex == 0)
+                if (JuneTabControl.SelectedIndex == 0)
                 {
                     UpdateSchedule(dates, 0);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
@@ -313,7 +313,7 @@ namespace UI.Views
                         weekday1txtbox.Text = "Fuck yes";
                     }
                 }
-                else if (JanuaryTabControl.SelectedIndex == 1)
+                else if (JuneTabControl.SelectedIndex == 1)
                 {
                     UpdateSchedule(dates, 1);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
@@ -321,7 +321,7 @@ namespace UI.Views
                         weekday1txtbox.Text = "Fuck yes";
                     }
                 }
-                else if (JanuaryTabControl.SelectedIndex == 2)
+                else if (JuneTabControl.SelectedIndex == 2)
                 {
                     UpdateSchedule(dates, 2);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
@@ -329,7 +329,7 @@ namespace UI.Views
                         weekday1txtbox.Text = "Fuck yes";
                     }
                 }
-                else if (JanuaryTabControl.SelectedIndex == 3)
+                else if (JuneTabControl.SelectedIndex == 3)
                 {
                     UpdateSchedule(dates, 3);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
@@ -337,7 +337,7 @@ namespace UI.Views
                         weekday1txtbox.Text = "Fuck yes";
                     }
                 }
-                else if (JanuaryTabControl.SelectedIndex == 4)
+                else if (JuneTabControl.SelectedIndex == 4)
                 {
                     UpdateSchedule(dates, 4);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
@@ -349,7 +349,7 @@ namespace UI.Views
 
             if (tabControl.SelectedIndex == 6) // juli
             {
-                if (JanuaryTabControl.SelectedIndex == 0)
+                if (JulyTabControl.SelectedIndex == 0)
                 {
                     UpdateSchedule(dates, 0);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
@@ -357,7 +357,7 @@ namespace UI.Views
                         weekday1txtbox.Text = "Fuck yes";
                     }
                 }
-                else if (JanuaryTabControl.SelectedIndex == 1)
+                else if (JulyTabControl.SelectedIndex == 1)
                 {
                     UpdateSchedule(dates, 1);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
@@ -365,7 +365,7 @@ namespace UI.Views
                         weekday1txtbox.Text = "Fuck yes";
                     }
                 }
-                else if (JanuaryTabControl.SelectedIndex == 2)
+                else if (JulyTabControl.SelectedIndex == 2)
                 {
                     UpdateSchedule(dates, 2);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
@@ -373,7 +373,7 @@ namespace UI.Views
                         weekday1txtbox.Text = "Fuck yes";
                     }
                 }
-                else if (JanuaryTabControl.SelectedIndex == 3)
+                else if (JulyTabControl.SelectedIndex == 3)
                 {
                     UpdateSchedule(dates, 3);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
@@ -381,7 +381,7 @@ namespace UI.Views
                         weekday1txtbox.Text = "Fuck yes";
                     }
                 }
-                else if (JanuaryTabControl.SelectedIndex == 4)
+                else if (JulyTabControl.SelectedIndex == 4)
                 {
                     UpdateSchedule(dates, 4);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
@@ -393,7 +393,7 @@ namespace UI.Views
 
             if (tabControl.SelectedIndex == 7) // August
             {
-                if (JanuaryTabControl.SelectedIndex == 0)
+                if (AugustTabControl.SelectedIndex == 0)
                 {
                     UpdateSchedule(dates, 0);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
@@ -401,7 +401,7 @@ namespace UI.Views
                         weekday1txtbox.Text = "Fuck yes";
                     }
                 }
-                else if (JanuaryTabControl.SelectedIndex == 1)
+                else if (AugustTabControl.SelectedIndex == 1)
                 {
                     UpdateSchedule(dates, 1);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
@@ -409,7 +409,7 @@ namespace UI.Views
                         weekday1txtbox.Text = "Fuck yes";
                     }
                 }
-                else if (JanuaryTabControl.SelectedIndex == 2)
+                else if (AugustTabControl.SelectedIndex == 2)
                 {
                     UpdateSchedule(dates, 2);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
@@ -417,7 +417,7 @@ namespace UI.Views
                         weekday1txtbox.Text = "Fuck yes";
                     }
                 }
-                else if (JanuaryTabControl.SelectedIndex == 3)
+                else if (AugustTabControl.SelectedIndex == 3)
                 {
                     UpdateSchedule(dates, 3);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
@@ -425,7 +425,7 @@ namespace UI.Views
                         weekday1txtbox.Text = "Fuck yes";
                     }
                 }
-                else if (JanuaryTabControl.SelectedIndex == 4)
+                else if (AugustTabControl.SelectedIndex == 4)
                 {
                     UpdateSchedule(dates, 4);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
@@ -437,7 +437,7 @@ namespace UI.Views
 
             if (tabControl.SelectedIndex == 8) // September
             {
-                if (JanuaryTabControl.SelectedIndex == 0)
+                if (SeptemberTabControl.SelectedIndex == 0)
                 {
                     UpdateSchedule(dates, 0);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
@@ -445,7 +445,7 @@ namespace UI.Views
                         weekday1txtbox.Text = "Fuck yes";
                     }
                 }
-                else if (JanuaryTabControl.SelectedIndex == 1)
+                else if (SeptemberTabControl.SelectedIndex == 1)
                 {
                     UpdateSchedule(dates, 1);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
@@ -453,7 +453,7 @@ namespace UI.Views
                         weekday1txtbox.Text = "Fuck yes";
                     }
                 }
-                else if (JanuaryTabControl.SelectedIndex == 2)
+                else if (SeptemberTabControl.SelectedIndex == 2)
                 {
                     UpdateSchedule(dates, 2);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
@@ -461,7 +461,7 @@ namespace UI.Views
                         weekday1txtbox.Text = "Fuck yes";
                     }
                 }
-                else if (JanuaryTabControl.SelectedIndex == 3)
+                else if (SeptemberTabControl.SelectedIndex == 3)
                 {
                     UpdateSchedule(dates, 3);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
@@ -469,7 +469,7 @@ namespace UI.Views
                         weekday1txtbox.Text = "Fuck yes";
                     }
                 }
-                else if (JanuaryTabControl.SelectedIndex == 4)
+                else if (SeptemberTabControl.SelectedIndex == 4)
                 {
                     UpdateSchedule(dates, 4);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
@@ -481,7 +481,7 @@ namespace UI.Views
 
             if (tabControl.SelectedIndex == 9) // Oktober
             {
-                if (JanuaryTabControl.SelectedIndex == 0)
+                if (OctoberTabControl.SelectedIndex == 0)
                 {
                     UpdateSchedule(dates, 0);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
@@ -489,7 +489,7 @@ namespace UI.Views
                         weekday1txtbox.Text = "Fuck yes";
                     }
                 }
-                else if (JanuaryTabControl.SelectedIndex == 1)
+                else if (OctoberTabControl.SelectedIndex == 1)
                 {
                     UpdateSchedule(dates, 1);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
@@ -497,7 +497,7 @@ namespace UI.Views
                         weekday1txtbox.Text = "Fuck yes";
                     }
                 }
-                else if (JanuaryTabControl.SelectedIndex == 2)
+                else if (OctoberTabControl.SelectedIndex == 2)
                 {
                     UpdateSchedule(dates, 2);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
@@ -505,7 +505,7 @@ namespace UI.Views
                         weekday1txtbox.Text = "Fuck yes";
                     }
                 }
-                else if (JanuaryTabControl.SelectedIndex == 3)
+                else if (OctoberTabControl.SelectedIndex == 3)
                 {
                     UpdateSchedule(dates, 3);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
@@ -513,7 +513,7 @@ namespace UI.Views
                         weekday1txtbox.Text = "Fuck yes";
                     }
                 }
-                else if (JanuaryTabControl.SelectedIndex == 4)
+                else if (OctoberTabControl.SelectedIndex == 4)
                 {
                     UpdateSchedule(dates, 4);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
@@ -525,7 +525,7 @@ namespace UI.Views
 
             if (tabControl.SelectedIndex == 10) // November
             {
-                if (JanuaryTabControl.SelectedIndex == 0)
+                if (NovemberTabControl.SelectedIndex == 0)
                 {
                     UpdateSchedule(dates, 0);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
@@ -533,7 +533,7 @@ namespace UI.Views
                         weekday1txtbox.Text = "Fuck yes";
                     }
                 }
-                else if (JanuaryTabControl.SelectedIndex == 1)
+                else if (NovemberTabControl.SelectedIndex == 1)
                 {
                     UpdateSchedule(dates, 1);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
@@ -541,7 +541,7 @@ namespace UI.Views
                         weekday1txtbox.Text = "Fuck yes";
                     }
                 }
-                else if (JanuaryTabControl.SelectedIndex == 2)
+                else if (NovemberTabControl.SelectedIndex == 2)
                 {
                     UpdateSchedule(dates, 2);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
@@ -549,7 +549,7 @@ namespace UI.Views
                         weekday1txtbox.Text = "Fuck yes";
                     }
                 }
-                else if (JanuaryTabControl.SelectedIndex == 3)
+                else if (NovemberTabControl.SelectedIndex == 3)
                 {
                     UpdateSchedule(dates, 3);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
@@ -557,7 +557,7 @@ namespace UI.Views
                         weekday1txtbox.Text = "Fuck yes";
                     }
                 }
-                else if (JanuaryTabControl.SelectedIndex == 4)
+                else if (NovemberTabControl.SelectedIndex == 4)
                 {
                     UpdateSchedule(dates, 4);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
@@ -569,7 +569,7 @@ namespace UI.Views
 
             if (tabControl.SelectedIndex == 11) // December
             {
-                if (JanuaryTabControl.SelectedIndex == 0)
+                if (DecemberTabControl.SelectedIndex == 0)
                 {
                     UpdateSchedule(dates, 0);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
@@ -577,7 +577,7 @@ namespace UI.Views
                         weekday1txtbox.Text = "Fuck yes";
                     }
                 }
-                else if (JanuaryTabControl.SelectedIndex == 1)
+                else if (DecemberTabControl.SelectedIndex == 1)
                 {
                     UpdateSchedule(dates, 1);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
@@ -585,7 +585,7 @@ namespace UI.Views
                         weekday1txtbox.Text = "Fuck yes";
                     }
                 }
-                else if (JanuaryTabControl.SelectedIndex == 2)
+                else if (DecemberTabControl.SelectedIndex == 2)
                 {
                     UpdateSchedule(dates, 2);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
@@ -593,7 +593,7 @@ namespace UI.Views
                         weekday1txtbox.Text = "Fuck yes";
                     }
                 }
-                else if (JanuaryTabControl.SelectedIndex == 3)
+                else if (DecemberTabControl.SelectedIndex == 3)
                 {
                     UpdateSchedule(dates, 3);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
@@ -601,7 +601,7 @@ namespace UI.Views
                         weekday1txtbox.Text = "Fuck yes";
                     }
                 }
-                else if (JanuaryTabControl.SelectedIndex == 4)
+                else if (DecemberTabControl.SelectedIndex == 4)
                 {
                     UpdateSchedule(dates, 4);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
@@ -611,20 +611,6 @@ namespace UI.Views
                 }
             }
         }
-
-
-
-
-
-
-
-
-
-
-
-
-            
-            
 
 
 
