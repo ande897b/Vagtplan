@@ -619,15 +619,9 @@ namespace UI.Views
                         }
                         j--;
                     }
-                    if (dayFound == true)
-                    {
-                        UpdateSchedule(dates, 0);
-                    }
-                    else
-                    {
-                        UpdateSchedule(dates, 1);
-                    }
-                   
+                    UpdateSchedule(dates, 1);
+
+
                 }
                 else if (MayTabControl.SelectedIndex == 2)
                 {
