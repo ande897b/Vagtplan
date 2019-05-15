@@ -166,18 +166,18 @@ namespace Application.DatabaseControllers
         public static List<Date> GetDates(string shop)
         {
             List<Date> dates = new List<Date>();
-            string ID = null;
 
             DateTime day;
             int dateID;
             int dateListId;
+            string shopDB = null;
 
             DBConnection.DatabaseName = "CANE";
             if (DBConnection.IsConnected())
             {
-                string query = $"SELECT * FROM DATE WHERE Shop = {shop}";
+                string query = "Get_Dates";
                 var cmd = new SqlCommand(query, DBConnection.Connection);
-                cmd.CommandType = CommandType.Text;
+                cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Add(new SqlParameter("Shop_IN", shop));
                 var reader = cmd.ExecuteReader();
                 if (reader.HasRows)
@@ -185,13 +185,12 @@ namespace Application.DatabaseControllers
                     if (reader.Read())
                     {
                         dateID = (int)reader["DateID"];
-
                         dateListId = (int)reader["DateListID"];
-
-                        shop = reader["Shop"].ToString();
                         day = (DateTime)reader["Day"];
+
+                        shopDB = reader["Shop"].ToString();
                         Shop newShop;
-                        if (shop == "kongensgade")
+                        if (shopDB == "kongensgade")
                         {
                             newShop = Shop.kongensgade;
                         }
