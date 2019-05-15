@@ -90,7 +90,11 @@ namespace UI.Views
                     UpdateSchedule(dates, 0);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
                     {
-                        weekday1txtbox.Text = "Fuck yes";
+                        UpdateComboboxes(true);
+                    }
+                    else
+                    {
+                        UpdateComboboxes(false);
                     }
                 }
                 else if (JanuaryTabControl.SelectedIndex == 1)
@@ -98,7 +102,11 @@ namespace UI.Views
                     UpdateSchedule(dates, 1);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
                     {
-                        weekday1txtbox.Text = "Fuck yes";
+                        UpdateComboboxes(true);
+                    }
+                    else
+                    {
+                        UpdateComboboxes(false);
                     }
                 }
                 else if (JanuaryTabControl.SelectedIndex == 2)
@@ -106,7 +114,11 @@ namespace UI.Views
                     UpdateSchedule(dates, 2);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
                     {
-                        weekday1txtbox.Text = "Fuck yes";
+                        UpdateComboboxes(true);
+                    }
+                    else
+                    {
+                        UpdateComboboxes(false);
                     }
                 }
                 else if (JanuaryTabControl.SelectedIndex == 3)
@@ -114,7 +126,11 @@ namespace UI.Views
                     UpdateSchedule(dates, 3);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
                     {
-                        weekday1txtbox.Text = "Fuck yes";
+                        UpdateComboboxes(true);
+                    }
+                    else
+                    {
+                        UpdateComboboxes(false);
                     }
                 }
                 else if (JanuaryTabControl.SelectedIndex == 4)
@@ -122,7 +138,11 @@ namespace UI.Views
                     UpdateSchedule(dates, 4);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
                     {
-                        weekday1txtbox.Text = "Fuck yes";
+                        UpdateComboboxes(true);
+                    }
+                    else
+                    {
+                        UpdateComboboxes(false);
                     }
                 }
             }
@@ -134,7 +154,11 @@ namespace UI.Views
                     UpdateSchedule(dates, 0);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
                     {
-                        weekday1txtbox.Text = "Fuck yes";
+                        UpdateComboboxes(true);
+                    }
+                    else
+                    {
+                        UpdateComboboxes(false);
                     }
                 }
                 else if (FebruaryTabControl.SelectedIndex == 1)
@@ -142,7 +166,11 @@ namespace UI.Views
                     UpdateSchedule(dates, 1);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
                     {
-                        weekday1txtbox.Text = "Fuck yes";
+                        UpdateComboboxes(true);
+                    }
+                    else
+                    {
+                        UpdateComboboxes(false);
                     }
                 }
                 else if (FebruaryTabControl.SelectedIndex == 2)
@@ -150,7 +178,11 @@ namespace UI.Views
                     UpdateSchedule(dates, 2);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
                     {
-                        weekday1txtbox.Text = "Fuck yes";
+                        UpdateComboboxes(true);
+                    }
+                    else
+                    {
+                        UpdateComboboxes(false);
                     }
                 }
                 else if (FebruaryTabControl.SelectedIndex == 3)
@@ -158,7 +190,11 @@ namespace UI.Views
                     UpdateSchedule(dates, 3);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
                     {
-                        weekday1txtbox.Text = "Fuck yes";
+                        UpdateComboboxes(true);
+                    }
+                    else
+                    {
+                        UpdateComboboxes(false);
                     }
                 }
                 else if (FebruaryTabControl.SelectedIndex == 4)
@@ -166,7 +202,11 @@ namespace UI.Views
                     UpdateSchedule(dates, 4);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
                     {
-                        weekday1txtbox.Text = "Fuck yes";
+                        UpdateComboboxes(true);
+                    }
+                    else
+                    {
+                        UpdateComboboxes(false);
                     }
                 }
             }
@@ -178,7 +218,11 @@ namespace UI.Views
                     UpdateSchedule(dates, 0);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
                     {
-                        weekday1txtbox.Text = "Fuck yes";
+                        UpdateComboboxes(true);
+                    }
+                    else
+                    {
+                        UpdateComboboxes(false);
                     }
                 }
                 else if (MarchTabControl.SelectedIndex == 1)
@@ -186,7 +230,11 @@ namespace UI.Views
                     UpdateSchedule(dates, 1);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
                     {
-                        weekday1txtbox.Text = "Fuck yes";
+                        UpdateComboboxes(true);
+                    }
+                    else
+                    {
+                        UpdateComboboxes(false);
                     }
                 }
                 else if (MarchTabControl.SelectedIndex == 2)
@@ -194,7 +242,11 @@ namespace UI.Views
                     UpdateSchedule(dates, 2);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
                     {
-                        weekday1txtbox.Text = "Fuck yes";
+                        UpdateComboboxes(true);
+                    }
+                    else
+                    {
+                        UpdateComboboxes(false);
                     }
                 }
                 else if (MarchTabControl.SelectedIndex == 3)
@@ -202,7 +254,11 @@ namespace UI.Views
                     UpdateSchedule(dates, 3);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
                     {
-                        weekday1txtbox.Text = "Fuck yes";
+                        UpdateComboboxes(true);
+                    }
+                    else
+                    {
+                        UpdateComboboxes(false);
                     }
                 }
                 else if (MarchTabControl.SelectedIndex == 4)
@@ -210,7 +266,11 @@ namespace UI.Views
                     UpdateSchedule(dates, 4);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
                     {
-                        weekday1txtbox.Text = "Fuck yes";
+                        UpdateComboboxes(true);
+                    }
+                    else
+                    {
+                        UpdateComboboxes(false);
                     }
                 }
             }
@@ -222,7 +282,11 @@ namespace UI.Views
                     UpdateSchedule(dates, 0);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
                     {
-                        weekday1txtbox.Text = "Fuck yes";
+                        UpdateComboboxes(true);
+                    }
+                    else
+                    {
+                        UpdateComboboxes(false);
                     }
                 }
                 else if (AprilTabControl.SelectedIndex == 1)
@@ -230,7 +294,11 @@ namespace UI.Views
                     UpdateSchedule(dates, 1);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
                     {
-                        weekday1txtbox.Text = "Fuck yes";
+                        UpdateComboboxes(true);
+                    }
+                    else
+                    {
+                        UpdateComboboxes(false);
                     }
                 }
                 else if (AprilTabControl.SelectedIndex == 2)
@@ -238,7 +306,11 @@ namespace UI.Views
                     UpdateSchedule(dates, 2);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
                     {
-                        weekday1txtbox.Text = "Fuck yes";
+                        UpdateComboboxes(true);
+                    }
+                    else
+                    {
+                        UpdateComboboxes(false);
                     }
                 }
                 else if (AprilTabControl.SelectedIndex == 3)
@@ -246,7 +318,11 @@ namespace UI.Views
                     UpdateSchedule(dates, 3);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
                     {
-                        weekday1txtbox.Text = "Fuck yes";
+                        UpdateComboboxes(true);
+                    }
+                    else
+                    {
+                        UpdateComboboxes(false);
                     }
                 }
                 else if (AprilTabControl.SelectedIndex == 4)
@@ -254,7 +330,11 @@ namespace UI.Views
                     UpdateSchedule(dates, 4);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
                     {
-                        weekday1txtbox.Text = "Fuck yes";
+                        UpdateComboboxes(true);
+                    }
+                    else
+                    {
+                        UpdateComboboxes(false);
                     }
                 }
             }
@@ -266,7 +346,11 @@ namespace UI.Views
                     UpdateSchedule(dates, 0);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
                     {
-                        weekday1txtbox.Text = "Fuck yes";
+                        UpdateComboboxes(true);
+                    }
+                    else
+                    {
+                        UpdateComboboxes(false);
                     }
                 }
                 else if (MayTabControl.SelectedIndex == 1)
@@ -274,7 +358,11 @@ namespace UI.Views
                     UpdateSchedule(dates, 1);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
                     {
-                        weekday1txtbox.Text = "Fuck yes";
+                        UpdateComboboxes(true);
+                    }
+                    else
+                    {
+                        UpdateComboboxes(false);
                     }
                 }
                 else if (MayTabControl.SelectedIndex == 2)
@@ -282,7 +370,11 @@ namespace UI.Views
                     UpdateSchedule(dates, 2);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
                     {
-                        weekday1txtbox.Text = "Fuck yes";
+                        UpdateComboboxes(true);
+                    }
+                    else
+                    {
+                        UpdateComboboxes(false);
                     }
                 }
                 else if (MayTabControl.SelectedIndex == 3)
@@ -290,7 +382,11 @@ namespace UI.Views
                     UpdateSchedule(dates, 3);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
                     {
-                        weekday1txtbox.Text = "Fuck yes";
+                        UpdateComboboxes(true);
+                    }
+                    else
+                    {
+                        UpdateComboboxes(false);
                     }
                 }
                 else if (MayTabControl.SelectedIndex == 4)
@@ -298,7 +394,11 @@ namespace UI.Views
                     UpdateSchedule(dates, 4);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
                     {
-                        weekday1txtbox.Text = "Fuck yes";
+                        UpdateComboboxes(true);
+                    }
+                    else
+                    {
+                        UpdateComboboxes(false);
                     }
                 }
             }
@@ -310,7 +410,11 @@ namespace UI.Views
                     UpdateSchedule(dates, 0);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
                     {
-                        weekday1txtbox.Text = "Fuck yes";
+                        UpdateComboboxes(true);
+                    }
+                    else
+                    {
+                        UpdateComboboxes(false);
                     }
                 }
                 else if (JuneTabControl.SelectedIndex == 1)
@@ -318,7 +422,11 @@ namespace UI.Views
                     UpdateSchedule(dates, 1);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
                     {
-                        weekday1txtbox.Text = "Fuck yes";
+                        UpdateComboboxes(true);
+                    }
+                    else
+                    {
+                        UpdateComboboxes(false);
                     }
                 }
                 else if (JuneTabControl.SelectedIndex == 2)
@@ -326,7 +434,11 @@ namespace UI.Views
                     UpdateSchedule(dates, 2);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
                     {
-                        weekday1txtbox.Text = "Fuck yes";
+                        UpdateComboboxes(true);
+                    }
+                    else
+                    {
+                        UpdateComboboxes(false);
                     }
                 }
                 else if (JuneTabControl.SelectedIndex == 3)
@@ -334,7 +446,11 @@ namespace UI.Views
                     UpdateSchedule(dates, 3);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
                     {
-                        weekday1txtbox.Text = "Fuck yes";
+                        UpdateComboboxes(true);
+                    }
+                    else
+                    {
+                        UpdateComboboxes(false);
                     }
                 }
                 else if (JuneTabControl.SelectedIndex == 4)
@@ -342,7 +458,11 @@ namespace UI.Views
                     UpdateSchedule(dates, 4);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
                     {
-                        weekday1txtbox.Text = "Fuck yes";
+                        UpdateComboboxes(true);
+                    }
+                    else
+                    {
+                        UpdateComboboxes(false);
                     }
                 }
             }
@@ -354,7 +474,11 @@ namespace UI.Views
                     UpdateSchedule(dates, 0);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
                     {
-                        weekday1txtbox.Text = "Fuck yes";
+                        UpdateComboboxes(true);
+                    }
+                    else
+                    {
+                        UpdateComboboxes(false);
                     }
                 }
                 else if (JulyTabControl.SelectedIndex == 1)
@@ -362,7 +486,11 @@ namespace UI.Views
                     UpdateSchedule(dates, 1);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
                     {
-                        weekday1txtbox.Text = "Fuck yes";
+                        UpdateComboboxes(true);
+                    }
+                    else
+                    {
+                        UpdateComboboxes(false);
                     }
                 }
                 else if (JulyTabControl.SelectedIndex == 2)
@@ -370,7 +498,11 @@ namespace UI.Views
                     UpdateSchedule(dates, 2);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
                     {
-                        weekday1txtbox.Text = "Fuck yes";
+                        UpdateComboboxes(true);
+                    }
+                    else
+                    {
+                        UpdateComboboxes(false);
                     }
                 }
                 else if (JulyTabControl.SelectedIndex == 3)
@@ -378,7 +510,11 @@ namespace UI.Views
                     UpdateSchedule(dates, 3);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
                     {
-                        weekday1txtbox.Text = "Fuck yes";
+                        UpdateComboboxes(true);
+                    }
+                    else
+                    {
+                        UpdateComboboxes(false);
                     }
                 }
                 else if (JulyTabControl.SelectedIndex == 4)
@@ -386,7 +522,11 @@ namespace UI.Views
                     UpdateSchedule(dates, 4);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
                     {
-                        weekday1txtbox.Text = "Fuck yes";
+                        UpdateComboboxes(true);
+                    }
+                    else
+                    {
+                        UpdateComboboxes(false);
                     }
                 }
             }
@@ -398,7 +538,11 @@ namespace UI.Views
                     UpdateSchedule(dates, 0);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
                     {
-                        weekday1txtbox.Text = "Fuck yes";
+                        UpdateComboboxes(true);
+                    }
+                    else
+                    {
+                        UpdateComboboxes(false);
                     }
                 }
                 else if (AugustTabControl.SelectedIndex == 1)
@@ -406,7 +550,11 @@ namespace UI.Views
                     UpdateSchedule(dates, 1);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
                     {
-                        weekday1txtbox.Text = "Fuck yes";
+                        UpdateComboboxes(true);
+                    }
+                    else
+                    {
+                        UpdateComboboxes(false);
                     }
                 }
                 else if (AugustTabControl.SelectedIndex == 2)
@@ -414,7 +562,11 @@ namespace UI.Views
                     UpdateSchedule(dates, 2);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
                     {
-                        weekday1txtbox.Text = "Fuck yes";
+                        UpdateComboboxes(true);
+                    }
+                    else
+                    {
+                        UpdateComboboxes(false);
                     }
                 }
                 else if (AugustTabControl.SelectedIndex == 3)
@@ -422,7 +574,11 @@ namespace UI.Views
                     UpdateSchedule(dates, 3);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
                     {
-                        weekday1txtbox.Text = "Fuck yes";
+                        UpdateComboboxes(true);
+                    }
+                    else
+                    {
+                        UpdateComboboxes(false);
                     }
                 }
                 else if (AugustTabControl.SelectedIndex == 4)
@@ -430,7 +586,11 @@ namespace UI.Views
                     UpdateSchedule(dates, 4);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
                     {
-                        weekday1txtbox.Text = "Fuck yes";
+                        UpdateComboboxes(true);
+                    }
+                    else
+                    {
+                        UpdateComboboxes(false);
                     }
                 }
             }
@@ -442,7 +602,11 @@ namespace UI.Views
                     UpdateSchedule(dates, 0);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
                     {
-                        weekday1txtbox.Text = "Fuck yes";
+                        UpdateComboboxes(true);
+                    }
+                    else
+                    {
+                        UpdateComboboxes(false);
                     }
                 }
                 else if (SeptemberTabControl.SelectedIndex == 1)
@@ -450,7 +614,11 @@ namespace UI.Views
                     UpdateSchedule(dates, 1);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
                     {
-                        weekday1txtbox.Text = "Fuck yes";
+                        UpdateComboboxes(true);
+                    }
+                    else
+                    {
+                        UpdateComboboxes(false);
                     }
                 }
                 else if (SeptemberTabControl.SelectedIndex == 2)
@@ -458,7 +626,11 @@ namespace UI.Views
                     UpdateSchedule(dates, 2);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
                     {
-                        weekday1txtbox.Text = "Fuck yes";
+                        UpdateComboboxes(true);
+                    }
+                    else
+                    {
+                        UpdateComboboxes(false);
                     }
                 }
                 else if (SeptemberTabControl.SelectedIndex == 3)
@@ -466,7 +638,11 @@ namespace UI.Views
                     UpdateSchedule(dates, 3);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
                     {
-                        weekday1txtbox.Text = "Fuck yes";
+                        UpdateComboboxes(true);
+                    }
+                    else
+                    {
+                        UpdateComboboxes(false);
                     }
                 }
                 else if (SeptemberTabControl.SelectedIndex == 4)
@@ -474,7 +650,11 @@ namespace UI.Views
                     UpdateSchedule(dates, 4);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
                     {
-                        weekday1txtbox.Text = "Fuck yes";
+                        UpdateComboboxes(true);
+                    }
+                    else
+                    {
+                        UpdateComboboxes(false);
                     }
                 }
             }
@@ -486,7 +666,11 @@ namespace UI.Views
                     UpdateSchedule(dates, 0);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
                     {
-                        weekday1txtbox.Text = "Fuck yes";
+                        UpdateComboboxes(true);
+                    }
+                    else
+                    {
+                        UpdateComboboxes(false);
                     }
                 }
                 else if (OctoberTabControl.SelectedIndex == 1)
@@ -494,7 +678,11 @@ namespace UI.Views
                     UpdateSchedule(dates, 1);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
                     {
-                        weekday1txtbox.Text = "Fuck yes";
+                        UpdateComboboxes(true);
+                    }
+                    else
+                    {
+                        UpdateComboboxes(false);
                     }
                 }
                 else if (OctoberTabControl.SelectedIndex == 2)
@@ -502,7 +690,11 @@ namespace UI.Views
                     UpdateSchedule(dates, 2);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
                     {
-                        weekday1txtbox.Text = "Fuck yes";
+                        UpdateComboboxes(true);
+                    }
+                    else
+                    {
+                        UpdateComboboxes(false);
                     }
                 }
                 else if (OctoberTabControl.SelectedIndex == 3)
@@ -510,7 +702,11 @@ namespace UI.Views
                     UpdateSchedule(dates, 3);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
                     {
-                        weekday1txtbox.Text = "Fuck yes";
+                        UpdateComboboxes(true);
+                    }
+                    else
+                    {
+                        UpdateComboboxes(false);
                     }
                 }
                 else if (OctoberTabControl.SelectedIndex == 4)
@@ -518,7 +714,11 @@ namespace UI.Views
                     UpdateSchedule(dates, 4);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
                     {
-                        weekday1txtbox.Text = "Fuck yes";
+                        UpdateComboboxes(true);
+                    }
+                    else
+                    {
+                        UpdateComboboxes(false);
                     }
                 }
             }
@@ -530,7 +730,11 @@ namespace UI.Views
                     UpdateSchedule(dates, 0);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
                     {
-                        weekday1txtbox.Text = "Fuck yes";
+                        UpdateComboboxes(true);
+                    }
+                    else
+                    {
+                        UpdateComboboxes(false);
                     }
                 }
                 else if (NovemberTabControl.SelectedIndex == 1)
@@ -538,7 +742,11 @@ namespace UI.Views
                     UpdateSchedule(dates, 1);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
                     {
-                        weekday1txtbox.Text = "Fuck yes";
+                        UpdateComboboxes(true);
+                    }
+                    else
+                    {
+                        UpdateComboboxes(false);
                     }
                 }
                 else if (NovemberTabControl.SelectedIndex == 2)
@@ -546,7 +754,11 @@ namespace UI.Views
                     UpdateSchedule(dates, 2);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
                     {
-                        weekday1txtbox.Text = "Fuck yes";
+                        UpdateComboboxes(true);
+                    }
+                    else
+                    {
+                        UpdateComboboxes(false);
                     }
                 }
                 else if (NovemberTabControl.SelectedIndex == 3)
@@ -554,7 +766,11 @@ namespace UI.Views
                     UpdateSchedule(dates, 3);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
                     {
-                        weekday1txtbox.Text = "Fuck yes";
+                        UpdateComboboxes(true);
+                    }
+                    else
+                    {
+                        UpdateComboboxes(false);
                     }
                 }
                 else if (NovemberTabControl.SelectedIndex == 4)
@@ -562,7 +778,11 @@ namespace UI.Views
                     UpdateSchedule(dates, 4);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
                     {
-                        weekday1txtbox.Text = "Fuck yes";
+                        UpdateComboboxes(true);
+                    }
+                    else
+                    {
+                        UpdateComboboxes(false);
                     }
                 }
             }
@@ -582,7 +802,11 @@ namespace UI.Views
                     UpdateSchedule(dates, 1);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
                     {
-                        weekday1txtbox.Text = "Fuck yes";
+                        UpdateComboboxes(true);
+                    }
+                    else
+                    {
+                        UpdateComboboxes(false);
                     }
                 }
                 else if (DecemberTabControl.SelectedIndex == 2)
@@ -590,7 +814,11 @@ namespace UI.Views
                     UpdateSchedule(dates, 2);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
                     {
-                        weekday1txtbox.Text = "Fuck yes";
+                        UpdateComboboxes(true);
+                    }
+                    else
+                    {
+                        UpdateComboboxes(false);
                     }
                 }
                 else if (DecemberTabControl.SelectedIndex == 3)
@@ -598,7 +826,11 @@ namespace UI.Views
                     UpdateSchedule(dates, 3);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
                     {
-                        weekday1txtbox.Text = "Fuck yes";
+                        UpdateComboboxes(true);
+                    }
+                    else
+                    {
+                        UpdateComboboxes(false);
                     }
                 }
                 else if (DecemberTabControl.SelectedIndex == 4)
@@ -606,16 +838,50 @@ namespace UI.Views
                     UpdateSchedule(dates, 4);
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
                     {
-                        weekday1txtbox.Text = "Fuck yes";
+                        UpdateComboboxes(true);
+                    }
+                    else
+                    {
+                        UpdateComboboxes(false);
                     }
                 }
+            }
+        }
+        public void UpdateComboboxes(bool decision)
+        {
+            if (decision == true)
+            {
+                weekday1combobox.IsEnabled = true;
+                weekday2combobox.IsEnabled = true;
+                weekday3combobox.IsEnabled = true;
+                weekday4combobox.IsEnabled = true;
+                weekday5combobox.IsEnabled = true;
+                weekday6combobox.IsEnabled = true;
+                weekday7combobox.IsEnabled = true;
+            }
+            else if (decision == false)
+            {
+                weekday1combobox.IsEnabled = false;
+                weekday2combobox.IsEnabled = false;
+                weekday3combobox.IsEnabled = false;
+                weekday4combobox.IsEnabled = false;
+                weekday5combobox.IsEnabled = false;
+                weekday6combobox.IsEnabled = false;
+                weekday7combobox.IsEnabled = false;
+                weekday1combobox.SelectedIndex = -1;
+                weekday2combobox.SelectedIndex = -1;
+                weekday3combobox.SelectedIndex = -1;
+                weekday4combobox.SelectedIndex = -1;
+                weekday5combobox.SelectedIndex = -1;
+                weekday6combobox.SelectedIndex = -1;
+                weekday7combobox.SelectedIndex = -1;
             }
         }
 
 
 
 
-            private void UpdateSchedule(DateTime[] dates, int i)
+        private void UpdateSchedule(DateTime[] dates, int i)
         {
          
             weekday1label.Content = dates[0].Date.AddDays(i * 7).ToString();
