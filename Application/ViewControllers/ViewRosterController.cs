@@ -35,19 +35,18 @@ namespace Application.ViewControllers
         }
         public static bool CheckIfDateExists(string date,string shop)
         {
+            List<Date> dates = DBRosterController.GetDates(shop);
+            string newDate = date.Substring(0, 10);
             bool checkIfTrue = false;
-            foreach (var day in DBRosterController.GetDates(shop))
+            foreach (var day in dates)
             {
-                if (date == day.Day.ToString())
+                string newDay = day.Day.ToString().Substring(0, 10);
+                if (newDate == newDay)
                 {
                     checkIfTrue = true;
-
                 }
             }
             return checkIfTrue;
-      
         }
-
-
     }
 }

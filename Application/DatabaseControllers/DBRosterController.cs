@@ -182,7 +182,7 @@ namespace Application.DatabaseControllers
                 var reader = cmd.ExecuteReader();
                 if (reader.HasRows)
                 {
-                    if (reader.Read())
+                    while (reader.Read())
                     {
                         dateID = (int)reader["DateID"];
                         dateListId = (int)reader["DateListID"];
