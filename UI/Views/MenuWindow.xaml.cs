@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Microsoft.VisualBasic;
 
 namespace UI.Views
 {
@@ -30,13 +31,17 @@ namespace UI.Views
         {
             AddShiftsWindow addShiftsWindow = new AddShiftsWindow();
             addShiftsWindow.Show();
-            
         }
 
         private void ShowRostersBtn_Click(object sender, RoutedEventArgs e)
         {
-            ShowRosterWindow showRosterWindow = new ShowRosterWindow();
-            showRosterWindow.Show();
+            string result = Interaction.InputBox("Write shop name", "", "shop");
+
+            if(result != "shop")
+            {
+                ShowRosterWindow showRosterWindow = new ShowRosterWindow(result);
+                showRosterWindow.Show();
+            }
         }
 
         private void LogOutBtn_Click(object sender, RoutedEventArgs e)
