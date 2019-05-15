@@ -33,6 +33,20 @@ namespace Application.ViewControllers
 
             RosterRepository.AddRoster(roster);
         }
+        public static bool CheckIfDateExists(string date,string shop)
+        {
+            bool checkIfTrue = false;
+            foreach (var day in DBRosterController.GetDates(shop))
+            {
+                if (date == day.Day.ToString())
+                {
+                    checkIfTrue = true;
+
+                }
+            }
+            return checkIfTrue;
+      
+        }
 
 
     }

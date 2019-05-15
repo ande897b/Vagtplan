@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Application;
 using Application.Repositories;
+using Application.ViewControllers;
 using Domain.Models;
 
 namespace UI.Views
@@ -23,17 +24,15 @@ namespace UI.Views
         List<Roster> rosters = RosterRepository.GetRosters();
         public ShowRosterWindow(string boxResult)
         { 
-            if(boxResult == "kongensgade")
+            if(boxResult.ToLower() == "kongensgade")
             {
                 Shop = Shop.kongensgade;
             }
-            else if (boxResult == "skibhusvej")
+            else if (boxResult.ToLower() == "skibhusvej")
             {
                 Shop = Shop.skibhusvej;
             }
-
             InitializeComponent();
-
             //List<Roster> rosters = RosterRepository.GetRosters();
             //rosterArrays = new List<Roster[]>();
 
@@ -83,34 +82,39 @@ namespace UI.Views
 
         private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            DateTime[] dates = GetDates(2019, tabControl.SelectedIndex+1).ToArray();
             if (tabControl.SelectedIndex == 0) // januar
             {
-                List<DateTime> dateTimes = new List<DateTime>(GetDates(2019, 01));
-                List<Date> dates = new List<Date>();
+               
+               // List<Date> dates = new List<Date>();
                 if (JanuaryTabControl.SelectedIndex == 0)
                 {
-                    bool dayFound = false;
-                    int j = rosters.Count - 1;
-
-                    while (j >= 0 && dayFound == false)
-                    {
-                        int l = 0;
-                        while (l <= rosters[j].Dates.Count - 1 && dayFound == false)
-                        {
-                            string rosterDay = rosters[j].Dates[l].ToString().Substring(0, 2);
-                            string rosterMonth = rosters[j].Dates[l].ToString().Substring(3, 2);
-                            if (rosterMonth == "01" && rosterDay == "01" || rosterMonth == "01" && rosterDay == "02" || rosterMonth == "01" && rosterDay == "03" || rosterMonth == "01" && rosterDay == "04" || rosterMonth == "01" && rosterDay == "05" || rosterMonth == "01" && rosterDay == "06" || rosterMonth == "01" && rosterDay == "07")
-                            {               
-                                dates = GetSpecificDates(rosters[j].Dates, "01/01/2019");
-                                
-                                dayFound = true;
-                            }
-                            l++;
-                        }
-                        j--;
-                    }
                     UpdateSchedule(dates, 0);
+                    if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(),Shop.ToString()))
+                    {
+                        weekday1txtbox.Text = "Fuck yes";
+                    }
+                    //bool dayFound = false;
+                    //int j = rosters.Count - 1;
+
+                    //while (j >= 0 && dayFound == false)
+                    //{
+                    //    int l = 0;
+                    //    while (l <= rosters[j].Dates.Count - 1 && dayFound == false)
+                    //    {
+                    //        string rosterDay = rosters[j].Dates[l].ToString().Substring(0, 2);
+                    //        string rosterMonth = rosters[j].Dates[l].ToString().Substring(3, 2);
+                    //        if (rosterMonth == "01" && rosterDay == "01" || rosterMonth == "01" && rosterDay == "02" || rosterMonth == "01" && rosterDay == "03" || rosterMonth == "01" && rosterDay == "04" || rosterMonth == "01" && rosterDay == "05" || rosterMonth == "01" && rosterDay == "06" || rosterMonth == "01" && rosterDay == "07")
+                    //        {               
+                    //            dates = GetSpecificDates(rosters[j].Dates, "01/01/2019");
+                                
+                    //            dayFound = true;
+                    //        }
+                    //        l++;
+                    //    }
+                    //    j--;
+                    //}
+                    //UpdateSchedule(dates, 0);
                 }
                 else if (JanuaryTabControl.SelectedIndex == 1)
                 {
@@ -127,7 +131,7 @@ namespace UI.Views
                             if (rosterMonth == "01" && rosterDay == "08" || rosterMonth == "01" && rosterDay == "09" || rosterMonth == "01" && rosterDay == "10" || rosterMonth == "01" && rosterDay == "11" || rosterMonth == "01" && rosterDay == "12" || rosterMonth == "01" && rosterDay == "13" || rosterMonth == "01" && rosterDay == "14")
                             {
                                 DateTime newDay = new DateTime(2019, 01, 01);
-                                dates = GetSpecificDates(rosters[j].Dates, "08/01/2019");
+                               // dates = GetSpecificDates(rosters[j].Dates, "08/01/2019");
                                 
                                 dayFound = true;
                             }
@@ -152,7 +156,7 @@ namespace UI.Views
                             if (rosterMonth == "01" && rosterDay == "15" || rosterMonth == "01" && rosterDay == "16" || rosterMonth == "01" && rosterDay == "17" || rosterMonth == "01" && rosterDay == "18" || rosterMonth == "01" && rosterDay == "19" || rosterMonth == "01" && rosterDay == "20" || rosterMonth == "01" && rosterDay == "21")
                             {
                                 DateTime newDay = new DateTime(2019, 01, 01);
-                                dates = GetSpecificDates(rosters[j].Dates, "15/01");
+                             //   dates = GetSpecificDates(rosters[j].Dates, "15/01");
                            
                                 dayFound = true;
                             }
@@ -177,7 +181,7 @@ namespace UI.Views
                             if (rosterMonth == "01" && rosterDay == "22" || rosterMonth == "01" && rosterDay == "23" || rosterMonth == "01" && rosterDay == "24" || rosterMonth == "01" && rosterDay == "25" || rosterMonth == "01" && rosterDay == "26" || rosterMonth == "01" && rosterDay == "27" || rosterMonth == "01" && rosterDay == "28")
                             {
                                 DateTime newDay = new DateTime(2019, 01, 01);
-                                dates = GetSpecificDates(rosters[j].Dates, "22/01");
+                                //dates = GetSpecificDates(rosters[j].Dates, "22/01");
                                 
                                 dayFound = true;
                             }
@@ -202,7 +206,7 @@ namespace UI.Views
                             if (rosterMonth == "01" && rosterDay == "29" || rosterMonth == "01" && rosterDay == "30" || rosterMonth == "01" && rosterDay == "31")
                             {
                                 DateTime newDay = new DateTime(2019, 01, 01);
-                                dates = GetSpecificDates(rosters[j].Dates, "29/01");
+                             //   dates = GetSpecificDates(rosters[j].Dates, "29/01");
 
                                 dayFound = true;
                             }
@@ -214,85 +218,85 @@ namespace UI.Views
                 }
             }
 
-            if (tabControl.SelectedIndex == 1) // Februar
-            {
-                List<DateTime> dateTimes = new List<DateTime>(GetDates(2019, 02));
-                List<Date> dates = new List<Date>();
-                if (FebruaryTabControl.SelectedIndex == 0)
-                {
-                    bool dayFound = false;
-                    int j = rosters.Count - 1;
+            //if (tabControl.SelectedIndex == 1) // Februar
+            //{
+            //    List<DateTime> dateTimes = new List<DateTime>(GetDates(2019, 02));
+            //    List<Date> dates = new List<Date>();
+            //    if (FebruaryTabControl.SelectedIndex == 0)
+            //    {
+            //        bool dayFound = false;
+            //        int j = rosters.Count - 1;
 
-                    while (j >= 0 && dayFound == false)
-                    {
-                        int l = 0;
-                        while (l <= rosters[j].Dates.Count - 1 && dayFound == false)
-                        {
-                            string rosterDay = rosters[j].Dates[l].ToString().Substring(0, 2);
-                            string rosterMonth = rosters[j].Dates[l].ToString().Substring(3, 2);
-                            if (rosterMonth == "02" && rosterDay == "01" || rosterMonth == "02" && rosterDay == "02" || rosterMonth == "02" && rosterDay == "03" || rosterMonth == "02" && rosterDay == "04" || rosterMonth == "02" && rosterDay == "05" || rosterMonth == "02" && rosterDay == "06" || rosterMonth == "02" && rosterDay == "07")
-                            {
-                                dates = GetSpecificDates(rosters[j].Dates, "01/02/2019");
+            //        while (j >= 0 && dayFound == false)
+            //        {
+            //            int l = 0;
+            //            while (l <= rosters[j].Dates.Count - 1 && dayFound == false)
+            //            {
+            //                string rosterDay = rosters[j].Dates[l].ToString().Substring(0, 2);
+            //                string rosterMonth = rosters[j].Dates[l].ToString().Substring(3, 2);
+            //                if (rosterMonth == "02" && rosterDay == "01" || rosterMonth == "02" && rosterDay == "02" || rosterMonth == "02" && rosterDay == "03" || rosterMonth == "02" && rosterDay == "04" || rosterMonth == "02" && rosterDay == "05" || rosterMonth == "02" && rosterDay == "06" || rosterMonth == "02" && rosterDay == "07")
+            //                {
+            //                    dates = GetSpecificDates(rosters[j].Dates, "01/02/2019");
 
-                                dayFound = true;
-                            }
-                            l++;
-                        }
-                        j--;
-                    }
-                    UpdateSchedule(dates, 0);
-                }
-                else if (FebruaryTabControl.SelectedIndex == 1)
-                {
-                    bool dayFound = false;
-                    int j = rosters.Count - 1;
+            //                    dayFound = true;
+            //                }
+            //                l++;
+            //            }
+            //            j--;
+            //        }
+            //        UpdateSchedule(dates, 0);
+            //    }
+            //    else if (FebruaryTabControl.SelectedIndex == 1)
+            //    {
+            //        bool dayFound = false;
+            //        int j = rosters.Count - 1;
 
-                    while (j >= 0 && dayFound == false)
-                    {
-                        int l = 0;
-                        while (l <= rosters[j].Dates.Count - 1 && dayFound == false)
-                        {
-                            string rosterDay = rosters[j].Dates[l].ToString().Substring(0, 2);
-                            string rosterMonth = rosters[j].Dates[l].ToString().Substring(3, 2);
-                            if (rosterMonth == "02" && rosterDay == "08" || rosterMonth == "02" && rosterDay == "09" || rosterMonth == "02" && rosterDay == "10" || rosterMonth == "02" && rosterDay == "11" || rosterMonth == "02" && rosterDay == "12" || rosterMonth == "02" && rosterDay == "13" || rosterMonth == "02" && rosterDay == "14")
-                            {
-                                DateTime newDay = new DateTime(2019, 01, 01);
-                                dates = GetSpecificDates(rosters[j].Dates, "08/02/2019");
+            //        while (j >= 0 && dayFound == false)
+            //        {
+            //            int l = 0;
+            //            while (l <= rosters[j].Dates.Count - 1 && dayFound == false)
+            //            {
+            //                string rosterDay = rosters[j].Dates[l].ToString().Substring(0, 2);
+            //                string rosterMonth = rosters[j].Dates[l].ToString().Substring(3, 2);
+            //                if (rosterMonth == "02" && rosterDay == "08" || rosterMonth == "02" && rosterDay == "09" || rosterMonth == "02" && rosterDay == "10" || rosterMonth == "02" && rosterDay == "11" || rosterMonth == "02" && rosterDay == "12" || rosterMonth == "02" && rosterDay == "13" || rosterMonth == "02" && rosterDay == "14")
+            //                {
+            //                    DateTime newDay = new DateTime(2019, 01, 01);
+            //                    dates = GetSpecificDates(rosters[j].Dates, "08/02/2019");
 
-                                dayFound = true;
-                            }
-                            l++;
-                        }
-                        j--;
-                    }
-                    UpdateSchedule(dates, 1);
-                }
-                else if (FebruaryTabControl.SelectedIndex == 2)
-                {
-                    bool dayFound = false;
-                    int j = rosters.Count - 1;
+            //                    dayFound = true;
+            //                }
+            //                l++;
+            //            }
+            //            j--;
+            //        }
+            //        UpdateSchedule(dates, 1);
+            //    }
+            //    else if (FebruaryTabControl.SelectedIndex == 2)
+            //    {
+            //        bool dayFound = false;
+            //        int j = rosters.Count - 1;
 
-                    while (j >= 0 && dayFound == false)
-                    {
-                        int l = 0;
-                        while (l <= rosters[j].Dates.Count - 1 && dayFound == false)
-                        {
-                            string rosterDay = rosters[j].Dates[l].Day.ToString().Substring(0, 2);
-                            string rosterMonth = rosters[j].Dates[l].Day.ToString().Substring(3, 2);
-                            if (rosterMonth == "02" && rosterDay == "15" || rosterMonth == "02" && rosterDay == "16" || rosterMonth == "02" && rosterDay == "17" || rosterMonth == "02" && rosterDay == "18" || rosterMonth == "02" && rosterDay == "19" || rosterMonth == "02" && rosterDay == "20" || rosterMonth == "02" && rosterDay == "21")
-                            {
-                                DateTime newDay = new DateTime(2019, 01, 01);
-                                dates = GetSpecificDates(rosters[j].Dates, "15/02");
+            //        while (j >= 0 && dayFound == false)
+            //        {
+            //            int l = 0;
+            //            while (l <= rosters[j].Dates.Count - 1 && dayFound == false)
+            //            {
+            //                string rosterDay = rosters[j].Dates[l].Day.ToString().Substring(0, 2);
+            //                string rosterMonth = rosters[j].Dates[l].Day.ToString().Substring(3, 2);
+            //                if (rosterMonth == "02" && rosterDay == "15" || rosterMonth == "02" && rosterDay == "16" || rosterMonth == "02" && rosterDay == "17" || rosterMonth == "02" && rosterDay == "18" || rosterMonth == "02" && rosterDay == "19" || rosterMonth == "02" && rosterDay == "20" || rosterMonth == "02" && rosterDay == "21")
+            //                {
+            //                    DateTime newDay = new DateTime(2019, 01, 01);
+            //                    dates = GetSpecificDates(rosters[j].Dates, "15/02");
 
-                                dayFound = true;
-                            }
-                            l++;
-                        }
-                        j--;
-                    }
-                    UpdateSchedule(dates, 2);
-                }
-                //    else if (FebruaryTabControl.SelectedIndex == 3)
+            //                    dayFound = true;
+            //                }
+            //                l++;
+            //            }
+            //            j--;
+            //        }
+            //        UpdateSchedule(dates, 2);
+            //    }
+            //    //    else if (FebruaryTabControl.SelectedIndex == 3)
                 //    {
                 //        bool dayFound = false;
                 //        int j = rosters.Count - 1;
@@ -1616,81 +1620,82 @@ namespace UI.Views
                 //        UpdateSchedule'(dates, 4);
                 //    }
             }
-        }
 
 
 
-        private void UpdateSchedule(List<Date> dates, int i)
+
+        private void UpdateSchedule(DateTime[] dates, int i)
         {
-            weekday1label.Content = dates[0].Day.AddDays(i * 7).ToString();
-            if (RosterRepository.CheckIfExists(dates[0].Day.AddDays(i * 7)) == true)
-            {
-                weekday1txtbox.Text = "Vagtplan Found";
-            }
-            else if (RosterRepository.CheckIfExists(dates[0].Day.AddDays(i * 7)) == false)
-            {
-                weekday1txtbox.Text = "Vagtplan Not found";
-            }
+         
+            weekday1label.Content = dates[0].Date.AddDays(i * 7).ToString();
+            //if (RosterRepository.CheckIfExists(dates[0].Day.AddDays(i * 7)) == true)
+            //{
+            //    weekday1txtbox.Text = "Vagtplan Found";
+            //}
+            //else if (RosterRepository.CheckIfExists(dates[0].Day.AddDays(i * 7)) == false)
+            //{
+            //    weekday1txtbox.Text = "Vagtplan Not found";
+            //}
 
-            weekday2label.Content = dates[1].Day.AddDays(i * 7).ToString();
-            if (RosterRepository.CheckIfExists(dates[1].Day.AddDays(i * 7)) == true)
-            {
-                weekday2txtbox.Text = "Vagtplan Found";
-            }
-            else if (RosterRepository.CheckIfExists(dates[1].Day.AddDays(i * 7)) == false)
-            {
-                weekday2txtbox.Text = "Vagtplan Not found";
-            }
+            weekday2label.Content = dates[1].Date.AddDays(i * 7).ToString();
+       //     if (RosterRepository.CheckIfExists(dates[1].Day.AddDays(i * 7)) == true)
+            //{
+            //    weekday2txtbox.Text = "Vagtplan Found";
+            //}
+            //else if (RosterRepository.CheckIfExists(dates[1].Day.AddDays(i * 7)) == false)
+            //{
+            //    weekday2txtbox.Text = "Vagtplan Not found";
+            //}
 
-            weekday3label.Content = dates[02].Day.AddDays(i * 7).ToString();
-            if (RosterRepository.CheckIfExists(dates[2].Day.AddDays(i * 7)) == true)
-            {
-                weekday3txtbox.Text = "Vagtplan Found";
-            }
-            else if (RosterRepository.CheckIfExists(dates[2].Day.AddDays(i * 7)) == false)
-            {
-                weekday3txtbox.Text = "Vagtplan Not found";
-            }
+            weekday3label.Content = dates[02].Date.AddDays(i * 7).ToString();
+           // if (RosterRepository.CheckIfExists(dates[2].Day.AddDays(i * 7)) == true)
+            //{
+            //    weekday3txtbox.Text = "Vagtplan Found";
+            //}
+            //else if (RosterRepository.CheckIfExists(dates[2].Day.AddDays(i * 7)) == false)
+            //{
+            //    weekday3txtbox.Text = "Vagtplan Not found";
+            //}
 
-            weekday4label.Content = dates[03].Day.AddDays(i * 7).ToString();
-            if (RosterRepository.CheckIfExists(dates[3].Day.AddDays(i * 7)) == true)
-            {
-                weekday4txtbox.Text = "Vagtplan Found";
-            }
-            else if (RosterRepository.CheckIfExists(dates[3].Day.AddDays(i * 7)) == false)
-            {
-                weekday4txtbox.Text = "Vagtplan Not found";
-            }
+            weekday4label.Content = dates[03].Date.AddDays(i * 7).ToString();
+            //if (RosterRepository.CheckIfExists(dates[3].Day.AddDays(i * 7)) == true)
+            //{
+            //    weekday4txtbox.Text = "Vagtplan Found";
+            //}
+            //else if (RosterRepository.CheckIfExists(dates[3].Day.AddDays(i * 7)) == false)
+            //{
+            //    weekday4txtbox.Text = "Vagtplan Not found";
+            //}
 
-            weekday5label.Content = dates[04].Day.AddDays(i * 7).ToString();
-            if (RosterRepository.CheckIfExists(dates[4].Day.AddDays(i * 7)) == true)
-            {
-                weekday5txtbox.Text = "Vagtplan Found";
-            }
-            else if (RosterRepository.CheckIfExists(dates[04].Day.AddDays(i * 7)) == false)
-            {
-                weekday5txtbox.Text = "Vagtplan Not found";
-            }
+            weekday5label.Content = dates[04].Date.AddDays(i * 7).ToString();
+            //if (RosterRepository.CheckIfExists(dates[4].Day.AddDays(i * 7)) == true)
+            //{
+            //    weekday5txtbox.Text = "Vagtplan Found";
+            //}
+            //else if (RosterRepository.CheckIfExists(dates[04].Day.AddDays(i * 7)) == false)
+            //{
+            //    weekday5txtbox.Text = "Vagtplan Not found";
+            //}
 
-            weekday6label.Content = dates[05].Day.AddDays(i * 7).ToString();
-            if (RosterRepository.CheckIfExists(dates[5].Day.AddDays(i * 7)) == true)
-            {
-                weekday6txtbox.Text = "Vagtplan Found";
-            }
-            else if (RosterRepository.CheckIfExists(dates[5].Day.AddDays(i * 7)) == false)
-            {
-                weekday6txtbox.Text = "Vagtplan Not found";
-            }
+            weekday6label.Content = dates[05].Date.AddDays(i * 7).ToString();
+            //if (RosterRepository.CheckIfExists(dates[5].Day.AddDays(i * 7)) == true)
+            //{
+            //    weekday6txtbox.Text = "Vagtplan Found";
+            //}
+            //else if (RosterRepository.CheckIfExists(dates[5].Day.AddDays(i * 7)) == false)
+            //{
+            //    weekday6txtbox.Text = "Vagtplan Not found";
+            //}
 
-            weekday7label.Content = dates[06].Day.AddDays(i * 7).ToString();
-            if (RosterRepository.CheckIfExists(dates[6].Day.AddDays(i * 7)) == true)
-            {
-                weekday7txtbox.Text = "Vagtplan Found";
-            }
-            else if (RosterRepository.CheckIfExists(dates[06].Day.AddDays(i * 7)) == false)
-            {
-                weekday7txtbox.Text = "Vagtplan Not found";
-            }
+            weekday7label.Content = dates[06].Date.AddDays(i * 7).ToString();
+            //if (RosterRepository.CheckIfExists(dates[6].Day.AddDays(i * 7)) == true)
+            //{
+            //    weekday7txtbox.Text = "Vagtplan Found";
+            //}
+            //else if (RosterRepository.CheckIfExists(dates[06].Day.AddDays(i * 7)) == false)
+            //{
+            //    weekday7txtbox.Text = "Vagtplan Not found";
+            //}
         }
     }
 }

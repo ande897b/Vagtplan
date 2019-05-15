@@ -15,7 +15,7 @@ namespace Application.DatabaseControllers
     {
         public static void LoadRosters()
         {
-           
+
             DateTime startDate = DateTime.Now;
             DateTime endDate = DateTime.Now;
             string shop = null;
@@ -30,7 +30,7 @@ namespace Application.DatabaseControllers
                 {
                     while (reader.Read())
                     {
-                      
+
 
                         startDate = (DateTime)reader["StartDate"];
 
@@ -162,6 +162,53 @@ namespace Application.DatabaseControllers
                     DBConnection.Close();
                 }
             }
+        }
+        public static List<Date> GetDates(string shop)
+        {
+            List<Date> dates = new List<Date>();
+            string ID = null;
+
+            DateTime day;
+            int dateID;
+            int dateListId;
+
+            DBConnection.DatabaseName = "CANE";
+            if (DBConnection.IsConnected())
+            {
+                string query = $"SELECT * FROM DATE WHERE Shop = {shop}";
+                var cmd = new SqlCommand(query, DBConnection.Connection);
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.Add(new SqlParameter("Shop_IN", shop));
+                var reader = cmd.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    if (reader.Read())
+                    {
+                        dateID = (int)reader["DateID"];
+
+                        dateListId = (int)reader["DateListID"];
+
+                        shop = reader["Shop"].ToString();
+                        day = (DateTime)reader["Day"];
+                        Shop newShop;
+                        if (shop == "kongensgade")
+                        {
+                            newShop = Shop.kongensgade;
+                        }
+                        else
+                        {
+                            newShop = Shop.skibhusvej;
+                        }
+
+                        Date date = new Date(day, dateID, dateListId, newShop);
+                        dates.Add(date);
+
+                    }
+                    DBConnection.Close();
+                }
+                
+            }
+            return dates;
         }
     }
 }

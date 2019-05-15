@@ -6,18 +6,21 @@ namespace Domain.Models
     public class Date
     {
         public DateTime Day { get; set; }
-        public List<Duty> Duties { get; set; }
+
         public Shop Shop { get; set; }
+        public int DateID { get; set; }
+        public int DateListId { get; set; }
 
         public Date (DateTime day, Shop shop)
         {
             Day = day;
             Shop = shop;
         }
-        public Date(DateTime day, List<Duty> duties, Shop shop)
+        public Date(DateTime day, int dateID,int dateListID, Shop shop)
         {
             Day = day;
-            Duties = duties;
+            DateID = dateID;
+            DateListId = dateListID;
             Shop = shop;
         }
     }
