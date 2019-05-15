@@ -20,6 +20,10 @@ namespace UI.Views
         public MenuWindow()
         {
             InitializeComponent();
+            if (departmentcombobox.SelectedIndex == -1)
+            {
+                ShowRostersBtn.IsEnabled = false;
+            }
         }
         private void CreateRosterBtn_Click(object sender, RoutedEventArgs e)
         {
@@ -35,13 +39,10 @@ namespace UI.Views
 
         private void ShowRostersBtn_Click(object sender, RoutedEventArgs e)
         {
-            string result = Interaction.InputBox("Write shop name", "", "shop");
-
-            if(result != "shop")
-            {
-                ShowRosterWindow showRosterWindow = new ShowRosterWindow(result);
+            
+                ShowRosterWindow showRosterWindow = new ShowRosterWindow(departmentcombobox.Text);
                 showRosterWindow.Show();
-            }
+            
         }
 
         private void LogOutBtn_Click(object sender, RoutedEventArgs e)
@@ -49,6 +50,14 @@ namespace UI.Views
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
                 this.Close();
+        }
+
+        private void departmentcombobox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (departmentcombobox.SelectedIndex != -1)
+            {
+                ShowRostersBtn.IsEnabled = true;
+            }
         }
     }
 }

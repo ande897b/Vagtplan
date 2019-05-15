@@ -11,6 +11,11 @@
         <Button x:Name="AddShiftsBtn" Content="Tilføj vagter til vagtplan" HorizontalAlignment="Left" Margin="574,149,0,0" VerticalAlignment="Top" Width="144" Height="55" Click="AddShiftsBtn_Click"/>
         <Button x:Name="ShowRostersBtn" Content="Se Vagtplan" HorizontalAlignment="Left" VerticalAlignment="Top" Width="144" Margin="91,62,0,0" Height="55" Click="ShowRostersBtn_Click"/>
         <Button x:Name="LogOutBtn" Content="Log Ud" HorizontalAlignment="Left" Margin="681,383,0,0" VerticalAlignment="Top" Width="101" Height="26" Click="LogOutBtn_Click"/>
+        <Label x:Name="label" Content="Vælg Butiksafdeling" HorizontalAlignment="Left" Margin="91,0,0,0" VerticalAlignment="Top" Width="144"/>
+        <ComboBox  x:Name="departmentcombobox" HorizontalAlignment="Left" Margin="91,31,0,0" VerticalAlignment="Top" Width="144" SelectionChanged="departmentcombobox_SelectionChanged">
+            <ComboBoxItem Content="Skibhusvej" />
+            <ComboBoxItem Content="Kongensgade" />            
+        </ComboBox>
 
     </Grid>
 </Window>
