@@ -166,7 +166,7 @@ namespace Application.DatabaseControllers
 
             DateTime day;
             int dateID;
-            int dateListId;
+            int rosterID;
             string shopDB = null;
 
             DBConnection.DatabaseName = "CANE";
@@ -182,7 +182,7 @@ namespace Application.DatabaseControllers
                     while (reader.Read())
                     {
                         dateID = (int)reader["DateID"];
-                        dateListId = (int)reader["DateListID"];
+                        rosterID = (int)reader["RosterID"];
                         day = (DateTime)reader["Day"];
 
                         shopDB = reader["Shop"].ToString();
@@ -196,7 +196,7 @@ namespace Application.DatabaseControllers
                             newShop = Shop.skibhusvej;
                         }
 
-                        Date date = new Date(day, dateID, dateListId, newShop);
+                        Date date = new Date(day, dateID, rosterID, newShop);
                         dates.Add(date);
 
                     }

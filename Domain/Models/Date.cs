@@ -9,18 +9,18 @@ namespace Domain.Models
 
         public Shop Shop { get; set; }
         public int DateID { get; set; }
-        public int DateListId { get; set; }
+        public int RosterID { get; set; }
 
         public Date (DateTime day, Shop shop)
         {
             Day = day;
             Shop = shop;
         }
-        public Date(DateTime day, int dateID,int dateListID, Shop shop)
+        public Date(DateTime day, int dateID,int rosterID, Shop shop)
         {
             Day = day;
             DateID = dateID;
-            DateListId = dateListID;
+            RosterID = rosterID;
             Shop = shop;
         }
     }
