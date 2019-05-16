@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Microsoft.VisualBasic;
 
 namespace UI.Views
 {
@@ -19,6 +20,10 @@ namespace UI.Views
         public MenuWindow()
         {
             InitializeComponent();
+            if (departmentcombobox.SelectedIndex == -1)
+            {
+                ShowRostersBtn.IsEnabled = false;
+            }
         }
         private void CreateRosterBtn_Click(object sender, RoutedEventArgs e)
         {
@@ -30,13 +35,14 @@ namespace UI.Views
         {
             AddShiftsWindow addShiftsWindow = new AddShiftsWindow();
             addShiftsWindow.Show();
-            
         }
 
         private void ShowRostersBtn_Click(object sender, RoutedEventArgs e)
         {
-            ShowRosterWindow showRosterWindow = new ShowRosterWindow();
-            showRosterWindow.Show();
+            
+                ShowRosterWindow showRosterWindow = new ShowRosterWindow(departmentcombobox.Text);
+                showRosterWindow.Show();
+            
         }
 
         private void LogOutBtn_Click(object sender, RoutedEventArgs e)
@@ -44,6 +50,14 @@ namespace UI.Views
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
                 this.Close();
+        }
+
+        private void departmentcombobox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (departmentcombobox.SelectedIndex != -1)
+            {
+                ShowRostersBtn.IsEnabled = true;
+            }
         }
     }
 }

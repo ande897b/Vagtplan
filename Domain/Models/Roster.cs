@@ -20,16 +20,24 @@ namespace Domain.Models
     
     public class Roster
     {
-        public int RosterID { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
         public Shop Shop { get; set; }
+        public List<Date> Dates { get; set; }
 
         public Roster(DateTime startDate, DateTime endDate, Shop shop)
         {
             StartDate = startDate;
             EndDate = endDate;
             Shop = shop;
+        }
+
+        public Roster(DateTime startDate, DateTime endDate, Shop shop, List<Date> dates)
+        {
+            StartDate = startDate;
+            EndDate = endDate;
+            Shop = shop;
+            Dates = dates;
         }
     }
 }
