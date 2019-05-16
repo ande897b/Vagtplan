@@ -39,9 +39,6 @@ namespace UI.Views
                 rosterArrays.Add(dates);
             }
         }
-
-       
-
         public static List<DateTime> GetDates(int year, int month)
         {
             return Enumerable.Range(1, DateTime.DaysInMonth(year, month))  // Days: 1, 2 ... 31 etc.
@@ -67,9 +64,6 @@ namespace UI.Views
             }
             return specificDates;
         }
-
-       
-
         private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
@@ -1653,7 +1647,7 @@ namespace UI.Views
             {
                 weekday5txtbox.Text = "Vagtplan Found";
             }
-            else if (RosterRepository.CheckIfExists(dates[04].AddDays(i * 7)) == false)
+            else if (RosterRepository.CheckIfExists(dates[4].AddDays(i * 7)) == false)
             {
                 weekday5txtbox.Text = "Vagtplan Not found";
             }
@@ -1673,7 +1667,7 @@ namespace UI.Views
             {
                 weekday7txtbox.Text = "Vagtplan Found";
             }
-            else if (RosterRepository.CheckIfExists(dates[06].AddDays(i * 7)) == false)
+            else if (RosterRepository.CheckIfExists(dates[6].AddDays(i * 7)) == false)
             {
                 weekday7txtbox.Text = "Vagtplan Not found";
             }
