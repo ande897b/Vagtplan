@@ -79,7 +79,6 @@ namespace UI.Views
         }
 
 
-
         private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             DateTime[] dates = GetDates(2019, tabControl.SelectedIndex + 1).ToArray();

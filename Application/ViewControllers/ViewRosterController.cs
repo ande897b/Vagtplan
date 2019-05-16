@@ -24,9 +24,7 @@ namespace Application.ViewControllers
             Roster roster = new Roster(startDate, endDate, newShop);
             DBRosterController.CreateRoster(roster);
             int rosterID = DBRosterController.GetRosterID(roster);
-            DBRosterController.CreateDateList(rosterID, shop);
-            int dateListID = DBRosterController.GetDateListID(rosterID, shop);
-            DBRosterController.CreateDates(dateListID, shop, startDate, endDate);
+            DBRosterController.CreateDates(rosterID, shop, startDate, endDate);
 
             RosterRepository.AddRoster(roster);
         }
