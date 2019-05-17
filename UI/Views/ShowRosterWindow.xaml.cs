@@ -51,27 +51,27 @@ namespace UI.Views
                 if (JanuaryTabControl.SelectedIndex == 0)
                 {
                     UpdateSchedule(dates, 0);
-                    FUCKTHISSHIT();
+                    ManageComboboxes();
                 }
                 else if (JanuaryTabControl.SelectedIndex == 1)
                 {
                     UpdateSchedule(dates, 1);
-                    FUCKTHISSHIT();
+                    ManageComboboxes();
                 }
                 else if (JanuaryTabControl.SelectedIndex == 2)
                 {
                     UpdateSchedule(dates, 2);
-                    FUCKTHISSHIT();
+                    ManageComboboxes();
                 }
                 else if (JanuaryTabControl.SelectedIndex == 3)
                 {
                     UpdateSchedule(dates, 3);
-                    FUCKTHISSHIT();
+                    ManageComboboxes();
                 }
                 else if (JanuaryTabControl.SelectedIndex == 4)
                 {
                     UpdateSchedule(dates, 4);
-                    FUCKTHISSHIT();
+                    ManageComboboxes();
                 }
             }
 
@@ -80,22 +80,22 @@ namespace UI.Views
                 if (FebruaryTabControl.SelectedIndex == 0)
                 {
                     UpdateSchedule(dates, 0);
-                    FUCKTHISSHIT();
+                    ManageComboboxes();
                 }
                 else if (FebruaryTabControl.SelectedIndex == 1)
                 {
                     UpdateSchedule(dates, 1);
-                    FUCKTHISSHIT();
+                    ManageComboboxes();
                 }
                 else if (FebruaryTabControl.SelectedIndex == 2)
                 {
                     UpdateSchedule(dates, 2);
-                    FUCKTHISSHIT();
+                    ManageComboboxes();
                 }
                 else if (FebruaryTabControl.SelectedIndex == 3)
                 {
                     UpdateSchedule(dates, 3);
-                    FUCKTHISSHIT();
+                    ManageComboboxes();
                 }
             }
 
@@ -104,27 +104,27 @@ namespace UI.Views
                 if (MarchTabControl.SelectedIndex == 0)
                 {
                     UpdateSchedule(dates, 0);
-                    FUCKTHISSHIT();
+                    ManageComboboxes();
                 }
                 else if (MarchTabControl.SelectedIndex == 1)
                 {
                     UpdateSchedule(dates, 1);
-                    FUCKTHISSHIT();
+                    ManageComboboxes();
                 }
                 else if (MarchTabControl.SelectedIndex == 2)
                 {
                     UpdateSchedule(dates, 2);
-                    FUCKTHISSHIT();
+                    ManageComboboxes();
                 }
                 else if (MarchTabControl.SelectedIndex == 3)
                 {
                     UpdateSchedule(dates, 3);
-                    FUCKTHISSHIT();
+                    ManageComboboxes();
                 }
                 else if (MarchTabControl.SelectedIndex == 4)
                 {
                     UpdateSchedule(dates, 4);
-                    FUCKTHISSHIT();
+                    ManageComboboxes();
                 }
             }
 
@@ -133,27 +133,27 @@ namespace UI.Views
                 if (AprilTabControl.SelectedIndex == 0)
                 {
                     UpdateSchedule(dates, 0);
-                    FUCKTHISSHIT();
+                    ManageComboboxes();
                 }
                 else if (AprilTabControl.SelectedIndex == 1)
                 {
                     UpdateSchedule(dates, 1);
-                    FUCKTHISSHIT();
+                    ManageComboboxes();
                 }
                 else if (AprilTabControl.SelectedIndex == 2)
                 {
                     UpdateSchedule(dates, 2);
-                    FUCKTHISSHIT();
+                    ManageComboboxes();
                 }
                 else if (AprilTabControl.SelectedIndex == 3)
                 {
                     UpdateSchedule(dates, 3);
-                    FUCKTHISSHIT();
+                    ManageComboboxes();
                 }
                 else if (AprilTabControl.SelectedIndex == 4)
                 {
                     UpdateSchedule(dates, 4);
-                    FUCKTHISSHIT();
+                    ManageComboboxes();
                 }
             }
 
@@ -162,27 +162,27 @@ namespace UI.Views
                 if (MayTabControl.SelectedIndex == 0)
                 {
                     UpdateSchedule(dates, 0);
-                    FUCKTHISSHIT();
+                    ManageComboboxes();
                 }
                 else if (MayTabControl.SelectedIndex == 1)
                 {
                     UpdateSchedule(dates, 1);
-                    FUCKTHISSHIT();
+                    ManageComboboxes();
                 }
                 else if (MayTabControl.SelectedIndex == 2)
                 {
                     UpdateSchedule(dates, 2);
-                    FUCKTHISSHIT();
+                    ManageComboboxes();
                 }
                 else if (MayTabControl.SelectedIndex == 3)
                 {
                     UpdateSchedule(dates, 3);
-                    FUCKTHISSHIT();
+                    ManageComboboxes();
                 }
                 else if (MayTabControl.SelectedIndex == 4)
                 {
                     UpdateSchedule(dates, 4);
-                    FUCKTHISSHIT();
+                    ManageComboboxes();
                 }
             }
 
@@ -191,27 +191,27 @@ namespace UI.Views
                 if (JuneTabControl.SelectedIndex == 0)
                 {
                     UpdateSchedule(dates, 0);
-                    FUCKTHISSHIT();
+                    ManageComboboxes();
                 }
                 else if (JuneTabControl.SelectedIndex == 1)
                 {
                     UpdateSchedule(dates, 1);
-                    FUCKTHISSHIT();
+                    ManageComboboxes();
                 }
                 else if (JuneTabControl.SelectedIndex == 2)
                 {
                     UpdateSchedule(dates, 2);
-                    FUCKTHISSHIT();
+                    ManageComboboxes();
                 }
                 else if (JuneTabControl.SelectedIndex == 3)
                 {
                     UpdateSchedule(dates, 3);
-                    FUCKTHISSHIT();
+                    ManageComboboxes();
                 }
                 else if (JuneTabControl.SelectedIndex == 4)
                 {
                     UpdateSchedule(dates, 4);
-                    FUCKTHISSHIT();
+                    ManageComboboxes();
                 }
             }
 
@@ -220,27 +220,27 @@ namespace UI.Views
                 if (JulyTabControl.SelectedIndex == 0)
                 {
                     UpdateSchedule(dates, 0);
-                    FUCKTHISSHIT();
+                    ManageComboboxes();
                 }
                 else if (JulyTabControl.SelectedIndex == 1)
                 {
                     UpdateSchedule(dates, 1);
-                    FUCKTHISSHIT();
+                    ManageComboboxes();
                 }
                 else if (JulyTabControl.SelectedIndex == 2)
                 {
                     UpdateSchedule(dates, 2);
-                    FUCKTHISSHIT();
+                    ManageComboboxes();
                 }
                 else if (JulyTabControl.SelectedIndex == 3)
                 {
                     UpdateSchedule(dates, 3);
-                    FUCKTHISSHIT();
+                    ManageComboboxes();
                 }
                 else if (JulyTabControl.SelectedIndex == 4)
                 {
                     UpdateSchedule(dates, 4);
-                    FUCKTHISSHIT();
+                    ManageComboboxes();
                 }
             }
 
@@ -249,27 +249,27 @@ namespace UI.Views
                 if (AugustTabControl.SelectedIndex == 0)
                 {
                     UpdateSchedule(dates, 0);
-                    FUCKTHISSHIT();
+                    ManageComboboxes();
                 }
                 else if (AugustTabControl.SelectedIndex == 1)
                 {
                     UpdateSchedule(dates, 1);
-                    FUCKTHISSHIT();
+                    ManageComboboxes();
                 }
                 else if (AugustTabControl.SelectedIndex == 2)
                 {
                     UpdateSchedule(dates, 2);
-                    FUCKTHISSHIT();
+                    ManageComboboxes();
                 }
                 else if (AugustTabControl.SelectedIndex == 3)
                 {
                     UpdateSchedule(dates, 3);
-                    FUCKTHISSHIT();
+                    ManageComboboxes();
                 }
                 else if (AugustTabControl.SelectedIndex == 4)
                 {
                     UpdateSchedule(dates, 4);
-                    FUCKTHISSHIT();
+                    ManageComboboxes();
                 }
             }
 
@@ -278,27 +278,27 @@ namespace UI.Views
                 if (SeptemberTabControl.SelectedIndex == 0)
                 {
                     UpdateSchedule(dates, 0);
-                    FUCKTHISSHIT();
+                    ManageComboboxes();
                 }
                 else if (SeptemberTabControl.SelectedIndex == 1)
                 {
                     UpdateSchedule(dates, 1);
-                    FUCKTHISSHIT();
+                    ManageComboboxes();
                 }
                 else if (SeptemberTabControl.SelectedIndex == 2)
                 {
                     UpdateSchedule(dates, 2);
-                    FUCKTHISSHIT();
+                    ManageComboboxes();
                 }
                 else if (SeptemberTabControl.SelectedIndex == 3)
                 {
                     UpdateSchedule(dates, 3);
-                    FUCKTHISSHIT();
+                    ManageComboboxes();
                 }
                 else if (SeptemberTabControl.SelectedIndex == 4)
                 {
                     UpdateSchedule(dates, 4);
-                    FUCKTHISSHIT();
+                    ManageComboboxes();
                 }
             }
 
@@ -307,27 +307,27 @@ namespace UI.Views
                 if (OctoberTabControl.SelectedIndex == 0)
                 {
                     UpdateSchedule(dates, 0);
-                    FUCKTHISSHIT();
+                    ManageComboboxes();
                 }
                 else if (OctoberTabControl.SelectedIndex == 1)
                 {
                     UpdateSchedule(dates, 1);
-                    FUCKTHISSHIT();
+                    ManageComboboxes();
                 }
                 else if (OctoberTabControl.SelectedIndex == 2)
                 {
                     UpdateSchedule(dates, 2);
-                    FUCKTHISSHIT();
+                    ManageComboboxes();
                 }
                 else if (OctoberTabControl.SelectedIndex == 3)
                 {
                     UpdateSchedule(dates, 3);
-                    FUCKTHISSHIT();
+                    ManageComboboxes();
                 }
                 else if (OctoberTabControl.SelectedIndex == 4)
                 {
                     UpdateSchedule(dates, 4);
-                    FUCKTHISSHIT();
+                    ManageComboboxes();
                 }
             }
 
@@ -336,27 +336,27 @@ namespace UI.Views
                 if (NovemberTabControl.SelectedIndex == 0)
                 {
                     UpdateSchedule(dates, 0);
-                    FUCKTHISSHIT();
+                    ManageComboboxes();
                 }
                 else if (NovemberTabControl.SelectedIndex == 1)
                 {
                     UpdateSchedule(dates, 1);
-                    FUCKTHISSHIT();
+                    ManageComboboxes();
                 }
                 else if (NovemberTabControl.SelectedIndex == 2)
                 {
                     UpdateSchedule(dates, 2);
-                    FUCKTHISSHIT();
+                    ManageComboboxes();
                 }
                 else if (NovemberTabControl.SelectedIndex == 3)
                 {
                     UpdateSchedule(dates, 3);
-                    FUCKTHISSHIT();
+                    ManageComboboxes();
                 }
                 else if (NovemberTabControl.SelectedIndex == 4)
                 {
                     UpdateSchedule(dates, 4);
-                    FUCKTHISSHIT();
+                    ManageComboboxes();
                 }
             }
 
@@ -365,27 +365,27 @@ namespace UI.Views
                 if (DecemberTabControl.SelectedIndex == 0)
                 {
                     UpdateSchedule(dates, 0);
-                    FUCKTHISSHIT();
+                    ManageComboboxes();
                 }
                 else if (DecemberTabControl.SelectedIndex == 1)
                 {
                     UpdateSchedule(dates, 1);
-                    FUCKTHISSHIT();
+                    ManageComboboxes();
                 }
                 else if (DecemberTabControl.SelectedIndex == 2)
                 {
                     UpdateSchedule(dates, 2);
-                    FUCKTHISSHIT();
+                    ManageComboboxes();
                 }
                 else if (DecemberTabControl.SelectedIndex == 3)
                 {
                     UpdateSchedule(dates, 3);
-                    FUCKTHISSHIT();
+                    ManageComboboxes();
                 }
                 else if (DecemberTabControl.SelectedIndex == 4)
                 {
                     UpdateSchedule(dates, 4);
-                    FUCKTHISSHIT();
+                    ManageComboboxes();
                 }
             }
         }
@@ -460,7 +460,7 @@ namespace UI.Views
             }
         }
 
-        private void FUCKTHISSHIT()
+        private void ManageComboboxes()
         {
             if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
             {
