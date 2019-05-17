@@ -514,7 +514,7 @@ namespace UI.Views
                     }
                     else
                     {
-                        UpdateComboboxes(false, 0);
+                        UpdateComboboxes(false, 1);
                     }
                     if (ViewRosterController.CheckIfDateExists(weekday2label.Content.ToString(), Shop.ToString()))
                     {
@@ -522,7 +522,7 @@ namespace UI.Views
                     }
                     else
                     {
-                        UpdateComboboxes(false, 0);
+                        UpdateComboboxes(false, 2);
                     }
                     if (ViewRosterController.CheckIfDateExists(weekday3label.Content.ToString(), Shop.ToString()))
                     {
@@ -530,7 +530,7 @@ namespace UI.Views
                     }
                     else
                     {
-                        UpdateComboboxes(false, 0);
+                        UpdateComboboxes(false, 3);
                     }
                     if (ViewRosterController.CheckIfDateExists(weekday4label.Content.ToString(), Shop.ToString()))
                     {
@@ -538,7 +538,7 @@ namespace UI.Views
                     }
                     else
                     {
-                        UpdateComboboxes(false, 0);
+                        UpdateComboboxes(false, 4);
                     }
                     if (ViewRosterController.CheckIfDateExists(weekday5label.Content.ToString(), Shop.ToString()))
                     {
@@ -546,7 +546,7 @@ namespace UI.Views
                     }
                     else
                     {
-                        UpdateComboboxes(false, 0);
+                        UpdateComboboxes(false, 5);
                     }
                     if (ViewRosterController.CheckIfDateExists(weekday6label.Content.ToString(), Shop.ToString()))
                     {
@@ -554,7 +554,7 @@ namespace UI.Views
                     }
                     else
                     {
-                        UpdateComboboxes(false, 0);
+                        UpdateComboboxes(false, 6);
                     }
                     if (ViewRosterController.CheckIfDateExists(weekday7label.Content.ToString(), Shop.ToString()))
                     {
@@ -562,7 +562,7 @@ namespace UI.Views
                     }
                     else
                     {
-                        UpdateComboboxes(false, 0);
+                        UpdateComboboxes(false, 7);
                     }
                 }
             }
