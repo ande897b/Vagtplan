@@ -43,25 +43,6 @@ namespace UI.Views
                              .ToList(); // Load dates into a list
         }
 
-        private List<Date> GetSpecificDates(List<Date> dates, string startDate)
-        {
-            List<Date> specificDates = new List<Date>();
-            int i = 0;
-            foreach (var date in dates)
-            {
-                if (date.ToString().Substring(3, 2) == startDate.Substring(3, 2) )
-                {
-                    specificDates.Add(date);
-
-                    if (i != 30)
-                    {
-                        i++;                      
-                    }                   
-                }
-            }
-            return specificDates;
-        }
-
         private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             DateTime[] dates = GetDates(2019, tabControl.SelectedIndex + 1).ToArray();
@@ -114,11 +95,6 @@ namespace UI.Views
                 else if (FebruaryTabControl.SelectedIndex == 3)
                 {
                     UpdateSchedule(dates, 3);
-                    FUCKTHISSHIT();
-                }
-                else if (FebruaryTabControl.SelectedIndex == 4)
-                {
-                    UpdateSchedule(dates, 4);
                     FUCKTHISSHIT();
                 }
             }
