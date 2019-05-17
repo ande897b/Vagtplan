@@ -20,10 +20,13 @@ namespace UI.Views
 {
     public partial class ShowRosterWindow : Window
     {
+        
         public Shop Shop { get; set; }
         List<Roster> rosters = RosterRepository.GetRosters();
         public ShowRosterWindow(string boxResult)
-        { 
+        {
+            
+            
             if(boxResult.ToLower() == "kongensgade")
             {
                 Shop = Shop.kongensgade;
@@ -81,6 +84,7 @@ namespace UI.Views
 
         private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            
             DateTime[] dates = GetDates(2019, tabControl.SelectedIndex + 1).ToArray();
             if (tabControl.SelectedIndex == 0) // januar
             {
@@ -90,6 +94,10 @@ namespace UI.Views
                     if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
                     {
                         UpdateComboboxes(true);
+                    }
+                    else if (ViewRosterController.CheckIfDateExists(weekday2label.Content.ToString(), Shop.ToString()))
+                    {
+                        
                     }
                     else
                     {
