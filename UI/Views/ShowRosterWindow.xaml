@@ -383,7 +383,7 @@
             </TabItem>
 
         </TabControl>
-        <ComboBox x:Name="weekday1combobox" HorizontalAlignment="Left" Margin="20,140,0,0" VerticalAlignment="Top" Width="100">
+        <ComboBox x:Name="weekday1combobox" HorizontalAlignment="Left" Margin="20,140,0,0" VerticalAlignment="Top" Width="100" SelectionChanged="weekday1combobox_SelectionChanged">
             <ComboBoxItem Background="#FFF98A8A" Content="Stub1"/>
             <ComboBoxItem Background="#FFB5E43A" Content="stub2"/>
             <ComboBoxItem Background="#FF6AE656" Content="stub3"/>
@@ -418,6 +418,14 @@
             <ComboBoxItem Background="#FFB5E43A" Content="stub2"/>
             <ComboBoxItem Background="#FF6AE656" Content="stub3"/>
         </ComboBox>
+        <TextBox x:Name="weekday1textbox" HorizontalAlignment="Left" Height="23" Margin="20,162,0,0" TextWrapping="Wrap" Text="10:00 - 17:00" VerticalAlignment="Top" Width="100" TextChanged="weekday1textbox_TextChanged" Visibility="Hidden"/>
+        <ComboBox x:Name="weekday1combobox_Copy" HorizontalAlignment="Left" Margin="20,185,0,0" VerticalAlignment="Top" Width="100"  Visibility="Hidden" SelectionChanged="weekday1combobox_Copy_SelectionChanged">
+            <ComboBoxItem Background="#FFF98A8A" Content="Stub1"/>
+            <ComboBoxItem Background="#FFB5E43A" Content="stub2"/>
+            <ComboBoxItem Background="#FF6AE656" Content="stub3"/>
+        </ComboBox>
+        <TextBox x:Name="weekday1textbox2" Visibility="Hidden" HorizontalAlignment="Left" Height="23" Margin="20,207,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100"/>
+
 
     </Grid>
 </Window>

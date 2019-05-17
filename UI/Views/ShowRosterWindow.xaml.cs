@@ -15,6 +15,7 @@ using Application;
 using Application.Repositories;
 using Application.ViewControllers;
 using Domain.Models;
+using Application.DatabaseControllers;
 
 namespace UI.Views
 {
@@ -535,6 +536,39 @@ namespace UI.Views
             weekday5label.Content = dates[04].Date.AddDays(i * 7).ToString();
             weekday6label.Content = dates[05].Date.AddDays(i * 7).ToString();
             weekday7label.Content = dates[06].Date.AddDays(i * 7).ToString();
+        }
+
+        private void weekday1combobox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            weekday1textbox.Visibility = Visibility.Visible;
+        }
+
+        private void weekday1textbox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (weekday1textbox.Text != "10:00 - 17:00")
+            {
+                weekday1combobox_Copy.Visibility = Visibility.Visible;
+
+            }
+        }
+
+        private void weekday1combobox_Copy_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            List<Date> dates = DBRosterController.GetDates(Shop.ToString());
+            weekday1textbox2.Text = weekday1textbox.Text.Substring(8, 5) + "- 17:00";
+            foreach (Date date in dates)
+            {
+                if (weekday1label.Content.ToString() == date.Day.ToString())
+                {
+                    if (date.Day.DayOfWeek == DayOfWeek.Monday)
+                    {
+                        weekday1textbox2.Text = weekday1textbox.Text.Substring(8, 5) + "- 16:00";
+                    }
+                    
+                }
+            }
+            weekday1textbox2.Visibility = Visibility.Visible;
+            
         }
     }
 }
