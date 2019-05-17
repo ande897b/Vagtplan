@@ -15,15 +15,17 @@ using Application;
 using Application.Repositories;
 using Application.ViewControllers;
 using Domain.Models;
+using Application.DatabaseControllers;
 
 namespace UI.Views
 {
     public partial class ShowRosterWindow : Window
     {
-        public Shop Shop { get; set; }
         List<Roster> rosters = RosterRepository.GetRosters();
+
+        public Shop Shop { get; set; }
         public ShowRosterWindow(string boxResult)
-        { 
+        {
             if(boxResult.ToLower() == "kongensgade")
             {
                 Shop = Shop.kongensgade;
@@ -33,24 +35,7 @@ namespace UI.Views
                 Shop = Shop.skibhusvej;
             }
             InitializeComponent();
-            //List<Roster> rosters = RosterRepository.GetRosters();
-            //rosterArrays = new List<Roster[]>();
-
-            //for (int i = 0; i < rosters.Count; i++)
-            //{
-            //    DateTime start = rosters[i].StartDate;
-            //    Date[] dates = new Date[360];
-
-            //    for (int j = 0; start <= rosters[i].EndDate; j++)
-            //    {
-            //        dates[j] = rosters[i].;
-            //        start = start.AddDays(1);
-            //    }
-            //    rosterArrays.Add(dates);
-            //}
         }
-
-       
 
         public static List<DateTime> GetDates(int year, int month)
         {
@@ -58,26 +43,6 @@ namespace UI.Views
                              .Select(day => new DateTime(year, month, day)) // Map each day to a date
                              .ToList(); // Load dates into a list
         }
-
-        private List<Date> GetSpecificDates(List<Date> dates, string startDate)
-        {
-            List<Date> specificDates = new List<Date>();
-            int i = 0;
-            foreach (var date in dates)
-            {
-                if (date.ToString().Substring(3, 2) == startDate.Substring(3, 2) )
-                {
-                    specificDates.Add(date);
-
-                    if (i != 30)
-                    {
-                        i++;                      
-                    }                   
-                }
-            }
-            return specificDates;
-        }
-
 
         private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -87,62 +52,27 @@ namespace UI.Views
                 if (JanuaryTabControl.SelectedIndex == 0)
                 {
                     UpdateSchedule(dates, 0);
-                    if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
-                    {
-                        UpdateComboboxes(true);
-                    }
-                    else
-                    {
-                        UpdateComboboxes(false);
-                    }
+                    ManageComboboxes();
                 }
                 else if (JanuaryTabControl.SelectedIndex == 1)
                 {
                     UpdateSchedule(dates, 1);
-                    if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
-                    {
-                        UpdateComboboxes(true);
-                    }
-                    else
-                    {
-                        UpdateComboboxes(false);
-                    }
+                    ManageComboboxes();
                 }
                 else if (JanuaryTabControl.SelectedIndex == 2)
                 {
                     UpdateSchedule(dates, 2);
-                    if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
-                    {
-                        UpdateComboboxes(true);
-                    }
-                    else
-                    {
-                        UpdateComboboxes(false);
-                    }
+                    ManageComboboxes();
                 }
                 else if (JanuaryTabControl.SelectedIndex == 3)
                 {
                     UpdateSchedule(dates, 3);
-                    if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
-                    {
-                        UpdateComboboxes(true);
-                    }
-                    else
-                    {
-                        UpdateComboboxes(false);
-                    }
+                    ManageComboboxes();
                 }
                 else if (JanuaryTabControl.SelectedIndex == 4)
                 {
                     UpdateSchedule(dates, 4);
-                    if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
-                    {
-                        UpdateComboboxes(true);
-                    }
-                    else
-                    {
-                        UpdateComboboxes(false);
-                    }
+                    ManageComboboxes();
                 }
             }
 
@@ -151,62 +81,22 @@ namespace UI.Views
                 if (FebruaryTabControl.SelectedIndex == 0)
                 {
                     UpdateSchedule(dates, 0);
-                    if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
-                    {
-                        UpdateComboboxes(true);
-                    }
-                    else
-                    {
-                        UpdateComboboxes(false);
-                    }
+                    ManageComboboxes();
                 }
                 else if (FebruaryTabControl.SelectedIndex == 1)
                 {
                     UpdateSchedule(dates, 1);
-                    if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
-                    {
-                        UpdateComboboxes(true);
-                    }
-                    else
-                    {
-                        UpdateComboboxes(false);
-                    }
+                    ManageComboboxes();
                 }
                 else if (FebruaryTabControl.SelectedIndex == 2)
                 {
                     UpdateSchedule(dates, 2);
-                    if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
-                    {
-                        UpdateComboboxes(true);
-                    }
-                    else
-                    {
-                        UpdateComboboxes(false);
-                    }
+                    ManageComboboxes();
                 }
                 else if (FebruaryTabControl.SelectedIndex == 3)
                 {
                     UpdateSchedule(dates, 3);
-                    if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
-                    {
-                        UpdateComboboxes(true);
-                    }
-                    else
-                    {
-                        UpdateComboboxes(false);
-                    }
-                }
-                else if (FebruaryTabControl.SelectedIndex == 4)
-                {
-                    UpdateSchedule(dates, 4);
-                    if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
-                    {
-                        UpdateComboboxes(true);
-                    }
-                    else
-                    {
-                        UpdateComboboxes(false);
-                    }
+                    ManageComboboxes();
                 }
             }
 
@@ -215,62 +105,27 @@ namespace UI.Views
                 if (MarchTabControl.SelectedIndex == 0)
                 {
                     UpdateSchedule(dates, 0);
-                    if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
-                    {
-                        UpdateComboboxes(true);
-                    }
-                    else
-                    {
-                        UpdateComboboxes(false);
-                    }
+                    ManageComboboxes();
                 }
                 else if (MarchTabControl.SelectedIndex == 1)
                 {
                     UpdateSchedule(dates, 1);
-                    if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
-                    {
-                        UpdateComboboxes(true);
-                    }
-                    else
-                    {
-                        UpdateComboboxes(false);
-                    }
+                    ManageComboboxes();
                 }
                 else if (MarchTabControl.SelectedIndex == 2)
                 {
                     UpdateSchedule(dates, 2);
-                    if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
-                    {
-                        UpdateComboboxes(true);
-                    }
-                    else
-                    {
-                        UpdateComboboxes(false);
-                    }
+                    ManageComboboxes();
                 }
                 else if (MarchTabControl.SelectedIndex == 3)
                 {
                     UpdateSchedule(dates, 3);
-                    if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
-                    {
-                        UpdateComboboxes(true);
-                    }
-                    else
-                    {
-                        UpdateComboboxes(false);
-                    }
+                    ManageComboboxes();
                 }
                 else if (MarchTabControl.SelectedIndex == 4)
                 {
                     UpdateSchedule(dates, 4);
-                    if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
-                    {
-                        UpdateComboboxes(true);
-                    }
-                    else
-                    {
-                        UpdateComboboxes(false);
-                    }
+                    ManageComboboxes();
                 }
             }
 
@@ -279,62 +134,27 @@ namespace UI.Views
                 if (AprilTabControl.SelectedIndex == 0)
                 {
                     UpdateSchedule(dates, 0);
-                    if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
-                    {
-                        UpdateComboboxes(true);
-                    }
-                    else
-                    {
-                        UpdateComboboxes(false);
-                    }
+                    ManageComboboxes();
                 }
                 else if (AprilTabControl.SelectedIndex == 1)
                 {
                     UpdateSchedule(dates, 1);
-                    if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
-                    {
-                        UpdateComboboxes(true);
-                    }
-                    else
-                    {
-                        UpdateComboboxes(false);
-                    }
+                    ManageComboboxes();
                 }
                 else if (AprilTabControl.SelectedIndex == 2)
                 {
                     UpdateSchedule(dates, 2);
-                    if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
-                    {
-                        UpdateComboboxes(true);
-                    }
-                    else
-                    {
-                        UpdateComboboxes(false);
-                    }
+                    ManageComboboxes();
                 }
                 else if (AprilTabControl.SelectedIndex == 3)
                 {
                     UpdateSchedule(dates, 3);
-                    if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
-                    {
-                        UpdateComboboxes(true);
-                    }
-                    else
-                    {
-                        UpdateComboboxes(false);
-                    }
+                    ManageComboboxes();
                 }
                 else if (AprilTabControl.SelectedIndex == 4)
                 {
                     UpdateSchedule(dates, 4);
-                    if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
-                    {
-                        UpdateComboboxes(true);
-                    }
-                    else
-                    {
-                        UpdateComboboxes(false);
-                    }
+                    ManageComboboxes();
                 }
             }
 
@@ -343,62 +163,27 @@ namespace UI.Views
                 if (MayTabControl.SelectedIndex == 0)
                 {
                     UpdateSchedule(dates, 0);
-                    if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
-                    {
-                        UpdateComboboxes(true);
-                    }
-                    else
-                    {
-                        UpdateComboboxes(false);
-                    }
+                    ManageComboboxes();
                 }
                 else if (MayTabControl.SelectedIndex == 1)
                 {
                     UpdateSchedule(dates, 1);
-                    if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
-                    {
-                        UpdateComboboxes(true);
-                    }
-                    else
-                    {
-                        UpdateComboboxes(false);
-                    }
+                    ManageComboboxes();
                 }
                 else if (MayTabControl.SelectedIndex == 2)
                 {
                     UpdateSchedule(dates, 2);
-                    if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
-                    {
-                        UpdateComboboxes(true);
-                    }
-                    else
-                    {
-                        UpdateComboboxes(false);
-                    }
+                    ManageComboboxes();
                 }
                 else if (MayTabControl.SelectedIndex == 3)
                 {
                     UpdateSchedule(dates, 3);
-                    if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
-                    {
-                        UpdateComboboxes(true);
-                    }
-                    else
-                    {
-                        UpdateComboboxes(false);
-                    }
+                    ManageComboboxes();
                 }
                 else if (MayTabControl.SelectedIndex == 4)
                 {
                     UpdateSchedule(dates, 4);
-                    if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
-                    {
-                        UpdateComboboxes(true);
-                    }
-                    else
-                    {
-                        UpdateComboboxes(false);
-                    }
+                    ManageComboboxes();
                 }
             }
 
@@ -407,62 +192,27 @@ namespace UI.Views
                 if (JuneTabControl.SelectedIndex == 0)
                 {
                     UpdateSchedule(dates, 0);
-                    if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
-                    {
-                        UpdateComboboxes(true);
-                    }
-                    else
-                    {
-                        UpdateComboboxes(false);
-                    }
+                    ManageComboboxes();
                 }
                 else if (JuneTabControl.SelectedIndex == 1)
                 {
                     UpdateSchedule(dates, 1);
-                    if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
-                    {
-                        UpdateComboboxes(true);
-                    }
-                    else
-                    {
-                        UpdateComboboxes(false);
-                    }
+                    ManageComboboxes();
                 }
                 else if (JuneTabControl.SelectedIndex == 2)
                 {
                     UpdateSchedule(dates, 2);
-                    if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
-                    {
-                        UpdateComboboxes(true);
-                    }
-                    else
-                    {
-                        UpdateComboboxes(false);
-                    }
+                    ManageComboboxes();
                 }
                 else if (JuneTabControl.SelectedIndex == 3)
                 {
                     UpdateSchedule(dates, 3);
-                    if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
-                    {
-                        UpdateComboboxes(true);
-                    }
-                    else
-                    {
-                        UpdateComboboxes(false);
-                    }
+                    ManageComboboxes();
                 }
                 else if (JuneTabControl.SelectedIndex == 4)
                 {
                     UpdateSchedule(dates, 4);
-                    if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
-                    {
-                        UpdateComboboxes(true);
-                    }
-                    else
-                    {
-                        UpdateComboboxes(false);
-                    }
+                    ManageComboboxes();
                 }
             }
 
@@ -471,62 +221,27 @@ namespace UI.Views
                 if (JulyTabControl.SelectedIndex == 0)
                 {
                     UpdateSchedule(dates, 0);
-                    if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
-                    {
-                        UpdateComboboxes(true);
-                    }
-                    else
-                    {
-                        UpdateComboboxes(false);
-                    }
+                    ManageComboboxes();
                 }
                 else if (JulyTabControl.SelectedIndex == 1)
                 {
                     UpdateSchedule(dates, 1);
-                    if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
-                    {
-                        UpdateComboboxes(true);
-                    }
-                    else
-                    {
-                        UpdateComboboxes(false);
-                    }
+                    ManageComboboxes();
                 }
                 else if (JulyTabControl.SelectedIndex == 2)
                 {
                     UpdateSchedule(dates, 2);
-                    if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
-                    {
-                        UpdateComboboxes(true);
-                    }
-                    else
-                    {
-                        UpdateComboboxes(false);
-                    }
+                    ManageComboboxes();
                 }
                 else if (JulyTabControl.SelectedIndex == 3)
                 {
                     UpdateSchedule(dates, 3);
-                    if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
-                    {
-                        UpdateComboboxes(true);
-                    }
-                    else
-                    {
-                        UpdateComboboxes(false);
-                    }
+                    ManageComboboxes();
                 }
                 else if (JulyTabControl.SelectedIndex == 4)
                 {
                     UpdateSchedule(dates, 4);
-                    if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
-                    {
-                        UpdateComboboxes(true);
-                    }
-                    else
-                    {
-                        UpdateComboboxes(false);
-                    }
+                    ManageComboboxes();
                 }
             }
 
@@ -535,62 +250,27 @@ namespace UI.Views
                 if (AugustTabControl.SelectedIndex == 0)
                 {
                     UpdateSchedule(dates, 0);
-                    if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
-                    {
-                        UpdateComboboxes(true);
-                    }
-                    else
-                    {
-                        UpdateComboboxes(false);
-                    }
+                    ManageComboboxes();
                 }
                 else if (AugustTabControl.SelectedIndex == 1)
                 {
                     UpdateSchedule(dates, 1);
-                    if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
-                    {
-                        UpdateComboboxes(true);
-                    }
-                    else
-                    {
-                        UpdateComboboxes(false);
-                    }
+                    ManageComboboxes();
                 }
                 else if (AugustTabControl.SelectedIndex == 2)
                 {
                     UpdateSchedule(dates, 2);
-                    if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
-                    {
-                        UpdateComboboxes(true);
-                    }
-                    else
-                    {
-                        UpdateComboboxes(false);
-                    }
+                    ManageComboboxes();
                 }
                 else if (AugustTabControl.SelectedIndex == 3)
                 {
                     UpdateSchedule(dates, 3);
-                    if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
-                    {
-                        UpdateComboboxes(true);
-                    }
-                    else
-                    {
-                        UpdateComboboxes(false);
-                    }
+                    ManageComboboxes();
                 }
                 else if (AugustTabControl.SelectedIndex == 4)
                 {
                     UpdateSchedule(dates, 4);
-                    if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
-                    {
-                        UpdateComboboxes(true);
-                    }
-                    else
-                    {
-                        UpdateComboboxes(false);
-                    }
+                    ManageComboboxes();
                 }
             }
 
@@ -599,62 +279,27 @@ namespace UI.Views
                 if (SeptemberTabControl.SelectedIndex == 0)
                 {
                     UpdateSchedule(dates, 0);
-                    if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
-                    {
-                        UpdateComboboxes(true);
-                    }
-                    else
-                    {
-                        UpdateComboboxes(false);
-                    }
+                    ManageComboboxes();
                 }
                 else if (SeptemberTabControl.SelectedIndex == 1)
                 {
                     UpdateSchedule(dates, 1);
-                    if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
-                    {
-                        UpdateComboboxes(true);
-                    }
-                    else
-                    {
-                        UpdateComboboxes(false);
-                    }
+                    ManageComboboxes();
                 }
                 else if (SeptemberTabControl.SelectedIndex == 2)
                 {
                     UpdateSchedule(dates, 2);
-                    if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
-                    {
-                        UpdateComboboxes(true);
-                    }
-                    else
-                    {
-                        UpdateComboboxes(false);
-                    }
+                    ManageComboboxes();
                 }
                 else if (SeptemberTabControl.SelectedIndex == 3)
                 {
                     UpdateSchedule(dates, 3);
-                    if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
-                    {
-                        UpdateComboboxes(true);
-                    }
-                    else
-                    {
-                        UpdateComboboxes(false);
-                    }
+                    ManageComboboxes();
                 }
                 else if (SeptemberTabControl.SelectedIndex == 4)
                 {
                     UpdateSchedule(dates, 4);
-                    if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
-                    {
-                        UpdateComboboxes(true);
-                    }
-                    else
-                    {
-                        UpdateComboboxes(false);
-                    }
+                    ManageComboboxes();
                 }
             }
 
@@ -663,62 +308,27 @@ namespace UI.Views
                 if (OctoberTabControl.SelectedIndex == 0)
                 {
                     UpdateSchedule(dates, 0);
-                    if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
-                    {
-                        UpdateComboboxes(true);
-                    }
-                    else
-                    {
-                        UpdateComboboxes(false);
-                    }
+                    ManageComboboxes();
                 }
                 else if (OctoberTabControl.SelectedIndex == 1)
                 {
                     UpdateSchedule(dates, 1);
-                    if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
-                    {
-                        UpdateComboboxes(true);
-                    }
-                    else
-                    {
-                        UpdateComboboxes(false);
-                    }
+                    ManageComboboxes();
                 }
                 else if (OctoberTabControl.SelectedIndex == 2)
                 {
                     UpdateSchedule(dates, 2);
-                    if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
-                    {
-                        UpdateComboboxes(true);
-                    }
-                    else
-                    {
-                        UpdateComboboxes(false);
-                    }
+                    ManageComboboxes();
                 }
                 else if (OctoberTabControl.SelectedIndex == 3)
                 {
                     UpdateSchedule(dates, 3);
-                    if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
-                    {
-                        UpdateComboboxes(true);
-                    }
-                    else
-                    {
-                        UpdateComboboxes(false);
-                    }
+                    ManageComboboxes();
                 }
                 else if (OctoberTabControl.SelectedIndex == 4)
                 {
                     UpdateSchedule(dates, 4);
-                    if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
-                    {
-                        UpdateComboboxes(true);
-                    }
-                    else
-                    {
-                        UpdateComboboxes(false);
-                    }
+                    ManageComboboxes();
                 }
             }
 
@@ -727,62 +337,27 @@ namespace UI.Views
                 if (NovemberTabControl.SelectedIndex == 0)
                 {
                     UpdateSchedule(dates, 0);
-                    if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
-                    {
-                        UpdateComboboxes(true);
-                    }
-                    else
-                    {
-                        UpdateComboboxes(false);
-                    }
+                    ManageComboboxes();
                 }
                 else if (NovemberTabControl.SelectedIndex == 1)
                 {
                     UpdateSchedule(dates, 1);
-                    if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
-                    {
-                        UpdateComboboxes(true);
-                    }
-                    else
-                    {
-                        UpdateComboboxes(false);
-                    }
+                    ManageComboboxes();
                 }
                 else if (NovemberTabControl.SelectedIndex == 2)
                 {
                     UpdateSchedule(dates, 2);
-                    if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
-                    {
-                        UpdateComboboxes(true);
-                    }
-                    else
-                    {
-                        UpdateComboboxes(false);
-                    }
+                    ManageComboboxes();
                 }
                 else if (NovemberTabControl.SelectedIndex == 3)
                 {
                     UpdateSchedule(dates, 3);
-                    if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
-                    {
-                        UpdateComboboxes(true);
-                    }
-                    else
-                    {
-                        UpdateComboboxes(false);
-                    }
+                    ManageComboboxes();
                 }
                 else if (NovemberTabControl.SelectedIndex == 4)
                 {
                     UpdateSchedule(dates, 4);
-                    if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
-                    {
-                        UpdateComboboxes(true);
-                    }
-                    else
-                    {
-                        UpdateComboboxes(false);
-                    }
+                    ManageComboboxes();
                 }
             }
 
@@ -791,346 +366,209 @@ namespace UI.Views
                 if (DecemberTabControl.SelectedIndex == 0)
                 {
                     UpdateSchedule(dates, 0);
-                    if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
-                    {
-                        weekday1txtbox.Text = "Fuck yes";
-                    }
+                    ManageComboboxes();
                 }
                 else if (DecemberTabControl.SelectedIndex == 1)
                 {
                     UpdateSchedule(dates, 1);
-                    if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
-                    {
-                        UpdateComboboxes(true);
-                    }
-                    else
-                    {
-                        UpdateComboboxes(false);
-                    }
+                    ManageComboboxes();
                 }
                 else if (DecemberTabControl.SelectedIndex == 2)
                 {
                     UpdateSchedule(dates, 2);
-                    if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
-                    {
-                        UpdateComboboxes(true);
-                    }
-                    else
-                    {
-                        UpdateComboboxes(false);
-                    }
+                    ManageComboboxes();
                 }
                 else if (DecemberTabControl.SelectedIndex == 3)
                 {
                     UpdateSchedule(dates, 3);
-                    if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
-                    {
-                        UpdateComboboxes(true);
-                    }
-                    else
-                    {
-                        UpdateComboboxes(false);
-                    }
+                    ManageComboboxes();
                 }
                 else if (DecemberTabControl.SelectedIndex == 4)
                 {
                     UpdateSchedule(dates, 4);
-                    if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
-                    {
-                        UpdateComboboxes(true);
-                    }
-                    else
-                    {
-                        UpdateComboboxes(false);
-                    }
+                    ManageComboboxes();
                 }
             }
         }
-        public void UpdateComboboxes(bool decision)
+
+        public void UpdateComboboxes(bool decision, int comboBox)
         {
             if (decision == true)
             {
-                weekday1combobox.IsEnabled = true;
-                weekday2combobox.IsEnabled = true;
-                weekday3combobox.IsEnabled = true;
-                weekday4combobox.IsEnabled = true;
-                weekday5combobox.IsEnabled = true;
-                weekday6combobox.IsEnabled = true;
-                weekday7combobox.IsEnabled = true;
+                switch (comboBox)
+                {
+                    case 1:
+                        weekday1combobox.IsEnabled = true;
+                        break;
+                    case 2:
+                        weekday2combobox.IsEnabled = true;
+                        break;
+                    case 3:
+                        weekday3combobox.IsEnabled = true;
+                        break;
+                    case 4:
+                        weekday4combobox.IsEnabled = true;
+                        break;
+                    case 5:
+                        weekday5combobox.IsEnabled = true;
+                        break;
+                    case 6:
+                        weekday6combobox.IsEnabled = true;
+                        break;
+                    case 7:
+                        weekday7combobox.IsEnabled = true;
+                        break;
+                    default:
+                        break;
+                }
             }
-            else if (decision == false)
+
+            if (decision == false)
             {
-                weekday1combobox.IsEnabled = false;
-                weekday2combobox.IsEnabled = false;
-                weekday3combobox.IsEnabled = false;
-                weekday4combobox.IsEnabled = false;
-                weekday5combobox.IsEnabled = false;
-                weekday6combobox.IsEnabled = false;
-                weekday7combobox.IsEnabled = false;
-                weekday1combobox.SelectedIndex = -1;
-                weekday2combobox.SelectedIndex = -1;
-                weekday3combobox.SelectedIndex = -1;
-                weekday4combobox.SelectedIndex = -1;
-                weekday5combobox.SelectedIndex = -1;
-                weekday6combobox.SelectedIndex = -1;
-                weekday7combobox.SelectedIndex = -1;
+                switch (comboBox)
+                {
+                    case 1:
+                        weekday1combobox.IsEnabled = false;
+                        weekday1combobox.SelectedIndex = -1;
+                        break;
+                    case 2:
+                        weekday2combobox.IsEnabled = false;
+                        weekday2combobox.SelectedIndex = -1;
+                        break;
+                    case 3:
+                        weekday3combobox.IsEnabled = false;
+                        weekday3combobox.SelectedIndex = -1;
+                        break;
+                    case 4:
+                        weekday4combobox.IsEnabled = false;
+                        weekday4combobox.SelectedIndex = -1;
+                        break;
+                    case 5:
+                        weekday5combobox.IsEnabled = false;
+                        weekday5combobox.SelectedIndex = -1;
+                        break;
+                    case 6:
+                        weekday6combobox.IsEnabled = false;
+                        weekday6combobox.SelectedIndex = -1;
+                        break;
+                    case 7:
+                        weekday7combobox.IsEnabled = false;
+                        weekday7combobox.SelectedIndex = -1;
+                        break;
+                    default:
+                        break;
+                }
             }
         }
 
+        private void ManageComboboxes()
+        {
+            if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
+            {
+                UpdateComboboxes(ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()), 1);
+            }
+            else
+            {
+                UpdateComboboxes(false, 1);
+            }
 
+            if (ViewRosterController.CheckIfDateExists(weekday2label.Content.ToString(), Shop.ToString()))
+            {
+                UpdateComboboxes(ViewRosterController.CheckIfDateExists(weekday2label.Content.ToString(), Shop.ToString()), 2);
+            }
+            else
+            {
+                UpdateComboboxes(false, 2);
+            }
 
+            if (ViewRosterController.CheckIfDateExists(weekday3label.Content.ToString(), Shop.ToString()))
+            {
+                UpdateComboboxes(ViewRosterController.CheckIfDateExists(weekday3label.Content.ToString(), Shop.ToString()), 3);
+            }
+            else
+            {
+                UpdateComboboxes(false, 3);
+            }
+
+            if (ViewRosterController.CheckIfDateExists(weekday4label.Content.ToString(), Shop.ToString()))
+            {
+                UpdateComboboxes(ViewRosterController.CheckIfDateExists(weekday4label.Content.ToString(), Shop.ToString()), 4);
+            }
+            else
+            {
+                UpdateComboboxes(false, 4);
+            }
+
+            if (ViewRosterController.CheckIfDateExists(weekday5label.Content.ToString(), Shop.ToString()))
+            {
+                UpdateComboboxes(ViewRosterController.CheckIfDateExists(weekday5label.Content.ToString(), Shop.ToString()), 5);
+            }
+            else
+            {
+                UpdateComboboxes(false, 5);
+            }
+
+            if (ViewRosterController.CheckIfDateExists(weekday6label.Content.ToString(), Shop.ToString()))
+            {
+                UpdateComboboxes(ViewRosterController.CheckIfDateExists(weekday6label.Content.ToString(), Shop.ToString()), 6);
+            }
+            else
+            {
+                UpdateComboboxes(false, 6);
+            }
+
+            if (ViewRosterController.CheckIfDateExists(weekday7label.Content.ToString(), Shop.ToString()))
+            {
+                UpdateComboboxes(ViewRosterController.CheckIfDateExists(weekday7label.Content.ToString(), Shop.ToString()), 7);
+            }
+            else
+            {
+                UpdateComboboxes(false, 7);
+            }
+        }
 
         private void UpdateSchedule(DateTime[] dates, int i)
         {
-         
             weekday1label.Content = dates[0].Date.AddDays(i * 7).ToString();
-            //if (RosterRepository.CheckIfExists(dates[0].Day.AddDays(i * 7)) == true)
-            //{
-            //    weekday1txtbox.Text = "Vagtplan Found";
-            //}
-            //else if (RosterRepository.CheckIfExists(dates[0].Day.AddDays(i * 7)) == false)
-            //{
-            //    weekday1txtbox.Text = "Vagtplan Not found";
-            //}
-
             weekday2label.Content = dates[1].Date.AddDays(i * 7).ToString();
-       //     if (RosterRepository.CheckIfExists(dates[1].Day.AddDays(i * 7)) == true)
-            //{
-            //    weekday2txtbox.Text = "Vagtplan Found";
-            //}
-            //else if (RosterRepository.CheckIfExists(dates[1].Day.AddDays(i * 7)) == false)
-            //{
-            //    weekday2txtbox.Text = "Vagtplan Not found";
-            //}
-
             weekday3label.Content = dates[02].Date.AddDays(i * 7).ToString();
-           // if (RosterRepository.CheckIfExists(dates[2].Day.AddDays(i * 7)) == true)
-            //{
-            //    weekday3txtbox.Text = "Vagtplan Found";
-            //}
-            //else if (RosterRepository.CheckIfExists(dates[2].Day.AddDays(i * 7)) == false)
-            //{
-            //    weekday3txtbox.Text = "Vagtplan Not found";
-            //}
-
             weekday4label.Content = dates[03].Date.AddDays(i * 7).ToString();
-            //if (RosterRepository.CheckIfExists(dates[3].Day.AddDays(i * 7)) == true)
-            //{
-            //    weekday4txtbox.Text = "Vagtplan Found";
-            //}
-            //else if (RosterRepository.CheckIfExists(dates[3].Day.AddDays(i * 7)) == false)
-            //{
-            //    weekday4txtbox.Text = "Vagtplan Not found";
-            //}
-
             weekday5label.Content = dates[04].Date.AddDays(i * 7).ToString();
-            //if (RosterRepository.CheckIfExists(dates[4].Day.AddDays(i * 7)) == true)
-            //{
-            //    weekday5txtbox.Text = "Vagtplan Found";
-            //}
-            //else if (RosterRepository.CheckIfExists(dates[04].Day.AddDays(i * 7)) == false)
-            //{
-            //    weekday5txtbox.Text = "Vagtplan Not found";
-            //}
-
             weekday6label.Content = dates[05].Date.AddDays(i * 7).ToString();
-            //if (RosterRepository.CheckIfExists(dates[5].Day.AddDays(i * 7)) == true)
-            //{
-            //    weekday6txtbox.Text = "Vagtplan Found";
-            //}
-            //else if (RosterRepository.CheckIfExists(dates[5].Day.AddDays(i * 7)) == false)
-            //{
-            //    weekday6txtbox.Text = "Vagtplan Not found";
-            //}
-
             weekday7label.Content = dates[06].Date.AddDays(i * 7).ToString();
-            //if (RosterRepository.CheckIfExists(dates[6].Day.AddDays(i * 7)) == true)
-            //{
-            //    weekday7txtbox.Text = "Vagtplan Found";
-            //}
-            //else if (RosterRepository.CheckIfExists(dates[06].Day.AddDays(i * 7)) == false)
-            //{
-            //    weekday7txtbox.Text = "Vagtplan Not found";
-            //}
+        }
+
+        private void weekday1combobox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            weekday1textbox.Visibility = Visibility.Visible;
+        }
+
+        private void weekday1textbox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (weekday1textbox.Text != "10:00 - 17:00")
+            {
+                weekday1combobox_Copy.Visibility = Visibility.Visible;
+
+            }
+        }
+
+        private void weekday1combobox_Copy_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            List<Date> dates = DBRosterController.GetDates(Shop.ToString());
+            weekday1textbox2.Text = weekday1textbox.Text.Substring(8, 5) + "- 17:00";
+            foreach (Date date in dates)
+            {
+                if (weekday1label.Content.ToString() == date.Day.ToString())
+                {
+                    if (date.Day.DayOfWeek == DayOfWeek.Monday)
+                    {
+                        weekday1textbox2.Text = weekday1textbox.Text.Substring(8, 5) + "- 16:00";
+                    }
+                    
+                }
+            }
+            weekday1textbox2.Visibility = Visibility.Visible;
+            
         }
     }
 }
-
-// weekday1label.Content = (rosters[1].StartDate.ToString()+ rosters[1].Shop);
-
-//public partial class ShowRosterWindow : Window
-//{
-//    public ShowRosterWindow()
-//    {
-//        InitializeComponent();
-//        int x = 0;
-//        List<Roster> rosters = RosterRepository.GetRosters();
-//        bool isDone = false;
-//        while (!isDone)
-//        {
-//            if (rosters[1].StartDate.AddDays(x) == rosters[1].EndDate.AddDays(0))
-//            {
-//                isDone = true;
-//            }
-//            weekday1label.Content = rosters[1].StartDate.AddDays(x);
-//            weekday2label.Content = rosters[1].StartDate.AddDays(1 + x);
-//            weekday3label.Content = rosters[1].StartDate.AddDays(2 + x);
-//            weekday4label.Content = rosters[1].StartDate.AddDays(3 + x);
-//            weekday5label.Content = rosters[1].StartDate.AddDays(4 + x);
-//            weekday6label.Content = rosters[1].StartDate.AddDays(5 + x);
-//            weekday7label.Content = rosters[1].StartDate.AddDays(6 + x);
-//            x = x + 7;
-//        }
-//    }
-//}
-
-//bool isDone = false;
-//                    while (!isDone)
-//                    {
-//                        int x = 0;
-//                        if (dates[0] <= dates[dates.Count - 1])
-//                        {
-//                            isDone = true;
-//                        }
-//                        weekday1txtbox.Text = "test0";
-//                        weekday1label.Content = rosters[1].StartDate.AddDays(x);
-//                        weekday2label.Content = rosters[1].StartDate.AddDays(1 + x);
-//                        weekday3label.Content = rosters[1].StartDate.AddDays(2 + x);
-//                        weekday4label.Content = rosters[1].StartDate.AddDays(3 + x);
-//                        weekday5label.Content = rosters[1].StartDate.AddDays(4 + x);
-//                        weekday6label.Content = rosters[1].StartDate.AddDays(5 + x);
-//                        weekday7label.Content = rosters[1].StartDate.AddDays(6 + x);
-//                        x = x + 7;
-//                    }
-
-
-
-
-
-
-//if (tabControl.SelectedIndex == 11) // December
-//{
-//    DateTime[] dates = GetDates(2019, 12).ToArray();
-//    if (DecemberTabControl.SelectedIndex == 0)
-//    {
-//        bool dayFound = false;
-//        int j = rosters.Count - 1;
-
-//        while (j >= 0 && dayFound == false)
-//        {
-//            int l = 0;
-//            while (l <= rosters[j].Length - 1 && dayFound == false)
-//            {
-//                string rosterDay = rosters[j].GetValue(l).ToString().Substring(0, 2);
-//                string rosterMonth = rosters[j].GetValue(l).ToString().Substring(3, 2);
-//                if (rosterMonth == "12" && rosterDay == "01" || rosterMonth == "12" && rosterDay == "02" || rosterMonth == "12" && rosterDay == "03" || rosterMonth == "12" && rosterDay == "04" || rosterMonth == "12" && rosterDay == "05" || rosterMonth == "12" && rosterDay == "06" || rosterMonth == "12" && rosterDay == "07")
-//                {
-//                    dates = GetSpecificDates(rosters[j], "01/12/2019");
-//                    dayFound = true;
-//                }
-//                l++;
-//            }
-//            j--;
-//        }
-//        UpdateSchedule(dates, 0);
-//    }
-//    else if (DecemberTabControl.SelectedIndex == 1)
-//    {
-//        bool dayFound = false;
-//        int j = rosters.Count - 1;
-
-//        while (j >= 0 && dayFound == false)
-//        {
-//            int l = 0;
-//            while (l <= rosters[j].Length - 1 && dayFound == false)
-//            {
-//                string rosterDay = rosters[j].GetValue(l).ToString().Substring(0, 2);
-//                string rosterMonth = rosters[j].GetValue(l).ToString().Substring(3, 2);
-//                if (rosterMonth == "12" && rosterDay == "08" || rosterMonth == "12" && rosterDay == "09" || rosterMonth == "12" && rosterDay == "10" || rosterMonth == "12" && rosterDay == "11" || rosterMonth == "12" && rosterDay == "12" || rosterMonth == "12" && rosterDay == "13" || rosterMonth == "12" && rosterDay == "14")
-//                {
-
-//                    dates = GetSpecificDates(rosters[j], "08/12/2019");
-
-//                    dayFound = true;
-//                }
-//                l++;
-//            }
-//            j--;
-//        }
-//        UpdateSchedule(dates, 1);
-//    }
-//    else if (DecemberTabControl.SelectedIndex == 2)
-//    {
-//        bool dayFound = false;
-//        int j = rosters.Count - 1;
-
-//        while (j >= 0 && dayFound == false)
-//        {
-//            int l = 0;
-//            while (l <= rosters[j].Length - 1 && dayFound == false)
-//            {
-//                string rosterDay = rosters[j].GetValue(l).ToString().Substring(0, 2);
-//                string rosterMonth = rosters[j].GetValue(l).ToString().Substring(3, 2);
-//                if (rosterMonth == "12" && rosterDay == "15" || rosterMonth == "12" && rosterDay == "16" || rosterMonth == "12" && rosterDay == "17" || rosterMonth == "12" && rosterDay == "18" || rosterMonth == "12" && rosterDay == "19" || rosterMonth == "12" && rosterDay == "20" || rosterMonth == "12" && rosterDay == "21")
-//                {
-
-//                    dates = GetSpecificDates(rosters[j], "15/12");
-
-//                    dayFound = true;
-//                }
-//                l++;
-//            }
-//            j--;
-//        }
-//        UpdateSchedule(dates, 2);
-//    }
-//    else if (DecemberTabControl.SelectedIndex == 3)
-//    {
-//        bool dayFound = false;
-//        int j = rosters.Count - 1;
-
-//        while (j >= 0 && dayFound == false)
-//        {
-//            int l = 0;
-//            while (l <= rosters[j].Length - 1 && dayFound == false)
-//            {
-//                string rosterDay = rosters[j].GetValue(l).ToString().Substring(0, 2);
-//                string rosterMonth = rosters[j].GetValue(l).ToString().Substring(3, 2);
-//                if (rosterMonth == "12" && rosterDay == "22" || rosterMonth == "12" && rosterDay == "23" || rosterMonth == "12" && rosterDay == "24" || rosterMonth == "12" && rosterDay == "25" || rosterMonth == "12" && rosterDay == "26" || rosterMonth == "1121" && rosterDay == "27" || rosterMonth == "12" && rosterDay == "28")
-//                {
-
-//                    dates = GetSpecificDates(rosters[j], "22/12");
-
-//                    dayFound = true;
-//                }
-//                l++;
-//            }
-//            j--;
-//        }
-//        UpdateSchedule(dates, 3);
-//    }
-//    else if (DecemberTabControl.SelectedIndex == 4)
-//    {
-//        bool dayFound = false;
-//        int j = rosters.Count - 1;
-
-//        while (j >= 0 && dayFound == false)
-//        {
-//            int l = 0;
-//            while (l <= rosters[j].Length - 1 && dayFound == false)
-//            {
-//                string rosterDay = rosters[j].GetValue(l).ToString().Substring(0, 2);
-//                string rosterMonth = rosters[j].GetValue(l).ToString().Substring(3, 2);
-//                if (rosterMonth == "12" && rosterDay == "29" || rosterMonth == "12" && rosterDay == "30" || rosterMonth == "12" && rosterDay == "31")
-//                {
-//                    DateTime newDay = new DateTime(2019, 01, 01);
-//                    dates = GetSpecificDates(rosters[j], "29/12");
-
-//                    dayFound = true;
-//                }
-//                l++;
-//            }
-//            j--;
-//        }
-//        UpdateSchedule'(dates, 4);
-//    }
