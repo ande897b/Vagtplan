@@ -11,11 +11,6 @@ namespace Domain.Models
         public int DateID { get; set; }
         public int RosterID { get; set; }
 
-        public Date (DateTime day, Shop shop)
-        {
-            Day = day;
-            Shop = shop;
-        }
         public Date(DateTime day, int dateID,int rosterID, Shop shop)
         {
             Day = day;

@@ -21,7 +21,6 @@ namespace UI.Views
     public partial class ShowRosterWindow : Window
     {
         List<Roster> rosters = RosterRepository.GetRosters();
-
         public Shop Shop { get; set; }
         public ShowRosterWindow(string boxResult)
         {
