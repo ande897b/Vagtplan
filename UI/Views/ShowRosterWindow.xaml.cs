@@ -539,28 +539,26 @@ namespace UI.Views
 
         private void weekday1combobox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            weekday1textbox2.Visibility = Visibility.Visible;
+            weekday1textbox1.Visibility = Visibility.Visible;
         }
 
       
 
-        private void weekday1combobox_Copy_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void weekday1combobox2_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             List<Date> dates = DBDateController.GetDates(Shop.ToString());
-            weekday1textbox2.Text = weekday1textbox2.Text.Substring(8, 5) + "- 17:00";
+            weekday1textbox1.Text = weekday1textbox1.Text.Substring(8, 5) + "- 17:00";
             foreach (Date date in dates)
             {
                 if (weekday1label.Content.ToString() == date.Day.ToString())
                 {
                     if (date.Day.DayOfWeek == DayOfWeek.Monday)
                     {
-                        weekday1textbox3.Text = weekday1textbox2.Text.Substring(8, 5) + "- 16:00";
+                        weekday1textbox2.Text = weekday1textbox2.Text.Substring(8, 5) + "- 16:00";
                     }
-                    
                 }
             }
-            weekday1textbox2.Visibility = Visibility.Visible;
-            
+            weekday1textbox1.Visibility = Visibility.Visible;
         }
 
         private void weekday1textbox1_TextChanged(object sender, TextChangedEventArgs e)
