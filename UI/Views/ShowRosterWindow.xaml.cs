@@ -13,9 +13,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Application;
 using Application.Repositories;
-using Application.ViewControllers;
 using Domain.Models;
 using Application.DatabaseControllers;
+using Controller.DatabaseControllers;
 
 namespace UI.Views
 {
@@ -462,63 +462,63 @@ namespace UI.Views
 
         private void ManageComboboxes()
         {
-            if (ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
+            if (RosterRepository.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
             {
-                UpdateComboboxes(ViewRosterController.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()), 1);
+                UpdateComboboxes(RosterRepository.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()), 1);
             }
             else
             {
                 UpdateComboboxes(false, 1);
             }
 
-            if (ViewRosterController.CheckIfDateExists(weekday2label.Content.ToString(), Shop.ToString()))
+            if (RosterRepository.CheckIfDateExists(weekday2label.Content.ToString(), Shop.ToString()))
             {
-                UpdateComboboxes(ViewRosterController.CheckIfDateExists(weekday2label.Content.ToString(), Shop.ToString()), 2);
+                UpdateComboboxes(RosterRepository.CheckIfDateExists(weekday2label.Content.ToString(), Shop.ToString()), 2);
             }
             else
             {
                 UpdateComboboxes(false, 2);
             }
 
-            if (ViewRosterController.CheckIfDateExists(weekday3label.Content.ToString(), Shop.ToString()))
+            if (RosterRepository.CheckIfDateExists(weekday3label.Content.ToString(), Shop.ToString()))
             {
-                UpdateComboboxes(ViewRosterController.CheckIfDateExists(weekday3label.Content.ToString(), Shop.ToString()), 3);
+                UpdateComboboxes(RosterRepository.CheckIfDateExists(weekday3label.Content.ToString(), Shop.ToString()), 3);
             }
             else
             {
                 UpdateComboboxes(false, 3);
             }
 
-            if (ViewRosterController.CheckIfDateExists(weekday4label.Content.ToString(), Shop.ToString()))
+            if (RosterRepository.CheckIfDateExists(weekday4label.Content.ToString(), Shop.ToString()))
             {
-                UpdateComboboxes(ViewRosterController.CheckIfDateExists(weekday4label.Content.ToString(), Shop.ToString()), 4);
+                UpdateComboboxes(RosterRepository.CheckIfDateExists(weekday4label.Content.ToString(), Shop.ToString()), 4);
             }
             else
             {
                 UpdateComboboxes(false, 4);
             }
 
-            if (ViewRosterController.CheckIfDateExists(weekday5label.Content.ToString(), Shop.ToString()))
+            if (RosterRepository.CheckIfDateExists(weekday5label.Content.ToString(), Shop.ToString()))
             {
-                UpdateComboboxes(ViewRosterController.CheckIfDateExists(weekday5label.Content.ToString(), Shop.ToString()), 5);
+                UpdateComboboxes(RosterRepository.CheckIfDateExists(weekday5label.Content.ToString(), Shop.ToString()), 5);
             }
             else
             {
                 UpdateComboboxes(false, 5);
             }
 
-            if (ViewRosterController.CheckIfDateExists(weekday6label.Content.ToString(), Shop.ToString()))
+            if (RosterRepository.CheckIfDateExists(weekday6label.Content.ToString(), Shop.ToString()))
             {
-                UpdateComboboxes(ViewRosterController.CheckIfDateExists(weekday6label.Content.ToString(), Shop.ToString()), 6);
+                UpdateComboboxes(RosterRepository.CheckIfDateExists(weekday6label.Content.ToString(), Shop.ToString()), 6);
             }
             else
             {
                 UpdateComboboxes(false, 6);
             }
 
-            if (ViewRosterController.CheckIfDateExists(weekday7label.Content.ToString(), Shop.ToString()))
+            if (RosterRepository.CheckIfDateExists(weekday7label.Content.ToString(), Shop.ToString()))
             {
-                UpdateComboboxes(ViewRosterController.CheckIfDateExists(weekday7label.Content.ToString(), Shop.ToString()), 7);
+                UpdateComboboxes(RosterRepository.CheckIfDateExists(weekday7label.Content.ToString(), Shop.ToString()), 7);
             }
             else
             {
@@ -553,7 +553,7 @@ namespace UI.Views
 
         private void weekday1combobox_Copy_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            List<Date> dates = DBRosterController.GetDates(Shop.ToString());
+            List<Date> dates = DBDateController.GetDates(Shop.ToString());
             weekday1textbox2.Text = weekday1textbox.Text.Substring(8, 5) + "- 17:00";
             foreach (Date date in dates)
             {

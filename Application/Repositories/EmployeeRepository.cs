@@ -14,10 +14,6 @@ namespace Application.Repositories
 		{
 			employees.Add(employee);
 		}
-		public static int GetEmployeeID(Employee employee)
-		{
-			return employee.EmployeeID;
-		}
 		public static List<Employee> GetEmployees()
 		{
 			return employees;

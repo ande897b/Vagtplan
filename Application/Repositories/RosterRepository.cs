@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Application.DatabaseControllers;
+using Controller.DatabaseControllers;
 using Domain.Models;
 
 namespace Application.Repositories
@@ -45,28 +47,42 @@ namespace Application.Repositories
 			}
 			return exists;
 		}
-        public static bool CheckIfExists(DateTime date)
+
+        public static void CreateRoster(DateTime startDate, DateTime endDate, string shop)
         {
-            bool exists = false;            
-
-            List<Roster> rosters = GetRosters();
-
-            for (int i = 0; i < rosters.Count; i++)
+            Shop newShop;
+            if (shop == Shop.kongensgade.ToString())
             {
-                DateTime start = rosters[i].StartDate;
-                DateTime[] dates = new DateTime[360];
+                newShop = Shop.kongensgade;
+            }
+            else
+            {
+                newShop = Shop.skibhusvej;
+            }
 
-                for (int j = 0; start <= rosters[i].EndDate; j++)
+
+            Roster roster = new Roster(startDate, endDate, newShop);
+            DBRosterController.CreateRoster(roster);
+            int rosterID = DBRosterController.GetRosterID(roster);
+            DBDateController.CreateDates(rosterID, shop, startDate, endDate);
+
+            AddRoster(roster);
+        }
+
+        public static bool CheckIfDateExists(string date, string shop)
+        {
+            List<Date> dates = DBDateController.GetDates(shop);
+            string newDate = date.Substring(0, 10);
+            bool checkIfTrue = false;
+            foreach (var day in dates)
+            {
+                string newDay = day.Day.ToString().Substring(0, 10);
+                if (newDate == newDay)
                 {
-                    dates[j] = start;
-                    start = start.AddDays(1);
-                    if (start == date)
-                    {
-                        exists = true;
-                    }
+                    checkIfTrue = true;
                 }
             }
-            return exists;
+            return checkIfTrue;
         }
-	}
+    }
 }

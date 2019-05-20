@@ -11,7 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using Application.ViewControllers;
+using Application.DatabaseControllers;
 using Application.Repositories;
 using Domain.Models;
 
@@ -22,19 +22,17 @@ namespace UI.Views
         public CreateRosterWindow()
         {
             InitializeComponent();
-            
         }
 
         private void CreateRosterBtn_Click(object sender, RoutedEventArgs e)
         {
-            ViewRosterController.CreateRoster(DatePickerStart.SelectedDate.Value, DatePickerEnd.SelectedDate.Value, comboBoxShop.Text.ToString().ToLower());
+            RosterRepository.CreateRoster(DatePickerStart.SelectedDate.Value, DatePickerEnd.SelectedDate.Value, comboBoxShop.Text.ToString().ToLower());
             MessageBox.Show("Vagtplan med " + " i "+ comboBoxShop.Text +" oprettet. Du kan nu indsætte vagter", "Success");
             this.Close();
         }
 
         private void ComboBoxShop_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
             string shop = (comboBoxShop.SelectedItem as ComboBoxItem).Content.ToString().ToLower();
             DateTime startDate;
             if (RosterRepository.CurrentRosterExist(shop) == false)

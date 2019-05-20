@@ -8,8 +8,8 @@ namespace Domain.Models
 {
     public enum Rank
     {
-        deltidmedarbejder,
-        butikschef
+        parttimer,
+        manager
     }
     public class Employee
     {
@@ -17,5 +17,13 @@ namespace Domain.Models
 		public string FirstName { get; set; }
         public string LastName { get; set; }
         public Rank Rank { get; set; }
+
+        public Employee(int employeeID, string firstName, string lastName, Rank rank)
+        {
+            EmployeeID = employeeID;
+            FirstName = firstName;
+            LastName = lastName;
+            Rank = rank;
+        }
     }
 }
