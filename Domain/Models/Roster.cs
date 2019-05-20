@@ -23,7 +23,8 @@ namespace Domain.Models
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
         public Shop Shop { get; set; }
-        public List<Date> Dates { get; set; }
+        public int RosterID { get; set; }
+
 
         public Roster(DateTime startDate, DateTime endDate, Shop shop)
         {
@@ -31,13 +32,15 @@ namespace Domain.Models
             EndDate = endDate;
             Shop = shop;
         }
-
-        public Roster(DateTime startDate, DateTime endDate, Shop shop, List<Date> dates)
+        public Roster(DateTime startDate, DateTime endDate, Shop shop, int rosterID)
         {
             StartDate = startDate;
             EndDate = endDate;
             Shop = shop;
-            Dates = dates;
+            RosterID = rosterID;
         }
+
+
+
     }
 }
