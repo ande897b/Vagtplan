@@ -539,29 +539,22 @@ namespace UI.Views
 
         private void weekday1combobox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            weekday1textbox.Visibility = Visibility.Visible;
+            weekday1textbox2.Visibility = Visibility.Visible;
         }
 
-        private void weekday1textbox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            if (weekday1textbox.Text != "10:00 - 17:00")
-            {
-                weekday1combobox_Copy.Visibility = Visibility.Visible;
-
-            }
-        }
+      
 
         private void weekday1combobox_Copy_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             List<Date> dates = DBDateController.GetDates(Shop.ToString());
-            weekday1textbox2.Text = weekday1textbox.Text.Substring(8, 5) + "- 17:00";
+            weekday1textbox2.Text = weekday1textbox2.Text.Substring(8, 5) + "- 17:00";
             foreach (Date date in dates)
             {
                 if (weekday1label.Content.ToString() == date.Day.ToString())
                 {
                     if (date.Day.DayOfWeek == DayOfWeek.Monday)
                     {
-                        weekday1textbox2.Text = weekday1textbox.Text.Substring(8, 5) + "- 16:00";
+                        weekday1textbox3.Text = weekday1textbox2.Text.Substring(8, 5) + "- 16:00";
                     }
                     
                 }
@@ -570,106 +563,115 @@ namespace UI.Views
             
         }
 
-        private void SaveBtn_Click(object sender, RoutedEventArgs e)
+        private void weekday1textbox1_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (weekday1combobox.SelectedItem != null)
+            if (weekday1textbox1.Text != "10:00 - 17:00")
             {
-                if (weekday1textbox.Text != null)
-                {
+                weekday1combobox2.Visibility = Visibility.Visible;
 
-                }
-                if (weekday1combobox_Copy.SelectedItem != null)
-                {
-                    if (weekday1textbox2.Text != null)
-                    {
-
-                    }
-                }
-            }
-            if (weekday2combobox.SelectedItem != null)
-            {
-                if (weekday2textbox.Text != null)
-                {
-
-                }
-                if (weekday2combobox_Copy.SelectedItem != null)
-                {
-                    if (weekday2textbox2.Text != null)
-                    {
-
-                    }
-                }
-            }
-            if (weekday3combobox.SelectedItem != null)
-            {
-                if (weekday3textbox.Text != null)
-                {
-
-                }
-                if (weekday3combobox_Copy.SelectedItem != null)
-                {
-                    if (weekday3textbox2.Text != null)
-                    {
-
-                    }
-                }
-            }
-            if (weekday4combobox.SelectedItem != null)
-            {
-                if (weekday4textbox.Text != null)
-                {
-
-                }
-                if (weekday4combobox_Copy.SelectedItem != null)
-                {
-                    if (weekday4textbox2.Text != null)
-                    {
-
-                    }
-                }
-            }
-            if (weekday5combobox.SelectedItem != null)
-            {
-                if (weekday5textbox.Text != null)
-                {
-
-                }
-                if (weekday5combobox_Copy.SelectedItem != null)
-                {
-                    if (weekday5textbox2.Text != null)
-                    {
-
-                    }
-                }
-            }
-            if (weekday6combobox.SelectedItem != null)
-            {
-                if (weekday6textbox.Text != null)
-                {
-
-                }
-                if (weekday6combobox_Copy.SelectedItem != null)
-                {
-                    if (weekday6textbox2.Text != null)
-                    {
-
-                    }
-                }
-            }
-            if (weekday7combobox.SelectedItem != null)
-            {
-                if (weekday7textbox.Text != null)
-                {
-
-                }
-                if (weekday7combobox_Copy.SelectedItem != null)
-                {
-                    if (weekday7textbox2.Text != null)
-                    {
-
-                    }
-                }
             }
         }
+
+        //private void SaveBtn_Click(object sender, RoutedEventArgs e)
+        //{
+        //    if (weekday1combobox.SelectedItem != null)
+        //    {
+        //        if (weekday1textbox.Text != null)
+        //        {
+
+        //        }
+        //        if (weekday1combobox_Copy.SelectedItem != null)
+        //        {
+        //            if (weekday1textbox2.Text != null)
+        //            {
+
+        //            }
+        //        }
+        //    }
+        //    if (weekday2combobox.SelectedItem != null)
+        //    {
+        //        if (weekday2textbox.Text != null)
+        //        {
+
+        //        }
+        //        if (weekday2combobox_Copy.SelectedItem != null)
+        //        {
+        //            if (weekday2textbox2.Text != null)
+        //            {
+
+        //            }
+        //        }
+        //    }
+        //    if (weekday3combobox.SelectedItem != null)
+        //    {
+        //        if (weekday3textbox.Text != null)
+        //        {
+
+        //        }
+        //        if (weekday3combobox_Copy.SelectedItem != null)
+        //        {
+        //            if (weekday3textbox2.Text != null)
+        //            {
+
+        //            }
+        //        }
+        //    }
+        //    if (weekday4combobox.SelectedItem != null)
+        //    {
+        //        if (weekday4textbox.Text != null)
+        //        {
+
+        //        }
+        //        if (weekday4combobox_Copy.SelectedItem != null)
+        //        {
+        //            if (weekday4textbox2.Text != null)
+        //            {
+
+        //            }
+        //        }
+        //    }
+        //    if (weekday5combobox.SelectedItem != null)
+        //    {
+        //        if (weekday5textbox.Text != null)
+        //        {
+
+        //        }
+        //        if (weekday5combobox_Copy.SelectedItem != null)
+        //        {
+        //            if (weekday5textbox2.Text != null)
+        //            {
+
+        //            }
+        //        }
+        //    }
+        //    if (weekday6combobox.SelectedItem != null)
+        //    {
+        //        if (weekday6textbox.Text != null)
+        //        {
+
+        //        }
+        //        if (weekday6combobox_Copy.SelectedItem != null)
+        //        {
+        //            if (weekday6textbox2.Text != null)
+        //            {
+
+        //            }
+        //        }
+        //    }
+        //    if (weekday7combobox.SelectedItem != null)
+        //    {
+        //        if (weekday7textbox.Text != null)
+        //        {
+
+        //        }
+        //        if (weekday7combobox_Copy.SelectedItem != null)
+        //        {
+        //            if (weekday7textbox2.Text != null)
+        //            {
+
+        //            }
+        //        }
+        // }
+        // }
     }
 }
