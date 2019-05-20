@@ -19,15 +19,12 @@ namespace Application.ViewControllers
             {
                 newShop = Shop.skibhusvej;
             }
-
-
             Roster roster = new Roster(startDate, endDate, newShop);
             DBRosterController.CreateRoster(roster);
             int rosterID = DBRosterController.GetRosterID(roster);
             DBRosterController.CreateDateList(rosterID, shop);
             int dateListID = DBRosterController.GetDateListID(rosterID, shop);
             DBRosterController.CreateDates(dateListID, shop, startDate, endDate);
-
             RosterRepository.AddRoster(roster);
         }
         public static bool CheckIfDateExists(string date,string shop)
@@ -45,7 +42,5 @@ namespace Application.ViewControllers
             }
             return checkIfTrue;
         }
-
-       
     }
 }

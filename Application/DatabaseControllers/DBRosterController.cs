@@ -42,11 +42,10 @@ namespace Application.DatabaseControllers
                         {
                             newShop = Shop.kongensgade;
                         }
-                        else
+                        else 
                         {
                             newShop = Shop.skibhusvej;
                         }
-
                         Roster addRoster = new Roster(startDate, endDate, newShop);
                         RosterRepository.AddRoster(addRoster);
                     }

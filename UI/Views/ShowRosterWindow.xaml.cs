@@ -49,16 +49,12 @@ namespace UI.Views
             //    rosterArrays.Add(dates);
             //}
         }
-
-       
-
         public static List<DateTime> GetDates(int year, int month)
         {
             return Enumerable.Range(1, DateTime.DaysInMonth(year, month))  // Days: 1, 2 ... 31 etc.
                              .Select(day => new DateTime(year, month, day)) // Map each day to a date
                              .ToList(); // Load dates into a list
         }
-
         private List<Date> GetSpecificDates(List<Date> dates, string startDate)
         {
             List<Date> specificDates = new List<Date>();
@@ -77,9 +73,6 @@ namespace UI.Views
             }
             return specificDates;
         }
-
-
-
         private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             DateTime[] dates = GetDates(2019, tabControl.SelectedIndex + 1).ToArray();
@@ -146,7 +139,6 @@ namespace UI.Views
                     }
                 }
             }
-
             if (tabControl.SelectedIndex == 1) // Februar
             {
                 if (FebruaryTabControl.SelectedIndex == 0)
@@ -274,7 +266,6 @@ namespace UI.Views
                     }
                 }
             }
-
             if (tabControl.SelectedIndex == 3) // April
             {
                 if (AprilTabControl.SelectedIndex == 0)
@@ -338,7 +329,6 @@ namespace UI.Views
                     }
                 }
             }
-
             if (tabControl.SelectedIndex == 4) // Maj
             {
                 if (MayTabControl.SelectedIndex == 0)
@@ -402,7 +392,6 @@ namespace UI.Views
                     }
                 }
             }
-
             if (tabControl.SelectedIndex == 5) // Juni
             {
                 if (JuneTabControl.SelectedIndex == 0)
