@@ -8,7 +8,7 @@
         Title="ShowRosterWindow" Height="450" Width="900"
 >
     <Grid>
-        <TextBox x:Name="weekday1txtbox" HorizontalAlignment="Left" Height="200" Margin="20,140,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" IsEnabled="False"/>
+        <TextBox x:Name="weekday1txtbox" HorizontalAlignment="Left" Height="200" Margin="20,140,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" IsEnabled="False" TextChanged="Weekday1txtbox_TextChanged"/>
         <TextBox x:Name="weekday2txtbox" HorizontalAlignment="Left" Height="200" Margin="149,140,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" IsEnabled="False"/>
         <TextBox x:Name="weekday3txtbox" HorizontalAlignment="Left" Height="200" Margin="277,140,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" IsEnabled="False"/>
         <TextBox x:Name="weekday4txtbox" HorizontalAlignment="Left" Height="200" Margin="412,140,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" IsEnabled="False"/>
@@ -425,6 +425,7 @@
             <ComboBoxItem Background="#FF6AE656" Content="stub3"/>
         </ComboBox>
         <TextBox x:Name="weekday1textbox2" Visibility="Hidden" HorizontalAlignment="Left" Height="23" Margin="20,207,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100"/>
+        <Button x:Name="SaveBtn" Background="LightGreen" Content="Gem" HorizontalAlignment="Left" Margin="20,375,0,0" VerticalAlignment="Top" Width="862" Height="34" Click="SaveBtn_Click"/>
 
 
     </Grid>

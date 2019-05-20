@@ -569,5 +569,10 @@ namespace UI.Views
             weekday1textbox2.Visibility = Visibility.Visible;
             
         }
+
+        private void SaveBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
