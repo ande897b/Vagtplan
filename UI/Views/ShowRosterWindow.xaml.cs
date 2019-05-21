@@ -811,106 +811,107 @@ namespace UI.Views
 
 
 
-        //private void SaveBtn_Click(object sender, RoutedEventArgs e)
-        //{
-        //    if (weekday1combobox.SelectedItem != null)
-        //    {
-        //        if (weekday1textbox.Text != null)
-        //        {
 
-        //        }
-        //        if (weekday1combobox_Copy.SelectedItem != null)
-        //        {
-        //            if (weekday1textbox2.Text != null)
-        //            {
+        private void SaveBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if (weekday1combobox.SelectedItem != null)
+            {
+                if (weekday1textbox.Text != null)
+                {
 
-        //            }
-        //        }
-        //    }
-        //    if (weekday2combobox.SelectedItem != null)
-        //    {
-        //        if (weekday2textbox.Text != null)
-        //        {
+                }
+                if (weekday1combobox_Copy.SelectedItem != null)
+                {
+                    if (weekday1textbox2.Text != null)
+                    {
 
-        //        }
-        //        if (weekday2combobox_Copy.SelectedItem != null)
-        //        {
-        //            if (weekday2textbox2.Text != null)
-        //            {
+                    }
+                }
+            }
+            if (weekday2combobox.SelectedItem != null)
+            {
+                if (weekday2textbox.Text != null)
+                {
 
-        //            }
-        //        }
-        //    }
-        //    if (weekday3combobox.SelectedItem != null)
-        //    {
-        //        if (weekday3textbox.Text != null)
-        //        {
+                }
+                if (weekday2combobox_Copy.SelectedItem != null)
+                {
+                    if (weekday2textbox2.Text != null)
+                    {
 
-        //        }
-        //        if (weekday3combobox_Copy.SelectedItem != null)
-        //        {
-        //            if (weekday3textbox2.Text != null)
-        //            {
+                    }
+                }
+            }
+            if (weekday3combobox.SelectedItem != null)
+            {
+                if (weekday3textbox.Text != null)
+                {
 
-        //            }
-        //        }
-        //    }
-        //    if (weekday4combobox.SelectedItem != null)
-        //    {
-        //        if (weekday4textbox.Text != null)
-        //        {
+                }
+                if (weekday3combobox_Copy.SelectedItem != null)
+                {
+                    if (weekday3textbox2.Text != null)
+                    {
 
-        //        }
-        //        if (weekday4combobox_Copy.SelectedItem != null)
-        //        {
-        //            if (weekday4textbox2.Text != null)
-        //            {
+                    }
+                }
+            }
+            if (weekday4combobox.SelectedItem != null)
+            {
+                if (weekday4textbox.Text != null)
+                {
 
-        //            }
-        //        }
-        //    }
-        //    if (weekday5combobox.SelectedItem != null)
-        //    {
-        //        if (weekday5textbox.Text != null)
-        //        {
+                }
+                if (weekday4combobox_Copy.SelectedItem != null)
+                {
+                    if (weekday4textbox2.Text != null)
+                    {
 
-        //        }
-        //        if (weekday5combobox_Copy.SelectedItem != null)
-        //        {
-        //            if (weekday5textbox2.Text != null)
-        //            {
+                    }
+                }
+            }
+            if (weekday5combobox.SelectedItem != null)
+            {
+                if (weekday5textbox.Text != null)
+                {
 
-        //            }
-        //        }
-        //    }
-        //    if (weekday6combobox.SelectedItem != null)
-        //    {
-        //        if (weekday6textbox.Text != null)
-        //        {
+                }
+                if (weekday5combobox_Copy.SelectedItem != null)
+                {
+                    if (weekday5textbox2.Text != null)
+                    {
 
-        //        }
-        //        if (weekday6combobox_Copy.SelectedItem != null)
-        //        {
-        //            if (weekday6textbox2.Text != null)
-        //            {
+                    }
+                }
+            }
+            if (weekday6combobox.SelectedItem != null)
+            {
+                if (weekday6textbox.Text != null)
+                {
 
-        //            }
-        //        }
-        //    }
-        //    if (weekday7combobox.SelectedItem != null)
-        //    {
-        //        if (weekday7textbox.Text != null)
-        //        {
+                }
+                if (weekday6combobox_Copy.SelectedItem != null)
+                {
+                    if (weekday6textbox2.Text != null)
+                    {
 
-        //        }
-        //        if (weekday7combobox_Copy.SelectedItem != null)
-        //        {
-        //            if (weekday7textbox2.Text != null)
-        //            {
+                    }
+                }
+            }
+            if (weekday7combobox.SelectedItem != null)
+            {
+                if (weekday7textbox.Text != null)
+                {
 
-        //            }
-        //        }
-        // }
-        // }
+                }
+                if (weekday7combobox_Copy.SelectedItem != null)
+                {
+                    if (weekday7textbox2.Text != null)
+                    {
+
+                    }
+                }
+            }
+        }
     }
 }
