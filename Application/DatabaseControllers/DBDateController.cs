@@ -32,7 +32,6 @@ namespace Controller.DatabaseControllers
                 DBConnection.Close();
             }
         }
-
         public static List<Date> GetDates(string shop)
         {
             List<Date> dates = new List<Date>();
