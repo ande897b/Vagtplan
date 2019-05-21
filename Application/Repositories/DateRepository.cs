@@ -22,5 +22,17 @@ namespace Controller.Repositories
         {
             dates.Remove(date);
         }
+        public static int GetDateID(string date, Shop shop)
+        {
+            int id = 0;
+            foreach (Date day in dates)
+            {
+                if (day.Day.ToString().Substring(0, 10) == date.Substring(0,10) && day.Shop == shop)
+                {
+                    id = day.DateID;
+                }
+            }
+            return id;
+        }
     }
 }

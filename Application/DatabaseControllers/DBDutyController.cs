@@ -37,36 +37,29 @@ namespace Controller.DatabaseControllers
                         startTime = (DateTime)reader["StartTime"];
                         endTime = (DateTime)reader["EndTime"];
 
-                        Duty duty = new Duty(employeeID, dutyID, startTime, endTime, dateID);
+                        Duty duty = new Duty(dutyID, employeeID, dateID, startTime, endTime);
                         DutyRepository.AddDuty(duty);
                     }
                 }
                 DBConnection.Close();
             }
         }
-        //public static int GetDutyID(Duty duty)
-        //{
-        //    int ID = 0;
 
-        //    DBConnection.DatabaseName = "CANE";
-        //    if (DBConnection.IsConnected())
-        //    {
-        //        string query = "Get_Employee";
-        //        var cmd = new SqlCommand(query, DBConnection.Connection);
-        //        cmd.CommandType = CommandType.StoredProcedure;
-        //        cmd.Parameters.Add(new SqlParameter("FirstName_IN", duty.FirstName));
-        //        cmd.Parameters.Add(new SqlParameter("LastName_IN", employee.LastName));
-        //        var reader = cmd.ExecuteReader();
-        //        if (reader.HasRows)
-        //        {
-        //            if (reader.Read())
-        //            {
-        //                ID = (int)reader["EmployeeID"];
-        //            }
-        //        }
-        //        DBConnection.Close();
-        //    }
-        //    return ID;
-        //}
+        public static void CreateDuty(Duty duty)
+        {
+            DBConnection.DatabaseName = "CANE";
+            if (DBConnection.IsConnected())
+            {
+                string query = "Create_Duty";
+                var cmd = new SqlCommand(query, DBConnection.Connection);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add(new SqlParameter("@Employee_IN", duty.EmployeeID));
+                cmd.Parameters.Add(new SqlParameter("@Date_IN", duty.DateID));
+                cmd.Parameters.Add(new SqlParameter("@StartTime_IN", duty.StartTime));
+                cmd.Parameters.Add(new SqlParameter("@EndTime_IN", duty.EndTime));
+                cmd.ExecuteReader();
+                DBConnection.Close();
+            }
+        }
     }
 }

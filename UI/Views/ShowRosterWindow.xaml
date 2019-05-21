@@ -411,7 +411,7 @@
 
         </ComboBox>
         <TextBox x:Name="weekday1textbox3" Visibility="Hidden" HorizontalAlignment="Left" Height="23" Margin="20,207,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" TextChanged="weekday1textbox3_TextChanged"/>
-        <Button x:Name="SaveBtn" Background="LightGreen" Content="Gem" HorizontalAlignment="Left" Margin="20,375,0,0" VerticalAlignment="Top" Width="862" Height="34" Click="SaveBtn_Click" />
+        <Button x:Name="SaveBtn" Background="LightGreen" Content="Gem" HorizontalAlignment="Left" Margin="20,375,0,0" VerticalAlignment="Top" Width="862" Height="34"  />
         <ComboBox x:Name="weekday1combobox3" HorizontalAlignment="Left" Margin="20,230,0,0" VerticalAlignment="Top" Width="100"  Visibility="Hidden" SelectionChanged="weekday1combobox3_SelectionChanged">
           
         </ComboBox>
