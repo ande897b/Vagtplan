@@ -495,7 +495,6 @@ namespace UI.Views
             }
         }
 
-
         private void ManageComboboxes()
         {
             if (RosterRepository.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
@@ -578,8 +577,6 @@ namespace UI.Views
             weekday1textbox2.Visibility = Visibility.Visible;
         }
 
-      
-
         private void weekday1combobox2_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             List<Date> dates = DateRepository.GetDates();
@@ -613,12 +610,13 @@ namespace UI.Views
             {
                 weekday1combobox3.Visibility = Visibility.Hidden;
             }
-        }private void weekday1combobox3_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        }
+
+        private void weekday1combobox3_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             weekday1textbox4.Visibility = Visibility.Visible;
             weekday1textbox4.Text = weekday1textbox3.Text.Substring(8, 5) + " - 17:00";
         }
-
 
         private void weekday2combobox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
