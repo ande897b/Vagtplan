@@ -12,7 +12,10 @@ namespace Controller.Repositories
         private static List<Duty> duties = new List<Duty>();
         public static void AddDuty(Duty duty)
         {
-            duties.Add(duty);
+            if (!DutyExist(duty))
+            {
+                duties.Add(duty);
+            }
         }
         public static List<Duty> GetDuties()
         {
@@ -33,6 +36,19 @@ namespace Controller.Repositories
         public static void Removeduty(Duty duty)
         {
             duties.Remove(duty);
+        }
+
+        public static bool DutyExist(Duty duty)
+        {
+            bool exist = false;
+            foreach(Duty duti in duties)
+            {
+                if (duti.DateID == duty.DateID && duti.EmployeeID == duty.EmployeeID && duti.StartTime == duty.StartTime && duti.EndTime == duty.EndTime)
+                {
+                    exist = true;
+                }
+            }
+            return exist;
         }
     }
 }
