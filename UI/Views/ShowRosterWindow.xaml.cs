@@ -410,16 +410,29 @@ namespace UI.Views
 
             if (decision == true)
             {
+
                 switch (comboBox)
                 {
                     case 1:
                         weekday1combobox.IsEnabled = true;
 
-                            weekday1combobox.ItemsSource = EmployeeRepository.GetEmployee(duties[0].EmployeeID).FirstName.ToString();
 
-                            weekday1combobox2.ItemsSource = EmployeeRepository.GetEmployee(duties[1].EmployeeID).FirstName.ToString();
-            
-                            weekday1combobox3.ItemsSource = EmployeeRepository.GetEmployee(duties[2].EmployeeID).FirstName.ToString();
+                        weekday1combobox.ItemsSource = newEmployees;
+                        weekday1combobox2.ItemsSource = newEmployees;
+                        weekday1combobox3.ItemsSource = newEmployees;
+
+
+                            weekday1combobox.SelectedItem = EmployeeRepository.GetEmployee(duties[0].EmployeeID).FirstName;
+                        if(weekday1combobox2.SelectedIndex != -1)
+                        {
+                            weekday1combobox2.Visibility = Visibility.Visible;
+                        }
+                        weekday1combobox2.SelectedItem = EmployeeRepository.GetEmployee(duties[1].EmployeeID).FirstName;
+                        if (weekday1combobox3.SelectedIndex != -1)
+                        {
+                            weekday1combobox3.Visibility = Visibility.Visible;
+                        }
+                            weekday1combobox3.SelectedItem = EmployeeRepository.GetEmployee(duties[2].EmployeeID).FirstName;
                         //weekday1textbox
 
                         break;
