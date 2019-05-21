@@ -18,6 +18,18 @@ namespace Controller.Repositories
         {
             return duties;
         }
+        public static List<Duty> GetDuties(int dateID)
+        {
+            List<Duty> newDuties = new List<Duty>();
+            foreach(Duty duty in duties)
+            {
+                if(duty.DateID == dateID)
+                {
+                    newDuties.Add(duty);
+                }
+            }
+            return newDuties;
+        }
         public static void Removeduty(Duty duty)
         {
             duties.Remove(duty);

@@ -76,7 +76,29 @@ namespace Controller.DatabaseControllers
             }
         }
 
-        
+        //public static void GetDate(string date, string shop)
+        //{
+        //    DateTime newDate = new DateTime(int.Parse(date.Substring(6, 4)), int.Parse(date.Substring(3, 2)), int.Parse(date.Substring(0, 2)));
+        //    DBConnection.DatabaseName = "CANE";
+        //    if (DBConnection.IsConnected())
+        //    {
+        //        string query = "Get_Roster";
+        //        var cmd = new SqlCommand(query, DBConnection.Connection);
+        //        cmd.CommandType = CommandType.StoredProcedure;
+        //        cmd.Parameters.Add(new SqlParameter("Date_IN", newDate));
+        //        cmd.Parameters.Add(new SqlParameter("Shop_IN", shop));
+        //        var reader = cmd.ExecuteReader();
+        //        if (reader.HasRows)
+        //        {
+        //            if (reader.Read())
+        //            {
+        //                ID = reader["RosterID"].ToString();
+        //                int.TryParse(ID, out IDint);
+        //            }
+        //        }
+        //        DBConnection.Close();
+        //    }
+        //}
     }
 }
     

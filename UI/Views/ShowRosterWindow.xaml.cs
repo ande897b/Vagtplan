@@ -395,9 +395,11 @@ namespace UI.Views
             }
         }
 
-        public void UpdateComboboxes(bool decision, int comboBox)
+        public void UpdateComboboxes(bool decision, int dateID, int comboBox)
         {
+            DBDutyController.LoadDuties();
             List<Employee> employees = EmployeeRepository.GetEmployees();
+            List<Duty> duties = DutyRepository.GetDuties(dateID);
             List<string> newEmployees = new List<string>();
 
             foreach (Employee employee in employees)
@@ -412,9 +414,14 @@ namespace UI.Views
                 {
                     case 1:
                         weekday1combobox.IsEnabled = true;
-                        weekday1combobox.ItemsSource = newEmployees;
-                        weekday1combobox2.ItemsSource = newEmployees;
-                        weekday1combobox3.ItemsSource = newEmployees;
+
+                            weekday1combobox.ItemsSource = EmployeeRepository.GetEmployee(duties[0].EmployeeID).FirstName.ToString();
+
+                            weekday1combobox2.ItemsSource = EmployeeRepository.GetEmployee(duties[1].EmployeeID).FirstName.ToString();
+            
+                            weekday1combobox3.ItemsSource = EmployeeRepository.GetEmployee(duties[2].EmployeeID).FirstName.ToString();
+                        //weekday1textbox
+
                         break;
                     case 2:
                         weekday2combobox.IsEnabled = true;
@@ -499,65 +506,79 @@ namespace UI.Views
         {
             if (RosterRepository.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
             {
-                UpdateComboboxes(true, 1);
+                int dateID = DateRepository.GetDateID(weekday1label.Content.ToString(), Shop);
+                UpdateComboboxes(true, dateID, 1);
             }
             else
             {
-                UpdateComboboxes(false, 1);
+                int dateID = DateRepository.GetDateID(weekday1label.Content.ToString(), Shop);
+                UpdateComboboxes(false, dateID, 1);
             }
 
             if (RosterRepository.CheckIfDateExists(weekday2label.Content.ToString(), Shop.ToString()))
             {
-                UpdateComboboxes(true, 2);
+                int dateID = DateRepository.GetDateID(weekday2label.Content.ToString(), Shop);
+                UpdateComboboxes(true, dateID, 2);
             }
             else
             {
-                UpdateComboboxes(false, 2);
+                int dateID = DateRepository.GetDateID(weekday2label.Content.ToString(), Shop);
+                UpdateComboboxes(false, dateID, 2);
             }
 
             if (RosterRepository.CheckIfDateExists(weekday3label.Content.ToString(), Shop.ToString()))
             {
-                UpdateComboboxes(true, 3);
+                int dateID = DateRepository.GetDateID(weekday3label.Content.ToString(), Shop);
+                UpdateComboboxes(true, dateID, 3);
             }
             else
             {
-                UpdateComboboxes(false, 3);
+                int dateID = DateRepository.GetDateID(weekday3label.Content.ToString(), Shop);
+                UpdateComboboxes(false, dateID, 3);
             }
 
             if (RosterRepository.CheckIfDateExists(weekday4label.Content.ToString(), Shop.ToString()))
             {
-                UpdateComboboxes(RosterRepository.CheckIfDateExists(weekday4label.Content.ToString(), Shop.ToString()), 4);
+                int dateID = DateRepository.GetDateID(weekday4label.Content.ToString(), Shop);
+                UpdateComboboxes(true, dateID, 4);
             }
             else
             {
-                UpdateComboboxes(false, 4);
+                int dateID = DateRepository.GetDateID(weekday4label.Content.ToString(), Shop);
+                UpdateComboboxes(false, dateID, 4);
             }
 
             if (RosterRepository.CheckIfDateExists(weekday5label.Content.ToString(), Shop.ToString()))
             {
-                UpdateComboboxes(RosterRepository.CheckIfDateExists(weekday5label.Content.ToString(), Shop.ToString()), 5);
+                int dateID = DateRepository.GetDateID(weekday5label.Content.ToString(), Shop);
+                UpdateComboboxes(true, dateID, 5);
             }
             else
             {
-                UpdateComboboxes(false, 5);
+                int dateID = DateRepository.GetDateID(weekday5label.Content.ToString(), Shop);
+                UpdateComboboxes(false, dateID, 5);
             }
 
             if (RosterRepository.CheckIfDateExists(weekday6label.Content.ToString(), Shop.ToString()))
             {
-                UpdateComboboxes(RosterRepository.CheckIfDateExists(weekday6label.Content.ToString(), Shop.ToString()), 6);
+                int dateID = DateRepository.GetDateID(weekday6label.Content.ToString(), Shop);
+                UpdateComboboxes(true, dateID, 6);
             }
             else
             {
-                UpdateComboboxes(false, 6);
+                int dateID = DateRepository.GetDateID(weekday6label.Content.ToString(), Shop);
+                UpdateComboboxes(false, dateID, 6);
             }
 
             if (RosterRepository.CheckIfDateExists(weekday7label.Content.ToString(), Shop.ToString()))
             {
-                UpdateComboboxes(RosterRepository.CheckIfDateExists(weekday7label.Content.ToString(), Shop.ToString()), 7);
+                int dateID = DateRepository.GetDateID(weekday7label.Content.ToString(), Shop);
+                UpdateComboboxes(true, dateID, 7);
             }
             else
             {
-                UpdateComboboxes(false, 7);
+                int dateID = DateRepository.GetDateID(weekday7label.Content.ToString(), Shop);
+                UpdateComboboxes(false, dateID, 7);
             }
         }
 
