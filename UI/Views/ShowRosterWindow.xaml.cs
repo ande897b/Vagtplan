@@ -690,8 +690,11 @@ namespace UI.Views
 
         private void weekday4textbox2_TextChanged(object sender, TextChangedEventArgs e)
         {
-            weekday4textbox3.Text = weekday4textbox2.Text.Substring(8, 5) + " - 17:00";
-            weekday4combobox2.Visibility = Visibility.Visible;
+            if (weekday4textbox2.Text != "10:00 - 17:00")
+            {
+                weekday4combobox2.Visibility = Visibility.Visible;
+
+            }
         }
 
         private void weekday4combobox2_SelectionChanged(object sender, SelectionChangedEventArgs e)
