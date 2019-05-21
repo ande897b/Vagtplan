@@ -573,7 +573,129 @@ namespace UI.Views
         private void weekday1textbox3_TextChanged(object sender, TextChangedEventArgs e)
         {
             weekday1combobox3.Visibility = Visibility.Visible;
+            if (weekday1textbox3.Text.Substring(8, 2) == "17")
+            {
+                weekday1combobox3.Visibility = Visibility.Hidden;
+            }
+        }private void weekday1combobox3_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            weekday1textbox4.Visibility = Visibility.Visible;
+            weekday1textbox4.Text = weekday1textbox3.Text.Substring(8, 5) + " - 17:00";
         }
+
+
+        private void weekday2combobox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            weekday2textbox2.Visibility = Visibility.Visible;
+        }
+
+        private void weekday2textbox2_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (weekday2textbox2.Text != "10:00 - 17:00")
+            {
+                weekday2combobox2.Visibility = Visibility.Visible;
+
+            }
+        }
+
+        private void weekday2combobox2_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            weekday2textbox3.Visibility = Visibility.Visible;
+            weekday2textbox3.Text = weekday2textbox2.Text.Substring(8, 5) + " - 17:00";
+        }
+
+        private void weekday2textbox3_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (weekday2textbox3.Text != "10:00 - 17:00")
+            {
+                weekday2combobox3.Visibility = Visibility.Visible;
+            }
+            if (weekday2textbox3.Text.Substring(8, 2) == "17")
+            {
+                weekday2combobox3.Visibility = Visibility.Hidden;
+            }
+        }
+
+        private void weekday2combobox3_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            weekday2textbox4.Visibility = Visibility.Visible;
+            weekday2textbox4.Text = weekday2textbox3.Text.Substring(8, 5) + " - 17:00";
+        }
+
+        private void weekday3combobox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            weekday3textbox2.Visibility = Visibility.Visible;
+        }
+
+        private void weekday3textbox2_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (weekday3textbox2.Text != "10:00 - 17:00")
+            {
+                weekday3combobox2.Visibility = Visibility.Visible;
+
+            }
+        }
+
+        private void weekday3combobox2_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            weekday3textbox3.Visibility = Visibility.Visible;
+            weekday3textbox3.Text = weekday3textbox2.Text.Substring(8, 5) + " - 17:00";
+
+        }
+
+        private void weekday3textbox3_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (weekday3textbox3.Text.Substring(8,2) == "17")
+            {
+                weekday3combobox3.Visibility = Visibility.Hidden;
+            }
+            else
+            {
+                weekday3combobox3.Visibility = Visibility.Visible;
+            }
+        }
+
+        private void weekday3combobox3_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            weekday3textbox4.Visibility = Visibility.Visible;
+            weekday3textbox4.Text = weekday3textbox3.Text.Substring(8, 5) + " - 17:00";
+        }
+
+        private void weekday4combobox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            weekday4textbox2.Visibility = Visibility.Visible;
+        }
+
+        private void weekday4textbox2_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            weekday4textbox3.Text = weekday4textbox2.Text.Substring(8, 5) + " - 17:00";
+            weekday4combobox2.Visibility = Visibility.Visible;
+        }
+
+        private void weekday4combobox2_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            weekday4textbox3.Visibility = Visibility.Visible;
+            weekday4textbox3.Text = weekday4textbox2.Text.Substring(8, 5) + " - 17:00";
+        }
+
+        private void weekday4textbox3_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (weekday4textbox3.Text.Substring(8, 2) == "17")
+            {
+                weekday4combobox3.Visibility = Visibility.Hidden;
+            }
+            else
+            {
+                weekday4combobox3.Visibility = Visibility.Visible;
+            }
+        }
+
+        private void weekday4combobox3_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            weekday4textbox4.Visibility = Visibility.Visible;
+            weekday4textbox4.Text = weekday4textbox3.Text.Substring(8, 5) + " - 17:00";
+        }
+
 
         //private void SaveBtn_Click(object sender, RoutedEventArgs e)
         //{
