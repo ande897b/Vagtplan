@@ -41,7 +41,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DatabaseControllers\Datetime.cs" />
     <Compile Include="DatabaseControllers\DBDateController.cs" />
     <Compile Include="DatabaseControllers\DBDutyController.cs" />
     <Compile Include="DatabaseControllers\DBEmployeeController.cs" />
