@@ -402,7 +402,7 @@
         <ComboBox x:Name="weekday6combobox" HorizontalAlignment="Left" Margin="661,140,0,0" VerticalAlignment="Top" Width="100" SelectionChanged="weekday6combobox_SelectionChanged">
           
         </ComboBox>
-        <ComboBox x:Name="weekday7combobox" HorizontalAlignment="Left" Margin="785,140,0,0" VerticalAlignment="Top" Width="100">
+        <ComboBox x:Name="weekday7combobox" HorizontalAlignment="Left" Margin="785,140,0,0" VerticalAlignment="Top" Width="100" SelectionChanged="weekday7combobox_SelectionChanged">
           
         </ComboBox>
         <TextBox x:Name="weekday1textbox2" HorizontalAlignment="Left" Height="23" Margin="20,162,0,0" TextWrapping="Wrap" Text="10:00 - 17:00" VerticalAlignment="Top" Width="100"  Visibility="Hidden" TextChanged="weekday1textbox1_TextChanged"/>
@@ -464,13 +464,13 @@
         <ComboBox x:Name="weekday6combobox3" HorizontalAlignment="Left" Margin="661,230,0,0" VerticalAlignment="Top" Width="100" Visibility="Hidden" SelectionChanged="weekday6combobox3_SelectionChanged">
 
         </ComboBox>
-        <TextBox x:Name="weekday7textbox2" HorizontalAlignment="Left" Height="23" Margin="785,162,0,0" TextWrapping="Wrap" Text="10:00 - 17:00" VerticalAlignment="Top" Width="100"  Visibility="Visible"/>
-        <ComboBox x:Name="weekday7combobox2" HorizontalAlignment="Left" Margin="785,185,0,0" VerticalAlignment="Top" Width="100" Visibility="Visible" >
+        <TextBox x:Name="weekday7textbox2" HorizontalAlignment="Left" Height="23" Margin="785,162,0,0" TextWrapping="Wrap" Text="10:00 - 17:00" VerticalAlignment="Top" Width="100"  Visibility="Hidden" TextChanged="weekday7textbox2_TextChanged"/>
+        <ComboBox x:Name="weekday7combobox2" HorizontalAlignment="Left" Margin="785,185,0,0" VerticalAlignment="Top" Width="100" Visibility="Hidden" SelectionChanged="weekday7combobox2_SelectionChanged" >
           
         </ComboBox>
-        <TextBox x:Name="weekday7textbox3" Visibility="Visible" HorizontalAlignment="Left" Height="23" Margin="785,207,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100"/>
-        <TextBox x:Name="weekday7textbox4" Visibility="Visible" HorizontalAlignment="Left" Height="23" Margin="785,252,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100"/>
-        <ComboBox x:Name="weekday7combobox3" HorizontalAlignment="Left" Margin="785,230,0,0" VerticalAlignment="Top" Width="100"  Visibility="Visible">
+        <TextBox x:Name="weekday7textbox3" Visibility="Hidden" HorizontalAlignment="Left" Height="23" Margin="785,207,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" TextChanged="weekday7textbox3_TextChanged"/>
+        <TextBox x:Name="weekday7textbox4" Visibility="Hidden" HorizontalAlignment="Left" Height="23" Margin="785,252,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100"/>
+        <ComboBox x:Name="weekday7combobox3" HorizontalAlignment="Left" Margin="785,230,0,0" VerticalAlignment="Top" Width="100"  Visibility="Hidden" SelectionChanged="weekday7combobox3_SelectionChanged">
             
         </ComboBox>
 
