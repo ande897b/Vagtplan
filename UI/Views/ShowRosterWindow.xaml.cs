@@ -808,6 +808,43 @@ namespace UI.Views
             weekday6textbox4.Text = weekday6textbox3.Text.Substring(8, 5) + " - 17:00";
         }
 
+        private void weekday7combobox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            weekday7textbox2.Visibility = Visibility.Visible;
+        }
+
+        private void weekday7textbox2_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (weekday7textbox2.Text.Substring(8, 2) != "17")
+            {
+                weekday7combobox2.Visibility = Visibility.Visible;
+            }
+        }
+
+        private void weekday7combobox2_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            weekday7textbox3.Visibility = Visibility.Visible;
+            weekday7textbox3.Text = weekday7textbox2.Text.Substring(8, 5) + " - 17:00";
+        }
+
+        private void weekday7textbox3_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (weekday7textbox3.Text.Substring(8, 2) == "17")
+            {
+                weekday7combobox3.Visibility = Visibility.Hidden;
+            }
+            else
+            {
+                weekday7combobox3.Visibility = Visibility.Visible;
+            }
+        }
+
+        private void weekday7combobox3_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            weekday7textbox4.Visibility = Visibility.Visible;
+            weekday7textbox4.Text = weekday7textbox3.Text.Substring(8, 5) + " - 17:00";
+        }
+
 
 
 
