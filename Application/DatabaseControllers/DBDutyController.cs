@@ -53,8 +53,8 @@ namespace Controller.DatabaseControllers
                 string query = "Create_Duty";
                 var cmd = new SqlCommand(query, DBConnection.Connection);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.Add(new SqlParameter("@Employee_IN", duty.EmployeeID));
-                cmd.Parameters.Add(new SqlParameter("@Date_IN", duty.DateID));
+                cmd.Parameters.Add(new SqlParameter("@EmployeeID_IN", duty.EmployeeID));
+                cmd.Parameters.Add(new SqlParameter("@DateID_IN", duty.DateID));
                 cmd.Parameters.Add(new SqlParameter("@StartTime_IN", duty.StartTime));
                 cmd.Parameters.Add(new SqlParameter("@EndTime_IN", duty.EndTime));
                 cmd.ExecuteReader();
