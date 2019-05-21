@@ -1,4 +1,5 @@
 ﻿using Application;
+using Controller.Repositories;
 using Domain.Models;
 using System;
 using System.Collections.Generic;
@@ -12,30 +13,8 @@ namespace Controller.DatabaseControllers
 {
     public class DBDateController
     {
-        public static void CreateDates(int rosterID, string shop, DateTime startDay, DateTime endDay)
+        public static void LoadDates(string shop)
         {
-            string query = "Create_Date";
-            int daysDiff = ((TimeSpan)(endDay.Date - startDay.Date)).Days;
-
-            for (int i = 0; i <= daysDiff; i++)
-            {
-                DBConnection.DatabaseName = "CANE";
-                if (DBConnection.IsConnected())
-                {
-                    var cmd = new SqlCommand(query, DBConnection.Connection);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add(new SqlParameter("@RosterID_IN", rosterID));
-                    cmd.Parameters.Add(new SqlParameter("@Shop_IN", shop));
-                    cmd.Parameters.Add(new SqlParameter("@Day_IN", startDay.AddDays(i)));
-                    cmd.ExecuteReader();
-                }
-                DBConnection.Close();
-            }
-        }
-        public static List<Date> GetDates(string shop)
-        {
-            List<Date> dates = new List<Date>();
-
             DateTime day;
             int dateID;
             int rosterID;
@@ -69,13 +48,35 @@ namespace Controller.DatabaseControllers
                         }
 
                         Date date = new Date(day, dateID, rosterID, newShop);
-                        dates.Add(date);
+                        DateRepository.AddDate(date);
                     }
                     DBConnection.Close();
                 }
             }
-            return dates;
         }
+
+        public static void CreateDates(int rosterID, string shop, DateTime startDay, DateTime endDay)
+        {
+            string query = "Create_Date";
+            int daysDiff = ((TimeSpan)(endDay.Date - startDay.Date)).Days;
+
+            for (int i = 0; i <= daysDiff; i++)
+            {
+                DBConnection.DatabaseName = "CANE";
+                if (DBConnection.IsConnected())
+                {
+                    var cmd = new SqlCommand(query, DBConnection.Connection);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add(new SqlParameter("@RosterID_IN", rosterID));
+                    cmd.Parameters.Add(new SqlParameter("@Shop_IN", shop));
+                    cmd.Parameters.Add(new SqlParameter("@Day_IN", startDay.AddDays(i)));
+                    cmd.ExecuteReader();
+                }
+                DBConnection.Close();
+            }
+        }
+
+        
     }
 }
     

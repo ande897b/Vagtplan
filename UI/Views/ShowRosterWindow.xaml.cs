@@ -16,6 +16,7 @@ using Application.Repositories;
 using Domain.Models;
 using Application.DatabaseControllers;
 using Controller.DatabaseControllers;
+using Controller.Repositories;
 
 namespace UI.Views
 {
@@ -33,6 +34,10 @@ namespace UI.Views
             {
                 Shop = Shop.skibhusvej;
             }
+
+
+            DBDateController.LoadDates(Shop.ToString());
+
             InitializeComponent();
         }
 
@@ -392,30 +397,46 @@ namespace UI.Views
 
         public void UpdateComboboxes(bool decision, int comboBox)
         {
+            List<Employee> employees = EmployeeRepository.GetEmployees();
+            List<string> newEmployees = new List<string>();
+
+            foreach (Employee employee in employees)
+            {
+                string newEmployee = employee.FirstName;
+                newEmployees.Add(newEmployee);
+            }
+
             if (decision == true)
             {
                 switch (comboBox)
                 {
                     case 1:
                         weekday1combobox.IsEnabled = true;
+                        weekday1combobox.ItemsSource = newEmployees;
                         break;
                     case 2:
                         weekday2combobox.IsEnabled = true;
+                        weekday2combobox.ItemsSource = newEmployees;
                         break;
                     case 3:
                         weekday3combobox.IsEnabled = true;
+                        weekday3combobox.ItemsSource = newEmployees;
                         break;
                     case 4:
                         weekday4combobox.IsEnabled = true;
+                        weekday4combobox.ItemsSource = newEmployees;
                         break;
                     case 5:
                         weekday5combobox.IsEnabled = true;
+                        weekday5combobox.ItemsSource = newEmployees;
                         break;
                     case 6:
                         weekday6combobox.IsEnabled = true;
+                        weekday6combobox.ItemsSource = newEmployees;
                         break;
                     case 7:
                         weekday7combobox.IsEnabled = true;
+                        weekday7combobox.ItemsSource = newEmployees;
                         break;
                     default:
                         break;
@@ -460,11 +481,12 @@ namespace UI.Views
             }
         }
 
+
         private void ManageComboboxes()
         {
             if (RosterRepository.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
             {
-                UpdateComboboxes(RosterRepository.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()), 1);
+                UpdateComboboxes(true, 1);
             }
             else
             {
@@ -473,7 +495,7 @@ namespace UI.Views
 
             if (RosterRepository.CheckIfDateExists(weekday2label.Content.ToString(), Shop.ToString()))
             {
-                UpdateComboboxes(RosterRepository.CheckIfDateExists(weekday2label.Content.ToString(), Shop.ToString()), 2);
+                UpdateComboboxes(true, 2);
             }
             else
             {
@@ -482,7 +504,7 @@ namespace UI.Views
 
             if (RosterRepository.CheckIfDateExists(weekday3label.Content.ToString(), Shop.ToString()))
             {
-                UpdateComboboxes(RosterRepository.CheckIfDateExists(weekday3label.Content.ToString(), Shop.ToString()), 3);
+                UpdateComboboxes(true, 3);
             }
             else
             {
@@ -546,7 +568,7 @@ namespace UI.Views
 
         private void weekday1combobox2_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            List<Date> dates = DBDateController.GetDates(Shop.ToString());
+            List<Date> dates = DateRepository.GetDates();
             weekday1textbox3.Text = weekday1textbox2.Text.Substring(8, 5) + " - 17:00";
             foreach (Date date in dates)
             {
