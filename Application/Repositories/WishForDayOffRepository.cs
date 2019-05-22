@@ -22,6 +22,18 @@ namespace Controller.Repositories
         {
             wishForDayOffList.Remove(wishForDayOff);
         }
+        public static List<WishForDayOff> GetWishForDayOffs(string date)
+        {
+            List<WishForDayOff> newListOfWishes = new List<WishForDayOff>();
+            foreach (WishForDayOff wish in wishForDayOffList)
+            {
+                if (wish.Date.ToString().Substring(0,10) == date.Substring(0,10))
+                {
+                    newListOfWishes.Add(wish);
+                }
+            }
+            return newListOfWishes;
+        }
 
     }
 }

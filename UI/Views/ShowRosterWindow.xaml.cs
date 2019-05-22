@@ -40,8 +40,7 @@ namespace UI.Views
             DBDutyController.LoadDuties();
             DBRosterController.LoadRosters();
             DBEmployeeController.LoadEmployees();
-            DBWishForDayOffController.CreateWishForDayOff();
-
+            DBWishForDayOffController.LoadWishForDayOffs();
             InitializeComponent();
         }
 
@@ -405,20 +404,37 @@ namespace UI.Views
             List<Employee> employees = EmployeeRepository.GetEmployees();
             List<Duty> duties = DutyRepository.GetDuties(dateID);
             List<string> newEmployees = new List<string>();
-            List<WishForDayOff> wishes = new List<WishForDayOff>();
-            
-            foreach (Employee employee in employees)
-            {
-                string newEmployee = employee.FirstName;
-                newEmployees.Add(newEmployee);
-            }
+
+            List<WishForDayOff> wishes = WishForDayOffRepository.GetWishForDayOffs();
+
+
 
             if (decision == true)
             {
                 switch (comboBox)
                 {
                     case 1:
+                        foreach (WishForDayOff wish in wishes)
+                        {
+                            if (wish.Date.ToString().Substring(0, 10) == weekday1label.Content.ToString().Substring(0, 10))
+                            {
+
+                            }
+                            else
+                            {
+                                foreach (Employee employee in employees)
+                                {
+                                    string newEmployee = employee.FirstName;
+                                    newEmployees.Add(newEmployee);
+                                }
+                            }
+                        }
+
+
+                        
+                        
                        
+
                         weekday1combobox.IsEnabled = true;
                         weekday1combobox.ItemsSource = newEmployees;
                         weekday1combobox2.ItemsSource = newEmployees;
@@ -455,6 +471,22 @@ namespace UI.Views
 
                         break;
                     case 2:
+                        foreach (WishForDayOff wish in wishes)
+                        {
+                            if (wish.Date.ToString().Substring(0, 10) == weekday2label.Content.ToString().Substring(0, 10))
+                            {
+
+                            }
+                            else
+                            {
+                                foreach (Employee employee in employees)
+                                {
+                                    string newEmployee = employee.FirstName;
+                                    newEmployees.Add(newEmployee);
+                                }
+                            }
+                        }
+
                         weekday2combobox.IsEnabled = true;
                         weekday2combobox.ItemsSource = newEmployees;
                         weekday2combobox2.ItemsSource = newEmployees;
@@ -490,6 +522,30 @@ namespace UI.Views
                         }
                         break;
                     case 3:
+                        foreach (WishForDayOff wish in wishes)
+                        {
+                            if (wish.Date.ToString().Substring(0, 10) == weekday3label.Content.ToString().Substring(0, 10))
+                            {
+                                foreach (Employee employee in employees)
+                                {
+                                    string newEmployee = employee.FirstName;
+                                    if (employee.EmployeeID != wish.EmployeeID)
+                                    {
+                                        newEmployees.Add(newEmployee);
+                                    }                                   
+                                  
+                                }
+                            }
+                            else
+                            {
+                                foreach (Employee employee in employees)
+                                {
+                                    string newEmployee = employee.FirstName;
+                                    newEmployees.Add(newEmployee);
+                                }
+                            }
+                        }
+
                         weekday3combobox.IsEnabled = true;
                         weekday3combobox.ItemsSource = newEmployees;
                         weekday3combobox2.ItemsSource = newEmployees;
