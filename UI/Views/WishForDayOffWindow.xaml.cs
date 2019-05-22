@@ -29,7 +29,7 @@ namespace Vagtplan.Views
         private void WishForDayOffBtn_Click(object sender, RoutedEventArgs e)
         {
             MessageBoxButton btn = MessageBoxButton.YesNo;
-            MessageBoxResult result = MessageBox.Show("Er du sikker på du vil ønske fri på denne dag?", "ønsk fri", btn);
+            MessageBoxResult result = MessageBox.Show($"Er du sikker på at {WishForDayOffCB.SelectedItem.ToString()} vil ønske fri på datoen: {WishForDayOffDP.SelectedDate.ToString().Substring(0,10)}?", "ønsk fri", btn);
 
             if(result == MessageBoxResult.Yes)
             {

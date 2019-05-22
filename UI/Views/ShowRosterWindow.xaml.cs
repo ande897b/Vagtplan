@@ -17,6 +17,7 @@ using Domain.Models;
 using Application.DatabaseControllers;
 using Controller.DatabaseControllers;
 using Controller.Repositories;
+using Model.Models;
 
 namespace UI.Views
 {
@@ -39,6 +40,7 @@ namespace UI.Views
             DBDutyController.LoadDuties();
             DBRosterController.LoadRosters();
             DBEmployeeController.LoadEmployees();
+            DBWishForDayOffController.CreateWishForDayOff();
 
             InitializeComponent();
         }
@@ -403,7 +405,8 @@ namespace UI.Views
             List<Employee> employees = EmployeeRepository.GetEmployees();
             List<Duty> duties = DutyRepository.GetDuties(dateID);
             List<string> newEmployees = new List<string>();
-
+            List<WishForDayOff> wishes = new List<WishForDayOff>();
+            
             foreach (Employee employee in employees)
             {
                 string newEmployee = employee.FirstName;
@@ -415,6 +418,7 @@ namespace UI.Views
                 switch (comboBox)
                 {
                     case 1:
+                       
                         weekday1combobox.IsEnabled = true;
                         weekday1combobox.ItemsSource = newEmployees;
                         weekday1combobox2.ItemsSource = newEmployees;

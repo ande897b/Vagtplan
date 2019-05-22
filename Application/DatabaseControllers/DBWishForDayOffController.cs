@@ -14,7 +14,7 @@ namespace Controller.DatabaseControllers
 {
     public static class DBWishForDayOffController
     {
-        public static void LoadWishForDayOffs(DateTime date)
+        public static void LoadWishForDayOffs()
         {
             DateTime day;
             int wishForDayOffID;
@@ -22,10 +22,9 @@ namespace Controller.DatabaseControllers
             DBConnection.DatabaseName = "CANE";
             if (DBConnection.IsConnected())
             {
-                string query = "Get_WishForDayOffs";
+                string query = "select * from WishForDayOff";
                 var cmd = new SqlCommand(query, DBConnection.Connection);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.Add(new SqlParameter("Date_IN", date));
+                cmd.CommandType = CommandType.Text;              
                 var reader = cmd.ExecuteReader();
                 if (reader.HasRows)
                 {
