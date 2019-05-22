@@ -40,7 +40,7 @@ namespace UI.Views
             DBDutyController.LoadDuties();
             DBRosterController.LoadRosters();
             DBEmployeeController.LoadEmployees();
-            DBWishForDayOffController.CreateWishForDayOff();
+            DBWishForDayOffController.LoadWishForDayOffs();
 
             InitializeComponent();
         }
