@@ -22,6 +22,10 @@ namespace Controller.Repositories
             {
                 if (date2.Day == date.Day && date2.Shop == date.Shop)
                 {
+                    if (date2.DateID == -1)
+                    {
+                        date2.DateID = date.DateID;
+                    }
                     exist = true;
                 }
             }
@@ -41,6 +45,18 @@ namespace Controller.Repositories
         }
         public static List<Date> GetDates()
         {
+            return dates;
+        }
+        public static List<Date> GetDates(string shop)
+        {
+            List<Date> newDates = new List<Date>();
+            foreach (Date date in dates)
+            {
+                if(date.Shop.ToString() == shop)
+                {
+                    newDates.Add(date);
+                }
+            }
             return dates;
         }
         public static void RemoveDate(Date date)

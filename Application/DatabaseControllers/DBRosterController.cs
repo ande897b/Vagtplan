@@ -65,6 +65,7 @@ namespace Application.DatabaseControllers
                 cmd.ExecuteReader();
                 DBConnection.Close();
             }
+            RosterRepository.AddRoster(roster);
         }
 
         public static int GetRosterID(Roster roster)

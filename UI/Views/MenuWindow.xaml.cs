@@ -25,11 +25,14 @@ namespace UI.Views
         public MenuWindow()
         {
             InitializeComponent();
+            DBRosterController.LoadRosters();
+            DBEmployeeController.LoadEmployees();
             if (departmentcombobox.SelectedIndex == -1)
             {
                 ShowRostersBtn.IsEnabled = false;
             }
         }
+
         private void CreateRosterBtn_Click(object sender, RoutedEventArgs e)
         {
             CreateRosterWindow createRosterWindow = new CreateRosterWindow();
@@ -70,7 +73,6 @@ namespace UI.Views
                 newEmployees.Add(newEmployee);
             }
             dayOff.WishForDayOffCB.ItemsSource = newEmployees;
-            
             dayOff.Show();
         }
     }

@@ -36,10 +36,8 @@ namespace UI.Views
                 Shop = Shop.skibhusvej;
             }
 
-            DBDateController.LoadDates(Shop.ToString());
+            DBDateController.LoadDates();
             DBDutyController.LoadDuties();
-            DBRosterController.LoadRosters();
-            DBEmployeeController.LoadEmployees();
             DBWishForDayOffController.LoadWishForDayOffs();
             InitializeComponent();
         }
@@ -927,18 +925,8 @@ namespace UI.Views
 
         private void weekday1combobox2_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            List<Date> dates = DateRepository.GetDates();
+            List<Date> dates = DateRepository.GetDates(Shop.ToString());
             weekday1textbox3.Text = weekday1textbox2.Text.Substring(8, 5) + " - 17:00";
-            //foreach (Date date in dates)
-            //{
-            //    if (weekday1label.Content.ToString() == date.Day.ToString())
-            //    {
-            //        if (date.Day.DayOfWeek == DayOfWeek.Monday)
-            //        {
-            //            weekday1textbox3.Text = weekday1textbox2.Text.Substring(8, 5) + " - 16:00";
-            //        }
-            //    }
-            //}
             weekday1textbox3.Visibility = Visibility.Visible;
         }
 
@@ -947,7 +935,6 @@ namespace UI.Views
             if (weekday1textbox2.Text != "10:00 - 17:00")
             {
                 weekday1combobox2.Visibility = Visibility.Visible;
-
             }
         }
 
@@ -976,7 +963,6 @@ namespace UI.Views
             if (weekday2textbox2.Text != "10:00 - 17:00")
             {
                 weekday2combobox2.Visibility = Visibility.Visible;
-
             }
         }
 

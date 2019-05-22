@@ -76,6 +76,7 @@ namespace Controller.DatabaseControllers
                 }
                 DBConnection.Close();
             }
+            EmployeeRepository.AddEmployee(employee);
             return ID;
         }
     }

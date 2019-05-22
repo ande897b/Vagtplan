@@ -12,6 +12,7 @@ namespace Domain.Models
 
         public Duty (int employeeID, int dateID, DateTime startTime, DateTime endTime)
         {
+            DutyID = -1;
             EmployeeID = employeeID;
             DateID = dateID;
             StartTime = startTime;

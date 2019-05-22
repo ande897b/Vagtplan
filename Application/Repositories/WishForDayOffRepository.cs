@@ -12,12 +12,25 @@ namespace Controller.Repositories
         private static List<WishForDayOff> wishForDayOffList = new List<WishForDayOff>();
         public static void AddWishForDayOff(WishForDayOff wishForDayOff)
         {
+            if (!WishForDayOffExist(wishForDayOff))
             wishForDayOffList.Add(wishForDayOff);
         }
-        //public static List<WishForDayOff> GetWishForDayOffs()
-        //{
-        //    return wishForDayOffList;
-        //}
+        public static bool WishForDayOffExist(WishForDayOff wishForDayOff)
+        {
+            bool exist = false;
+            foreach (WishForDayOff wishForDayOff2 in wishForDayOffList)
+            {
+                if (wishForDayOff2.Date == wishForDayOff.Date && wishForDayOff2.EmployeeID == wishForDayOff.EmployeeID)
+                {
+                    exist = true;
+                }
+            }
+            return exist;
+        }
+        public static List<WishForDayOff> GetWishForDayOffs()
+        {
+            return wishForDayOffList;
+        }
         public static void RemoveWishForDayOff(WishForDayOff wishForDayOff)
         {
             wishForDayOffList.Remove(wishForDayOff);

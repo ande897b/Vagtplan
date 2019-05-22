@@ -54,6 +54,7 @@ namespace Controller.DatabaseControllers
                 cmd.ExecuteReader();
             }
             DBConnection.Close();
+            WishForDayOffRepository.AddWishForDayOff(wish);
         } 
     }
 }

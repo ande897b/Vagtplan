@@ -28,19 +28,17 @@ namespace Domain.Models
 
         public Roster(DateTime startDate, DateTime endDate, Shop shop)
         {
+            RosterID = -1;
             StartDate = startDate;
             EndDate = endDate;
             Shop = shop;
         }
         public Roster(DateTime startDate, DateTime endDate, Shop shop, int rosterID)
         {
+            RosterID = rosterID;
             StartDate = startDate;
             EndDate = endDate;
             Shop = shop;
-            RosterID = rosterID;
         }
-
-
-
     }
 }

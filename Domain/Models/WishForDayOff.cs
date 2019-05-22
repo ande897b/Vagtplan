@@ -14,6 +14,7 @@ namespace Model.Models
 
         public WishForDayOff(int employeeID, DateTime date)
         {
+            WishForDayOffID = -1;
             EmployeeID = employeeID;
             Date = date;
         }

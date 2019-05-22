@@ -87,7 +87,7 @@ namespace Application.Repositories
 		{
 			string newDate = date.Substring(0, 10);
 			bool checkIfTrue = false;
-			foreach (var day in DateRepository.GetDates())
+			foreach (var day in DateRepository.GetDates(shop))
 			{
 				string newDay = day.Day.ToString().Substring(0, 10);
 				if (newDate == newDay)

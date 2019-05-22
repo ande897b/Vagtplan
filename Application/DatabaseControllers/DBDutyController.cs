@@ -60,6 +60,7 @@ namespace Controller.DatabaseControllers
                 cmd.ExecuteReader();
                 DBConnection.Close();
             }
+            DutyRepository.AddDuty(duty);
         }
     }
 }

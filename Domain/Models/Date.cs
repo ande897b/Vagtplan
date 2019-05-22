@@ -18,5 +18,12 @@ namespace Domain.Models
             RosterID = rosterID;
             Shop = shop;
         }
+        public Date(DateTime day, int rosterID, Shop shop)
+        {
+            DateID = -1;
+            Day = day;
+            RosterID = rosterID;
+            Shop = shop;
+        }
     }
 }

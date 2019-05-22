@@ -22,7 +22,9 @@ namespace Vagtplan.Views
     {
         public WishForDayOffWindow()
         {
-
+            DBDateController.LoadDates();
+            DBDutyController.LoadDuties();
+            DBWishForDayOffController.LoadWishForDayOffs();
             InitializeComponent();
         }
 

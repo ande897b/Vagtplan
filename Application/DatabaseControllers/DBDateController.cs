@@ -13,7 +13,7 @@ namespace Controller.DatabaseControllers
 {
     public static class DBDateController
     {
-        public static void LoadDates(string shop)
+        public static void LoadDates()
         {
             DateTime day;
             int dateID;
@@ -23,10 +23,9 @@ namespace Controller.DatabaseControllers
             DBConnection.DatabaseName = "CANE";
             if (DBConnection.IsConnected())
             {
-                string query = "Get_Dates";
+                string query = "SELECT * FROM Date";
                 var cmd = new SqlCommand(query, DBConnection.Connection);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.Add(new SqlParameter("Shop_IN", shop));
+                cmd.CommandType = CommandType.Text;
                 var reader = cmd.ExecuteReader();
                 if (reader.HasRows)
                 {
@@ -73,7 +72,19 @@ namespace Controller.DatabaseControllers
                     cmd.ExecuteReader();
                 }
                 DBConnection.Close();
+                Shop newShop;
+                if (shop.ToLower() == "kongensgade")
+                {
+                    newShop = Shop.kongensgade;
+                }
+                else
+                {
+                    newShop = Shop.skibhusvej;
+                }
+                Date date = new Date(startDay.AddDays(i), rosterID, newShop);
+                DateRepository.AddDate(date);
             }
+            
         }
 
         //public static void GetDate(string date, string shop)

@@ -12,8 +12,6 @@ namespace UI
 		public MainWindow()
 		{
 			InitializeComponent();
-			DBRosterController.LoadRosters();
-            DBEmployeeController.LoadEmployees();
         }
 
 		private void LoginBtn_Click(object sender, RoutedEventArgs e)
