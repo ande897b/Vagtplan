@@ -32,7 +32,7 @@ namespace Controller.Repositories
             DateTime newDate = DateTime.Now;
             foreach (Date date2 in dates)
             {
-                if (date2.Day.ToString() == date)
+                if (date2.Day.ToString().Substring(0,10) == date.Substring(0,10))
                 {
                     newDate = date2.Day;
                 }
