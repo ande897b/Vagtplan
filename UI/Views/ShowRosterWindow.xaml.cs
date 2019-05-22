@@ -418,22 +418,25 @@ namespace UI.Views
                         {
                             if (wish.Date.ToString().Substring(0, 10) == weekday1label.Content.ToString().Substring(0, 10))
                             {
-
-                            }
-                            else
-                            {
                                 foreach (Employee employee in employees)
                                 {
                                     string newEmployee = employee.FirstName;
-                                    newEmployees.Add(newEmployee);
+                                    if (employee.EmployeeID != wish.EmployeeID)
+                                    {
+                                        newEmployees.Add(newEmployee);
+                                    }
+
                                 }
                             }
                         }
-
-
-                        
-                        
-                       
+                        if (newEmployees.Count == 0)
+                        {
+                            foreach (Employee employee in employees)
+                            {
+                                string newEmployee = employee.FirstName;
+                                newEmployees.Add(newEmployee);
+                            }
+                        }
 
                         weekday1combobox.IsEnabled = true;
                         weekday1combobox.ItemsSource = newEmployees;
@@ -475,15 +478,23 @@ namespace UI.Views
                         {
                             if (wish.Date.ToString().Substring(0, 10) == weekday2label.Content.ToString().Substring(0, 10))
                             {
-
-                            }
-                            else
-                            {
                                 foreach (Employee employee in employees)
                                 {
                                     string newEmployee = employee.FirstName;
-                                    newEmployees.Add(newEmployee);
+                                    if (employee.EmployeeID != wish.EmployeeID)
+                                    {
+                                        newEmployees.Add(newEmployee);
+                                    }
+
                                 }
+                            }
+                        }
+                        if (newEmployees.Count == 0)
+                        {
+                            foreach (Employee employee in employees)
+                            {
+                                string newEmployee = employee.FirstName;
+                                newEmployees.Add(newEmployee);
                             }
                         }
 
@@ -535,17 +546,16 @@ namespace UI.Views
                                     }                                   
                                   
                                 }
-                            }
-                            else
+                            }                            
+                        }
+                        if (newEmployees.Count == 0)
+                        {
+                            foreach (Employee employee in employees)
                             {
-                                foreach (Employee employee in employees)
-                                {
-                                    string newEmployee = employee.FirstName;
-                                    newEmployees.Add(newEmployee);
-                                }
+                                string newEmployee = employee.FirstName;
+                                newEmployees.Add(newEmployee);
                             }
                         }
-
                         weekday3combobox.IsEnabled = true;
                         weekday3combobox.ItemsSource = newEmployees;
                         weekday3combobox2.ItemsSource = newEmployees;
@@ -581,6 +591,29 @@ namespace UI.Views
                         }
                         break;
                     case 4:
+                        foreach (WishForDayOff wish in wishes)
+                        {
+                            if (wish.Date.ToString().Substring(0, 10) == weekday4label.Content.ToString().Substring(0, 10))
+                            {
+                                foreach (Employee employee in employees)
+                                {
+                                    string newEmployee = employee.FirstName;
+                                    if (employee.EmployeeID != wish.EmployeeID)
+                                    {
+                                        newEmployees.Add(newEmployee);
+                                    }
+
+                                }
+                            }
+                        }
+                        if (newEmployees.Count == 0)
+                        {
+                            foreach (Employee employee in employees)
+                            {
+                                string newEmployee = employee.FirstName;
+                                newEmployees.Add(newEmployee);
+                            }
+                        }
                         weekday4combobox.IsEnabled = true;
                         weekday4combobox.ItemsSource = newEmployees;
                         weekday4combobox2.ItemsSource = newEmployees;
@@ -615,6 +648,29 @@ namespace UI.Views
                         }
                         break;
                     case 5:
+                        foreach (WishForDayOff wish in wishes)
+                        {
+                            if (wish.Date.ToString().Substring(0, 10) == weekday5label.Content.ToString().Substring(0, 10))
+                            {
+                                foreach (Employee employee in employees)
+                                {
+                                    string newEmployee = employee.FirstName;
+                                    if (employee.EmployeeID != wish.EmployeeID)
+                                    {
+                                        newEmployees.Add(newEmployee);
+                                    }
+
+                                }
+                            }
+                        }
+                        if (newEmployees.Count == 0)
+                        {
+                            foreach (Employee employee in employees)
+                            {
+                                string newEmployee = employee.FirstName;
+                                newEmployees.Add(newEmployee);
+                            }
+                        }
                         weekday5combobox.IsEnabled = true;
                         weekday5combobox.ItemsSource = newEmployees;
                         weekday5combobox2.ItemsSource = newEmployees;
@@ -650,6 +706,29 @@ namespace UI.Views
                         }
                         break;
                     case 6:
+                        foreach (WishForDayOff wish in wishes)
+                        {
+                            if (wish.Date.ToString().Substring(0, 10) == weekday6label.Content.ToString().Substring(0, 10))
+                            {
+                                foreach (Employee employee in employees)
+                                {
+                                    string newEmployee = employee.FirstName;
+                                    if (employee.EmployeeID != wish.EmployeeID)
+                                    {
+                                        newEmployees.Add(newEmployee);
+                                    }
+
+                                }
+                            }
+                        }
+                        if (newEmployees.Count == 0)
+                        {
+                            foreach (Employee employee in employees)
+                            {
+                                string newEmployee = employee.FirstName;
+                                newEmployees.Add(newEmployee);
+                            }
+                        }
                         weekday6combobox.IsEnabled = true;
                         weekday6combobox.ItemsSource = newEmployees;
                         weekday6combobox2.ItemsSource = newEmployees;
@@ -685,6 +764,29 @@ namespace UI.Views
                         }
                         break;
                     case 7:
+                        foreach (WishForDayOff wish in wishes)
+                        {
+                            if (wish.Date.ToString().Substring(0, 10) == weekday7label.Content.ToString().Substring(0, 10))
+                            {
+                                foreach (Employee employee in employees)
+                                {
+                                    string newEmployee = employee.FirstName;
+                                    if (employee.EmployeeID != wish.EmployeeID)
+                                    {
+                                        newEmployees.Add(newEmployee);
+                                    }
+
+                                }
+                            }
+                        }
+                        if (newEmployees.Count == 0)
+                        {
+                            foreach (Employee employee in employees)
+                            {
+                                string newEmployee = employee.FirstName;
+                                newEmployees.Add(newEmployee);
+                            }
+                        }
                         weekday7combobox.IsEnabled = true;
                         weekday7combobox.ItemsSource = newEmployees;
                         weekday7combobox2.ItemsSource = newEmployees;
