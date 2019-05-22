@@ -8,7 +8,7 @@
         mc:Ignorable="d"
         Title="ShowRosterWindow" Height="450" Width="900"
 >
-    <Grid Margin="-7,-6,7,6">
+    <Grid Margin="6,4,7,6">
         <TextBox x:Name="weekday1txtbox" HorizontalAlignment="Left" Height="200" Margin="20,140,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" IsEnabled="False"/>
         <TextBox x:Name="weekday2txtbox" HorizontalAlignment="Left" Height="200" Margin="149,140,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" IsEnabled="False"/>
         <TextBox x:Name="weekday3txtbox" HorizontalAlignment="Left" Height="200" Margin="277,140,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" IsEnabled="False"/>
