@@ -47,20 +47,23 @@ namespace Controller.DatabaseControllers
 
         public static void CreateDuty(Duty duty)
         {
+            string query = "Create_Duty";
             DBConnection.DatabaseName = "CANE";
-            if (DBConnection.IsConnected())
+            if (!DutyRepository.DutyExist(duty))
             {
-                string query = "Create_Duty";
-                var cmd = new SqlCommand(query, DBConnection.Connection);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.Add(new SqlParameter("@EmployeeID_IN", duty.EmployeeID));
-                cmd.Parameters.Add(new SqlParameter("@DateID_IN", duty.DateID));
-                cmd.Parameters.Add(new SqlParameter("@StartTime_IN", duty.StartTime));
-                cmd.Parameters.Add(new SqlParameter("@EndTime_IN", duty.EndTime));
-                cmd.ExecuteReader();
-                DBConnection.Close();
+                if (DBConnection.IsConnected())
+                {
+                    var cmd = new SqlCommand(query, DBConnection.Connection);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add(new SqlParameter("@EmployeeID_IN", duty.EmployeeID));
+                    cmd.Parameters.Add(new SqlParameter("@DateID_IN", duty.DateID));
+                    cmd.Parameters.Add(new SqlParameter("@StartTime_IN", duty.StartTime));
+                    cmd.Parameters.Add(new SqlParameter("@EndTime_IN", duty.EndTime));
+                    cmd.ExecuteReader();
+                    DBConnection.Close();
+                }
+                DutyRepository.AddDuty(duty);
             }
-            DutyRepository.AddDuty(duty);
         }
     }
 }

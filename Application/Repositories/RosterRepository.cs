@@ -15,22 +15,22 @@ namespace Application.Repositories
 		private static List<Roster> rosters = new List<Roster>();
 		public static void AddRoster(Roster roster)
 		{
-            if (!RosterExist(roster))
+			if (!RosterExist(roster))
 			rosters.Add(roster);
 		}
-        public static bool RosterExist(Roster roster)
-        {
-            bool exist = false;
-            foreach (Roster roster2 in rosters)
-            {
-                if (roster2.Shop == roster.Shop && roster2.StartDate == roster.StartDate && roster2.EndDate == roster.EndDate)
-                {
-                    exist = true;
-                }
-            }
-            return exist;
-        }
-        public static List<Roster> GetRosters()
+		public static bool RosterExist(Roster roster)
+		{
+			bool exist = false;
+			foreach (Roster roster2 in rosters)
+			{
+				if (roster2.Shop == roster.Shop && roster2.StartDate == roster.StartDate && roster2.EndDate == roster.EndDate)
+				{
+					exist = true;
+				}
+			}
+			return exist;
+		}
+		public static List<Roster> GetRosters()
 		{
 			return rosters;
 		}

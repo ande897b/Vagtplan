@@ -45,16 +45,19 @@ namespace Controller.DatabaseControllers
         {
             string query = "Create_WishForDayOff";
             DBConnection.DatabaseName = "CANE";
-            if (DBConnection.IsConnected())
+            if (!WishForDayOffRepository.WishForDayOffExist(wish))
             {
-                var cmd = new SqlCommand(query, DBConnection.Connection);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.Add(new SqlParameter("@EmployeeID_IN", wish.EmployeeID));
-                cmd.Parameters.Add(new SqlParameter("@Date_IN", wish.Date));
-                cmd.ExecuteReader();
+                if (DBConnection.IsConnected())
+                {
+                    var cmd = new SqlCommand(query, DBConnection.Connection);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add(new SqlParameter("@EmployeeID_IN", wish.EmployeeID));
+                    cmd.Parameters.Add(new SqlParameter("@Date_IN", wish.Date));
+                    cmd.ExecuteReader();
+                }
+                DBConnection.Close();
+                WishForDayOffRepository.AddWishForDayOff(wish);
             }
-            DBConnection.Close();
-            WishForDayOffRepository.AddWishForDayOff(wish);
         } 
     }
 }

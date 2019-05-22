@@ -56,12 +56,12 @@ namespace Controller.DatabaseControllers
 
         public static int GetEmployeeID(Employee employee)
         {
+            string query = "Get_Employee";
             int ID = 0;
-
             DBConnection.DatabaseName = "CANE";
             if (DBConnection.IsConnected())
             {
-                string query = "Get_Employee";
+                
                 var cmd = new SqlCommand(query, DBConnection.Connection);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Add(new SqlParameter("FirstName_IN", employee.FirstName));

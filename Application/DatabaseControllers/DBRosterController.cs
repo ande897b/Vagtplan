@@ -54,18 +54,22 @@ namespace Application.DatabaseControllers
         public static void CreateRoster(Roster roster)
         {
             DBConnection.DatabaseName = "CANE";
-            if (DBConnection.IsConnected())
+            string query = "Create_Roster";
+            if (!RosterRepository.RosterExist(roster))
             {
-                string query = "Create_Roster";
-                var cmd = new SqlCommand(query, DBConnection.Connection);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.Add(new SqlParameter("@StartDate_IN", roster.StartDate));
-                cmd.Parameters.Add(new SqlParameter("@EndDate_IN", roster.EndDate));
-                cmd.Parameters.Add(new SqlParameter("@Shop_IN", roster.Shop.ToString()));
-                cmd.ExecuteReader();
-                DBConnection.Close();
+                if (DBConnection.IsConnected())
+                {
+                    
+                    var cmd = new SqlCommand(query, DBConnection.Connection);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add(new SqlParameter("@StartDate_IN", roster.StartDate));
+                    cmd.Parameters.Add(new SqlParameter("@EndDate_IN", roster.EndDate));
+                    cmd.Parameters.Add(new SqlParameter("@Shop_IN", roster.Shop.ToString()));
+                    cmd.ExecuteReader();
+                    DBConnection.Close();
+                }
+                RosterRepository.AddRoster(roster);
             }
-            RosterRepository.AddRoster(roster);
         }
 
         public static int GetRosterID(Roster roster)
