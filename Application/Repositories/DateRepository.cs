@@ -27,6 +27,18 @@ namespace Controller.Repositories
             }
             return exist;
         }
+        public static DateTime GetDate(string date)
+        {
+            DateTime newDate = DateTime.Now;
+            foreach (Date date2 in dates)
+            {
+                if (date2.Day.ToString() == date)
+                {
+                    newDate = date2.Day;
+                }
+            }
+            return newDate;
+        }
         public static List<Date> GetDates()
         {
             return dates;

@@ -14,10 +14,10 @@ namespace Controller.Repositories
         {
             wishForDayOffList.Add(wishForDayOff);
         }
-        public static List<WishForDayOff> GetWishForDayOffs()
-        {
-            return wishForDayOffList;
-        }
+        //public static List<WishForDayOff> GetWishForDayOffs()
+        //{
+        //    return wishForDayOffList;
+        //}
         public static void RemoveWishForDayOff(WishForDayOff wishForDayOff)
         {
             wishForDayOffList.Remove(wishForDayOff);
@@ -34,6 +34,5 @@ namespace Controller.Repositories
             }
             return newListOfWishes;
         }
-
     }
 }

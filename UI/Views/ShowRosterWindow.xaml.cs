@@ -398,43 +398,37 @@ namespace UI.Views
             }
         }
 
-        public void UpdateComboboxes(bool decision, int dateID, int comboBox)
+        public void UpdateComboboxes(bool decision, int dateID, int comboBox, DateTime date)
         {
             DBDutyController.LoadDuties();
             List<Employee> employees = EmployeeRepository.GetEmployees();
             List<Duty> duties = DutyRepository.GetDuties(dateID);
             List<string> newEmployees = new List<string>();
 
-            List<WishForDayOff> wishes = WishForDayOffRepository.GetWishForDayOffs();
+            List<WishForDayOff> wishes = WishForDayOffRepository.GetWishForDayOffs(date.ToString());
 
-
+            foreach (Employee employee in employees)
+            {
+                bool employeeWishesFree = false;
+                foreach (WishForDayOff wish in wishes)
+                {
+                    if (employee.EmployeeID == wish.EmployeeID)
+                    {
+                        employeeWishesFree = true;
+                    }
+                }
+                if (!employeeWishesFree)
+                {
+                    string newEmployee = employee.FirstName;
+                    newEmployees.Add(newEmployee);
+                }
+            }
 
             if (decision == true)
             {
                 switch (comboBox)
                 {
                     case 1:
-                        foreach (WishForDayOff wish in wishes)
-                        {
-                            if (wish.Date.ToString().Substring(0, 10) == weekday1label.Content.ToString().Substring(0, 10))
-                            {
-
-                            }
-                            else
-                            {
-                                foreach (Employee employee in employees)
-                                {
-                                    string newEmployee = employee.FirstName;
-                                    newEmployees.Add(newEmployee);
-                                }
-                            }
-                        }
-
-
-                        
-                        
-                       
-
                         weekday1combobox.IsEnabled = true;
                         weekday1combobox.ItemsSource = newEmployees;
                         weekday1combobox2.ItemsSource = newEmployees;
@@ -471,21 +465,6 @@ namespace UI.Views
 
                         break;
                     case 2:
-                        foreach (WishForDayOff wish in wishes)
-                        {
-                            if (wish.Date.ToString().Substring(0, 10) == weekday2label.Content.ToString().Substring(0, 10))
-                            {
-
-                            }
-                            else
-                            {
-                                foreach (Employee employee in employees)
-                                {
-                                    string newEmployee = employee.FirstName;
-                                    newEmployees.Add(newEmployee);
-                                }
-                            }
-                        }
 
                         weekday2combobox.IsEnabled = true;
                         weekday2combobox.ItemsSource = newEmployees;
@@ -522,29 +501,6 @@ namespace UI.Views
                         }
                         break;
                     case 3:
-                        foreach (WishForDayOff wish in wishes)
-                        {
-                            if (wish.Date.ToString().Substring(0, 10) == weekday3label.Content.ToString().Substring(0, 10))
-                            {
-                                foreach (Employee employee in employees)
-                                {
-                                    string newEmployee = employee.FirstName;
-                                    if (employee.EmployeeID != wish.EmployeeID)
-                                    {
-                                        newEmployees.Add(newEmployee);
-                                    }                                   
-                                  
-                                }
-                            }
-                            else
-                            {
-                                foreach (Employee employee in employees)
-                                {
-                                    string newEmployee = employee.FirstName;
-                                    newEmployees.Add(newEmployee);
-                                }
-                            }
-                        }
 
                         weekday3combobox.IsEnabled = true;
                         weekday3combobox.ItemsSource = newEmployees;
@@ -859,78 +815,92 @@ namespace UI.Views
             if (RosterRepository.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
             {
                 int dateID = DateRepository.GetDateID(weekday1label.Content.ToString(), Shop);
-                UpdateComboboxes(true, dateID, 1);
+                DateTime date = DateRepository.GetDate(weekday1label.Content.ToString());
+                UpdateComboboxes(true, dateID, 1, date);
             }
             else
             {
                 int dateID = DateRepository.GetDateID(weekday1label.Content.ToString(), Shop);
-                UpdateComboboxes(false, dateID, 1);
+                DateTime date = DateRepository.GetDate(weekday1label.Content.ToString());
+                UpdateComboboxes(false, dateID, 1, date);
             }
 
             if (RosterRepository.CheckIfDateExists(weekday2label.Content.ToString(), Shop.ToString()))
             {
                 int dateID = DateRepository.GetDateID(weekday2label.Content.ToString(), Shop);
-                UpdateComboboxes(true, dateID, 2);
+                DateTime date = DateRepository.GetDate(weekday2label.Content.ToString());
+                UpdateComboboxes(true, dateID, 2, date);
             }
             else
             {
                 int dateID = DateRepository.GetDateID(weekday2label.Content.ToString(), Shop);
-                UpdateComboboxes(false, dateID, 2);
+                DateTime date = DateRepository.GetDate(weekday2label.Content.ToString());
+                UpdateComboboxes(false, dateID, 2, date);
             }
 
             if (RosterRepository.CheckIfDateExists(weekday3label.Content.ToString(), Shop.ToString()))
             {
                 int dateID = DateRepository.GetDateID(weekday3label.Content.ToString(), Shop);
-                UpdateComboboxes(true, dateID, 3);
+                DateTime date = DateRepository.GetDate(weekday3label.Content.ToString());
+                UpdateComboboxes(true, dateID, 3, date);
             }
             else
             {
                 int dateID = DateRepository.GetDateID(weekday3label.Content.ToString(), Shop);
-                UpdateComboboxes(false, dateID, 3);
+                DateTime date = DateRepository.GetDate(weekday3label.Content.ToString());
+                UpdateComboboxes(false, dateID, 3, date);
             }
 
             if (RosterRepository.CheckIfDateExists(weekday4label.Content.ToString(), Shop.ToString()))
             {
                 int dateID = DateRepository.GetDateID(weekday4label.Content.ToString(), Shop);
-                UpdateComboboxes(true, dateID, 4);
+                DateTime date = DateRepository.GetDate(weekday4label.Content.ToString());
+                UpdateComboboxes(true, dateID, 4, date);
             }
             else
             {
                 int dateID = DateRepository.GetDateID(weekday4label.Content.ToString(), Shop);
-                UpdateComboboxes(false, dateID, 4);
+                DateTime date = DateRepository.GetDate(weekday4label.Content.ToString());
+                UpdateComboboxes(false, dateID, 4, date);
             }
 
             if (RosterRepository.CheckIfDateExists(weekday5label.Content.ToString(), Shop.ToString()))
             {
                 int dateID = DateRepository.GetDateID(weekday5label.Content.ToString(), Shop);
-                UpdateComboboxes(true, dateID, 5);
+                DateTime date = DateRepository.GetDate(weekday5label.Content.ToString());
+                UpdateComboboxes(true, dateID, 5, date);
             }
             else
             {
                 int dateID = DateRepository.GetDateID(weekday5label.Content.ToString(), Shop);
-                UpdateComboboxes(false, dateID, 5);
+                DateTime date = DateRepository.GetDate(weekday5label.Content.ToString());
+                UpdateComboboxes(false, dateID, 5, date);
             }
 
             if (RosterRepository.CheckIfDateExists(weekday6label.Content.ToString(), Shop.ToString()))
             {
                 int dateID = DateRepository.GetDateID(weekday6label.Content.ToString(), Shop);
-                UpdateComboboxes(true, dateID, 6);
+                DateTime date = DateRepository.GetDate(weekday6label.Content.ToString());
+                UpdateComboboxes(true, dateID, 6, date);
             }
             else
             {
                 int dateID = DateRepository.GetDateID(weekday6label.Content.ToString(), Shop);
-                UpdateComboboxes(false, dateID, 6);
+                DateTime date = DateRepository.GetDate(weekday6label.Content.ToString());
+                UpdateComboboxes(false, dateID, 6, date);
             }
 
             if (RosterRepository.CheckIfDateExists(weekday7label.Content.ToString(), Shop.ToString()))
             {
                 int dateID = DateRepository.GetDateID(weekday7label.Content.ToString(), Shop);
-                UpdateComboboxes(true, dateID, 7);
+                DateTime date = DateRepository.GetDate(weekday7label.Content.ToString());
+                UpdateComboboxes(true, dateID, 7, date);
             }
             else
             {
                 int dateID = DateRepository.GetDateID(weekday7label.Content.ToString(), Shop);
-                UpdateComboboxes(false, dateID, 7);
+                DateTime date = DateRepository.GetDate(weekday7label.Content.ToString());
+                UpdateComboboxes(false, dateID, 7, date);
             }
         }
 
