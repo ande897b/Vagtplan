@@ -24,9 +24,9 @@ namespace UI.Views
     {
         public MenuWindow()
         {
-            InitializeComponent();
             DBRosterController.LoadRosters();
             DBEmployeeController.LoadEmployees();
+            InitializeComponent();
             if (departmentcombobox.SelectedIndex == -1)
             {
                 ShowRostersBtn.IsEnabled = false;

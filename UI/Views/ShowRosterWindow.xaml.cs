@@ -25,6 +25,7 @@ namespace UI.Views
     {
         List<Roster> rosters = RosterRepository.GetRosters();
         public Shop Shop { get; set; }
+
         public ShowRosterWindow(string boxResult)
         {
             if(boxResult.ToLower() == "kongensgade")
