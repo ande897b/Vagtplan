@@ -12,7 +12,20 @@ namespace Controller.Repositories
         private static List<Date> dates = new List<Date>();
         public static void AddDate(Date date)
         {
+            if (!DateExist(date))
             dates.Add(date);
+        }
+        public static bool DateExist(Date date)
+        {
+            bool exist = false;
+            foreach (Date date2 in dates)
+            {
+                if (date2.Day == date.Day && date2.Shop == date.Shop)
+                {
+                    exist = true;
+                }
+            }
+            return exist;
         }
         public static List<Date> GetDates()
         {

@@ -59,6 +59,9 @@
     <Compile Include="Views\ShowRosterWindow.xaml.cs">
       <DependentUpon>ShowRosterWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\WishForDayOffWindow.xaml.cs">
+      <DependentUpon>WishForDayOffWindow.xaml</DependentUpon>
+    </Compile>
     <Page Include="Views\CreateRosterWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -78,10 +81,6 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Views\AddShiftsWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Views\MenuWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -90,11 +89,12 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\WishForDayOffWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Views\AddShiftsWindow.xaml.cs">
-      <DependentUpon>AddShiftsWindow.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\MenuWindow.xaml.cs">
       <DependentUpon>MenuWindow.xaml</DependentUpon>
     </Compile>

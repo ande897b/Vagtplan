@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Controller.DatabaseControllers
 {
-    public class DBEmployeeController
+    public static class DBEmployeeController
     {
         public static void LoadEmployees()
         {

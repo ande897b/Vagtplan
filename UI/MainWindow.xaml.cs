@@ -22,7 +22,6 @@ namespace UI
 			{
 				MenuWindow menuWindow = new MenuWindow();
 				menuWindow.Show();
-				menuWindow.AddShiftsBtn.IsEnabled = false;
 				menuWindow.CreateRosterBtn.IsEnabled = false;
 				this.Hide();
 			}

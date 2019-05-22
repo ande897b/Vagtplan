@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Controller.DatabaseControllers
 {
-    public class DBDateController
+    public static class DBDateController
     {
         public static void LoadDates(string shop)
         {

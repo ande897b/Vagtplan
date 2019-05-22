@@ -45,6 +45,7 @@
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\Roster.cs" />
     <Compile Include="Models\Duty.cs" />
+    <Compile Include="Models\WishForDayOff.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

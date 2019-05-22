@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Controller.DatabaseControllers
 {
-    public class DBDutyController
+    public static class DBDutyController
     {
         public static void LoadDuties()
         {

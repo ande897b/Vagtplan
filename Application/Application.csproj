@@ -44,6 +44,7 @@
     <Compile Include="DatabaseControllers\DBDateController.cs" />
     <Compile Include="DatabaseControllers\DBDutyController.cs" />
     <Compile Include="DatabaseControllers\DBEmployeeController.cs" />
+    <Compile Include="DatabaseControllers\DBWishForDayOffController.cs" />
     <Compile Include="DBConnection.cs" />
     <Compile Include="DatabaseControllers\DBRosterController.cs" />
     <Compile Include="Repositories\DateRepository.cs" />
@@ -51,6 +52,7 @@
     <Compile Include="Repositories\EmployeeRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\RosterRepository.cs" />
+    <Compile Include="Repositories\WishForDayOffRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Domain\Domain.csproj">

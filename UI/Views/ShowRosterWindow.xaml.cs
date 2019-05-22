@@ -37,6 +37,8 @@ namespace UI.Views
 
             DBDateController.LoadDates(Shop.ToString());
             DBDutyController.LoadDuties();
+            DBRosterController.LoadRosters();
+            DBEmployeeController.LoadEmployees();
 
             InitializeComponent();
         }
@@ -442,6 +444,8 @@ namespace UI.Views
                         }
                         else
                         {
+                            if (weekday1label2.Content.ToString() == "Sunday")
+                                weekday1combobox.IsEnabled = false;
                             ResetComboboxes(1);
                         }
 
@@ -476,6 +480,8 @@ namespace UI.Views
                         }
                         else
                         {
+                            if (weekday2label2.Content.ToString() == "Sunday")
+                                weekday2combobox.IsEnabled = false;
                             ResetComboboxes(2);
                         }
                         break;
@@ -509,6 +515,8 @@ namespace UI.Views
                         }
                         else
                         {
+                            if (weekday3label2.Content.ToString() == "Sunday")
+                                weekday3combobox.IsEnabled = false;
                             ResetComboboxes(3);
                         }
                         break;
@@ -541,6 +549,8 @@ namespace UI.Views
                         }
                         else
                         {
+                            if (weekday4label2.Content.ToString() == "Sunday")
+                                weekday4combobox.IsEnabled = false;
                             ResetComboboxes(4);
                         }
                         break;
@@ -574,6 +584,8 @@ namespace UI.Views
                         }
                         else
                         {
+                            if (weekday5label2.Content.ToString() == "Sunday")
+                                weekday5combobox.IsEnabled = false;
                             ResetComboboxes(5);
                         }
                         break;
@@ -607,6 +619,8 @@ namespace UI.Views
                         }
                         else
                         {
+                            if (weekday6label2.Content.ToString() == "Sunday")
+                                weekday6combobox.IsEnabled = false;
                             ResetComboboxes(6);
                         }
                         break;
@@ -640,6 +654,8 @@ namespace UI.Views
                         }
                         else
                         {
+                            if (weekday7label2.Content.ToString() == "Sunday")
+                                weekday7combobox.IsEnabled = false;
                             ResetComboboxes(7);
                         }
                         break;
@@ -861,12 +877,19 @@ namespace UI.Views
         private void UpdateSchedule(DateTime[] dates, int i)
         {
             weekday1label.Content = dates[0].Date.AddDays(i * 7).ToString();
+            weekday1label2.Content = dates[0].Date.AddDays(i * 7).DayOfWeek.ToString();
             weekday2label.Content = dates[1].Date.AddDays(i * 7).ToString();
+            weekday2label2.Content = dates[1].Date.AddDays(i * 7).DayOfWeek.ToString();
             weekday3label.Content = dates[02].Date.AddDays(i * 7).ToString();
+            weekday3label2.Content = dates[02].Date.AddDays(i * 7).DayOfWeek.ToString();
             weekday4label.Content = dates[03].Date.AddDays(i * 7).ToString();
+            weekday4label2.Content = dates[03].Date.AddDays(i * 7).DayOfWeek.ToString();
             weekday5label.Content = dates[04].Date.AddDays(i * 7).ToString();
+            weekday5label2.Content = dates[04].Date.AddDays(i * 7).DayOfWeek.ToString();
             weekday6label.Content = dates[05].Date.AddDays(i * 7).ToString();
+            weekday6label2.Content = dates[05].Date.AddDays(i * 7).DayOfWeek.ToString();
             weekday7label.Content = dates[06].Date.AddDays(i * 7).ToString();
+            weekday7label2.Content = dates[06].Date.AddDays(i * 7).DayOfWeek.ToString();
         }
 
         private void weekday1combobox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -1306,6 +1329,7 @@ namespace UI.Views
                     }
                 }
             }
+            MessageBox.Show("vagterne er blevet gemt", "success");
 
         }
     }
