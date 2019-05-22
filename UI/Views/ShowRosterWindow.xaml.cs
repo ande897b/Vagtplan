@@ -403,7 +403,7 @@ namespace UI.Views
             List<Duty> duties = DutyRepository.GetDuties(dateID);
             List<string> newEmployees = new List<string>();
 
-            List<WishForDayOff> wishes = WishForDayOffRepository.GetWishForDayOffs(date.ToString());
+            List<WishForDayOff> wishes = WishForDayOffRepository.GetWishForDayOffs(date.ToString().Substring(0,10));
 
             foreach (Employee employee in employees)
             {
