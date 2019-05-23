@@ -23,7 +23,6 @@ namespace UI.Views
 {
     public partial class PerfektKlasseMedfjortenHundredeOgNiOgFyrre : Window
     {
-        List<Roster> rosters = RosterRepository.GetRosters();
         public Shop Shop { get; set; }
 
         public PerfektKlasseMedfjortenHundredeOgNiOgFyrre(string boxResult)
