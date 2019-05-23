@@ -452,6 +452,9 @@ namespace UI.Views
                     case 1:
                         if (!isHoliday)
                             weekday1combobox.IsEnabled = true;
+                        else
+                            weekday1combobox.IsEnabled = false;
+
                         weekday1combobox.ItemsSource = newEmployees;
                         weekday1combobox2.ItemsSource = newEmployees;
                         weekday1combobox3.ItemsSource = newEmployees;
@@ -487,6 +490,9 @@ namespace UI.Views
                     case 2:
                         if (!isHoliday)
                             weekday2combobox.IsEnabled = true;
+                        else
+                            weekday2combobox.IsEnabled = false;
+
                         weekday2combobox.ItemsSource = newEmployees;
                         weekday2combobox2.ItemsSource = newEmployees;
                         weekday2combobox3.ItemsSource = newEmployees;
@@ -523,6 +529,9 @@ namespace UI.Views
                     case 3:
                         if (!isHoliday)
                             weekday3combobox.IsEnabled = true;
+                        else
+                            weekday3combobox.IsEnabled = false;
+
                         weekday3combobox.ItemsSource = newEmployees;
                         weekday3combobox2.ItemsSource = newEmployees;
                         weekday3combobox3.ItemsSource = newEmployees;
@@ -558,6 +567,9 @@ namespace UI.Views
                     case 4:
                         if (!isHoliday)
                             weekday4combobox.IsEnabled = true;
+                        else
+                            weekday4combobox.IsEnabled = false;
+
                         weekday4combobox.ItemsSource = newEmployees;
                         weekday4combobox2.ItemsSource = newEmployees;
                         weekday4combobox3.ItemsSource = newEmployees;
@@ -593,6 +605,9 @@ namespace UI.Views
                     case 5:
                         if (!isHoliday)
                             weekday5combobox.IsEnabled = true;
+                        else
+                            weekday5combobox.IsEnabled = false;
+
                         weekday5combobox.ItemsSource = newEmployees;
                         weekday5combobox2.ItemsSource = newEmployees;
                         weekday5combobox3.ItemsSource = newEmployees;
@@ -630,6 +645,9 @@ namespace UI.Views
                     case 6:
                         if (!isHoliday)
                             weekday6combobox.IsEnabled = true;
+                        else
+                            weekday6combobox.IsEnabled = false;
+
                         weekday6combobox.ItemsSource = newEmployees;
                         weekday6combobox2.ItemsSource = newEmployees;
                         weekday6combobox3.ItemsSource = newEmployees;
@@ -667,6 +685,9 @@ namespace UI.Views
                     case 7:
                         if (!isHoliday)
                             weekday7combobox.IsEnabled = true;
+                        else
+                            weekday7combobox.IsEnabled = false;
+
                         weekday7combobox.ItemsSource = newEmployees;
                         weekday7combobox2.ItemsSource = newEmployees;
                         weekday7combobox3.ItemsSource = newEmployees;
