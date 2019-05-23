@@ -56,8 +56,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Views\ShowRosterWindow.xaml.cs">
-      <DependentUpon>ShowRosterWindow.xaml</DependentUpon>
+    <Compile Include="Views\PerfektKlasseMedfjortenHundredeOgNiOgFyrre.xaml.cs">
+      <DependentUpon>PerfektKlasseMedfjortenHundredeOgNiOgFyrre.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\WishForDayOffWindow.xaml.cs">
       <DependentUpon>WishForDayOffWindow.xaml</DependentUpon>
@@ -85,7 +85,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\ShowRosterWindow.xaml">
+    <Page Include="Views\PerfektKlasseMedfjortenHundredeOgNiOgFyrre.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

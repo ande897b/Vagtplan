@@ -4,9 +4,9 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UI.Views"
-        xmlns:DatabaseControllers="clr-namespace:Controller.DatabaseControllers;assembly=Controller" x:Class="UI.Views.ShowRosterWindow"
+        xmlns:DatabaseControllers="clr-namespace:Controller.DatabaseControllers;assembly=Controller" x:Class="UI.Views.PerfektKlasseMedfjortenHundredeOgNiOgFyrre"
         mc:Ignorable="d"
-        Title="ShowRosterWindow" Height="505" Width="911"
+        Title="PerfektKlasseMedfjortenHundredeOgNiOgFyrre" Height="459" Width="911"
 >
     <Grid Margin="6,4,7,6">
         <TextBox x:Name="weekday1txtbox" HorizontalAlignment="Left" Height="200" Margin="20,140,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" IsEnabled="False"/>
@@ -480,14 +480,13 @@
         <Label x:Name="weekday5label2" Content="Label" HorizontalAlignment="Left" Margin="538,88,0,0" VerticalAlignment="Top" Width="75"/>
         <Label x:Name="weekday6label2" Content="Label" HorizontalAlignment="Left" Margin="661,88,0,0" VerticalAlignment="Top" Width="75"/>
         <Label x:Name="weekday7label2" Content="Label" HorizontalAlignment="Left" Margin="785,88,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="weekday1resetBtn" Background="#FF1796A2" Content="Reset" HorizontalAlignment="Left" Margin="20,345,0,0" VerticalAlignment="Top" Width="100" Click="Weekday1resetBtn_Click"/>
-        <Button x:Name="weekday2resetBtn" Background="#FF1796A2" Content="Reset" HorizontalAlignment="Left" Margin="149,345,0,0" VerticalAlignment="Top" Width="100" Click="Weekday2resetBtn_Click"/>
-        <Button x:Name="weekday3resetBtn" Background="#FF1796A2" Content="Reset" HorizontalAlignment="Left" Margin="277,345,0,0" VerticalAlignment="Top" Width="100" Click="Weekday3resetBtn_Click"/>
-        <Button x:Name="weekday4resetBtn" Background="#FF1796A2" Content="Reset" HorizontalAlignment="Left" Margin="412,345,0,0" VerticalAlignment="Top" Width="100" Click="Weekday4resetBtn_Click"/>
-        <Button x:Name="weekday5resetBtn" Background="#FF1796A2" Content="Reset" HorizontalAlignment="Left" Margin="538,345,0,0" VerticalAlignment="Top" Width="100" Click="Weekday5resetBtn_Click"/>
-        <Button x:Name="weekday6resetBtn" Background="#FF1796A2" Content="Reset" HorizontalAlignment="Left" Margin="661,345,0,0" VerticalAlignment="Top" Width="100" Click="Weekday6resetBtn_Click"/>
-        <Button x:Name="weekday7resetBtn" Background="#FF1796A2" Content="Reset" HorizontalAlignment="Left" Margin="785,345,0,0" VerticalAlignment="Top" Width="100" Click="Weekday7resetBtn_Click"/>
-        <Label x:Name="shopLabel" Content="Shop" HorizontalAlignment="Left" Margin="20,430,0,0" VerticalAlignment="Top" Width="156"/>
+        <Button x:Name="weekday1resetBtn" Background="#FF1796A2" Content="Reset" HorizontalAlignment="Left" Margin="20,318,0,0" VerticalAlignment="Top" Width="100" Click="Weekday1resetBtn_Click" Height="22"/>
+        <Button x:Name="weekday2resetBtn" Background="#FF1796A2" Content="Reset" HorizontalAlignment="Left" Margin="149,318,0,0" VerticalAlignment="Top" Width="100" Click="Weekday2resetBtn_Click" Height="22"/>
+        <Button x:Name="weekday3resetBtn" Background="#FF1796A2" Content="Reset" HorizontalAlignment="Left" Margin="277,318,0,0" VerticalAlignment="Top" Width="100" Click="Weekday3resetBtn_Click" Height="22"/>
+        <Button x:Name="weekday4resetBtn" Background="#FF1796A2" Content="Reset" HorizontalAlignment="Left" Margin="412,318,0,0" VerticalAlignment="Top" Width="100" Click="Weekday4resetBtn_Click" Height="22"/>
+        <Button x:Name="weekday5resetBtn" Background="#FF1796A2" Content="Reset" HorizontalAlignment="Left" Margin="538,318,0,0" VerticalAlignment="Top" Width="100" Click="Weekday5resetBtn_Click" Height="22"/>
+        <Button x:Name="weekday6resetBtn" Background="#FF1796A2" Content="Reset" HorizontalAlignment="Left" Margin="661,318,0,0" VerticalAlignment="Top" Width="100" Click="Weekday6resetBtn_Click" Height="22"/>
+        <Button x:Name="weekday7resetBtn" Background="#FF1796A2" Content="Reset" HorizontalAlignment="Left" Margin="785,318,0,0" VerticalAlignment="Top" Width="100" Click="Weekday7resetBtn_Click" Height="22"/>
 
 
     </Grid>

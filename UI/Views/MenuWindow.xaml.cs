@@ -42,7 +42,7 @@ namespace UI.Views
         private void ShowRostersBtn_Click(object sender, RoutedEventArgs e)
         {
 
-            ShowRosterWindow showRosterWindow = new ShowRosterWindow(departmentcombobox.Text);
+            PerfektKlasseMedfjortenHundredeOgNiOgFyrre showRosterWindow = new PerfektKlasseMedfjortenHundredeOgNiOgFyrre(departmentcombobox.Text);
             showRosterWindow.Show();
             
         }
