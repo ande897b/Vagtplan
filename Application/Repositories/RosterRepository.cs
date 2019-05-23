@@ -85,12 +85,11 @@ namespace Application.Repositories
 
 		public static bool CheckIfDateExists(string date, string shop)
 		{
-			string newDate = date.Substring(0, 10);
+			List<Date> dates = DateRepository.GetDates(shop.ToLower());
 			bool checkIfTrue = false;
-			foreach (var day in DateRepository.GetDates(shop))
+			foreach (var day in dates)
 			{
-				string newDay = day.Day.ToString().Substring(0, 10);
-				if (newDate == newDay)
+				if (day.Day.ToString().Substring(0,10) == date.Substring(0,10) && day.Shop.ToString() == shop.ToLower())
 				{
 					checkIfTrue = true;
 				}

@@ -37,7 +37,7 @@ namespace UI.Views
             {
                 Shop = Shop.skibhusvej;
             }
-
+            shopLabel.Content = Shop.ToString();
             DBDateController.LoadDates();
             DBDutyController.LoadDuties();
             DBWishForDayOffController.LoadWishForDayOffs();

@@ -54,7 +54,7 @@ namespace Controller.Repositories
             List<Date> newDates = new List<Date>();
             foreach (Date date in dates)
             {
-                if(date.Shop.ToString() == shop)
+                if(date.Shop.ToString().Substring(0,10) == shop.Substring(0, 10))
                 {
                     newDates.Add(date);
                 }

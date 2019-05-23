@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:UI.Views"
         xmlns:DatabaseControllers="clr-namespace:Controller.DatabaseControllers;assembly=Controller" x:Class="UI.Views.ShowRosterWindow"
         mc:Ignorable="d"
-        Title="ShowRosterWindow" Height="467" Width="924"
+        Title="ShowRosterWindow" Height="505" Width="911"
 >
     <Grid Margin="6,4,7,6">
         <TextBox x:Name="weekday1txtbox" HorizontalAlignment="Left" Height="200" Margin="20,140,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" IsEnabled="False"/>
@@ -487,6 +487,7 @@
         <Button x:Name="weekday5resetBtn" Background="#FF1796A2" Content="Reset" HorizontalAlignment="Left" Margin="538,345,0,0" VerticalAlignment="Top" Width="100" Click="Weekday5resetBtn_Click"/>
         <Button x:Name="weekday6resetBtn" Background="#FF1796A2" Content="Reset" HorizontalAlignment="Left" Margin="661,345,0,0" VerticalAlignment="Top" Width="100" Click="Weekday6resetBtn_Click"/>
         <Button x:Name="weekday7resetBtn" Background="#FF1796A2" Content="Reset" HorizontalAlignment="Left" Margin="785,345,0,0" VerticalAlignment="Top" Width="100" Click="Weekday7resetBtn_Click"/>
+        <Label x:Name="shopLabel" Content="Shop" HorizontalAlignment="Left" Margin="20,430,0,0" VerticalAlignment="Top" Width="156"/>
 
 
     </Grid>
