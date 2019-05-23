@@ -42,14 +42,12 @@ namespace UI.Views
             DBWishForDayOffController.LoadWishForDayOffs();
             InitializeComponent();
         }
-
         public static List<DateTime> GetDates(int year, int month)
         {
             return Enumerable.Range(1, DateTime.DaysInMonth(year, month))  // Days: 1, 2 ... 31 etc.
                              .Select(day => new DateTime(year, month, day)) // Map each day to a date
                              .ToList(); // Load dates into a list
         }
-
         private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             DateTime[] dates = GetDates(2019, tabControl.SelectedIndex + 1).ToArray();
@@ -81,7 +79,6 @@ namespace UI.Views
                     ManageComboboxes();
                 }
             }
-
             if (tabControl.SelectedIndex == 1) // Februar
             {
                 if (FebruaryTabControl.SelectedIndex == 0)
@@ -105,7 +102,6 @@ namespace UI.Views
                     ManageComboboxes();
                 }
             }
-
             if (tabControl.SelectedIndex == 2) // Marts
             {
                 if (MarchTabControl.SelectedIndex == 0)
@@ -399,6 +395,11 @@ namespace UI.Views
 
         public void UpdateComboboxes(bool decision, int dateID, int comboBox, DateTime date)
         {
+            List<DateTime> holidays = new List<DateTime>()
+            {
+                holidays.Add(new DateTime("2019-05-01"))
+            }
+            ;
             DBDutyController.LoadDuties();
             List<Employee> employees = EmployeeRepository.GetEmployees();
             List<Duty> duties = DutyRepository.GetDuties(dateID);
