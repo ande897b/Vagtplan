@@ -399,8 +399,17 @@ namespace UI.Views
         {
             DateTime[] holidays = new DateTime[]
             {
-                 new DateTime(2019, 05, 30),
-                 new DateTime(2010, 10, 2)
+                 new DateTime(2019, 01, 01), //Nytårsdag
+                 new DateTime(2019, 04, 18), //Skærtorsdag
+                 new DateTime(2019, 04, 19), //Langfredag
+                 new DateTime(2019, 04, 21), //påskedag
+                 new DateTime(2019, 04, 22), //anden påskedag
+                 new DateTime(2019, 05, 17), //store Bededag
+                 new DateTime(2019, 05, 30), //kristi himmelfartsdag
+                 new DateTime(2019, 06, 09), //pinsedag
+                 new DateTime(2019, 06, 10), //anden pinsedag
+                 new DateTime(2019, 12, 24), //juledag
+                 new DateTime(2019, 12, 25)  // Anden juledag      
             };
             bool isHoliday = false;
             foreach (DateTime holiday in holidays)
