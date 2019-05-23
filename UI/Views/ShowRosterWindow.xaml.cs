@@ -393,13 +393,24 @@ namespace UI.Views
             }
         }
 
+
+
         public void UpdateComboboxes(bool decision, int dateID, int comboBox, DateTime date)
         {
-            List<DateTime> holidays = new List<DateTime>()
+            DateTime[] holidays = new DateTime[]
             {
-                holidays.Add(new DateTime("2019-05-01"))
+                 new DateTime(2019, 05, 30),
+                 new DateTime(2010, 10, 2)
+            };
+            bool isHoliday = false;
+            foreach (DateTime holiday in holidays)
+            {
+                if (holiday.ToString().Substring(0, 10) == date.ToString().Substring(0, 10))
+                {
+                    isHoliday = true;
+                }
             }
-            ;
+
             DBDutyController.LoadDuties();
             List<Employee> employees = EmployeeRepository.GetEmployees();
             List<Duty> duties = DutyRepository.GetDuties(dateID);
@@ -429,7 +440,8 @@ namespace UI.Views
                 switch (comboBox)
                 {
                     case 1:
-                        weekday1combobox.IsEnabled = true;
+                        if (!isHoliday)
+                            weekday1combobox.IsEnabled = true;
                         weekday1combobox.ItemsSource = newEmployees;
                         weekday1combobox2.ItemsSource = newEmployees;
                         weekday1combobox3.ItemsSource = newEmployees;
@@ -463,7 +475,8 @@ namespace UI.Views
                         break;
 
                     case 2:
-                        weekday2combobox.IsEnabled = true;
+                        if (!isHoliday)
+                            weekday2combobox.IsEnabled = true;
                         weekday2combobox.ItemsSource = newEmployees;
                         weekday2combobox2.ItemsSource = newEmployees;
                         weekday2combobox3.ItemsSource = newEmployees;
@@ -498,7 +511,8 @@ namespace UI.Views
                         break;
 
                     case 3:
-                        weekday3combobox.IsEnabled = true;
+                        if (!isHoliday)
+                            weekday3combobox.IsEnabled = true;
                         weekday3combobox.ItemsSource = newEmployees;
                         weekday3combobox2.ItemsSource = newEmployees;
                         weekday3combobox3.ItemsSource = newEmployees;
@@ -532,7 +546,8 @@ namespace UI.Views
                         break;
 
                     case 4:
-                        weekday4combobox.IsEnabled = true;
+                        if (!isHoliday)
+                            weekday4combobox.IsEnabled = true;
                         weekday4combobox.ItemsSource = newEmployees;
                         weekday4combobox2.ItemsSource = newEmployees;
                         weekday4combobox3.ItemsSource = newEmployees;
@@ -566,7 +581,8 @@ namespace UI.Views
                         break;
 
                     case 5:
-                        weekday5combobox.IsEnabled = true;
+                        if (!isHoliday)
+                            weekday5combobox.IsEnabled = true;
                         weekday5combobox.ItemsSource = newEmployees;
                         weekday5combobox2.ItemsSource = newEmployees;
                         weekday5combobox3.ItemsSource = newEmployees;
@@ -602,7 +618,8 @@ namespace UI.Views
                         break;
 
                     case 6:
-                        weekday6combobox.IsEnabled = true;
+                        if (!isHoliday)
+                            weekday6combobox.IsEnabled = true;
                         weekday6combobox.ItemsSource = newEmployees;
                         weekday6combobox2.ItemsSource = newEmployees;
                         weekday6combobox3.ItemsSource = newEmployees;
@@ -638,7 +655,8 @@ namespace UI.Views
                         break;
 
                     case 7:
-                        weekday7combobox.IsEnabled = true;
+                        if (!isHoliday)
+                            weekday7combobox.IsEnabled = true;
                         weekday7combobox.ItemsSource = newEmployees;
                         weekday7combobox2.ItemsSource = newEmployees;
                         weekday7combobox3.ItemsSource = newEmployees;

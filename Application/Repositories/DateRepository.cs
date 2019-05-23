@@ -9,12 +9,14 @@ namespace Controller.Repositories
 {
     public static class DateRepository
     {
+
         private static List<Date> dates = new List<Date>();
         public static void AddDate(Date date)
         {
             if (!DateExist(date))
             dates.Add(date);
         }
+
         public static bool DateExist(Date date)
         {
             bool exist = false;
