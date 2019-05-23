@@ -411,7 +411,7 @@
 
         </ComboBox>
         <TextBox x:Name="weekday1textbox3" Visibility="Hidden" HorizontalAlignment="Left" Height="23" Margin="20,207,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" TextChanged="weekday1textbox3_TextChanged"/>
-        <Button x:Name="SaveBtn" Background="LightGreen" Content="Gem" HorizontalAlignment="Left" Margin="20,375,0,0" VerticalAlignment="Top" Width="865" Height="34" Click="SaveBtn_Click" />
+        <Button x:Name="SaveBtn" Background="#FFAE90EE" Content="Gem" HorizontalAlignment="Left" Margin="20,375,0,0" VerticalAlignment="Top" Width="865" Height="34" Click="SaveBtn_Click" />
         <ComboBox x:Name="weekday1combobox3" HorizontalAlignment="Left" Margin="20,230,0,0" VerticalAlignment="Top" Width="100"  Visibility="Hidden" SelectionChanged="weekday1combobox3_SelectionChanged">
 
         </ComboBox>
@@ -480,6 +480,13 @@
         <Label x:Name="weekday5label2" Content="Label" HorizontalAlignment="Left" Margin="538,88,0,0" VerticalAlignment="Top" Width="75"/>
         <Label x:Name="weekday6label2" Content="Label" HorizontalAlignment="Left" Margin="661,88,0,0" VerticalAlignment="Top" Width="75"/>
         <Label x:Name="weekday7label2" Content="Label" HorizontalAlignment="Left" Margin="785,88,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="weekday1resetBtn" Background="#FF1796A2" Content="Reset" HorizontalAlignment="Left" Margin="20,345,0,0" VerticalAlignment="Top" Width="100" Click="Weekday1resetBtn_Click"/>
+        <Button x:Name="weekday2resetBtn" Background="#FF1796A2" Content="Reset" HorizontalAlignment="Left" Margin="149,345,0,0" VerticalAlignment="Top" Width="100" Click="Weekday2resetBtn_Click"/>
+        <Button x:Name="weekday3resetBtn" Background="#FF1796A2" Content="Reset" HorizontalAlignment="Left" Margin="277,345,0,0" VerticalAlignment="Top" Width="100" Click="Weekday3resetBtn_Click"/>
+        <Button x:Name="weekday4resetBtn" Background="#FF1796A2" Content="Reset" HorizontalAlignment="Left" Margin="412,345,0,0" VerticalAlignment="Top" Width="100" Click="Weekday4resetBtn_Click"/>
+        <Button x:Name="weekday5resetBtn" Background="#FF1796A2" Content="Reset" HorizontalAlignment="Left" Margin="538,345,0,0" VerticalAlignment="Top" Width="100" Click="Weekday5resetBtn_Click"/>
+        <Button x:Name="weekday6resetBtn" Background="#FF1796A2" Content="Reset" HorizontalAlignment="Left" Margin="661,345,0,0" VerticalAlignment="Top" Width="100" Click="Weekday6resetBtn_Click"/>
+        <Button x:Name="weekday7resetBtn" Background="#FF1796A2" Content="Reset" HorizontalAlignment="Left" Margin="785,345,0,0" VerticalAlignment="Top" Width="100" Click="Weekday7resetBtn_Click"/>
 
 
     </Grid>

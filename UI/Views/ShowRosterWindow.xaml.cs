@@ -1180,8 +1180,10 @@ namespace UI.Views
             weekday7textbox4.Text = weekday7textbox3.Text.Substring(8, 5) + " - 17:00";
         }
 
-        private void ManageDuty(string labelContent, string textboxContent, string employeeName)
+        private void ManageDuty(string labelContent, string textboxContent, string employeeName, int datoID)
         {
+            DutyRepository.Removeduties(datoID);
+            DBDutyController.DeleteDuties(datoID);
             string start = textboxContent.Substring(0, 5);
             string end = textboxContent.Substring(8, 5);
             DateTime startdateTime = new DateTime(int.Parse(labelContent.ToString().Substring(6, 4)), int.Parse(labelContent.ToString().Substring(3, 2)), int.Parse(labelContent.ToString().Substring(0, 2)), int.Parse(start.Substring(0, 2)), int.Parse(start.Substring(3, 2)), 0);
@@ -1201,19 +1203,19 @@ namespace UI.Views
             {
                 if (weekday1textbox2.Text != null)
                 {
-                    ManageDuty(weekday1label.Content.ToString(), weekday1textbox2.Text, weekday1combobox.SelectedItem.ToString());
+                    ManageDuty(weekday1label.Content.ToString(), weekday1textbox2.Text, weekday1combobox.SelectedItem.ToString(), DateRepository.GetDateID(weekday1label.Content.ToString(), Shop));
                 }
                 if (weekday1combobox2.SelectedItem != null)
                 {
                     if (weekday1textbox3.Text != null)
                     {
-                        ManageDuty(weekday1label.Content.ToString(), weekday1textbox3.Text, weekday1combobox2.SelectedItem.ToString());
+                        ManageDuty(weekday1label.Content.ToString(), weekday1textbox3.Text, weekday1combobox2.SelectedItem.ToString(), DateRepository.GetDateID(weekday1label.Content.ToString(), Shop));
                     }
                     if(weekday1combobox3.SelectedItem != null)
                     {
                         if(weekday1textbox4.Text != null)
                         {
-                            ManageDuty(weekday1label.Content.ToString(), weekday1textbox4.Text, weekday1combobox3.SelectedItem.ToString());
+                            ManageDuty(weekday1label.Content.ToString(), weekday1textbox4.Text, weekday1combobox3.SelectedItem.ToString(), DateRepository.GetDateID(weekday1label.Content.ToString(), Shop));
                         }
                     }
                 }
@@ -1222,19 +1224,19 @@ namespace UI.Views
             {
                 if (weekday2textbox2.Text != null)
                 {
-                    ManageDuty(weekday2label.Content.ToString(), weekday2textbox2.Text, weekday2combobox.SelectedItem.ToString());
+                    ManageDuty(weekday2label.Content.ToString(), weekday2textbox2.Text, weekday2combobox.SelectedItem.ToString(), DateRepository.GetDateID(weekday2label.Content.ToString(), Shop));
                 }
                 if (weekday2combobox2.SelectedItem != null)
                 {
                     if (weekday2textbox3.Text != null)
                     {
-                        ManageDuty(weekday2label.Content.ToString(), weekday2textbox3.Text, weekday2combobox2.SelectedItem.ToString());
+                        ManageDuty(weekday2label.Content.ToString(), weekday2textbox3.Text, weekday2combobox2.SelectedItem.ToString(), DateRepository.GetDateID(weekday2label.Content.ToString(), Shop));
                     }
                     if (weekday2combobox3.SelectedItem != null)
                     {
                         if (weekday2textbox4.Text != null)
                         {
-                            ManageDuty(weekday2label.Content.ToString(), weekday2textbox4.Text, weekday2combobox3.SelectedItem.ToString());
+                            ManageDuty(weekday2label.Content.ToString(), weekday2textbox4.Text, weekday2combobox3.SelectedItem.ToString(), DateRepository.GetDateID(weekday2label.Content.ToString(), Shop));
                         }
                     }
                 }
@@ -1243,19 +1245,19 @@ namespace UI.Views
             {
                 if (weekday3textbox2.Text != null)
                 {
-                    ManageDuty(weekday3label.Content.ToString(), weekday3textbox2.Text, weekday3combobox.SelectedItem.ToString());
+                    ManageDuty(weekday3label.Content.ToString(), weekday3textbox2.Text, weekday3combobox.SelectedItem.ToString(), DateRepository.GetDateID(weekday3label.Content.ToString(), Shop));
                 }
                 if (weekday3combobox2.SelectedItem != null)
                 {
                     if (weekday3textbox3.Text != null)
                     {
-                        ManageDuty(weekday3label.Content.ToString(), weekday3textbox3.Text, weekday3combobox2.SelectedItem.ToString());
+                        ManageDuty(weekday3label.Content.ToString(), weekday3textbox3.Text, weekday3combobox2.SelectedItem.ToString(), DateRepository.GetDateID(weekday3label.Content.ToString(), Shop));
                     }
                     if (weekday3combobox3.SelectedItem != null)
                     {
                         if (weekday3textbox4.Text != null)
                         {
-                            ManageDuty(weekday3label.Content.ToString(), weekday3textbox4.Text, weekday3combobox3.SelectedItem.ToString());
+                            ManageDuty(weekday3label.Content.ToString(), weekday3textbox4.Text, weekday3combobox3.SelectedItem.ToString(), DateRepository.GetDateID(weekday3label.Content.ToString(), Shop));
                         }
                     }
                 }
@@ -1264,19 +1266,19 @@ namespace UI.Views
             {
                 if (weekday4textbox2.Text != null)
                 {
-                    ManageDuty(weekday4label.Content.ToString(), weekday4textbox2.Text, weekday4combobox.SelectedItem.ToString());
+                    ManageDuty(weekday4label.Content.ToString(), weekday4textbox2.Text, weekday4combobox.SelectedItem.ToString(), DateRepository.GetDateID(weekday4label.Content.ToString(), Shop));
                 }
                 if (weekday4combobox2.SelectedItem != null)
                 {
                     if (weekday4textbox3.Text != null)
                     {
-                        ManageDuty(weekday4label.Content.ToString(), weekday4textbox3.Text, weekday4combobox2.SelectedItem.ToString());
+                        ManageDuty(weekday4label.Content.ToString(), weekday4textbox3.Text, weekday4combobox2.SelectedItem.ToString(), DateRepository.GetDateID(weekday4label.Content.ToString(), Shop));
                     }
                     if (weekday4combobox3.SelectedItem != null)
                     {
                         if (weekday4textbox4.Text != null)
                         {
-                            ManageDuty(weekday4label.Content.ToString(), weekday4textbox4.Text, weekday4combobox3.SelectedItem.ToString());
+                            ManageDuty(weekday4label.Content.ToString(), weekday4textbox4.Text, weekday4combobox3.SelectedItem.ToString(), DateRepository.GetDateID(weekday4label.Content.ToString(), Shop));
                         }
                     }
                 }
@@ -1285,19 +1287,19 @@ namespace UI.Views
             {
                 if (weekday5textbox2.Text != null)
                 {
-                    ManageDuty(weekday5label.Content.ToString(), weekday5textbox2.Text, weekday5combobox.SelectedItem.ToString());
+                    ManageDuty(weekday5label.Content.ToString(), weekday5textbox2.Text, weekday5combobox.SelectedItem.ToString(), DateRepository.GetDateID(weekday5label.Content.ToString(), Shop));
                 }
                 if (weekday5combobox2.SelectedItem != null)
                 {
                     if (weekday5textbox3.Text != null)
                     {
-                        ManageDuty(weekday5label.Content.ToString(), weekday5textbox3.Text, weekday5combobox2.SelectedItem.ToString());
+                        ManageDuty(weekday5label.Content.ToString(), weekday5textbox3.Text, weekday5combobox2.SelectedItem.ToString(), DateRepository.GetDateID(weekday5label.Content.ToString(), Shop));
                     }
                     if (weekday5combobox3.SelectedItem != null)
                     {
                         if (weekday5textbox4.Text != null)
                         {
-                            ManageDuty(weekday5label.Content.ToString(), weekday5textbox4.Text, weekday5combobox3.SelectedItem.ToString());
+                            ManageDuty(weekday5label.Content.ToString(), weekday5textbox4.Text, weekday5combobox3.SelectedItem.ToString(), DateRepository.GetDateID(weekday5label.Content.ToString(), Shop));
                         }
                     }
                 }
@@ -1306,19 +1308,19 @@ namespace UI.Views
             {
                 if (weekday6textbox2.Text != null)
                 {
-                    ManageDuty(weekday6label.Content.ToString(), weekday6textbox2.Text, weekday6combobox.SelectedItem.ToString());
+                    ManageDuty(weekday6label.Content.ToString(), weekday6textbox2.Text, weekday6combobox.SelectedItem.ToString(), DateRepository.GetDateID(weekday6label.Content.ToString(), Shop));
                 }
                 if (weekday6combobox2.SelectedItem != null)
                 {
                     if (weekday6textbox3.Text != null)
                     {
-                        ManageDuty(weekday6label.Content.ToString(), weekday6textbox3.Text, weekday6combobox2.SelectedItem.ToString());
+                        ManageDuty(weekday6label.Content.ToString(), weekday6textbox3.Text, weekday6combobox2.SelectedItem.ToString(), DateRepository.GetDateID(weekday6label.Content.ToString(), Shop));
                     }
                     if (weekday6combobox3.SelectedItem != null)
                     {
                         if (weekday6textbox4.Text != null)
                         {
-                            ManageDuty(weekday6label.Content.ToString(), weekday6textbox4.Text, weekday6combobox3.SelectedItem.ToString());
+                            ManageDuty(weekday6label.Content.ToString(), weekday6textbox4.Text, weekday6combobox3.SelectedItem.ToString(), DateRepository.GetDateID(weekday6label.Content.ToString(), Shop));
                         }
                     }
                 }
@@ -1327,25 +1329,59 @@ namespace UI.Views
             {
                 if (weekday7textbox2.Text != null)
                 {
-                    ManageDuty(weekday7label.Content.ToString(), weekday7textbox2.Text, weekday7combobox.SelectedItem.ToString());
+                    ManageDuty(weekday7label.Content.ToString(), weekday7textbox2.Text, weekday7combobox.SelectedItem.ToString(), DateRepository.GetDateID(weekday7label.Content.ToString(), Shop));
                 }
                 if (weekday7combobox2.SelectedItem != null)
                 {
                     if (weekday7textbox3.Text != null)
                     {
-                        ManageDuty(weekday7label.Content.ToString(), weekday7textbox3.Text, weekday7combobox2.SelectedItem.ToString());
+                        ManageDuty(weekday7label.Content.ToString(), weekday7textbox3.Text, weekday7combobox2.SelectedItem.ToString(), DateRepository.GetDateID(weekday7label.Content.ToString(), Shop));
                     }
                     if (weekday7combobox3.SelectedItem != null)
                     {
                         if (weekday7textbox4.Text != null)
                         {
-                            ManageDuty(weekday7label.Content.ToString(), weekday7textbox4.Text, weekday7combobox3.SelectedItem.ToString());
+                            ManageDuty(weekday7label.Content.ToString(), weekday7textbox4.Text, weekday7combobox3.SelectedItem.ToString(), DateRepository.GetDateID(weekday7label.Content.ToString(), Shop));
                         }
                     }
                 }
             }
             MessageBox.Show("vagterne er blevet gemt", "success");
+        }
 
+        private void Weekday1resetBtn_Click(object sender, RoutedEventArgs e)
+        {
+            ResetComboboxes(1);
+        }
+
+        private void Weekday2resetBtn_Click(object sender, RoutedEventArgs e)
+        {
+            ResetComboboxes(2);
+        }
+
+        private void Weekday3resetBtn_Click(object sender, RoutedEventArgs e)
+        {
+            ResetComboboxes(3);
+        }
+
+        private void Weekday4resetBtn_Click(object sender, RoutedEventArgs e)
+        {
+            ResetComboboxes(4);
+        }
+
+        private void Weekday5resetBtn_Click(object sender, RoutedEventArgs e)
+        {
+            ResetComboboxes(5);
+        }
+
+        private void Weekday6resetBtn_Click(object sender, RoutedEventArgs e)
+        {
+            ResetComboboxes(6);
+        }
+
+        private void Weekday7resetBtn_Click(object sender, RoutedEventArgs e)
+        {
+            ResetComboboxes(7);
         }
     }
 }

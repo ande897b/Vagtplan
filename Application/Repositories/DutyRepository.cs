@@ -33,9 +33,15 @@ namespace Controller.Repositories
             }
             return newDuties;
         }
-        public static void Removeduty(Duty duty)
+        public static void Removeduties(int dateID)
         {
-            duties.Remove(duty);
+            foreach (Duty duty in duties)
+            {
+                if (duty.DateID == dateID)
+                {
+                    duties.Remove(duty);
+                }
+            }
         }
 
         public static bool DutyExist(Duty duty)
