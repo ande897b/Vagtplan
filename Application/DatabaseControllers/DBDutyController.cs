@@ -60,8 +60,9 @@ namespace Controller.DatabaseControllers
                     cmd.Parameters.Add(new SqlParameter("@StartTime_IN", duty.StartTime));
                     cmd.Parameters.Add(new SqlParameter("@EndTime_IN", duty.EndTime));
                     cmd.ExecuteReader();
+                    DBConnection.Close();
                 }
-                DBConnection.Close();
+                
                 DutyRepository.AddDuty(duty);
             }
         }
@@ -76,8 +77,9 @@ namespace Controller.DatabaseControllers
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Add(new SqlParameter("@DateID_IN", dateID));
                 cmd.ExecuteReader();
+                DBConnection.Close();
             }
-            DBConnection.Close();
+            
         }
     }
 }

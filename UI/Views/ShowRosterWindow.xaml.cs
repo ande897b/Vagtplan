@@ -28,11 +28,12 @@ namespace UI.Views
 
         public ShowRosterWindow(string boxResult)
         {
-            if(boxResult.ToLower() == "kongensgade")
+            InitializeComponent();
+            if (boxResult.ToLower() == "kongensgade")
             {
                 Shop = Shop.kongensgade;
             }
-            else if (boxResult.ToLower() == "skibhusvej")
+            else
             {
                 Shop = Shop.skibhusvej;
             }
@@ -40,7 +41,7 @@ namespace UI.Views
             DBDateController.LoadDates();
             DBDutyController.LoadDuties();
             DBWishForDayOffController.LoadWishForDayOffs();
-            InitializeComponent();
+            
         }
         public static List<DateTime> GetDates(int year, int month)
         {

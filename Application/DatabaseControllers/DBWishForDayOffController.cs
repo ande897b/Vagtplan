@@ -36,8 +36,8 @@ namespace Controller.DatabaseControllers
                         WishForDayOff newWish = new WishForDayOff(wishForDayOffID, employeeID, day);
                         WishForDayOffRepository.AddWishForDayOff(newWish);
                     }
-                    DBConnection.Close();
                 }
+                DBConnection.Close();
             }
         }
 
@@ -54,8 +54,9 @@ namespace Controller.DatabaseControllers
                     cmd.Parameters.Add(new SqlParameter("@EmployeeID_IN", wish.EmployeeID));
                     cmd.Parameters.Add(new SqlParameter("@Date_IN", wish.Date));
                     cmd.ExecuteReader();
+                    DBConnection.Close();
                 }
-                DBConnection.Close();
+                
                 WishForDayOffRepository.AddWishForDayOff(wish);
             }
         } 
