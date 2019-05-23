@@ -35,7 +35,7 @@ namespace Controller.Repositories
         }
         public static void Removeduties(int dateID)
         {
-            foreach (Duty duty in duties)
+            foreach (Duty duty in duties.ToList()) 
             {
                 if (duty.DateID == dateID)
                 {
