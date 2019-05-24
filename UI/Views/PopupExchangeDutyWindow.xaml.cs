@@ -32,7 +32,9 @@ namespace Vagtplan.Views
 
         private void Confirm_Click(object sender, RoutedEventArgs e)
         {
-            DBDutyExchangeController.UpdateDutyExchange(EmployeeRepository.GetEmployeeID(EmployeeCB.SelectedValue.ToString()), DutyID);
+            DBDutyExchangeController.DeleteDutyExchange(DutyRepository.GetDuty(DutyLabel.Content.ToString().Substring(0, 10), DutyLabel.Content.ToString().Substring(16)).DutyID, EmployeeRepository.GetEmployeeID(DutyLabel.Content.ToString().Substring(16)));
+            DBDutyController.UpdateDuty(EmployeeRepository.GetEmployeeID(EmployeeCB.SelectedValue.ToString()), DutyID);
+            this.Close();
         }
     }
 }

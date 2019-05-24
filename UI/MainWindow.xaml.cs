@@ -1,5 +1,4 @@
 ﻿using Application.DatabaseControllers;
-using Controller.DatabaseControllers;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -13,10 +12,10 @@ namespace UI
 		{
 			InitializeComponent();
             DBDateController.LoadDates();
-            DBDutyController.LoadDuties();
             DBRosterController.LoadRosters();
             DBEmployeeController.LoadEmployees();
             DBWishForDayOffController.LoadWishForDayOffs();
+            DBDutyController.LoadDuties();
             DBDutyExchangeController.LoadDutyExchanges();
         }
 

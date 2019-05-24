@@ -22,6 +22,10 @@ namespace Application.Repositories
             {
                 if (dutyExchange2.DutyID == dutyExchange.DutyID && dutyExchange2.EmployeeID == dutyExchange.EmployeeID)
                 {
+                    if (dutyExchange2.DutyExchangeID == -1)
+                    {
+                        dutyExchange2.DutyExchangeID = dutyExchange.DutyExchangeID;
+                    }
                     exist = true;
                 }
             }

@@ -24,6 +24,7 @@ namespace UI.Views
         public MenuWindow()
         {
             InitializeComponent();
+
             if (departmentcombobox.SelectedIndex == -1)
             {
                 ShowRostersBtn.IsEnabled = false;

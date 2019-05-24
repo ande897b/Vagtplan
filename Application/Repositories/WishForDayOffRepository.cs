@@ -22,6 +22,10 @@ namespace Application.Repositories
             {
                 if (wishForDayOff2.Date == wishForDayOff.Date && wishForDayOff2.EmployeeID == wishForDayOff.EmployeeID)
                 {
+                    if (wishForDayOff2.WishForDayOffID == -1)
+                    {
+                        wishForDayOff2.WishForDayOffID = wishForDayOff.WishForDayOffID;
+                    }
                     exist = true;
                 }
             }

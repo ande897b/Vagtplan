@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Controller.DatabaseControllers
+namespace Application.DatabaseControllers
 {
     public static class DBDutyController
     {
@@ -80,6 +80,23 @@ namespace Controller.DatabaseControllers
                 DBConnection.Close();
             }
             
+        }
+
+        public static void UpdateDuty(int newEmployeeID, int dutyID)
+        {
+
+            DBConnection.DatabaseName = "CANE";
+            string query = "Update_Exchange";
+
+            if (DBConnection.IsConnected())
+            {
+                var cmd = new SqlCommand(query, DBConnection.Connection);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add(new SqlParameter("@DutyID_IN", dutyID));
+                cmd.Parameters.Add(new SqlParameter("@EmployeeID_IN", newEmployeeID));
+                cmd.ExecuteReader();
+            }
+            DBConnection.Close();
         }
     }
 }

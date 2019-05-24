@@ -43,9 +43,7 @@ namespace UI.Views
             {
                 startDate = RosterRepository.GetEndDate(shop);
             }
-
             DatePickerStart.SelectedDate = startDate;
-            
             DatePickerEnd.SelectedDate = DatePickerStart.SelectedDate;
         }
     }

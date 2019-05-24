@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UI.Views"
-        xmlns:DatabaseControllers="clr-namespace:Controller.DatabaseControllers;assembly=Controller" x:Class="UI.Views.ShowRosterWindow"
+        xmlns:DatabaseControllers="clr-namespace:Application.DatabaseControllers;assembly=Application" x:Class="UI.Views.ShowRosterWindow"
         mc:Ignorable="d"
         Title="ShowRosterWindow" Height="459" Width="911"
 >

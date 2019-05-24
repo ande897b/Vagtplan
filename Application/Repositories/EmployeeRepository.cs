@@ -22,7 +22,11 @@ namespace Application.Repositories
 			{
 				if (employee2.FirstName == employee.FirstName && employee2.LastName == employee.LastName)
 				{
-					exist = true;
+                    if (employee2.EmployeeID == -1)
+                    {
+                        employee2.EmployeeID = employee.EmployeeID;
+                    }
+                    exist = true;
 				}
 			}
 			return exist;
@@ -54,6 +58,7 @@ namespace Application.Repositories
 			{
 				if(employee.FirstName == firstName)
 				{
+
 					id = employee.EmployeeID;
 				}
 			}

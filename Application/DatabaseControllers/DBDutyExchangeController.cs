@@ -60,23 +60,22 @@ namespace Application.DatabaseControllers
             }
             DutyExchangeRepository.AddDutyExchange(dutyExchange);
         }
-        public static void UpdateDutyExchange(int newEmployeeID, int dutyID)
+       
+        public static void DeleteDutyExchange(int dutyID, int newEmployeeID)
         {
 
             DBConnection.DatabaseName = "CANE";
-            string query = "Update_Exchange";
+            string query = "Delete_DutyExchanges";
 
-              if (DBConnection.IsConnected())
-                {
-                    var cmd = new SqlCommand(query, DBConnection.Connection);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add(new SqlParameter("@DutyID_IN", dutyID));
-                    cmd.Parameters.Add(new SqlParameter("@EmployeeID_IN", newEmployeeID));
-                    cmd.ExecuteReader();
-                }
-                DBConnection.Close();
-            
-        //   DutyExchangeRepository.AddDutyExchange(dutyExchange);
+            if (DBConnection.IsConnected())
+            {
+                var cmd = new SqlCommand(query, DBConnection.Connection);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add(new SqlParameter("@DutyID_IN", dutyID));
+                cmd.Parameters.Add(new SqlParameter("@EmployeeID_IN", newEmployeeID));
+                cmd.ExecuteReader();
+            }
+            DBConnection.Close();
         }
     }    
 

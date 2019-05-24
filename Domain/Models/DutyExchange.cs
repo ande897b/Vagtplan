@@ -20,6 +20,7 @@ namespace Domain.Models
         }
         public DutyExchange(int dutyID, int employeeID)
         {
+            DutyExchangeID = -1;
             DutyID = dutyID;
             EmployeeID = employeeID;
         }

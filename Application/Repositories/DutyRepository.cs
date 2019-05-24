@@ -89,6 +89,10 @@ namespace Application.Repositories
             {
                 if (duti.DateID == duty.DateID && duti.EmployeeID == duty.EmployeeID && duti.StartTime == duty.StartTime && duti.EndTime == duty.EndTime)
                 {
+                    if (duti.DutyID == -1)
+                    {
+                        duti.DutyID = duty.DutyID;
+                    }
                     exist = true;
                 }
             }

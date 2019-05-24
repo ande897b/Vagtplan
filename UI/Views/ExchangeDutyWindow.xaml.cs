@@ -46,6 +46,7 @@ namespace Vagtplan.Views
 
         private void GetDuties_Click(object sender, RoutedEventArgs e)
         {
+
             List<Duty> duties = DutyRepository.GetDuties(EmployeeCB.SelectedItem.ToString());
             List<string> dates = new List<string>();
 

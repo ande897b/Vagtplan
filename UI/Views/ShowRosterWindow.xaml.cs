@@ -15,7 +15,7 @@ using Application;
 using Application.Repositories;
 using Domain.Models;
 using Application.DatabaseControllers;
-using Controller.DatabaseControllers;
+using System.ComponentModel;
 
 namespace UI.Views
 {
@@ -26,6 +26,7 @@ namespace UI.Views
         public ShowRosterWindow(string boxResult)
         {
             InitializeComponent();
+
             if (boxResult.ToLower() == "kongensgade")
             {
                 Shop = Shop.kongensgade;
@@ -34,6 +35,20 @@ namespace UI.Views
             {
                 Shop = Shop.skibhusvej;
             }
+
+            this.Closing += WindowClosed;
+        }
+
+        private void WindowClosed(object sender, CancelEventArgs e)
+        {
+            e.Cancel = true;
+            DBDateController.LoadDates();
+            DBRosterController.LoadRosters();
+            DBEmployeeController.LoadEmployees();
+            DBWishForDayOffController.LoadWishForDayOffs();
+            DBDutyController.LoadDuties();
+            DBDutyExchangeController.LoadDutyExchanges();
+            this.Visibility = Visibility.Hidden;
         }
         private static List<DateTime> GetDates(int year, int month)
         {
