@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using Domain.Models;
 
 namespace Application.Repositories
@@ -22,11 +18,11 @@ namespace Application.Repositories
 			{
 				if (employee2.FirstName == employee.FirstName && employee2.LastName == employee.LastName)
 				{
-                    if (employee2.EmployeeID == -1)
-                    {
-                        employee2.EmployeeID = employee.EmployeeID;
-                    }
-                    exist = true;
+					if (employee2.EmployeeID == -1)
+					{
+						employee2.EmployeeID = employee.EmployeeID;
+					}
+					exist = true;
 				}
 			}
 			return exist;
