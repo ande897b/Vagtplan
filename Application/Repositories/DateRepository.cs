@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Controller.Repositories
+namespace Application.Repositories
 {
     public static class DateRepository
     {
@@ -39,6 +39,18 @@ namespace Controller.Repositories
             foreach (Date date2 in dates)
             {
                 if (date2.Day.ToString().Substring(0,10) == date.Substring(0,10))
+                {
+                    newDate = date2.Day;
+                }
+            }
+            return newDate;
+        }
+        public static DateTime GetDate(int dateID)
+        {
+            DateTime newDate = DateTime.Now;
+            foreach (Date date2 in dates)
+            {
+                if (date2.DateID == dateID)
                 {
                     newDate = date2.Day;
                 }

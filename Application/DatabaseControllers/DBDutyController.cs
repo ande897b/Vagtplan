@@ -1,5 +1,5 @@
 ﻿using Application;
-using Controller.Repositories;
+using Application.Repositories;
 using Domain.Models;
 using System;
 using System.Collections.Generic;

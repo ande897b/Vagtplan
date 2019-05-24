@@ -43,11 +43,13 @@
   <ItemGroup>
     <Compile Include="DatabaseControllers\DBDateController.cs" />
     <Compile Include="DatabaseControllers\DBDutyController.cs" />
+    <Compile Include="DatabaseControllers\DBDutyExchangeController.cs" />
     <Compile Include="DatabaseControllers\DBEmployeeController.cs" />
     <Compile Include="DatabaseControllers\DBWishForDayOffController.cs" />
     <Compile Include="DBConnection.cs" />
     <Compile Include="DatabaseControllers\DBRosterController.cs" />
     <Compile Include="Repositories\DateRepository.cs" />
+    <Compile Include="Repositories\DutyExchangeRepository.cs" />
     <Compile Include="Repositories\DutyRepository.cs" />
     <Compile Include="Repositories\EmployeeRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

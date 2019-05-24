@@ -4,9 +4,9 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UI.Views"
-        xmlns:DatabaseControllers="clr-namespace:Controller.DatabaseControllers;assembly=Controller" x:Class="UI.Views.PerfektKlasseMedfjortenHundredeOgNiOgFyrre"
+        xmlns:DatabaseControllers="clr-namespace:Controller.DatabaseControllers;assembly=Controller" x:Class="UI.Views.ShowRosterWindow"
         mc:Ignorable="d"
-        Title="PerfektKlasseMedfjortenHundredeOgNiOgFyrre" Height="459" Width="911"
+        Title="ShowRosterWindow" Height="459" Width="911"
 >
     <Grid Margin="6,4,7,6">
         <TextBox x:Name="weekday1txtbox" HorizontalAlignment="Left" Height="200" Margin="20,140,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" IsEnabled="False"/>

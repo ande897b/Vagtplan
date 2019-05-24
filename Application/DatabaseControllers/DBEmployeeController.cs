@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Controller.DatabaseControllers
+namespace Application.DatabaseControllers
 {
     public static class DBEmployeeController
     {

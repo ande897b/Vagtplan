@@ -4,8 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Application.DatabaseControllers;
-using Controller.DatabaseControllers;
-using Controller.Repositories;
 using Domain.Models;
 
 namespace Application.Repositories

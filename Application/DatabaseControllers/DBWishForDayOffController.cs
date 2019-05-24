@@ -1,7 +1,6 @@
 ﻿using Application;
-using Controller.Repositories;
+using Application.Repositories;
 using Domain.Models;
-using Model.Models;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -10,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Controller.DatabaseControllers
+namespace Application.DatabaseControllers
 {
     public static class DBWishForDayOffController
     {

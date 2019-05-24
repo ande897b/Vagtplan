@@ -56,8 +56,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Views\PerfektKlasseMedfjortenHundredeOgNiOgFyrre.xaml.cs">
-      <DependentUpon>PerfektKlasseMedfjortenHundredeOgNiOgFyrre.xaml</DependentUpon>
+    <Compile Include="Views\ExchangeDutyWindow.xaml.cs">
+      <DependentUpon>ExchangeDutyWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PopupExchangeDutyWindow.xaml.cs">
+      <DependentUpon>PopupExchangeDutyWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ShowRosterWindow.xaml.cs">
+      <DependentUpon>ShowRosterWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\WishForDayOffWindow.xaml.cs">
       <DependentUpon>WishForDayOffWindow.xaml</DependentUpon>
@@ -81,11 +87,19 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\ExchangeDutyWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\MenuWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\PerfektKlasseMedfjortenHundredeOgNiOgFyrre.xaml">
+    <Page Include="Views\PopupExchangeDutyWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ShowRosterWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

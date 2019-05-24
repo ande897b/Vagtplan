@@ -1,7 +1,6 @@
-﻿using Application.Repositories;
-using Controller.DatabaseControllers;
+﻿using Application.DatabaseControllers;
+using Application.Repositories;
 using Domain.Models;
-using Model.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,9 +21,6 @@ namespace Vagtplan.Views
     {
         public WishForDayOffWindow()
         {
-            DBDateController.LoadDates();
-            DBDutyController.LoadDuties();
-            DBWishForDayOffController.LoadWishForDayOffs();
             InitializeComponent();
         }
 
