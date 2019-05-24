@@ -9,12 +9,14 @@ namespace Controller.Repositories
 {
     public static class DateRepository
     {
+
         private static List<Date> dates = new List<Date>();
         public static void AddDate(Date date)
         {
             if (!DateExist(date))
             dates.Add(date);
         }
+
         public static bool DateExist(Date date)
         {
             bool exist = false;
@@ -52,7 +54,7 @@ namespace Controller.Repositories
             List<Date> newDates = new List<Date>();
             foreach (Date date in dates)
             {
-                if(date.Shop.ToString() == shop)
+                if(date.Shop.ToString().Substring(0,10) == shop.Substring(0, 10))
                 {
                     newDates.Add(date);
                 }
