@@ -397,7 +397,7 @@ namespace UI.Views
         {
             List<DateTime> holidays = new List<DateTime>()
             {
-                holidays.Add(new DateTime("2019-05-01"))
+                holidays.Add(new DateTime(2019-05-01))
             }
             ;
             DBDutyController.LoadDuties();
