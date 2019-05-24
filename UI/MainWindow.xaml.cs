@@ -12,6 +12,11 @@ namespace UI
 		public MainWindow()
 		{
 			InitializeComponent();
+            DBDateController.LoadDates();
+            DBDutyController.LoadDuties();
+            DBRosterController.LoadRosters();
+            DBEmployeeController.LoadEmployees();
+            DBWishForDayOffController.LoadWishForDayOffs();
         }
 
 		private void LoginBtn_Click(object sender, RoutedEventArgs e)

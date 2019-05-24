@@ -16,6 +16,7 @@
             <ComboBoxItem Content="Kongensgade" />            
         </ComboBox>
         <Button x:Name="WishForDayOffBtn" Content="Ønsk fridag" HorizontalAlignment="Left" Margin="574,154,0,0" VerticalAlignment="Top" Width="144" Height="55" Click="WishForDayOff_Click"/>
+        <Button x:Name="ExchangeDuty" Content="byt vagt" HorizontalAlignment="Left" Margin="574,249,0,0" VerticalAlignment="Top" Width="144" Height="55" Click="ExchangeDuty_Click" />
 
     </Grid>
 </Window>

@@ -24,8 +24,6 @@ namespace UI.Views
     {
         public MenuWindow()
         {
-            DBRosterController.LoadRosters();
-            DBEmployeeController.LoadEmployees();
             InitializeComponent();
             if (departmentcombobox.SelectedIndex == -1)
             {
@@ -42,7 +40,7 @@ namespace UI.Views
         private void ShowRostersBtn_Click(object sender, RoutedEventArgs e)
         {
 
-            PerfektKlasseMedfjortenHundredeOgNiOgFyrre showRosterWindow = new PerfektKlasseMedfjortenHundredeOgNiOgFyrre(departmentcombobox.Text);
+            ShowRosterWindow showRosterWindow = new ShowRosterWindow(departmentcombobox.Text);
             showRosterWindow.Show();
             
         }
@@ -74,6 +72,12 @@ namespace UI.Views
             }
             dayOff.WishForDayOffCB.ItemsSource = newEmployees;
             dayOff.Show();
+        }
+
+        private void ExchangeDuty_Click(object sender, RoutedEventArgs e)
+        {
+            ExchangeDutyWindow exchangeDutyWindow = new ExchangeDutyWindow();
+            exchangeDutyWindow.Show();
         }
     }
 }

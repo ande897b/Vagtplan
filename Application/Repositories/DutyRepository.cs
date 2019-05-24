@@ -1,4 +1,5 @@
-﻿using Domain.Models;
+﻿using Application.Repositories;
+using Domain.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,6 +28,19 @@ namespace Controller.Repositories
             foreach(Duty duty in duties)
             {
                 if(duty.DateID == dateID)
+                {
+                    newDuties.Add(duty);
+                }
+            }
+            return newDuties;
+        }
+        public static List<Duty> GetDuties(string firstName)
+        {
+            List<Duty> newDuties = new List<Duty>();
+            int employeeID = EmployeeRepository.GetEmployeeID(firstName);
+            foreach (Duty duty in duties)
+            {
+                if (duty.EmployeeID == employeeID)
                 {
                     newDuties.Add(duty);
                 }

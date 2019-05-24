@@ -45,6 +45,18 @@ namespace Controller.Repositories
             }
             return newDate;
         }
+        public static DateTime GetDate(int dateID)
+        {
+            DateTime newDate = DateTime.Now;
+            foreach (Date date2 in dates)
+            {
+                if (date2.DateID == dateID)
+                {
+                    newDate = date2.Day;
+                }
+            }
+            return newDate;
+        }
         public static List<Date> GetDates()
         {
             return dates;

@@ -1,0 +1,15 @@
+﻿<Window x:Class="Vagtplan.Views.ExchangeDutyWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Vagtplan.Views"
+        mc:Ignorable="d"
+        Title="ExchangeDutyWindow" Height="450" Width="800">
+    <Grid>
+        <ListBox x:Name="DutyList" HorizontalAlignment="Left" Height="315" Margin="222,55,0,0" VerticalAlignment="Top" Width="380" SelectionChanged="DutyList_SelectionChanged"/>
+        <Button Background="Green" Content="Hent vagter" HorizontalAlignment="Left" Margin="48,244,0,0" VerticalAlignment="Top" Width="94" Height="37" Click="GetDuties_Click"/>
+        <ComboBox x:Name="EmployeeCB" HorizontalAlignment="Left" Margin="48,205,0,0" VerticalAlignment="Top" Width="120"/>
+
+    </Grid>
+</Window>
