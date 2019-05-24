@@ -15,7 +15,7 @@ using Application.DatabaseControllers;
 using Application.Repositories;
 using Domain.Models;
 using Microsoft.VisualBasic;
-using Vagtplan.Views;
+using UI.Views;
 
 namespace UI.Views
 {

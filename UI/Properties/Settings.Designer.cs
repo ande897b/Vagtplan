@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Vagtplan.Properties
+namespace UI.Properties
 {
 
 
