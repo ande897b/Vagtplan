@@ -23,11 +23,11 @@ namespace Application.Repositories
 			{
 				if (roster2.Shop == roster.Shop && roster2.StartDate == roster.StartDate && roster2.EndDate == roster.EndDate)
 				{
-                    if (roster2.RosterID == -1)
-                    {
-                        roster2.RosterID = roster.RosterID;
-                    }
-                    exist = true;
+					if (roster2.RosterID == -1)
+					{
+						roster2.RosterID = roster.RosterID;
+					}
+					exist = true;
 				}
 			}
 			return exist;
