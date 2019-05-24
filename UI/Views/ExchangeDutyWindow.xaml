@@ -7,9 +7,10 @@
         mc:Ignorable="d"
         Title="ExchangeDutyWindow" Height="450" Width="800">
     <Grid>
-        <ListBox x:Name="DutyList" HorizontalAlignment="Left" Height="315" Margin="222,55,0,0" VerticalAlignment="Top" Width="380" SelectionChanged="DutyList_SelectionChanged"/>
+        <ListBox x:Name="DutyList" HorizontalAlignment="Left" Height="315" Margin="193,55,0,0" VerticalAlignment="Top" Width="256" SelectionChanged="DutyList_SelectionChanged"/>
         <Button Background="Green" Content="Hent vagter" HorizontalAlignment="Left" Margin="48,244,0,0" VerticalAlignment="Top" Width="94" Height="37" Click="GetDuties_Click"/>
         <ComboBox x:Name="EmployeeCB" HorizontalAlignment="Left" Margin="48,205,0,0" VerticalAlignment="Top" Width="120"/>
+        <ListBox x:Name="DutyList2" HorizontalAlignment="Left" Height="315" Margin="483,55,0,0" VerticalAlignment="Top" Width="256" SelectionChanged="DutyList2_SelectionChanged" />
 
     </Grid>
 </Window>

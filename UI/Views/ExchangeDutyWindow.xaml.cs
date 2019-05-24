@@ -1,5 +1,5 @@
-﻿using Application.Repositories;
-using Controller.Repositories;
+﻿using Application.DatabaseControllers;
+using Application.Repositories;
 using Domain.Models;
 using System;
 using System.Collections.Generic;
@@ -19,20 +19,29 @@ namespace Vagtplan.Views
 {
     public partial class ExchangeDutyWindow : Window
     {
+        public List<string> EmployeesProp { get; set; }
         public ExchangeDutyWindow()
         {
             InitializeComponent();
 
             List<string> newEmployees = new List<string>();
             List<Employee> employees = EmployeeRepository.GetEmployees();
-
             foreach(Employee employee in employees)
             {
                 string newEmployee = employee.FirstName;
                 newEmployees.Add(newEmployee);
             }
-
+            EmployeesProp = newEmployees;
             EmployeeCB.ItemsSource = newEmployees;
+
+            List<DutyExchange> dutyExchanges = DutyExchangeRepository.GetDutyExchanges();
+            List<string> newDutyExchanges = new List<string>();
+            foreach (DutyExchange dutyExchange in dutyExchanges)
+            {
+                string newDutyExchange = DateRepository.GetDate(DutyRepository.GetDuty(dutyExchange.DutyID).DateID).Date.ToString().Substring(0,10) + " <--> " + EmployeeRepository.GetEmployee(dutyExchange.EmployeeID).FirstName;
+                newDutyExchanges.Add(newDutyExchange);
+            }
+            DutyList2.ItemsSource = newDutyExchanges;
         }
 
         private void GetDuties_Click(object sender, RoutedEventArgs e)
@@ -50,21 +59,28 @@ namespace Vagtplan.Views
 
         private void DutyList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if(DutyList.SelectedIndex != -1)
+            
+            if (DutyList.SelectedIndex != -1)
             {
                 MessageBoxButton btn = MessageBoxButton.YesNo;
                 MessageBoxImage image = MessageBoxImage.Exclamation;
                 MessageBoxResult result = MessageBox.Show("Er du sikker på at du vil bytte denne vagt.", "Vagt bytte", btn, image);
                 if (result == MessageBoxResult.Yes)
                 {
-                    
+                    DutyExchange dutyExchange = new DutyExchange(DutyRepository.GetDuty(DutyList.SelectedItem.ToString().Substring(0, 10), EmployeeCB.SelectedValue.ToString()).DutyID, EmployeeRepository.GetEmployeeID(EmployeeCB.SelectedValue.ToString()));
+                    DBDutyExchangeController.CreateDutyExchange(dutyExchange);
                     this.Close();
                 }
             }
+        }
 
-           
-
-
+        private void DutyList2_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if(DutyList2.SelectedIndex != -1)
+            {
+                PopupExchangeDutyWindow popupExchangeDutyWindow = new PopupExchangeDutyWindow(EmployeesProp, DutyList2.SelectedValue.ToString());
+                popupExchangeDutyWindow.Show();
+            }
         }
     }
 }

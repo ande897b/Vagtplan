@@ -17,6 +17,7 @@ namespace UI
             DBRosterController.LoadRosters();
             DBEmployeeController.LoadEmployees();
             DBWishForDayOffController.LoadWishForDayOffs();
+            DBDutyExchangeController.LoadDutyExchanges();
         }
 
 		private void LoginBtn_Click(object sender, RoutedEventArgs e)

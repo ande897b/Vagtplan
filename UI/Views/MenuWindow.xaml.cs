@@ -13,7 +13,6 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Application.DatabaseControllers;
 using Application.Repositories;
-using Controller.DatabaseControllers;
 using Domain.Models;
 using Microsoft.VisualBasic;
 using Vagtplan.Views;

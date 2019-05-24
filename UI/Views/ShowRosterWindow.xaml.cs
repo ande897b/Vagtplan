@@ -16,8 +16,6 @@ using Application.Repositories;
 using Domain.Models;
 using Application.DatabaseControllers;
 using Controller.DatabaseControllers;
-using Controller.Repositories;
-using Model.Models;
 
 namespace UI.Views
 {

@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Controller.Repositories
+namespace Application.Repositories
 {
     public static class DutyRepository
     {
@@ -21,6 +21,30 @@ namespace Controller.Repositories
         public static List<Duty> GetDuties()
         {
             return duties;
+        }
+        public static Duty GetDuty(string date, string firstName)
+        {
+            Duty newDuty = null;
+            foreach (Duty duty in duties)
+            {
+                if (duty.StartTime.ToString().Substring(0, 10) == date.Substring(0, 10) && EmployeeRepository.GetEmployee(duty.EmployeeID).FirstName == firstName)
+                {
+                    newDuty = duty;
+                }
+            }
+            return newDuty;
+        }
+        public static Duty GetDuty(int dutyID)
+        {
+            Duty newDuty = null;
+            foreach (Duty duty in duties)
+            {
+                if (duty.DutyID == dutyID)
+                {
+                    newDuty = duty;
+                }
+            }
+            return newDuty;
         }
         public static List<Duty> GetDuties(int dateID)
         {

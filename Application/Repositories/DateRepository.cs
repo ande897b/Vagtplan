@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Controller.Repositories
+namespace Application.Repositories
 {
     public static class DateRepository
     {

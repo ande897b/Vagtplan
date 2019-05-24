@@ -35,12 +35,12 @@ namespace Application.Repositories
 		{
 			employees.Remove(employee);
 		}
-		public static Employee GetEmployee(int id)
+		public static Employee GetEmployee(int employeeID)
 		{
 			Employee tempEmp = null;
 			foreach (Employee employee in employees)
 			{
-				if (employee.EmployeeID == id)
+				if (employee.EmployeeID == employeeID)
 				{
 					tempEmp = employee;
 				}

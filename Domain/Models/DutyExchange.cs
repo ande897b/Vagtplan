@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Model.Models
+namespace Domain.Models
 {
     public class DutyExchange
     {
@@ -15,6 +15,11 @@ namespace Model.Models
         public DutyExchange (int dutyExchangeID, int dutyID, int employeeID)
         {
             DutyExchangeID = dutyExchangeID;
+            DutyID = dutyID;
+            EmployeeID = employeeID;
+        }
+        public DutyExchange(int dutyID, int employeeID)
+        {
             DutyID = dutyID;
             EmployeeID = employeeID;
         }
