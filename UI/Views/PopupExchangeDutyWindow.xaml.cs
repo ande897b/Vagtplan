@@ -3,6 +3,7 @@ using Application.Repositories;
 using Domain.Models;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,6 +29,20 @@ namespace Vagtplan.Views
             DutyID = dutyID;
             EmployeeCB.ItemsSource = employeeList;
             DutyLabel.Content = exchange;
+
+            this.Closing += WindowClosed;
+        }
+
+        private void WindowClosed(object sender, CancelEventArgs e)
+        {
+            e.Cancel = true;
+            DBDateController.LoadDates();
+            DBRosterController.LoadRosters();
+            DBEmployeeController.LoadEmployees();
+            DBWishForDayOffController.LoadWishForDayOffs();
+            DBDutyController.LoadDuties();
+            DBDutyExchangeController.LoadDutyExchanges();
+            this.Visibility = Visibility.Hidden;
         }
 
         private void Confirm_Click(object sender, RoutedEventArgs e)
