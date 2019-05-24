@@ -10,7 +10,7 @@ namespace UI.Views
     public partial class PopupExchangeDutyWindow : Window
     {
         public int DutyID { get; set; }
-        public PopupExchangeDutyWindow(List<string> employeeList, string exchange,int dutyID)
+        public PopupExchangeDutyWindow(List<string> employeeList, string exchange, int dutyID)
         {
             InitializeComponent();
 
@@ -35,8 +35,8 @@ namespace UI.Views
 
         private void Confirm_Click(object sender, RoutedEventArgs e)
         {
-            DBDutyExchangeController.DeleteDutyExchange(DutyRepository.GetDuty(DutyLabel.Content.ToString().Substring(0, 10), DutyLabel.Content.ToString().Substring(16)).DutyID, EmployeeRepository.GetEmployeeID(DutyLabel.Content.ToString().Substring(16)));
             DBDutyController.UpdateDuty(EmployeeRepository.GetEmployeeID(EmployeeCB.SelectedValue.ToString()), DutyID);
+            DBDutyExchangeController.DeleteDutyExchange(DutyRepository.GetDuty(DutyLabel.Content.ToString().Substring(0, 10), DutyLabel.Content.ToString().Substring(16)).DutyID, EmployeeRepository.GetEmployeeID(DutyLabel.Content.ToString().Substring(16)));
             this.Close();
         }
     }
