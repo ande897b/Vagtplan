@@ -60,5 +60,24 @@ namespace Application.DatabaseControllers
             }
             DutyExchangeRepository.AddDutyExchange(dutyExchange);
         }
-    }
+        public static void UpdateDutyExchange(int newEmployeeID, int dutyID)
+        {
+
+            DBConnection.DatabaseName = "CANE";
+            string query = "Update_Exchange";
+
+              if (DBConnection.IsConnected())
+                {
+                    var cmd = new SqlCommand(query, DBConnection.Connection);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add(new SqlParameter("@DutyID_IN", dutyID));
+                    cmd.Parameters.Add(new SqlParameter("@EmployeeID_IN", newEmployeeID));
+                    cmd.ExecuteReader();
+                }
+                DBConnection.Close();
+            
+        //   DutyExchangeRepository.AddDutyExchange(dutyExchange);
+        }
+    }    
+
 }

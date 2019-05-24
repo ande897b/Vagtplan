@@ -78,7 +78,7 @@ namespace Vagtplan.Views
         {
             if(DutyList2.SelectedIndex != -1)
             {
-                PopupExchangeDutyWindow popupExchangeDutyWindow = new PopupExchangeDutyWindow(EmployeesProp, DutyList2.SelectedValue.ToString());
+                PopupExchangeDutyWindow popupExchangeDutyWindow = new PopupExchangeDutyWindow(EmployeesProp, DutyList2.SelectedValue.ToString(), DutyRepository.GetDuty(DutyList2.SelectedItem.ToString().Substring(0, 10), DutyList2.SelectedValue.ToString().Substring(16)).DutyID);
                 popupExchangeDutyWindow.Show();
             }
         }

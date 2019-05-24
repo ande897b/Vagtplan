@@ -1,4 +1,6 @@
-﻿using Domain.Models;
+﻿using Application.DatabaseControllers;
+using Application.Repositories;
+using Domain.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,18 +20,19 @@ namespace Vagtplan.Views
 
     public partial class PopupExchangeDutyWindow : Window
     {
-        public PopupExchangeDutyWindow(List<string> employeeList, string exchange)
+        public int DutyID { get; set; }
+        public PopupExchangeDutyWindow(List<string> employeeList, string exchange,int dutyID)
         {
             InitializeComponent();
 
+            DutyID = dutyID;
             EmployeeCB.ItemsSource = employeeList;
             DutyLabel.Content = exchange;
-
         }
 
         private void Confirm_Click(object sender, RoutedEventArgs e)
         {
-
+            DBDutyExchangeController.UpdateDutyExchange(EmployeeRepository.GetEmployeeID(EmployeeCB.SelectedValue.ToString()), DutyID);
         }
     }
 }
