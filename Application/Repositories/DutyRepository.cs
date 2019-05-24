@@ -14,22 +14,27 @@ namespace Application.Repositories
                 duties.Add(duty);
             }
         }
+
         public static List<Duty> GetDuties()
         {
             return duties;
         }
+
         public static Duty GetDuty(string date, string firstName)
         {
             Duty newDuty = null;
             foreach (Duty duty in duties)
             {
-                if (duty.StartTime.ToString().Substring(0, 10) == date.Substring(0, 10) && EmployeeRepository.GetEmployee(duty.EmployeeID).FirstName == firstName)
+                string duty2 = duty.StartTime.ToString().Substring(0, 10);
+                string firstName2 = EmployeeRepository.GetEmployee(duty.EmployeeID).FirstName;
+                if (duty2 == date.Substring(0, 10) && firstName2 == firstName)
                 {
                     newDuty = duty;
                 }
             }
             return newDuty;
         }
+
         public static Duty GetDuty(int dutyID)
         {
             Duty newDuty = null;
@@ -42,6 +47,7 @@ namespace Application.Repositories
             }
             return newDuty;
         }
+
         public static List<Duty> GetDuties(int dateID)
         {
             List<Duty> newDuties = new List<Duty>();
@@ -54,6 +60,7 @@ namespace Application.Repositories
             }
             return newDuties;
         }
+
         public static List<Duty> GetDuties(string firstName)
         {
             List<Duty> newDuties = new List<Duty>();
@@ -67,6 +74,7 @@ namespace Application.Repositories
             }
             return newDuties;
         }
+
         public static void Removeduties(int dateID)
         {
             foreach (Duty duty in duties.ToList()) 
@@ -85,7 +93,7 @@ namespace Application.Repositories
             {
                 if (duti.DateID == duty.DateID && duti.EmployeeID == duty.EmployeeID && duti.StartTime == duty.StartTime && duti.EndTime == duty.EndTime)
                 {
-                    if (duti.DutyID == -1)
+                    if (duti.DutyID != duty.DutyID)
                     {
                         duti.DutyID = duty.DutyID;
                     }

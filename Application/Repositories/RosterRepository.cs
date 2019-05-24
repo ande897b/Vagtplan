@@ -20,7 +20,7 @@ namespace Application.Repositories
 			{
 				if (roster2.Shop == roster.Shop && roster2.StartDate == roster.StartDate && roster2.EndDate == roster.EndDate)
 				{
-					if (roster2.RosterID == -1)
+					if (roster2.RosterID != roster.RosterID)
 					{
 						roster2.RosterID = roster.RosterID;
 					}

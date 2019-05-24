@@ -10,7 +10,7 @@ namespace UI.Views
     public partial class PopupExchangeDutyWindow : Window
     {
         public int DutyID { get; set; }
-        public PopupExchangeDutyWindow(List<string> employeeList, string exchange, int dutyID)
+        public PopupExchangeDutyWindow(List<string> employeeList, string exchange, int dutyID, ExchangeDutyWindow exchangeWindow)
         {
             InitializeComponent();
 
@@ -19,6 +19,7 @@ namespace UI.Views
             DutyLabel.Content = exchange;
 
             this.Closing += WindowClosed;
+            
         }
 
         private void WindowClosed(object sender, CancelEventArgs e)
@@ -30,7 +31,7 @@ namespace UI.Views
             DBWishForDayOffController.LoadWishForDayOffs();
             DBDutyController.LoadDuties();
             DBDutyExchangeController.LoadDutyExchanges();
-            this.Visibility = Visibility.Hidden;
+            e.Cancel = false;
         }
 
         private void Confirm_Click(object sender, RoutedEventArgs e)

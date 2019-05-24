@@ -39,6 +39,7 @@ namespace UI
 				MessageBox.Show("Forkert Brugernavn eller Password");
 			}
 		}
+
 		private void Textbox_GetFocus(object sender, RoutedEventArgs e)
 		{
 			TextBox tb = sender as TextBox;
@@ -47,6 +48,7 @@ namespace UI
 				tb.SelectAll(); 
 			}
 		}
+
 		private void Password_GetFocus(object sender, RoutedEventArgs e)
 		{
 			PasswordBox tb = sender as PasswordBox;
@@ -55,6 +57,7 @@ namespace UI
 				tb.SelectAll();
 			}
 		}
+
 		private void Window_PreviewKeyDown(object sender, KeyEventArgs e)
 		{
 			if (e.Key == Key.Enter)

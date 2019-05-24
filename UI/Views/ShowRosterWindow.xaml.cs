@@ -39,14 +39,16 @@ namespace UI.Views
             DBWishForDayOffController.LoadWishForDayOffs();
             DBDutyController.LoadDuties();
             DBDutyExchangeController.LoadDutyExchanges();
-            this.Visibility = Visibility.Hidden;
+            e.Cancel = false;
         }
+
         private static List<DateTime> GetDates(int year, int month)
         {
             return Enumerable.Range(1, DateTime.DaysInMonth(year, month))  // Days: 1, 2 ... 31 etc.
                              .Select(day => new DateTime(year, month, day)) // Map each day to a date
                              .ToList(); // Load dates into a list
         }
+
         private void ManageDuty(string labelContent, string textboxContent, string employeeName)
         {
             string start = textboxContent.Substring(0, 5);
@@ -61,12 +63,13 @@ namespace UI.Views
                 DBDutyController.CreateDuty(duty);
             }
         }
-
+    
         private void DeleteDuties(int dateID)
         {
             DutyRepository.Removeduties(dateID);
             DBDutyController.DeleteDuties(dateID);
         }
+
         private void UpdateSchedule(DateTime[] dates, int i)
         {
             weekday1label.Content = dates[0].Date.AddDays(i * 7).ToString();
@@ -258,6 +261,7 @@ namespace UI.Views
             }
 
         }
+
         private void weekday1combobox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             weekday1textbox2.Visibility = Visibility.Visible;
@@ -1076,6 +1080,7 @@ namespace UI.Views
                  new DateTime(2019, 12, 24), //juledag
                  new DateTime(2019, 12, 25)  // Anden juledag      
             };
+
             bool isHoliday = false;
             foreach (DateTime holiday in holidays)
             {

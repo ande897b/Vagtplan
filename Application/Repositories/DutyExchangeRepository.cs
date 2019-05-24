@@ -18,7 +18,7 @@ namespace Application.Repositories
             {
                 if (dutyExchange2.DutyID == dutyExchange.DutyID && dutyExchange2.EmployeeID == dutyExchange.EmployeeID)
                 {
-                    if (dutyExchange2.DutyExchangeID == -1)
+                    if (dutyExchange2.DutyExchangeID != dutyExchange.DutyExchangeID)
                     {
                         dutyExchange2.DutyExchangeID = dutyExchange.DutyExchangeID;
                     }
@@ -33,6 +33,7 @@ namespace Application.Repositories
         }
         public static void RemoveDutyExchange(DutyExchange dutyExchange)
         {
+
             dutyExchanges.Remove(dutyExchange);
         }
 

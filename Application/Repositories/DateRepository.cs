@@ -21,7 +21,7 @@ namespace Application.Repositories
             {
                 if (date2.Day == date.Day && date2.Shop == date.Shop)
                 {
-                    if (date2.DateID == -1)
+                    if (date2.DateID != date.DateID)
                     {
                         date2.DateID = date.DateID;
                     }
@@ -30,6 +30,7 @@ namespace Application.Repositories
             }
             return exist;
         }
+
         public static DateTime GetDate(string date)
         {
             DateTime newDate = DateTime.Now;
@@ -42,6 +43,7 @@ namespace Application.Repositories
             }
             return newDate;
         }
+
         public static DateTime GetDate(int dateID)
         {
             DateTime newDate = DateTime.Now;
@@ -54,10 +56,12 @@ namespace Application.Repositories
             }
             return newDate;
         }
+
         public static List<Date> GetDates()
         {
             return dates;
         }
+
         public static List<Date> GetDates(string shop)
         {
             List<Date> newDates = new List<Date>();
@@ -70,10 +74,12 @@ namespace Application.Repositories
             }
             return dates;
         }
+
         public static void RemoveDate(Date date)
         {
             dates.Remove(date);
         }
+
         public static int GetDateID(string date, Shop shop)
         {
             int id = 0;

@@ -9,6 +9,7 @@ namespace UI.Views
 {
     public partial class ExchangeDutyWindow : Window
     {
+
         public List<string> EmployeesProp { get; set; }
         public ExchangeDutyWindow()
         {
@@ -25,9 +26,15 @@ namespace UI.Views
             EmployeeCB.ItemsSource = newEmployees;
 
             UpdateDutyList2();
-
         }
 
+        private void Popup_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            if (!((bool)e.NewValue))
+            {
+                UpdateDutyList2();
+            }
+        }
 
         private void DutyList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -44,15 +51,21 @@ namespace UI.Views
                 {
                     DutyExchange dutyExchange = new DutyExchange(DutyRepository.GetDuty(date, employeeName).DutyID, EmployeeRepository.GetEmployeeID(employeeName));
                     DBDutyExchangeController.CreateDutyExchange(dutyExchange);
+                    UpdateDutyList2();
+                    UpdateDutyList();
                 }
             }
-
         }
+
         private void DutyList2_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (DutyList2.SelectedItem != null)
+            if (DutyList2.SelectedIndex != -1)
             {
-                PopupExchangeDutyWindow popupExchangeDutyWindow = new PopupExchangeDutyWindow(EmployeesProp, DutyList2.SelectedValue.ToString(), DutyRepository.GetDuty(DutyList2.SelectedItem.ToString().Substring(0, 10), DutyList2.SelectedValue.ToString().Substring(16)).DutyID);
+                string date = DutyList2.SelectedItem.ToString().Substring(0, 10);
+                string firstName = DutyList2.SelectedValue.ToString().Substring(16);
+                string dutyList2selected = DutyList2.SelectedValue.ToString();
+                Duty duty = DutyRepository.GetDuty(date, firstName);
+                PopupExchangeDutyWindow popupExchangeDutyWindow = new PopupExchangeDutyWindow(EmployeesProp, dutyList2selected, duty.DutyID, this);
                 popupExchangeDutyWindow.Show();
                 UpdateDutyList2();
             }
@@ -63,12 +76,15 @@ namespace UI.Views
             List<Duty> duties = DutyRepository.GetDuties(EmployeeCB.SelectedItem.ToString());
             List<string> dates = new List<string>();
 
-            foreach (Duty duty in duties)
+            if (duties.Count > 0)
             {
-                string date = DateRepository.GetDate(duty.DateID).ToString();
-                dates.Add(date.Substring(0, 10));
+                foreach (Duty duty in duties)
+                {
+                    string date = DateRepository.GetDate(duty.DateID).ToString();
+                    dates.Add(date.Substring(0, 10));
+                }
+                DutyList.ItemsSource = dates;
             }
-            DutyList.ItemsSource = dates;
         }
 
         public void UpdateDutyList2()
@@ -84,16 +100,11 @@ namespace UI.Views
                 }
                 DutyList2.ItemsSource = newDutyExchanges;
             }
-
         }
-
-
-
 
         private void EmployeeCB_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             UpdateDutyList();
-
         }
     }
 }

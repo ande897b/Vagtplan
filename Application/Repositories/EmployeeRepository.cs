@@ -18,7 +18,7 @@ namespace Application.Repositories
 			{
 				if (employee2.FirstName == employee.FirstName && employee2.LastName == employee.LastName)
 				{
-					if (employee2.EmployeeID == -1)
+					if (employee2.EmployeeID != employee.EmployeeID)
 					{
 						employee2.EmployeeID = employee.EmployeeID;
 					}
