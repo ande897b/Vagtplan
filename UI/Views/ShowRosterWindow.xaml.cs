@@ -12,14 +12,12 @@ namespace UI.Views
 {
     public partial class ShowRosterWindow : Window
     {
-        
         public int DecemberIndex { get; set; }
         public Shop Shop { get; set; }
 
         public ShowRosterWindow(string boxResult)
         {
             InitializeComponent();
-
             if (boxResult.ToLower() == "kongensgade")
             {
                 Shop = Shop.kongensgade;
@@ -28,7 +26,6 @@ namespace UI.Views
             {
                 Shop = Shop.skibhusvej;
             }
-
             this.Closing += WindowClosed;
         }
 
@@ -182,6 +179,7 @@ namespace UI.Views
                 UpdateComboboxes(false, dateID, 7, date);
             }
         }
+
         private void ResetComboboxes(int dayID)
         {
             switch (dayID)
@@ -341,7 +339,6 @@ namespace UI.Views
             if (weekday3textbox2.Text != "10:00 - 17:00")
             {
                 weekday3combobox2.Visibility = Visibility.Visible;
-
             }
         }
 
@@ -380,7 +377,6 @@ namespace UI.Views
             if (weekday4textbox2.Text != "10:00 - 17:00")
             {
                 weekday4combobox2.Visibility = Visibility.Visible;
-
             }
         }
 
@@ -418,7 +414,6 @@ namespace UI.Views
             if (weekday5textbox2.Text != "10:00 - 17:00")
             {
                 weekday5combobox2.Visibility = Visibility.Visible;
-
             }
         }
 
@@ -445,12 +440,12 @@ namespace UI.Views
             weekday5textbox4.Visibility = Visibility.Visible;
             weekday5textbox4.Text = weekday5textbox3.Text.Substring(8, 5) + " - 17:00";
         }
+
         private void weekday6combobox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
             weekday6textbox2.Visibility = Visibility.Visible;
-
         }
+
         private void weekday6textbox2_TextChanged(object sender, TextChangedEventArgs e)
         {
             if (weekday6textbox2.Text.Substring(8, 2) != "17")
@@ -544,6 +539,7 @@ namespace UI.Views
                     }
                 }
             }
+
             DeleteDuties(DateRepository.GetDateID(weekday2label.Content.ToString(), Shop));
             if (weekday2combobox.SelectedItem != null) // 2
             {
@@ -566,6 +562,7 @@ namespace UI.Views
                     }
                 }
             }
+
             DeleteDuties(DateRepository.GetDateID(weekday3label.Content.ToString(), Shop));
             if (weekday3combobox.SelectedItem != null) // 3
             {
@@ -588,6 +585,7 @@ namespace UI.Views
                     }
                 }
             }
+
             DeleteDuties(DateRepository.GetDateID(weekday4label.Content.ToString(), Shop));
             if (weekday4combobox.SelectedItem != null) // 4
             {
@@ -610,6 +608,7 @@ namespace UI.Views
                     }
                 }
             }
+
             DeleteDuties(DateRepository.GetDateID(weekday5label.Content.ToString(), Shop));
             if (weekday5combobox.SelectedItem != null) // 5
             {
@@ -632,6 +631,7 @@ namespace UI.Views
                     }
                 }
             }
+
             DeleteDuties(DateRepository.GetDateID(weekday6label.Content.ToString(), Shop));
             if (weekday6combobox.SelectedItem != null) // 6
             {
@@ -654,6 +654,7 @@ namespace UI.Views
                     }
                 }
             }
+
             DeleteDuties(DateRepository.GetDateID(weekday7label.Content.ToString(), Shop));
             if (weekday7combobox.SelectedItem != null) // 7
             {
@@ -713,7 +714,6 @@ namespace UI.Views
         {
             ResetComboboxes(7);
         }
-
 
         private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -805,7 +805,6 @@ namespace UI.Views
                  new DateTime(2019, 12, 24), //juledag
                  new DateTime(2019, 12, 25)  // Anden juledag      
             };
-
             bool isHoliday = false;
             foreach (DateTime holiday in holidays)
             {
@@ -814,13 +813,10 @@ namespace UI.Views
                     isHoliday = true;
                 }
             }
-
             List<Employee> employees = EmployeeRepository.GetEmployees();
             List<Duty> duties = DutyRepository.GetDuties(dateID);
             List<string> newEmployees = new List<string>();
-
             List<WishForDayOff> wishes = WishForDayOffRepository.GetWishForDayOffs(date.ToString().Substring(0,10));
-
             foreach (Employee employee in employees)
             {
                 bool employeeWishesFree = false;
@@ -837,7 +833,6 @@ namespace UI.Views
                     newEmployees.Add(newEmployee);
                 }
             }
-
             if (decision == true)
             {
                 switch (comboBox)
@@ -847,11 +842,9 @@ namespace UI.Views
                             weekday1combobox.IsEnabled = true;
                         else
                             weekday1combobox.IsEnabled = false;
-
                         weekday1combobox.ItemsSource = newEmployees;
                         weekday1combobox2.ItemsSource = newEmployees;
                         weekday1combobox3.ItemsSource = newEmployees;
-
                         if (duties.Count >= 1)
                         {
                             weekday1combobox.SelectedItem = EmployeeRepository.GetEmployee(duties[0].EmployeeID).FirstName;
@@ -863,7 +856,6 @@ namespace UI.Views
                                 weekday1combobox2.Visibility = Visibility.Visible;
                                 weekday1textbox3.Text = duties[1].StartTime.ToString().Substring(11, 5) + " - " + duties[1].EndTime.ToString().Substring(11, 5);
                             }
-
                             if (duties.Count >= 3)
                                 weekday1combobox3.SelectedItem = EmployeeRepository.GetEmployee(duties[2].EmployeeID).FirstName;
                             if (weekday1combobox3.SelectedIndex != -1 && duties.Count >= 3)
@@ -885,11 +877,9 @@ namespace UI.Views
                             weekday2combobox.IsEnabled = true;
                         else
                             weekday2combobox.IsEnabled = false;
-
                         weekday2combobox.ItemsSource = newEmployees;
                         weekday2combobox2.ItemsSource = newEmployees;
                         weekday2combobox3.ItemsSource = newEmployees;
-
                         if (duties.Count >= 1)
                         {
                             weekday2combobox.SelectedItem = EmployeeRepository.GetEmployee(duties[0].EmployeeID).FirstName;
@@ -901,12 +891,10 @@ namespace UI.Views
                                 weekday2combobox2.Visibility = Visibility.Visible;
                                 weekday2textbox3.Text = duties[1].StartTime.ToString().Substring(11, 5) + " - " + duties[1].EndTime.ToString().Substring(11, 5);
                             }
-
                             if(duties.Count >= 3)
                                 weekday2combobox3.SelectedItem = EmployeeRepository.GetEmployee(duties[2].EmployeeID).FirstName;
                             if (weekday2combobox3.SelectedIndex != -1 && duties.Count >= 3)
                             {
-                                
                                 weekday2combobox3.Visibility = Visibility.Visible;
                                 weekday2textbox4.Text = duties[2].StartTime.ToString().Substring(11, 5) + " - " + duties[2].EndTime.ToString().Substring(11, 5);
                             }
@@ -924,11 +912,9 @@ namespace UI.Views
                             weekday3combobox.IsEnabled = true;
                         else
                             weekday3combobox.IsEnabled = false;
-
                         weekday3combobox.ItemsSource = newEmployees;
                         weekday3combobox2.ItemsSource = newEmployees;
                         weekday3combobox3.ItemsSource = newEmployees;
-
                         if (duties.Count >= 1)
                         {
                             weekday3combobox.SelectedItem = EmployeeRepository.GetEmployee(duties[0].EmployeeID).FirstName;
@@ -962,11 +948,9 @@ namespace UI.Views
                             weekday4combobox.IsEnabled = true;
                         else
                             weekday4combobox.IsEnabled = false;
-
                         weekday4combobox.ItemsSource = newEmployees;
                         weekday4combobox2.ItemsSource = newEmployees;
                         weekday4combobox3.ItemsSource = newEmployees;
-
                         if (duties.Count >= 1)
                         {
                             weekday4combobox.SelectedItem = EmployeeRepository.GetEmployee(duties[0].EmployeeID).FirstName;
@@ -978,7 +962,6 @@ namespace UI.Views
                                 weekday4combobox2.Visibility = Visibility.Visible;
                                 weekday4textbox3.Text = duties[1].StartTime.ToString().Substring(11, 5) + " - " + duties[1].EndTime.ToString().Substring(11, 5);
                             }
-
                             if (duties.Count >= 3)
                                 weekday4combobox3.SelectedItem = EmployeeRepository.GetEmployee(duties[2].EmployeeID).FirstName;
                             if (weekday4combobox3.SelectedIndex != -1 && duties.Count >= 3)
@@ -1000,11 +983,9 @@ namespace UI.Views
                             weekday5combobox.IsEnabled = true;
                         else
                             weekday5combobox.IsEnabled = false;
-
                         weekday5combobox.ItemsSource = newEmployees;
                         weekday5combobox2.ItemsSource = newEmployees;
                         weekday5combobox3.ItemsSource = newEmployees;
-
                         if (duties.Count >= 1)
                         {
                             weekday5combobox.SelectedItem = EmployeeRepository.GetEmployee(duties[0].EmployeeID).FirstName;
@@ -1013,16 +994,13 @@ namespace UI.Views
                                 weekday5combobox2.SelectedItem = EmployeeRepository.GetEmployee(duties[1].EmployeeID).FirstName;
                             if (weekday5combobox2.SelectedIndex != -1 && duties.Count >= 2)
                             {
-
                                 weekday5combobox2.Visibility = Visibility.Visible;
                                 weekday5textbox3.Text = duties[1].StartTime.ToString().Substring(11, 5) + " - " + duties[1].EndTime.ToString().Substring(11, 5);
                             }
-
                             if (duties.Count >= 3)
                                 weekday5combobox3.SelectedItem = EmployeeRepository.GetEmployee(duties[2].EmployeeID).FirstName;
                             if (weekday5combobox3.SelectedIndex != -1 && duties.Count >= 3)
                             {
-
                                 weekday5combobox3.Visibility = Visibility.Visible;
                                 weekday5textbox4.Text = duties[2].StartTime.ToString().Substring(11, 5) + " - " + duties[2].EndTime.ToString().Substring(11, 5);
                             }
@@ -1040,11 +1018,9 @@ namespace UI.Views
                             weekday6combobox.IsEnabled = true;
                         else
                             weekday6combobox.IsEnabled = false;
-
                         weekday6combobox.ItemsSource = newEmployees;
                         weekday6combobox2.ItemsSource = newEmployees;
                         weekday6combobox3.ItemsSource = newEmployees;
-
                         if (duties.Count >= 1)
                         {
                             weekday6combobox.SelectedItem = EmployeeRepository.GetEmployee(duties[0].EmployeeID).FirstName;
@@ -1053,16 +1029,13 @@ namespace UI.Views
                                 weekday6combobox2.SelectedItem = EmployeeRepository.GetEmployee(duties[1].EmployeeID).FirstName;
                             if (weekday6combobox2.SelectedIndex != -1 && duties.Count >= 2)
                             {
-
                                 weekday6combobox2.Visibility = Visibility.Visible;
                                 weekday6textbox3.Text = duties[1].StartTime.ToString().Substring(11, 5) + " - " + duties[1].EndTime.ToString().Substring(11, 5);
                             }
-
                             if (duties.Count >= 3)
                                 weekday6combobox3.SelectedItem = EmployeeRepository.GetEmployee(duties[2].EmployeeID).FirstName;
                             if (weekday6combobox3.SelectedIndex != -1 && duties.Count >= 3)
                             {
-
                                 weekday6combobox3.Visibility = Visibility.Visible;
                                 weekday6textbox4.Text = duties[2].StartTime.ToString().Substring(11, 5) + " - " + duties[2].EndTime.ToString().Substring(11, 5);
                             }
@@ -1080,11 +1053,9 @@ namespace UI.Views
                             weekday7combobox.IsEnabled = true;
                         else
                             weekday7combobox.IsEnabled = false;
-
                         weekday7combobox.ItemsSource = newEmployees;
                         weekday7combobox2.ItemsSource = newEmployees;
                         weekday7combobox3.ItemsSource = newEmployees;
-
                         if (duties.Count >= 1)
                         {
                             weekday7combobox.SelectedItem = EmployeeRepository.GetEmployee(duties[0].EmployeeID).FirstName;
@@ -1093,16 +1064,13 @@ namespace UI.Views
                                 weekday7combobox2.SelectedItem = EmployeeRepository.GetEmployee(duties[1].EmployeeID).FirstName;
                             if (weekday7combobox2.SelectedIndex != -1 && duties.Count >= 2)
                             {
-
                                 weekday7combobox2.Visibility = Visibility.Visible;
                                 weekday7textbox3.Text = duties[1].StartTime.ToString().Substring(11, 5) + " - " + duties[1].EndTime.ToString().Substring(11, 5);
                             }
-
                             if (duties.Count >= 3)
                                 weekday7combobox3.SelectedItem = EmployeeRepository.GetEmployee(duties[2].EmployeeID).FirstName;
                             if (weekday7combobox3.SelectedIndex != -1 && duties.Count >= 3)
                             {
-
                                 weekday7combobox3.Visibility = Visibility.Visible;
                                 weekday7textbox4.Text = duties[2].StartTime.ToString().Substring(11, 5) + " - " + duties[2].EndTime.ToString().Substring(11, 5);
                             }
@@ -1119,10 +1087,8 @@ namespace UI.Views
                         break;
                 }
             }
-
             if (decision == false)
             {
-                
                 switch (comboBox)
                 {
                     case 1:
@@ -1140,6 +1106,7 @@ namespace UI.Views
                         weekday3combobox.SelectedIndex = -1;
                         ResetComboboxes(3);
                         break;
+
                     case 4:
                         weekday4combobox.IsEnabled = false;
                         weekday4combobox.SelectedIndex = -1;
@@ -1161,7 +1128,6 @@ namespace UI.Views
                         ResetComboboxes(7);
                         break;
                     default:
-                        
                         break;
                 }
             }

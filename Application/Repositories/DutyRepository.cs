@@ -1,4 +1,5 @@
 ﻿using Domain.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -10,9 +11,7 @@ namespace Application.Repositories
         public static void AddDuty(Duty duty)
         {
             if (!DutyExist(duty))
-            {
                 duties.Add(duty);
-            }
         }
 
         public static List<Duty> GetDuties()
@@ -101,6 +100,17 @@ namespace Application.Repositories
                 }
             }
             return exist;
+        }
+
+        public static void UpdateDuty(int newEmployeeID, int dutyID)
+        {
+            foreach(Duty duty in duties)
+            {
+                if(duty.DutyID == dutyID)
+                {
+                    duty.EmployeeID = newEmployeeID;
+                }
+            }
         }
     }
 }

@@ -14,7 +14,6 @@ namespace Application.DatabaseControllers
             int dateID;
             int rosterID;
             string shopDB = null;
-
             DBConnection.DatabaseName = "CANE";
             if (DBConnection.IsConnected())
             {
@@ -29,7 +28,6 @@ namespace Application.DatabaseControllers
                         dateID = (int)reader["DateID"];
                         rosterID = (int)reader["RosterID"];
                         day = (DateTime)reader["Day"];
-
                         shopDB = reader["Shop"].ToString();
                         Shop newShop;
                         if (shopDB == "kongensgade")
@@ -40,12 +38,11 @@ namespace Application.DatabaseControllers
                         {
                             newShop = Shop.skibhusvej;
                         }
-
                         Date date = new Date(day, dateID, rosterID, newShop);
                         DateRepository.AddDate(date);
                     }
-                    DBConnection.Close();
                 }
+                DBConnection.Close();
             }
         }
 
@@ -54,7 +51,6 @@ namespace Application.DatabaseControllers
             DBConnection.DatabaseName = "CANE";
             string query = "Create_Date";
             int daysDiff = ((TimeSpan)(endDay.Date - startDay.Date)).Days;
-
             Shop newShop;
             if (shop.ToLower() == "kongensgade")
             {
@@ -64,7 +60,6 @@ namespace Application.DatabaseControllers
             {
                 newShop = Shop.skibhusvej;
             }
-            
             for (int i = 0; i <= daysDiff; i++)
             {
                 Date date = new Date(startDay.AddDays(i), rosterID, newShop);
@@ -80,7 +75,6 @@ namespace Application.DatabaseControllers
                         cmd.ExecuteReader();
                     }
                     DBConnection.Close();
-
                     DateRepository.AddDate(date);
                 }
             }

@@ -12,15 +12,14 @@ namespace UI.Views
     {
         ExchangeDutyWindow ExchangeDutyWindow { get; set; }
         public int DutyID { get; set; }
+
         public PopupExchangeDutyWindow(List<string> employeeList, string exchange, int dutyID, ExchangeDutyWindow exchangeDutyWindow)
         {
             InitializeComponent();
-
             DutyID = dutyID;
             EmployeeCB.ItemsSource = employeeList;
             DutyLabel.Content = exchange;
             ExchangeDutyWindow = exchangeDutyWindow;
-
             this.Closing += WindowClosed;
         }
 
@@ -33,9 +32,7 @@ namespace UI.Views
             DBWishForDayOffController.LoadWishForDayOffs();
             DBDutyController.LoadDuties();
             DBDutyExchangeController.LoadDutyExchanges();
-            //ExchangeDutyWindow.UpdateDutyList2();
             e.Cancel = false;
-
         }
         
         private void Confirm_Click(object sender, RoutedEventArgs e)
@@ -43,7 +40,6 @@ namespace UI.Views
             int newEmployeeID = EmployeeRepository.GetEmployeeID(EmployeeCB.SelectedValue.ToString());
             int oldEmployeeID = EmployeeRepository.GetEmployeeID(DutyLabel.Content.ToString().Substring(16));
             int dutyID = DutyRepository.GetDuty(DutyLabel.Content.ToString().Substring(0, 10), DutyLabel.Content.ToString().Substring(16)).DutyID;
-
             DBDutyController.UpdateDuty(newEmployeeID, DutyID);
             DBDutyExchangeController.DeleteDutyExchange(dutyID, oldEmployeeID);
             DutyExchangeRepository.RemoveDutyExchange(dutyID, oldEmployeeID);

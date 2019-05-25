@@ -6,7 +6,6 @@ namespace Application.Repositories
 {
     public static class DateRepository
     {
-
         private static List<Date> dates = new List<Date>();
         public static void AddDate(Date date)
         {

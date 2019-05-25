@@ -15,7 +15,6 @@ namespace Application.DatabaseControllers
             DateTime endTime;
             int dateID;
             int dutyID;
-
             DBConnection.DatabaseName = "CANE";
             if (DBConnection.IsConnected())
             {
@@ -31,7 +30,6 @@ namespace Application.DatabaseControllers
                         dutyID = (int)reader["DutyID"];
                         startTime = (DateTime)reader["StartTime"];
                         endTime = (DateTime)reader["EndTime"];
-
                         Duty duty = new Duty(dutyID, employeeID, dateID, startTime, endTime);
                         DutyRepository.AddDuty(duty);
                     }
@@ -78,10 +76,8 @@ namespace Application.DatabaseControllers
 
         public static void UpdateDuty(int newEmployeeID, int dutyID)
         {
-
             DBConnection.DatabaseName = "CANE";
             string query = "Update_Exchange";
-
             if (DBConnection.IsConnected())
             {
                 var cmd = new SqlCommand(query, DBConnection.Connection);
@@ -91,6 +87,7 @@ namespace Application.DatabaseControllers
                 cmd.ExecuteReader();
             }
             DBConnection.Close();
+            DutyRepository.UpdateDuty(newEmployeeID, dutyID);
         }
     }
 }

@@ -17,7 +17,6 @@ namespace UI.Views
         {
             MessageBoxButton btn = MessageBoxButton.YesNo;
             MessageBoxResult result = MessageBox.Show($"Er du sikker på at {WishForDayOffCB.SelectedItem.ToString()} vil ønske fri på datoen: {WishForDayOffDP.SelectedDate.ToString().Substring(0,10)}?", "ønsk fri", btn);
-
             if(result == MessageBoxResult.Yes)
             {
                 int employeeID = EmployeeRepository.GetEmployeeID(WishForDayOffCB.SelectedItem.ToString());

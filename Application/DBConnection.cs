@@ -10,11 +10,13 @@ namespace Application
             get { return databaseName; }
             set { databaseName = value; }
         }
+
         private static SqlConnection connection = null;
         public static SqlConnection Connection
         {
             get { return connection; }
         }
+
         public static bool IsConnected()
         {
             if (Connection == null)
@@ -27,6 +29,7 @@ namespace Application
             }
             return true;
         }
+
         public static void Close()
         {
             connection.Close();

@@ -14,6 +14,7 @@ namespace Domain.Models
             EmployeeID = employeeID;
             Date = date;
         }
+
         public WishForDayOff(int wishForDayOffID, int employeeID, DateTime date)
         {
             WishForDayOffID = wishForDayOffID;

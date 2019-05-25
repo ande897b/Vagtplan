@@ -5,7 +5,6 @@ namespace Domain.Models
     public class Date
     {
         public DateTime Day { get; set; }
-
         public Shop Shop { get; set; }
         public int DateID { get; set; }
         public int RosterID { get; set; }
@@ -17,6 +16,7 @@ namespace Domain.Models
             RosterID = rosterID;
             Shop = shop;
         }
+
         public Date(DateTime day, int rosterID, Shop shop)
         {
             DateID = -1;

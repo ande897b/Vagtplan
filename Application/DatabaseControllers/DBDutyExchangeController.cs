@@ -13,7 +13,6 @@ namespace Application.DatabaseControllers
             int dutyExchangeID = 0;
             int dutyID = 0;
             int employeeID = 0;
-
             DBConnection.DatabaseName = "CANE";
             if (DBConnection.IsConnected())
             {
@@ -28,12 +27,11 @@ namespace Application.DatabaseControllers
                         dutyExchangeID = (int)reader["DutyExchangeID"];
                         dutyID = (int)reader["DutyID"];
                         employeeID = (int)reader["EmployeeID"];
-
                         DutyExchange newDutyExchange = new DutyExchange(dutyExchangeID, dutyID, employeeID);
                         DutyExchangeRepository.AddDutyExchange(newDutyExchange);
                     }
-                    DBConnection.Close();
                 }
+                DBConnection.Close();
             }
         }
 
@@ -41,7 +39,6 @@ namespace Application.DatabaseControllers
         {
             DBConnection.DatabaseName = "CANE";
             string query = "Create_DutyExchange";
-
             if (!DutyExchangeRepository.DutyExchangeExist(dutyExchange))
             {
                 if (DBConnection.IsConnected())
@@ -56,13 +53,11 @@ namespace Application.DatabaseControllers
             }
             DutyExchangeRepository.AddDutyExchange(dutyExchange);
         }
-
         
         public static void DeleteDutyExchange(int dutyID, int employeeID)
         {
             DBConnection.DatabaseName = "CANE";
             string query = "Delete_DutyExchanges";
-
             if (DBConnection.IsConnected())
             {
                 var cmd = new SqlCommand(query, DBConnection.Connection);
@@ -72,8 +67,6 @@ namespace Application.DatabaseControllers
                 cmd.ExecuteReader();
                 DBConnection.Close();
             }
-
         }
     }    
-
 }

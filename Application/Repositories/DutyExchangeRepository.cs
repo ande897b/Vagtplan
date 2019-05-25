@@ -9,8 +9,8 @@ namespace Application.Repositories
         private static List<DutyExchange> dutyExchanges = new List<DutyExchange>();
         public static void AddDutyExchange(DutyExchange dutyExchange)
         {
-                if (!DutyExchangeExist(dutyExchange))
-                    dutyExchanges.Add(dutyExchange);
+            if (!DutyExchangeExist(dutyExchange))
+                dutyExchanges.Add(dutyExchange);
         }
 
         public static bool DutyExchangeExist(DutyExchange dutyExchange)
@@ -34,7 +34,6 @@ namespace Application.Repositories
         {
             return dutyExchanges;
         }
-
 
         public static void RemoveDutyExchange(int dutyID, int employeeID)
         {

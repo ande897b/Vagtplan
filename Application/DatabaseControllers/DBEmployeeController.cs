@@ -13,7 +13,6 @@ namespace Application.DatabaseControllers
             string rank = null;
             string firstName = null;
             string lastName = null;
-
             DBConnection.DatabaseName = "CANE";
             if (DBConnection.IsConnected())
             {

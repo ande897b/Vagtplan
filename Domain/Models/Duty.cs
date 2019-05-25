@@ -17,8 +17,8 @@ namespace Domain.Models
             DateID = dateID;
             StartTime = startTime;
             EndTime = endTime;
-            
         }
+
         public Duty(int dutyID, int employeeID, int dateID, DateTime startTime, DateTime endTime)
         {
             DutyID = dutyID;
@@ -26,7 +26,6 @@ namespace Domain.Models
             DateID = dateID;
             StartTime = startTime;
             EndTime = endTime;
-
         }
     }
 }

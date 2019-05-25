@@ -50,9 +50,8 @@ namespace Application.DatabaseControllers
                     cmd.ExecuteReader();
                     DBConnection.Close();
                 }
-                
                 WishForDayOffRepository.AddWishForDayOff(wish);
             }
-        } 
+        }
     }
 }

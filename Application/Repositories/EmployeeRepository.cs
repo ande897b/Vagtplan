@@ -11,6 +11,7 @@ namespace Application.Repositories
 			if (!EmployeeExist(employee))
 				employees.Add(employee);
 		}
+
 		public static bool EmployeeExist(Employee employee)
 		{
 			bool exist = false;
@@ -27,14 +28,17 @@ namespace Application.Repositories
 			}
 			return exist;
 		}
+
 		public static List<Employee> GetEmployees()
 		{
 			return employees;
 		}
+
 		public static void RemoveEmployee(Employee employee)
 		{
 			employees.Remove(employee);
 		}
+
 		public static Employee GetEmployee(int employeeID)
 		{
 			Employee tempEmp = null;
@@ -47,6 +51,7 @@ namespace Application.Repositories
 			}
 			return tempEmp;
 		}
+
 		public static int GetEmployeeID(string firstName)
 		{
 			int id = 0;

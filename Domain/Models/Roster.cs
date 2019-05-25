@@ -7,6 +7,7 @@ namespace Domain.Models
         skibhusvej,
         kongensgade
     }
+
     public enum Period
     {
         oneMonth,
@@ -21,7 +22,6 @@ namespace Domain.Models
         public Shop Shop { get; set; }
         public int RosterID { get; set; }
 
-
         public Roster(DateTime startDate, DateTime endDate, Shop shop)
         {
             RosterID = -1;
@@ -29,6 +29,7 @@ namespace Domain.Models
             EndDate = endDate;
             Shop = shop;
         }
+
         public Roster(DateTime startDate, DateTime endDate, Shop shop, int rosterID)
         {
             RosterID = rosterID;

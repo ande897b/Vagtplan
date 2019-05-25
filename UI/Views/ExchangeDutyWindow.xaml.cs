@@ -15,7 +15,6 @@ namespace UI.Views
         public ExchangeDutyWindow()
         {
             InitializeComponent();
-
             List<string> newEmployees = new List<string>();
             List<Employee> employees = EmployeeRepository.GetEmployees();
             foreach (Employee employee in employees)
@@ -25,10 +24,8 @@ namespace UI.Views
             }
             EmployeesProp = newEmployees;
             EmployeeCB.ItemsSource = newEmployees;
-
             UpdateDutyList2();
         }
-
 
         private void DutyList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -37,7 +34,6 @@ namespace UI.Views
             {
                 date = DutyList.SelectedItem.ToString().Substring(0, 10);
                 string employeeName = EmployeeCB.SelectedValue.ToString();
-
                 MessageBoxButton btn = MessageBoxButton.YesNo;
                 MessageBoxImage image = MessageBoxImage.Exclamation;
                 MessageBoxResult result = MessageBox.Show("Er du sikker på at du vil bytte denne vagt.", "Vagt bytte", btn, image);
@@ -67,16 +63,19 @@ namespace UI.Views
         public void UpdateDutyList()
         {
             List<Duty> duties = DutyRepository.GetDuties(EmployeeCB.SelectedItem.ToString());
-            List<string> dates = new List<string>();
-
+            List<string> dutiesS = new List<string>();
             if (duties.Count > 0)
             {
                 foreach (Duty duty in duties)
                 {
-                    string date = DateRepository.GetDate(duty.DateID).ToString();
-                    dates.Add(date.Substring(0, 10));
+                    string dutyS = DateRepository.GetDate(DutyRepository.GetDuty(duty.DutyID).DateID).Date.ToString().Substring(0, 10) + " <--> " + EmployeeRepository.GetEmployee(duty.EmployeeID).FirstName;
+                    dutiesS.Add(dutyS);
                 }
-                DutyList.ItemsSource = dates;
+                DutyList.ItemsSource = dutiesS;
+            }
+            else
+            {
+                DutyList.ItemsSource = null;
             }
         }
 
@@ -92,6 +91,10 @@ namespace UI.Views
                     newDutyExchanges.Add(newDutyExchange);
                 }
                 DutyList2.ItemsSource = newDutyExchanges;
+            }
+            else
+            {
+                DutyList2.ItemsSource = null;
             }
         }
 

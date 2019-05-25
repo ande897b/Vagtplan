@@ -11,8 +11,9 @@ namespace Application.Repositories
 		public static void AddRoster(Roster roster)
 		{
 			if (!RosterExist(roster))
-			rosters.Add(roster);
+			    rosters.Add(roster);
 		}
+
 		public static bool RosterExist(Roster roster)
 		{
 			bool exist = false;
@@ -29,10 +30,12 @@ namespace Application.Repositories
 			}
 			return exist;
 		}
+
 		public static List<Roster> GetRosters()
 		{
 			return rosters;
 		}
+
 		public static DateTime GetEndDate(string shop)
 		{
 			DateTime endDate = DateTime.Now;
@@ -47,10 +50,10 @@ namespace Application.Repositories
 			}
 			return endDate;
 		}
+
 		public static bool CurrentRosterExist(string shop)
 		{
 			bool exists = false;
-
 			foreach (Roster roster in rosters)
 			{
 				if (roster.Shop.ToString().ToLower() == shop)
@@ -72,13 +75,10 @@ namespace Application.Repositories
 			{
 				newShop = Shop.skibhusvej;
 			}
-
-
 			Roster roster = new Roster(startDate, endDate, newShop);
 			DBRosterController.CreateRoster(roster);
 			int rosterID = DBRosterController.GetRosterID(roster);
 			DBDateController.CreateDates(rosterID, shop, startDate, endDate);
-
 			AddRoster(roster);
 		}
 

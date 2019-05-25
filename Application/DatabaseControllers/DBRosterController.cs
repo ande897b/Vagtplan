@@ -13,7 +13,6 @@ namespace Application.DatabaseControllers
             DateTime startDate = DateTime.Now;
             DateTime endDate = DateTime.Now;
             string shop = null;
-
             DBConnection.DatabaseName = "CANE";
             if (DBConnection.IsConnected())
             {
@@ -25,9 +24,7 @@ namespace Application.DatabaseControllers
                     while (reader.Read())
                     {
                         startDate = (DateTime)reader["StartDate"];
-
                         endDate = (DateTime)reader["EndDate"];
-
                         shop = reader["Shop"].ToString();
                         Shop newShop;
                         if (shop == "kongensgade")
@@ -54,7 +51,6 @@ namespace Application.DatabaseControllers
             {
                 if (DBConnection.IsConnected())
                 {
-                    
                     var cmd = new SqlCommand(query, DBConnection.Connection);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Add(new SqlParameter("@StartDate_IN", roster.StartDate));
@@ -71,7 +67,6 @@ namespace Application.DatabaseControllers
         {
             string ID = null;
             int IDint = 0;
-
             DBConnection.DatabaseName = "CANE";
             if (DBConnection.IsConnected())
             {
