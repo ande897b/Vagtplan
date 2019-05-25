@@ -10,8 +10,12 @@ namespace Application.Repositories
         private static List<DutyExchange> dutyExchanges = new List<DutyExchange>();
         public static void AddDutyExchange(DutyExchange dutyExchange)
         {
-            if (!DutyExchangeExist(dutyExchange))
-                dutyExchanges.Add(dutyExchange);
+            lock (thisLock)
+            {
+                if (!DutyExchangeExist(dutyExchange))
+                    dutyExchanges.Add(dutyExchange);
+            }
+
         }
 
         public static bool DutyExchangeExist(DutyExchange dutyExchange)
