@@ -31,12 +31,7 @@ namespace UI.Views
         private void WindowClosed(object sender, CancelEventArgs e)
         {
             e.Cancel = true;
-            DBDateController.LoadDates();
-            DBRosterController.LoadRosters();
-            DBEmployeeController.LoadEmployees();
-            DBWishForDayOffController.LoadWishForDayOffs();
             DBDutyController.LoadDuties();
-            DBDutyExchangeController.LoadDutyExchanges();
             e.Cancel = false;
         }
 

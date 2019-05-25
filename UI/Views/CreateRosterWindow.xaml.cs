@@ -1,6 +1,8 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
+using Application.DatabaseControllers;
 using Application.Repositories;
 
 namespace UI.Views
@@ -10,6 +12,14 @@ namespace UI.Views
         public CreateRosterWindow()
         {
             InitializeComponent();
+            this.Closing += WindowClosed;
+        }
+
+        private void WindowClosed(object sender, CancelEventArgs e)
+        {
+            e.Cancel = true;
+            DBRosterController.LoadRosters();
+            e.Cancel = false;
         }
 
         private void CreateRosterBtn_Click(object sender, RoutedEventArgs e)

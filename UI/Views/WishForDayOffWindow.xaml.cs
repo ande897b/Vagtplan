@@ -2,6 +2,7 @@
 using Application.Repositories;
 using Domain.Models;
 using System;
+using System.ComponentModel;
 using System.Windows;
 
 namespace UI.Views
@@ -11,6 +12,15 @@ namespace UI.Views
         public WishForDayOffWindow()
         {
             InitializeComponent();
+
+            this.Closing += WindowClosed;
+        }
+
+        private void WindowClosed(object sender, CancelEventArgs e)
+        {
+            e.Cancel = true;
+            DBWishForDayOffController.LoadWishForDayOffs();
+            e.Cancel = false;
         }
 
         private void WishForDayOffBtn_Click(object sender, RoutedEventArgs e)

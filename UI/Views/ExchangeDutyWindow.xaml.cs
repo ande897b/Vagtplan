@@ -26,6 +26,15 @@ namespace UI.Views
             EmployeesProp = newEmployees;
             EmployeeCB.ItemsSource = newEmployees;
             UpdateDutyList2();
+            this.Closing += WindowClosed;
+        }
+
+        private void WindowClosed(object sender, CancelEventArgs e)
+        {
+            e.Cancel = true;
+            DBDutyController.LoadDuties();
+            DBDutyExchangeController.LoadDutyExchanges();
+            e.Cancel = false;
         }
 
         private void DutyList_SelectionChanged(object sender, SelectionChangedEventArgs e)
