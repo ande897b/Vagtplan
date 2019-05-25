@@ -33,8 +33,9 @@ namespace UI.Views
             DBWishForDayOffController.LoadWishForDayOffs();
             DBDutyController.LoadDuties();
             DBDutyExchangeController.LoadDutyExchanges();
-            ExchangeDutyWindow.Close();
+            //ExchangeDutyWindow.UpdateDutyList2();
             e.Cancel = false;
+
         }
         
         private void Confirm_Click(object sender, RoutedEventArgs e)
@@ -46,7 +47,7 @@ namespace UI.Views
             DBDutyController.UpdateDuty(newEmployeeID, DutyID);
             DBDutyExchangeController.DeleteDutyExchange(dutyID, oldEmployeeID);
             DutyExchangeRepository.RemoveDutyExchange(dutyID, oldEmployeeID);
-
+            ExchangeDutyWindow.Close();
             this.Close();
         }
     }
