@@ -1,7 +1,9 @@
 ﻿using Application.DatabaseControllers;
 using Application.Repositories;
 using Domain.Models;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -9,7 +11,6 @@ namespace UI.Views
 {
     public partial class ExchangeDutyWindow : Window
     {
-
         public List<string> EmployeesProp { get; set; }
         public ExchangeDutyWindow()
         {
@@ -28,13 +29,6 @@ namespace UI.Views
             UpdateDutyList2();
         }
 
-        private void Popup_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
-        {
-            if (!((bool)e.NewValue))
-            {
-                UpdateDutyList2();
-            }
-        }
 
         private void DutyList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -67,7 +61,6 @@ namespace UI.Views
                 Duty duty = DutyRepository.GetDuty(date, firstName);
                 PopupExchangeDutyWindow popupExchangeDutyWindow = new PopupExchangeDutyWindow(EmployeesProp, dutyList2selected, duty.DutyID, this);
                 popupExchangeDutyWindow.Show();
-                UpdateDutyList2();
             }
         }
 

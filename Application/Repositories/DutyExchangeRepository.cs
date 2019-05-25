@@ -6,16 +6,11 @@ namespace Application.Repositories
 {
     public static class DutyExchangeRepository
     {
-        private readonly static object thisLock = new object();
         private static List<DutyExchange> dutyExchanges = new List<DutyExchange>();
         public static void AddDutyExchange(DutyExchange dutyExchange)
         {
-            lock (thisLock)
-            {
                 if (!DutyExchangeExist(dutyExchange))
                     dutyExchanges.Add(dutyExchange);
-            }
-
         }
 
         public static bool DutyExchangeExist(DutyExchange dutyExchange)
@@ -43,7 +38,7 @@ namespace Application.Repositories
 
         public static void RemoveDutyExchange(int dutyID, int employeeID)
         {
-            lock (thisLock)
+            try
             {
                 foreach (DutyExchange dutyExchange2 in dutyExchanges)
                 {
@@ -53,6 +48,7 @@ namespace Application.Repositories
                     }
                 }
             }
+            catch (Exception) { }
         }
     }
 }

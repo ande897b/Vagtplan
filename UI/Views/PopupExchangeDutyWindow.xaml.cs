@@ -8,21 +8,20 @@ using System.Windows;
 
 namespace UI.Views
 {
-
     public partial class PopupExchangeDutyWindow : Window
     {
-        private readonly object thisLock = new object();
+        ExchangeDutyWindow ExchangeDutyWindow { get; set; }
         public int DutyID { get; set; }
-        public PopupExchangeDutyWindow(List<string> employeeList, string exchange, int dutyID, ExchangeDutyWindow exchangeWindow)
+        public PopupExchangeDutyWindow(List<string> employeeList, string exchange, int dutyID, ExchangeDutyWindow exchangeDutyWindow)
         {
             InitializeComponent();
 
             DutyID = dutyID;
             EmployeeCB.ItemsSource = employeeList;
             DutyLabel.Content = exchange;
+            ExchangeDutyWindow = exchangeDutyWindow;
 
             this.Closing += WindowClosed;
-            
         }
 
         private void WindowClosed(object sender, CancelEventArgs e)
@@ -34,29 +33,19 @@ namespace UI.Views
             DBWishForDayOffController.LoadWishForDayOffs();
             DBDutyController.LoadDuties();
             DBDutyExchangeController.LoadDutyExchanges();
+            ExchangeDutyWindow.Close();
             e.Cancel = false;
         }
         
         private void Confirm_Click(object sender, RoutedEventArgs e)
         {
+            int newEmployeeID = EmployeeRepository.GetEmployeeID(EmployeeCB.SelectedValue.ToString());
+            int oldEmployeeID = EmployeeRepository.GetEmployeeID(DutyLabel.Content.ToString().Substring(16));
+            int dutyID = DutyRepository.GetDuty(DutyLabel.Content.ToString().Substring(0, 10), DutyLabel.Content.ToString().Substring(16)).DutyID;
 
-            lock (thisLock)
-            {
-                int newEmployeeID = EmployeeRepository.GetEmployeeID(EmployeeCB.SelectedValue.ToString());
-                int oldEmployeeID = EmployeeRepository.GetEmployeeID(DutyLabel.Content.ToString().Substring(16));
-                int dutyID = DutyRepository.GetDuty(DutyLabel.Content.ToString().Substring(0, 10), DutyLabel.Content.ToString().Substring(16)).DutyID;
-                DBDutyController.UpdateDuty(newEmployeeID, DutyID);
-
-                DBDutyExchangeController.DeleteDutyExchange(dutyID, oldEmployeeID);
-            }
-            lock (thisLock)
-            {
-                int newEmployeeID = EmployeeRepository.GetEmployeeID(EmployeeCB.SelectedValue.ToString());
-                int oldEmployeeID = EmployeeRepository.GetEmployeeID(DutyLabel.Content.ToString().Substring(16));
-                int dutyID = DutyRepository.GetDuty(DutyLabel.Content.ToString().Substring(0, 10), DutyLabel.Content.ToString().Substring(16)).DutyID;
-
-                DutyExchangeRepository.RemoveDutyExchange(dutyID, oldEmployeeID);
-            }
+            DBDutyController.UpdateDuty(newEmployeeID, DutyID);
+            DBDutyExchangeController.DeleteDutyExchange(dutyID, oldEmployeeID);
+            DutyExchangeRepository.RemoveDutyExchange(dutyID, oldEmployeeID);
 
             this.Close();
         }
