@@ -1,5 +1,6 @@
 ﻿using Application.Repositories;
 using Domain.Models;
+using System;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -55,7 +56,8 @@ namespace Application.DatabaseControllers
             }
             DutyExchangeRepository.AddDutyExchange(dutyExchange);
         }
-       
+
+        
         public static void DeleteDutyExchange(int dutyID, int employeeID)
         {
             DBConnection.DatabaseName = "CANE";
@@ -68,8 +70,9 @@ namespace Application.DatabaseControllers
                 cmd.Parameters.Add(new SqlParameter("@DutyID_IN", dutyID));
                 cmd.Parameters.Add(new SqlParameter("@EmployeeID_IN", employeeID));
                 cmd.ExecuteReader();
+                DBConnection.Close();
             }
-            DBConnection.Close();
+
         }
     }    
 
