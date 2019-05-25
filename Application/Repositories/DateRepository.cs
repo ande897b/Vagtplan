@@ -10,7 +10,7 @@ namespace Application.Repositories
         public static void AddDate(Date date)
         {
             if (!DateExist(date))
-            dates.Add(date);
+                dates.Add(date);
         }
 
         public static bool DateExist(Date date)
@@ -56,11 +56,6 @@ namespace Application.Repositories
             return newDate;
         }
 
-        public static List<Date> GetDates()
-        {
-            return dates;
-        }
-
         public static List<Date> GetDates(string shop)
         {
             List<Date> newDates = new List<Date>();
@@ -72,11 +67,6 @@ namespace Application.Repositories
                 }
             }
             return dates;
-        }
-
-        public static void RemoveDate(Date date)
-        {
-            dates.Remove(date);
         }
 
         public static int GetDateID(string date, Shop shop)

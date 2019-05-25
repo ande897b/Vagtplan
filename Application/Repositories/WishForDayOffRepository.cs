@@ -29,16 +29,6 @@ namespace Application.Repositories
             return exist;
         }
 
-        public static List<WishForDayOff> GetWishForDayOffs()
-        {
-            return wishForDayOffList;
-        }
-
-        public static void RemoveWishForDayOff(WishForDayOff wishForDayOff)
-        {
-            wishForDayOffList.Remove(wishForDayOff);
-        }
-
         public static List<WishForDayOff> GetWishForDayOffs(string date)
         {
             List<WishForDayOff> newListOfWishes = new List<WishForDayOff>();

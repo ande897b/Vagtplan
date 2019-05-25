@@ -12,6 +12,7 @@ namespace UI.Views
     public partial class ExchangeDutyWindow : Window
     {
         public List<string> EmployeesProp { get; set; }
+
         public ExchangeDutyWindow()
         {
             InitializeComponent();

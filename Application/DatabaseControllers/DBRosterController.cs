@@ -10,6 +10,7 @@ namespace Application.DatabaseControllers
     {
         public static void LoadRosters()
         {
+            int rosterID = 0;
             DateTime startDate = DateTime.Now;
             DateTime endDate = DateTime.Now;
             string shop = null;
@@ -23,6 +24,7 @@ namespace Application.DatabaseControllers
                 {
                     while (reader.Read())
                     {
+                        rosterID = (int)reader["RosterID"];
                         startDate = (DateTime)reader["StartDate"];
                         endDate = (DateTime)reader["EndDate"];
                         shop = reader["Shop"].ToString();
@@ -35,7 +37,7 @@ namespace Application.DatabaseControllers
                         {
                             newShop = Shop.skibhusvej;
                         }
-                        Roster addRoster = new Roster(startDate, endDate, newShop);
+                        Roster addRoster = new Roster(rosterID, startDate, endDate, newShop);
                         RosterRepository.AddRoster(addRoster);
                     }
                 }

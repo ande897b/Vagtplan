@@ -46,31 +46,5 @@ namespace Application.DatabaseControllers
                 DBConnection.Close();
             }
         }
-
-        public static int GetEmployeeID(Employee employee)
-        {
-            string query = "Get_Employee";
-            int ID = 0;
-            DBConnection.DatabaseName = "CANE";
-            if (DBConnection.IsConnected())
-            {
-                
-                var cmd = new SqlCommand(query, DBConnection.Connection);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.Add(new SqlParameter("FirstName_IN", employee.FirstName));
-                cmd.Parameters.Add(new SqlParameter("LastName_IN", employee.LastName));
-                var reader = cmd.ExecuteReader();
-                if (reader.HasRows)
-                {
-                    if (reader.Read())
-                    {
-                        ID = (int)reader["EmployeeID"];
-                    }
-                }
-                DBConnection.Close();
-            }
-            EmployeeRepository.AddEmployee(employee);
-            return ID;
-        }
     }
 }

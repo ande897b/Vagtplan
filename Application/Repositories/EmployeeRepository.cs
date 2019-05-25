@@ -34,11 +34,6 @@ namespace Application.Repositories
 			return employees;
 		}
 
-		public static void RemoveEmployee(Employee employee)
-		{
-			employees.Remove(employee);
-		}
-
 		public static Employee GetEmployee(int employeeID)
 		{
 			Employee tempEmp = null;

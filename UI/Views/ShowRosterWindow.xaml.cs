@@ -12,7 +12,6 @@ namespace UI.Views
 {
     public partial class ShowRosterWindow : Window
     {
-        public int DecemberIndex { get; set; }
         public Shop Shop { get; set; }
 
         public ShowRosterWindow(string boxResult)

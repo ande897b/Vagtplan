@@ -31,11 +31,6 @@ namespace Application.Repositories
 			return exist;
 		}
 
-		public static List<Roster> GetRosters()
-		{
-			return rosters;
-		}
-
 		public static DateTime GetEndDate(string shop)
 		{
 			DateTime endDate = DateTime.Now;

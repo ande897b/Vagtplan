@@ -14,11 +14,6 @@ namespace Application.Repositories
                 duties.Add(duty);
         }
 
-        public static List<Duty> GetDuties()
-        {
-            return duties;
-        }
-
         public static Duty GetDuty(string date, string firstName)
         {
             Duty newDuty = null;
