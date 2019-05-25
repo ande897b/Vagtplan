@@ -10,9 +10,6 @@ namespace Application.DatabaseControllers
     {
         public static void LoadDutyExchanges()
         {
-            int dutyExchangeID = 0;
-            int dutyID = 0;
-            int employeeID = 0;
             DBConnection.DatabaseName = "CANE";
             if (DBConnection.IsConnected())
             {
@@ -24,9 +21,9 @@ namespace Application.DatabaseControllers
                 {
                     while (reader.Read())
                     {
-                        dutyExchangeID = (int)reader["DutyExchangeID"];
-                        dutyID = (int)reader["DutyID"];
-                        employeeID = (int)reader["EmployeeID"];
+                        int dutyExchangeID = (int)reader["DutyExchangeID"];
+                        int dutyID = (int)reader["DutyID"];
+                        int employeeID = (int)reader["EmployeeID"];
                         DutyExchange newDutyExchange = new DutyExchange(dutyExchangeID, dutyID, employeeID);
                         DutyExchangeRepository.AddDutyExchange(newDutyExchange);
                     }

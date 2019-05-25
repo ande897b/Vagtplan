@@ -10,10 +10,6 @@ namespace Application.DatabaseControllers
     {
         public static void LoadDates()
         {
-            DateTime day;
-            int dateID;
-            int rosterID;
-            string shopDB = null;
             DBConnection.DatabaseName = "CANE";
             if (DBConnection.IsConnected())
             {
@@ -25,10 +21,10 @@ namespace Application.DatabaseControllers
                 {
                     while (reader.Read())
                     {
-                        dateID = (int)reader["DateID"];
-                        rosterID = (int)reader["RosterID"];
-                        day = (DateTime)reader["Day"];
-                        shopDB = reader["Shop"].ToString();
+                        int dateID = (int)reader["DateID"];
+                        int rosterID = (int)reader["RosterID"];
+                        DateTime day = (DateTime)reader["Day"];
+                        string shopDB = reader["Shop"].ToString();
                         Shop newShop;
                         if (shopDB == "kongensgade")
                         {

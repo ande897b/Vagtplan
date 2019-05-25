@@ -10,9 +10,6 @@ namespace Application.DatabaseControllers
     {
         public static void LoadWishForDayOffs()
         {
-            DateTime day;
-            int wishForDayOffID;
-            int employeeID;
             DBConnection.DatabaseName = "CANE";
             if (DBConnection.IsConnected())
             {
@@ -24,9 +21,9 @@ namespace Application.DatabaseControllers
                 {
                     while (reader.Read())
                     {
-                        wishForDayOffID = (int)reader["WishForDayOffID"];
-                        employeeID = (int)reader["EmployeeID"];
-                        day = (DateTime)reader["Date"];
+                        int wishForDayOffID = (int)reader["WishForDayOffID"];
+                        int employeeID = (int)reader["EmployeeID"];
+                        DateTime day = (DateTime)reader["Date"];
                         WishForDayOff newWish = new WishForDayOff(wishForDayOffID, employeeID, day);
                         WishForDayOffRepository.AddWishForDayOff(newWish);
                     }

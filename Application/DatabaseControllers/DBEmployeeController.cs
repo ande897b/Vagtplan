@@ -9,10 +9,6 @@ namespace Application.DatabaseControllers
     {
         public static void LoadEmployees()
         {
-            int employeeID;
-            string rank = null;
-            string firstName = null;
-            string lastName = null;
             DBConnection.DatabaseName = "CANE";
             if (DBConnection.IsConnected())
             {
@@ -23,9 +19,8 @@ namespace Application.DatabaseControllers
                 {
                     while (reader.Read())
                     {
-                        employeeID = (int)reader["EmployeeID"];
-
-                        rank = reader["EmployeeRank"].ToString();
+                        int employeeID = (int)reader["EmployeeID"];
+                        string rank = reader["EmployeeRank"].ToString();
                         Rank newRank;
                         if (rank == "Parttimer")
                         {
@@ -35,10 +30,8 @@ namespace Application.DatabaseControllers
                         {
                             newRank = Rank.manager;
                         }
-
-                        firstName = reader["FirstName"].ToString();
-                        lastName = reader["LastName"].ToString();
-
+                        string firstName = reader["FirstName"].ToString();
+                        string lastName = reader["LastName"].ToString();
                         Employee employee = new Employee(employeeID, firstName, lastName, newRank);
                         EmployeeRepository.AddEmployee(employee);
                     }

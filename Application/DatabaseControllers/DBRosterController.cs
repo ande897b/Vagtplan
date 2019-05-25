@@ -10,10 +10,6 @@ namespace Application.DatabaseControllers
     {
         public static void LoadRosters()
         {
-            int rosterID = 0;
-            DateTime startDate = DateTime.Now;
-            DateTime endDate = DateTime.Now;
-            string shop = null;
             DBConnection.DatabaseName = "CANE";
             if (DBConnection.IsConnected())
             {
@@ -24,10 +20,10 @@ namespace Application.DatabaseControllers
                 {
                     while (reader.Read())
                     {
-                        rosterID = (int)reader["RosterID"];
-                        startDate = (DateTime)reader["StartDate"];
-                        endDate = (DateTime)reader["EndDate"];
-                        shop = reader["Shop"].ToString();
+                        int rosterID = (int)reader["RosterID"];
+                        DateTime startDate = (DateTime)reader["StartDate"];
+                        DateTime endDate = (DateTime)reader["EndDate"];
+                        string shop = reader["Shop"].ToString();
                         Shop newShop;
                         if (shop == "kongensgade")
                         {
@@ -67,8 +63,7 @@ namespace Application.DatabaseControllers
 
         public static int GetRosterID(Roster roster)
         {
-            string ID = null;
-            int IDint = 0;
+            int rosterID = 0;
             DBConnection.DatabaseName = "CANE";
             if (DBConnection.IsConnected())
             {
@@ -83,13 +78,12 @@ namespace Application.DatabaseControllers
                 {
                     if (reader.Read())
                     {
-                        ID = reader["RosterID"].ToString();
-                        int.TryParse(ID, out IDint);
+                        rosterID = (int)reader["RosterID"];
                     }
                 }
                 DBConnection.Close();
             }
-            return IDint;
+            return rosterID;
         }
     }
 }

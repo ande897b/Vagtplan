@@ -10,11 +10,6 @@ namespace Application.DatabaseControllers
     {
         public static void LoadDuties()
         {
-            int employeeID ;
-            DateTime startTime;
-            DateTime endTime;
-            int dateID;
-            int dutyID;
             DBConnection.DatabaseName = "CANE";
             if (DBConnection.IsConnected())
             {
@@ -25,11 +20,11 @@ namespace Application.DatabaseControllers
                 {
                     while (reader.Read())
                     {
-                        employeeID = (int)reader["EmployeeID"];
-                        dateID = (int)reader["DateID"];
-                        dutyID = (int)reader["DutyID"];
-                        startTime = (DateTime)reader["StartTime"];
-                        endTime = (DateTime)reader["EndTime"];
+                        int employeeID = (int)reader["EmployeeID"];
+                        int dateID = (int)reader["DateID"];
+                        int dutyID = (int)reader["DutyID"];
+                        DateTime startTime = (DateTime)reader["StartTime"];
+                        DateTime endTime = (DateTime)reader["EndTime"];
                         Duty duty = new Duty(dutyID, employeeID, dateID, startTime, endTime);
                         DutyRepository.AddDuty(duty);
                     }
