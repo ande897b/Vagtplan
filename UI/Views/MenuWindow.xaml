@@ -9,7 +9,7 @@
     <Grid>
         <Button x:Name="CreateRosterBtn" Content="Opret Vagtplan" HorizontalAlignment="Left" Margin="224,84,0,0" VerticalAlignment="Top" Width="144" Height="55" Click="CreateRosterBtn_Click"/>
         <Button x:Name="ShowRostersBtn" Content="Se Vagtplan" HorizontalAlignment="Left" VerticalAlignment="Top" Width="144" Margin="25,84,0,0" Height="55" Click="ShowRostersBtn_Click"/>
-        <Button x:Name="LogOutBtn" Content="Log Ud" HorizontalAlignment="Left" Margin="663,15,0,0" VerticalAlignment="Top" Width="101" Height="26" Click="LogOutBtn_Click"/>
+        <Button x:Name="LogOutBtn" Content="Log Ud" HorizontalAlignment="Left" Margin="663,23,0,0" VerticalAlignment="Top" Width="101" Height="26" Click="LogOutBtn_Click"/>
         <Label x:Name="label" Content="Vælg Butiksafdeling" HorizontalAlignment="Left" Margin="25,15,0,0" VerticalAlignment="Top" Width="144"/>
         <ComboBox  x:Name="departmentcombobox" HorizontalAlignment="Left" Margin="25,46,0,0" VerticalAlignment="Top" Width="144" SelectionChanged="departmentcombobox_SelectionChanged">
             <ComboBoxItem Content="Skibhusvej" />

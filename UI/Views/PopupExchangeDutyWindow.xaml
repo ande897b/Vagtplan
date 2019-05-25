@@ -8,10 +8,10 @@
         Title="Byt vagt" Height="258.333" Width="346.667" Background="#FF0C9368">
     <Grid>
         <ComboBox x:Name="EmployeeCB" HorizontalAlignment="Left" Margin="39,125,0,0" VerticalAlignment="Top" Width="120"/>
-        <Label x:Name="DutyLabel" Content="Label" HorizontalAlignment="Left" Margin="84,25,-6,0" VerticalAlignment="Top" Width="261" Height="30"/>
+        <Label x:Name="DutyLabel" Content="Label" HorizontalAlignment="Left" Margin="84,37,-6,0" VerticalAlignment="Top" Width="261" Height="30"/>
         <Button x:Name="Confirm" Content="Byt vagt" HorizontalAlignment="Left" Margin="39,164,0,0" VerticalAlignment="Top" Width="120" Height="22" Click="Confirm_Click"/>
         <Label  Content="Vælg medarbejder som vil tage vagten:" HorizontalAlignment="Left" Margin="39,90,0,0" VerticalAlignment="Top" Width="261" Height="30"/>
-        <Label  Content="Vagt:" HorizontalAlignment="Left" Margin="39,25,0,0" VerticalAlignment="Top" Width="40" Height="30"/>
+        <Label  Content="Vagt:" HorizontalAlignment="Left" Margin="39,37,0,0" VerticalAlignment="Top" Width="40" Height="30"/>
 
     </Grid>
 </Window>
