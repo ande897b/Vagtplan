@@ -5,13 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UI.Views"
         mc:Ignorable="d"
-        Title="Byt vagt" Height="450" Width="800">
+        Title="Byt vagt" Height="569.83" Width="794.901">
     <Grid>
-        <ListBox x:Name="DutyList" HorizontalAlignment="Left" Height="315" Margin="44,94,0,0" VerticalAlignment="Top" Width="256" SelectionChanged="DutyList_SelectionChanged"/>
+        <ListBox x:Name="DutyList" HorizontalAlignment="Left" Height="416" Margin="44,94,0,0" VerticalAlignment="Top" Width="324" SelectionChanged="DutyList_SelectionChanged"/>
         <ComboBox x:Name="EmployeeCB" HorizontalAlignment="Left" Margin="44,55,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="EmployeeCB_SelectionChanged" Height="34"/>
-        <ListBox x:Name="DutyList2" HorizontalAlignment="Left" Height="315" Margin="479,94,0,0" VerticalAlignment="Top" Width="256" SelectionChanged="DutyList2_SelectionChanged" />
+        <ListBox x:Name="DutyList2" HorizontalAlignment="Left" Height="416" Margin="425,94,0,0" VerticalAlignment="Top" Width="310" SelectionChanged="DutyList2_SelectionChanged" />
         <Label Content="Vælg for at se &#xD;&#xA;medarbejders vagter" HorizontalAlignment="Left" Margin="44,10,0,0" VerticalAlignment="Top" Width="120" Height="45"/>
         <Label Content="Vælg vagt at bytte" HorizontalAlignment="Left" Margin="169,55,0,0" VerticalAlignment="Top" Width="120" Height="34"/>
-        <Label Content="Byt vagt" HorizontalAlignment="Left" Margin="570,55,0,0" VerticalAlignment="Top" Width="120" Height="34"/>
+        <Label Content="Byt vagt" HorizontalAlignment="Left" Margin="547,55,0,0" VerticalAlignment="Top" Width="120" Height="34"/>
     </Grid>
 </Window>

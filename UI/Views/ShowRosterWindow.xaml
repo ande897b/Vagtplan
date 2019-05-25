@@ -7,7 +7,7 @@
         xmlns:local="clr-namespace:UI.Views"
         xmlns:DatabaseControllers="clr-namespace:Application.DatabaseControllers;assembly=Application" 
         mc:Ignorable="d"
-        Title="Vagplans skema" Height="459" Width="911"
+        Title="Vagplans skema" Height="465" Width="929"
 >
     <Grid Margin="6,4,7,6">
         <TextBox x:Name="weekday1txtbox" HorizontalAlignment="Left" Height="200" Margin="20,140,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" IsEnabled="False"/>

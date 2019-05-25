@@ -11,7 +11,7 @@ namespace Application.Repositories
 		public static void AddRoster(Roster roster)
 		{
 			if (!RosterExist(roster))
-			    rosters.Add(roster);
+				rosters.Add(roster);
 		}
 
 		public static bool RosterExist(Roster roster)
@@ -62,7 +62,7 @@ namespace Application.Repositories
 		public static void CreateRoster(DateTime startDate, DateTime endDate, string shop)
 		{
 			Shop newShop;
-			if (shop == Shop.kongensgade.ToString())
+			if (shop == "kongensgade")
 			{
 				newShop = Shop.kongensgade;
 			}
@@ -73,7 +73,7 @@ namespace Application.Repositories
 			Roster roster = new Roster(startDate, endDate, newShop);
 			DBRosterController.CreateRoster(roster);
 			int rosterID = DBRosterController.GetRosterID(roster);
-            roster.RosterID = rosterID;
+			roster.RosterID = rosterID;
 			DBDateController.CreateDates(roster);
 			AddRoster(roster);
 		}
