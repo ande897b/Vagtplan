@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Log In" Height="369.688" Width="513.173"
         PreviewKeyDown="Window_PreviewKeyDown">
-    <Grid Focusable="True" Margin="0,0,2,5">
+    <Grid Background="#FF0C9368" Focusable="True" Margin="0,0,2,5">
         <Button x:Name="LogInBtn" Content="Log Ind" HorizontalAlignment="Left" Margin="193,261,0,0" VerticalAlignment="Top" Width="75" Click="LoginBtn_Click" TabIndex="3"/>
         <Label x:Name="label" Content="Brugernavn" HorizontalAlignment="Left" Margin="117,136,0,0" VerticalAlignment="Top" Height="23"/>
         <Label x:Name="label_Copy" Content="Password" HorizontalAlignment="Left" Margin="128,197,0,0" VerticalAlignment="Top"/>

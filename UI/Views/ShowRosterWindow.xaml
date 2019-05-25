@@ -7,7 +7,7 @@
         xmlns:local="clr-namespace:UI.Views"
         xmlns:DatabaseControllers="clr-namespace:Application.DatabaseControllers;assembly=Application" 
         mc:Ignorable="d"
-        Title="Vagplans skema" Height="465" Width="929"
+        Title="Vagplans skema" Height="465" Width="929" Background="#FF0C9368"
 >
     <Grid Margin="6,4,7,6">
         <TextBox x:Name="weekday1txtbox" HorizontalAlignment="Left" Height="200" Margin="20,140,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" IsEnabled="False"/>
@@ -412,7 +412,7 @@
 
         </ComboBox>
         <TextBox x:Name="weekday1textbox3" Visibility="Hidden" HorizontalAlignment="Left" Height="23" Margin="20,207,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" TextChanged="weekday1textbox3_TextChanged"/>
-        <Button x:Name="SaveBtn" Background="#FFAE90EE" Content="Gem" HorizontalAlignment="Left" Margin="20,375,0,0" VerticalAlignment="Top" Width="865" Height="34" Click="SaveBtn_Click" />
+        <Button x:Name="SaveBtn" Background="#FF5FD853" Content="Gem" HorizontalAlignment="Left" Margin="20,375,0,0" VerticalAlignment="Top" Width="865" Height="34" Click="SaveBtn_Click" />
         <ComboBox x:Name="weekday1combobox3" HorizontalAlignment="Left" Margin="20,230,0,0" VerticalAlignment="Top" Width="100"  Visibility="Hidden" SelectionChanged="weekday1combobox3_SelectionChanged">
 
         </ComboBox>

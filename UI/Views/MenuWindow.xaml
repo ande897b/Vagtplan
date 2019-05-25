@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UI.Views"
         mc:Ignorable="d"
-        Title="Menu" Height="220.538" Width="815.297">
+        Title="Menu" Height="220.538" Width="815.297" Background="#FF0C9368">
     <Grid>
         <Button x:Name="CreateRosterBtn" Content="Opret Vagtplan" HorizontalAlignment="Left" Margin="224,84,0,0" VerticalAlignment="Top" Width="144" Height="55" Click="CreateRosterBtn_Click"/>
         <Button x:Name="ShowRostersBtn" Content="Se Vagtplan" HorizontalAlignment="Left" VerticalAlignment="Top" Width="144" Margin="25,84,0,0" Height="55" Click="ShowRostersBtn_Click"/>
