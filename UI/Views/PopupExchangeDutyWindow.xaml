@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:UI.Views"
         mc:Ignorable="d"
         Title="Byt vagt" Height="258.333" Width="346.667" Background="#FF0C9368">
-    <Grid>
+    <Grid Margin="0,0,-8,-3">
         <ComboBox x:Name="EmployeeCB" HorizontalAlignment="Left" Margin="39,125,0,0" VerticalAlignment="Top" Width="120"/>
         <Label x:Name="DutyLabel" Content="Label" HorizontalAlignment="Left" Margin="84,37,-6,0" VerticalAlignment="Top" Width="261" Height="30"/>
         <Button x:Name="Confirm" Content="Byt vagt" HorizontalAlignment="Left" Margin="39,164,0,0" VerticalAlignment="Top" Width="120" Height="22" Click="Confirm_Click"/>
