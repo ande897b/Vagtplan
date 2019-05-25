@@ -77,7 +77,7 @@ namespace Application.DatabaseControllers
         public static void UpdateDuty(int newEmployeeID, int dutyID)
         {
             DBConnection.DatabaseName = "CANE";
-            string query = "Update_Exchange";
+            string query = "Update_Duty";
             if (DBConnection.IsConnected())
             {
                 var cmd = new SqlCommand(query, DBConnection.Connection);
