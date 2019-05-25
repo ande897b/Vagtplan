@@ -11,6 +11,7 @@ namespace Application.Repositories
             if (!DutyExchangeExist(dutyExchange))
                 dutyExchanges.Add(dutyExchange);
         }
+
         public static bool DutyExchangeExist(DutyExchange dutyExchange)
         {
             bool exist = false;
@@ -27,15 +28,21 @@ namespace Application.Repositories
             }
             return exist;
         }
+
         public static List<DutyExchange> GetDutyExchanges()
         {
             return dutyExchanges;
         }
-        public static void RemoveDutyExchange(DutyExchange dutyExchange)
+
+        public static void RemoveDutyExchange(int dutyID, int employeeID)
         {
-
-            dutyExchanges.Remove(dutyExchange);
+            foreach (DutyExchange dutyExchange2 in dutyExchanges)
+            {
+                if(dutyExchange2.DutyID == dutyID && dutyExchange2.EmployeeID == employeeID)
+                {
+                    dutyExchanges.Remove(dutyExchange2);
+                }
+            }
         }
-
     }
 }

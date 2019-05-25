@@ -73,8 +73,7 @@ namespace Application.DatabaseControllers
                 cmd.Parameters.Add(new SqlParameter("@DateID_IN", dateID));
                 cmd.ExecuteReader();
                 DBConnection.Close();
-            }
-            
+            } 
         }
 
         public static void UpdateDuty(int newEmployeeID, int dutyID)

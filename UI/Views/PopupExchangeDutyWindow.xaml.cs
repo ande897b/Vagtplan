@@ -36,8 +36,12 @@ namespace UI.Views
 
         private void Confirm_Click(object sender, RoutedEventArgs e)
         {
-            DBDutyController.UpdateDuty(EmployeeRepository.GetEmployeeID(EmployeeCB.SelectedValue.ToString()), DutyID);
-            DBDutyExchangeController.DeleteDutyExchange(DutyRepository.GetDuty(DutyLabel.Content.ToString().Substring(0, 10), DutyLabel.Content.ToString().Substring(16)).DutyID, EmployeeRepository.GetEmployeeID(DutyLabel.Content.ToString().Substring(16)));
+            int newEmployeeID = EmployeeRepository.GetEmployeeID(EmployeeCB.SelectedValue.ToString());
+            int oldEmployeeID = EmployeeRepository.GetEmployeeID(DutyLabel.Content.ToString().Substring(16));
+            int dutyID = DutyRepository.GetDuty(DutyLabel.Content.ToString().Substring(0, 10), DutyLabel.Content.ToString().Substring(16)).DutyID;
+            DBDutyController.UpdateDuty(newEmployeeID, DutyID);
+            DBDutyExchangeController.DeleteDutyExchange(dutyID, oldEmployeeID);
+            DutyExchangeRepository.RemoveDutyExchange(dutyID, oldEmployeeID);
             this.Close();
         }
     }

@@ -34,5 +34,3 @@ namespace Application
         }
     }
 }
-
-//public string Password { get; set; }
