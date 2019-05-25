@@ -46,13 +46,13 @@ namespace Application.DatabaseControllers
             }
         }
 
-        public static void CreateDates(int rosterID, string shop, DateTime startDay, DateTime endDay)
+        public static void CreateDates(Roster roster)
         {
             DBConnection.DatabaseName = "CANE";
             string query = "Create_Date";
-            int daysDiff = ((TimeSpan)(endDay.Date - startDay.Date)).Days;
+            int daysDiff = ((TimeSpan)(roster.EndDate.Date - roster.StartDate.Date)).Days;
             Shop newShop;
-            if (shop.ToLower() == "kongensgade")
+            if (roster.Shop.ToString().ToLower() == "kongensgade")
             {
                 newShop = Shop.kongensgade;
             }
@@ -62,16 +62,16 @@ namespace Application.DatabaseControllers
             }
             for (int i = 0; i <= daysDiff; i++)
             {
-                Date date = new Date(startDay.AddDays(i), rosterID, newShop);
+                Date date = new Date(roster.StartDate.AddDays(i), roster.RosterID, newShop);
                 if (!DateRepository.DateExist(date))
                 {
                     if (DBConnection.IsConnected())
                     {
                         var cmd = new SqlCommand(query, DBConnection.Connection);
                         cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.Add(new SqlParameter("@RosterID_IN", rosterID));
-                        cmd.Parameters.Add(new SqlParameter("@Shop_IN", shop));
-                        cmd.Parameters.Add(new SqlParameter("@Day_IN", startDay.AddDays(i)));
+                        cmd.Parameters.Add(new SqlParameter("@RosterID_IN", roster.RosterID));
+                        cmd.Parameters.Add(new SqlParameter("@Shop_IN", roster.Shop.ToString()));
+                        cmd.Parameters.Add(new SqlParameter("@Day_IN", roster.StartDate.AddDays(i)));
                         cmd.ExecuteReader();
                     }
                     DBConnection.Close();

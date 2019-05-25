@@ -73,7 +73,8 @@ namespace Application.Repositories
 			Roster roster = new Roster(startDate, endDate, newShop);
 			DBRosterController.CreateRoster(roster);
 			int rosterID = DBRosterController.GetRosterID(roster);
-			DBDateController.CreateDates(rosterID, shop, startDate, endDate);
+            roster.RosterID = rosterID;
+			DBDateController.CreateDates(roster);
 			AddRoster(roster);
 		}
 
