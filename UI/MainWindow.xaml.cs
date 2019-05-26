@@ -1,4 +1,5 @@
 ﻿using Application.DatabaseControllers;
+using System;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -13,12 +14,31 @@ namespace UI
 		{
 			InitializeComponent();
 			MainWindowInstance = this;
-			DBDateController.LoadDates();
-			DBRosterController.LoadRosters();
-			DBEmployeeController.LoadEmployees();
-			DBWishForDayOffController.LoadWishForDayOffs();
-			DBDutyController.LoadDuties();
-			DBDutyExchangeController.LoadDutyExchanges();
+            bool connecting = true;
+            while (connecting)
+            {
+                try
+                {
+                    DBDateController.LoadDates();
+                    DBRosterController.LoadRosters();
+                    DBEmployeeController.LoadEmployees();
+                    DBWishForDayOffController.LoadWishForDayOffs();
+                    DBDutyController.LoadDuties();
+                    DBDutyExchangeController.LoadDutyExchanges();
+                    connecting = false;
+                }
+                catch (Exception e)
+                {
+                    MessageBoxButton btn = MessageBoxButton.OKCancel;
+                    MessageBoxImage image = MessageBoxImage.Exclamation;
+                    MessageBoxResult result = MessageBox.Show($"{e.Message}\n\ntryk OK hvis du er klar, ellers cancel for at slutte!", "Husk at logge på databasen!", btn, image);
+                    if (result == MessageBoxResult.Cancel)
+                    {
+                        connecting = false;
+                        this.Close();
+                    }
+                }
+            }
 		}
 
 		private void LoginBtn_Click(object sender, RoutedEventArgs e)
