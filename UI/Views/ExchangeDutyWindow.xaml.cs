@@ -13,13 +13,19 @@ namespace UI.Views
 {
     public partial class ExchangeDutyWindow : Window
     {
-        public List<string> EmployeesProp { get; set; }
         public static ExchangeDutyWindow ExchangeDutyWindowInstance { get; set; }
 
         public ExchangeDutyWindow()
         {
             InitializeComponent();
             ExchangeDutyWindowInstance = this;
+            UpdateEmployeeCB();
+            UpdateDutyExchangeList();
+            this.Closing += WindowClosed;
+        }
+
+        public void UpdateEmployeeCB()
+        {
             List<string> newEmployees = new List<string>();
             List<Employee> employees = EmployeeRepository.GetEmployees();
             foreach (Employee employee in employees)
@@ -27,10 +33,7 @@ namespace UI.Views
                 string newEmployee = employee.FirstName;
                 newEmployees.Add(newEmployee);
             }
-            EmployeesProp = newEmployees;
             EmployeeCB.ItemsSource = newEmployees;
-            UpdateDutyList2();
-            this.Closing += WindowClosed;
         }
 
         private void WindowClosed(object sender, CancelEventArgs e)
@@ -62,7 +65,7 @@ namespace UI.Views
             DutyListView.SelectedIndex = -1;
         }
 
-        public void UpdateDutyList2()
+        public void UpdateDutyExchangeList()
         {
             List<DutyExchange> dutyExchanges = DutyExchangeRepository.GetDutyExchanges();
             List<DutyListView> dutyExchangeListViews = new List<DutyListView>();
@@ -75,6 +78,7 @@ namespace UI.Views
                 });
             }
             DutyExchangeListView.ItemsSource = dutyExchangeListViews;
+            DutyExchangeListView.SelectedIndex = -1;
         }
 
         private void EmployeeCB_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -94,8 +98,12 @@ namespace UI.Views
                 {
                     DutyExchange dutyExchange = new DutyExchange(dutyListView.Duty.DutyID, dutyListView.Duty.EmployeeID);
                     DBDutyExchangeController.CreateDutyExchange(dutyExchange);
-                    UpdateDutyList2();
+                    UpdateDutyExchangeList();
                     UpdateDutyList();
+                }
+                else if (result == MessageBoxResult.No)
+                {
+                    DutyListView.SelectedIndex = -1;
                 }
             }
         }
@@ -105,7 +113,7 @@ namespace UI.Views
             if (DutyExchangeListView.SelectedIndex != -1)
             {
                 DutyListView dutyExchange = (DutyListView)DutyExchangeListView.SelectedItem;
-                PopupExchangeDutyWindow popupExchangeDutyWindow = new PopupExchangeDutyWindow(EmployeesProp, dutyExchange);
+                PopupExchangeDutyWindow popupExchangeDutyWindow = new PopupExchangeDutyWindow(dutyExchange);
                 popupExchangeDutyWindow.Show();
                 this.Hide();
             }

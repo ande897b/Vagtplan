@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Domain.Models;
 
 namespace Application.Repositories
@@ -47,18 +48,18 @@ namespace Application.Repositories
 			return tempEmp;
 		}
 
-        public static string GetEmployeeName(int employeeID)
-        {
-            string employeeName = null;
-            foreach(Employee employee in employees)
-            {
-                if(employee.EmployeeID == employeeID)
-                {
-                    employeeName = employee.FirstName;
-                }
-            }
-            return employeeName;
-        }
+		public static string GetEmployeeName(int employeeID)
+		{
+			string employeeName = null;
+			foreach(Employee employee in employees)
+			{
+				if(employee.EmployeeID == employeeID)
+				{
+					employeeName = employee.FirstName;
+				}
+			}
+			return employeeName;
+		}
 
 		public static int GetEmployeeID(string firstName)
 		{
@@ -72,6 +73,21 @@ namespace Application.Repositories
 				}
 			}
 			return id;
+		}
+
+		public static void RemoveEmployee(int employeeID)
+		{
+			try
+			{
+				foreach (Employee employee in employees)
+				{
+					if (employee.EmployeeID == employeeID)
+					{
+						employees.Remove(employee);
+					}
+				}
+			}
+			catch (Exception) { }
 		}
 	}
 }

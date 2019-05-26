@@ -50,5 +50,20 @@ namespace Application.DatabaseControllers
                 WishForDayOffRepository.AddWishForDayOff(wish);
             }
         }
+
+        public static void DeleteWishForDayOffs(int employeeID)
+        {
+            DBConnection.DatabaseName = "CANE";
+            string query = "Delete_WishForDayOffs";
+            if (DBConnection.IsConnected())
+            {
+                var cmd = new SqlCommand(query, DBConnection.Connection);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add(new SqlParameter("@EmployeeID_IN", employeeID));
+                cmd.ExecuteReader();
+                DBConnection.Close();
+            }
+            WishForDayOffRepository.RemoveWishForDayOffs(employeeID);
+        }
     }
 }

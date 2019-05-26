@@ -15,22 +15,19 @@ namespace UI.Views
         DutyListView DutyExchangeListView { get; set; }
         public static PopupExchangeDutyWindow PopupExchangeDutyWindowInstance { get; set; }
 
-        public PopupExchangeDutyWindow(List<string> employeeList, DutyListView dutyListView)
+        public PopupExchangeDutyWindow(DutyListView dutyListView)
         {
             InitializeComponent();
             PopupExchangeDutyWindowInstance = this;
             DutyExchangeListView = dutyListView;
-            EmployeeCB.ItemsSource = employeeList;
+            UpdateEmployeeCB();
             DutyIDLabel.Content = DutyExchangeListView.Duty.DutyID;
             EmployeeLabel.Content = EmployeeRepository.GetEmployeeName(DutyExchangeListView.Duty.EmployeeID);
             StartTimeLabel.Content = DutyExchangeListView.Duty.StartTime;
             EndTimeLabel.Content = DutyExchangeListView.Duty.EndTime;
-            this.Closing += WindowClosed;
-
-            if(EmployeeCB.SelectedIndex == -1)
-            {
+            if (EmployeeCB.SelectedIndex == -1)
                 Confirm_Btn.IsEnabled = false;
-            }
+            this.Closing += WindowClosed;
         }
 
         private void WindowClosed(object sender, CancelEventArgs e)
@@ -40,7 +37,19 @@ namespace UI.Views
             DBDutyExchangeController.LoadDutyExchanges();
             e.Cancel = false;
         }
-        
+
+        public void UpdateEmployeeCB()
+        {
+            List<string> newEmployees = new List<string>();
+            List<Employee> employees = EmployeeRepository.GetEmployees();
+            foreach (Employee employee in employees)
+            {
+                string newEmployee = employee.FirstName;
+                newEmployees.Add(newEmployee);
+            }
+            EmployeeCB.ItemsSource = newEmployees;
+        }
+
         private void Confirm_Click(object sender, RoutedEventArgs e)
         {
             int newEmployeeID = EmployeeRepository.GetEmployeeID(EmployeeCB.SelectedValue.ToString());
@@ -55,10 +64,9 @@ namespace UI.Views
             {
                 MessageBox.Show(t.Message);
             }
-
             DBDutyExchangeController.DeleteDutyExchange(DutyExchangeListView.Duty.DutyID, oldEmployeeID);
             DutyExchangeRepository.RemoveDutyExchange(DutyExchangeListView.Duty.DutyID, oldEmployeeID);
-            ExchangeDutyWindow.ExchangeDutyWindowInstance.UpdateDutyList2();
+            ExchangeDutyWindow.ExchangeDutyWindowInstance.UpdateDutyExchangeList();
             ExchangeDutyWindow.ExchangeDutyWindowInstance.UpdateDutyList();
             ExchangeDutyWindow.ExchangeDutyWindowInstance.Show();
             this.Close();

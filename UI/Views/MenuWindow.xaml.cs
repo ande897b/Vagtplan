@@ -12,7 +12,6 @@ namespace UI.Views
     public partial class MenuWindow : Window
     {
         public static MenuWindow MenuWindowInstance { get; set; }
-        public List<string> EmployeesProp { get; set; }
 
         public MenuWindow()
         {
@@ -22,21 +21,12 @@ namespace UI.Views
             {
                 ShowRostersBtn.IsEnabled = false;
             }
-            this.Closing += WindowClosed;
             if (EmployeeCombobox.SelectedIndex == -1)
             {
                 ShowMyDutiesBtn.IsEnabled = false;
             }
-            List<string> newEmployees = new List<string>();
-            List<Employee> employees = EmployeeRepository.GetEmployees();
-            foreach (Employee employee in employees)
-            {
-                string newEmployee = employee.FirstName;
-                newEmployees.Add(newEmployee);
-            }
-            EmployeesProp = newEmployees;
-            EmployeeCombobox.ItemsSource = newEmployees;
-
+            UpdateEmployeeCB();
+            this.Closing += WindowClosed;
         }
 
         private void WindowClosed(object sender, CancelEventArgs e)
@@ -44,6 +34,18 @@ namespace UI.Views
             e.Cancel = true;
             MainWindow.MainWindowInstance.Show();
             e.Cancel = false;
+        }
+
+        public void UpdateEmployeeCB()
+        {
+            List<string> newEmployees = new List<string>();
+            List<Employee> employees = EmployeeRepository.GetEmployees();
+            foreach (Employee employee in employees)
+            {
+                string newEmployee = employee.FirstName;
+                newEmployees.Add(newEmployee);
+            }
+            EmployeeCombobox.ItemsSource = newEmployees;
         }
 
         private void CreateRosterBtn_Click(object sender, RoutedEventArgs e)
@@ -161,6 +163,20 @@ namespace UI.Views
         private void EmployeeCombobox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             ShowMyDutiesBtn.IsEnabled = true;
+        }
+
+        private void CreateEmployeeBtn_Click(object sender, RoutedEventArgs e)
+        {
+            CreateEmployeeWindow createEmployeeWindow = new CreateEmployeeWindow();
+            createEmployeeWindow.Show();
+            this.Hide();
+        }
+
+        private void DeleteEmployeeBtn_Click(object sender, RoutedEventArgs e)
+        {
+            DeleteEmployeeWindow deleteEmployeeWindow = new DeleteEmployeeWindow();
+            deleteEmployeeWindow.Show();
+            this.Hide();
         }
     }
 }

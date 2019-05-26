@@ -39,5 +39,42 @@ namespace Application.DatabaseControllers
                 DBConnection.Close();
             }
         }
+
+        public static void CreateEmployee(Employee employee)
+        {
+            string query = "Create_Employee";
+            DBConnection.DatabaseName = "CANE";
+            if (!EmployeeRepository.EmployeeExist(employee))
+            {
+                if (DBConnection.IsConnected())
+                {
+                    var cmd = new SqlCommand(query, DBConnection.Connection);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add(new SqlParameter("@FirstName_IN", employee.FirstName));
+                    cmd.Parameters.Add(new SqlParameter("@LastName_IN", employee.LastName));
+                    cmd.Parameters.Add(new SqlParameter("@EmployeeRank_IN", employee.Rank.ToString()));
+                    cmd.ExecuteReader();
+                    DBConnection.Close();
+                }
+                EmployeeRepository.AddEmployee(employee);
+            }
+        }
+
+        public static void DeleteEmployee(int employeeID)
+        {
+            DBWishForDayOffController.DeleteWishForDayOffs(employeeID);
+            DBDutyController.DeleteDuties_EmpID(employeeID);
+            DBConnection.DatabaseName = "CANE";
+            string query = "Delete_Employee";
+            if (DBConnection.IsConnected())
+            {
+                var cmd = new SqlCommand(query, DBConnection.Connection);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add(new SqlParameter("@EmployeeID_IN", employeeID));
+                cmd.ExecuteReader();
+                DBConnection.Close();
+            }
+            EmployeeRepository.RemoveEmployee(employeeID);
+        }
     }
 }

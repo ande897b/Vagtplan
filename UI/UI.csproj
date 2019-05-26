@@ -56,6 +56,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Views\CreateEmployeeWindow.xaml.cs">
+      <DependentUpon>CreateEmployeeWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DeleteEmployeeWindow.xaml.cs">
+      <DependentUpon>DeleteEmployeeWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ExchangeDutyWindow.xaml.cs">
       <DependentUpon>ExchangeDutyWindow.xaml</DependentUpon>
     </Compile>
@@ -71,6 +77,10 @@
     <Compile Include="Views\WishForDayOffWindow.xaml.cs">
       <DependentUpon>WishForDayOffWindow.xaml</DependentUpon>
     </Compile>
+    <Page Include="Views\CreateEmployeeWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\CreateRosterWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -90,6 +100,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\DeleteEmployeeWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\ExchangeDutyWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

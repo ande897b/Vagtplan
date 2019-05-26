@@ -80,6 +80,17 @@ namespace Application.Repositories
             }
         }
 
+        public static void Removeduties_EmpID(int employeeID)
+        {
+            foreach (Duty duty in duties.ToList())
+            {
+                if (duty.EmployeeID == employeeID)
+                {
+                    duties.Remove(duty);
+                }
+            }
+        }
+
         public static bool DutyExist(Duty duty)
         {
             bool exist = false;

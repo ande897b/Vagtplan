@@ -65,7 +65,23 @@ namespace Application.DatabaseControllers
                 cmd.Parameters.Add(new SqlParameter("@DateID_IN", dateID));
                 cmd.ExecuteReader();
                 DBConnection.Close();
-            } 
+            }
+            DutyRepository.Removeduties(dateID);
+        }
+
+        public static void DeleteDuties_EmpID(int employeeID)
+        {
+            string query = "Delete_Duties_EmpID";
+            DBConnection.DatabaseName = "CANE";
+            if (DBConnection.IsConnected())
+            {
+                var cmd = new SqlCommand(query, DBConnection.Connection);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add(new SqlParameter("@EmployeeID_IN", employeeID));
+                cmd.ExecuteReader();
+                DBConnection.Close();
+            }
+            DutyRepository.Removeduties_EmpID(employeeID);
         }
 
         public static void UpdateDuty(int newEmployeeID, int dutyID)

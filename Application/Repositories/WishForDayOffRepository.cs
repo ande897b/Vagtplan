@@ -1,4 +1,5 @@
 ﻿using Domain.Models;
+using System;
 using System.Collections.Generic;
 
 namespace Application.Repositories
@@ -40,6 +41,21 @@ namespace Application.Repositories
                 }
             }
             return newListOfWishes;
+        }
+
+        public static void RemoveWishForDayOffs(int employeeID)
+        {
+            try
+            {
+                foreach (WishForDayOff wishForDayOff in wishForDayOffList)
+                {
+                    if (wishForDayOff.EmployeeID == employeeID)
+                    {
+                        wishForDayOffList.Remove(wishForDayOff);
+                    }
+                }
+            }
+            catch (Exception) { }
         }
     }
 }

@@ -62,7 +62,7 @@ namespace UI.Views
     
         private void DeleteDuties(int dateID)
         {
-            DutyRepository.Removeduties(dateID);
+            
             DBDutyController.DeleteDuties(dateID);
         }
 

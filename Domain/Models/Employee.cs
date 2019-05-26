@@ -20,5 +20,12 @@ namespace Domain.Models
 			LastName = lastName;
 			Rank = rank;
 		}
-	}
+        public Employee(string firstName, string lastName, Rank rank)
+        {
+            EmployeeID = -1;
+            FirstName = firstName;
+            LastName = lastName;
+            Rank = rank;
+        }
+    }
 }
