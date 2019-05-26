@@ -9,9 +9,11 @@ namespace UI.Views
 {
     public partial class CreateRosterWindow : Window
     {
+        public static CreateRosterWindow CreateRosterWindowInstance { get; set; }
         public CreateRosterWindow()
         {
             InitializeComponent();
+            CreateRosterWindowInstance = this;
             this.Closing += WindowClosed;
         }
 
@@ -20,6 +22,7 @@ namespace UI.Views
             e.Cancel = true;
             DBRosterController.LoadRosters();
             DBDateController.LoadDates();
+            MenuWindow.MenuWindowInstance.Show();
             e.Cancel = false;
         }
 

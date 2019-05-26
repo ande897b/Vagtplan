@@ -5,13 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UI.Views"
         mc:Ignorable="d"
-        Title="Byt vagt" Height="258.333" Width="346.667" Background="#FF0C9368">
-    <Grid Margin="0,0,-8,-3">
-        <ComboBox x:Name="EmployeeCB" HorizontalAlignment="Left" Margin="39,125,0,0" VerticalAlignment="Top" Width="120"/>
-        <Label x:Name="DutyLabel" Content="Label" HorizontalAlignment="Left" Margin="84,37,-6,0" VerticalAlignment="Top" Width="261" Height="30"/>
-        <Button x:Name="Confirm" Content="Byt vagt" HorizontalAlignment="Left" Margin="39,164,0,0" VerticalAlignment="Top" Width="120" Height="22" Click="Confirm_Click"/>
-        <Label  Content="Vælg medarbejder som vil tage vagten:" HorizontalAlignment="Left" Margin="39,90,0,0" VerticalAlignment="Top" Width="261" Height="30"/>
-        <Label  Content="Vagt:" HorizontalAlignment="Left" Margin="39,37,0,0" VerticalAlignment="Top" Width="40" Height="30"/>
+        Title="Byt vagt" Height="315.333" Width="346.334" Background="#FF0C9368">
+    <Grid Margin="0,0,2,-3">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
+        <ComboBox x:Name="EmployeeCB" HorizontalAlignment="Left" Margin="39,188,0,0" VerticalAlignment="Top" Width="120" Height="22"/>
+        <Label x:Name="DutyIDLabel" Content="Vagt" HorizontalAlignment="Left" Margin="84,26,0,0" VerticalAlignment="Top" Width="100" Height="30" />
+        <Button x:Name="Confirm_Btn" Content="Byt vagt" HorizontalAlignment="Left" Margin="39,227,0,0" VerticalAlignment="Top" Width="120" Height="22" Click="Confirm_Click"/>
+        <Label  Content="Vælg medarbejder som vil tage vagten:" HorizontalAlignment="Left" Margin="39,153,0,0" VerticalAlignment="Top" Width="261" Height="30"/>
+        <Label  Content="Vagt:" HorizontalAlignment="Left" Margin="39,26,0,0" VerticalAlignment="Top" Width="40" Height="30"/>
+        <Button x:Name="Regret_Btn" Content="fortryd" HorizontalAlignment="Left" Margin="180,227,0,0" VerticalAlignment="Top" Width="120" Height="22" Click="Regret_Btn_Click" />
+        <Label  Content="Medarbejder:" HorizontalAlignment="Left" Margin="39,61,0,0" VerticalAlignment="Top" Width="84" Height="30"/>
+        <Label  Content="Start tidspunkt:" HorizontalAlignment="Left" Margin="39,96,0,0" VerticalAlignment="Top" Width="101" Height="30"/>
+        <Label x:Name="EmployeeLabel" Content="Medarbejder" HorizontalAlignment="Left" Margin="128,61,0,0" VerticalAlignment="Top" Width="148" Height="30" />
+        <Label x:Name="StartTimeLabel" Content="Start tid" HorizontalAlignment="Left" Margin="145,96,0,0" VerticalAlignment="Top" Width="143" Height="30" />
 
     </Grid>
 </Window>

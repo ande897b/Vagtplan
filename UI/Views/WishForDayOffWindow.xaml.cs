@@ -9,10 +9,12 @@ namespace UI.Views
 {
     public partial class WishForDayOffWindow : Window
     {
+        public static WishForDayOffWindow WishForDayOffWindowInstance { get; set; }
+
         public WishForDayOffWindow()
         {
             InitializeComponent();
-
+            WishForDayOffWindowInstance = this;
             this.Closing += WindowClosed;
         }
 
@@ -20,13 +22,14 @@ namespace UI.Views
         {
             e.Cancel = true;
             DBWishForDayOffController.LoadWishForDayOffs();
+            MenuWindow.MenuWindowInstance.Show();
             e.Cancel = false;
         }
 
         private void WishForDayOffBtn_Click(object sender, RoutedEventArgs e)
         {
             MessageBoxButton btn = MessageBoxButton.YesNo;
-            MessageBoxResult result = MessageBox.Show($"Er du sikker på at {WishForDayOffCB.SelectedItem.ToString()} vil ønske fri på datoen: {WishForDayOffDP.SelectedDate.ToString().Substring(0,10)}?", "ønsk fri", btn);
+            MessageBoxResult result = MessageBox.Show($"Er du sikker på at du vil ønske fri på datoen: {WishForDayOffDP.SelectedDate.ToString().Substring(0,10)}?", "ønsk fri", btn);
             if(result == MessageBoxResult.Yes)
             {
                 int employeeID = EmployeeRepository.GetEmployeeID(WishForDayOffCB.SelectedItem.ToString());

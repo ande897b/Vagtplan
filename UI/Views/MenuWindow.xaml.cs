@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
+using Application.DatabaseControllers;
 using Application.Repositories;
 using Domain.Models;
 
@@ -9,19 +11,30 @@ namespace UI.Views
 {
     public partial class MenuWindow : Window
     {
+        public static MenuWindow MenuWindowInstance { get; set; }
         public MenuWindow()
         {
             InitializeComponent();
+            MenuWindowInstance = this;
             if (departmentcombobox.SelectedIndex == -1)
             {
                 ShowRostersBtn.IsEnabled = false;
             }
+            this.Closing += WindowClosed;
+        }
+
+        private void WindowClosed(object sender, CancelEventArgs e)
+        {
+            e.Cancel = true;
+            MainWindow.MainWindowInstance.Show();
+            e.Cancel = false;
         }
 
         private void CreateRosterBtn_Click(object sender, RoutedEventArgs e)
         {
             CreateRosterWindow createRosterWindow = new CreateRosterWindow();
             createRosterWindow.Show();
+            this.Hide();
         }
 
         private void ShowRostersBtn_Click(object sender, RoutedEventArgs e)
@@ -36,11 +49,11 @@ namespace UI.Views
                 week = 1;
             if (day >= 15)
                 week = 2;
-            if (day >= 22)
+            if (day >= 23)
                 week = 3;
-            if (day >= 29)
+            if (day >= 30)
                 week = 4;
-            ShowRosterWindow showRosterWindow = new ShowRosterWindow(departmentcombobox.Text);
+            ShowRosterWindow showRosterWindow = new ShowRosterWindow(departmentcombobox.Text, this);
             showRosterWindow.tabControl.SelectedIndex = month - 1;
             switch (month)
             {
@@ -82,13 +95,14 @@ namespace UI.Views
                     break;
             }
             showRosterWindow.Show();
+            this.Hide();
         }
 
         private void LogOutBtn_Click(object sender, RoutedEventArgs e)
         {
             MainWindow mainWindow = new MainWindow();
+            this.Close();
             mainWindow.Show();
-                this.Close();
         }
 
         private void departmentcombobox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -111,12 +125,14 @@ namespace UI.Views
             }
             dayOff.WishForDayOffCB.ItemsSource = newEmployees;
             dayOff.Show();
+            this.Hide();
         }
 
         private void ExchangeDuty_Click(object sender, RoutedEventArgs e)
         {
             ExchangeDutyWindow exchangeDutyWindow = new ExchangeDutyWindow();
             exchangeDutyWindow.Show();
+            this.Hide();
         }
     }
 }

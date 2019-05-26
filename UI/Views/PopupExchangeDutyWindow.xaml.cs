@@ -1,5 +1,7 @@
 ﻿using Application.DatabaseControllers;
 using Application.Repositories;
+using Domain.Models;
+using Model.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,16 +12,18 @@ namespace UI.Views
 {
     public partial class PopupExchangeDutyWindow : Window
     {
-        ExchangeDutyWindow ExchangeDutyWindow { get; set; }
-        public int DutyID { get; set; }
+        DutyExchangeListView DutyExchangeListView { get; set; }
+        public static PopupExchangeDutyWindow PopupExchangeDutyWindowInstance { get; set; }
 
-        public PopupExchangeDutyWindow(List<string> employeeList, string exchange, int dutyID, ExchangeDutyWindow exchangeDutyWindow)
+        public PopupExchangeDutyWindow(List<string> employeeList, DutyExchangeListView dutyExchangeListView)
         {
             InitializeComponent();
-            DutyID = dutyID;
+            PopupExchangeDutyWindowInstance = this;
+            DutyExchangeListView = dutyExchangeListView;
             EmployeeCB.ItemsSource = employeeList;
-            DutyLabel.Content = exchange;
-            ExchangeDutyWindow = exchangeDutyWindow;
+            DutyIDLabel.Content = DutyExchangeListView.Duty.DutyID;
+            EmployeeLabel.Content = EmployeeRepository.GetEmployeeName(DutyExchangeListView.Duty.EmployeeID);
+            StartTimeLabel.Content = DutyExchangeListView.Duty.StartTime;
             this.Closing += WindowClosed;
         }
 
@@ -34,13 +38,29 @@ namespace UI.Views
         private void Confirm_Click(object sender, RoutedEventArgs e)
         {
             int newEmployeeID = EmployeeRepository.GetEmployeeID(EmployeeCB.SelectedValue.ToString());
-            int oldEmployeeID = EmployeeRepository.GetEmployeeID(DutyLabel.Content.ToString().Substring(16));
-            int dutyID = DutyRepository.GetDuty(DutyLabel.Content.ToString().Substring(0, 10), DutyLabel.Content.ToString().Substring(16)).DutyID;
-            DBDutyController.UpdateDuty(newEmployeeID, DutyID);
-            DBDutyExchangeController.DeleteDutyExchange(dutyID, oldEmployeeID);
-            DutyExchangeRepository.RemoveDutyExchange(dutyID, oldEmployeeID);
-            ExchangeDutyWindow.Close();
+            int oldEmployeeID = EmployeeRepository.GetEmployeeID(EmployeeRepository.GetEmployeeName(DutyExchangeListView.Duty.EmployeeID));
+
+            try
+            {
+                DBDutyController.UpdateDuty(newEmployeeID, DutyExchangeListView.Duty.DutyID);
+                MessageBox.Show("Vagt er opdateret");
+            }
+            catch(Exception t)
+            {
+                MessageBox.Show(t.Message);
+            }
+
+            DBDutyExchangeController.DeleteDutyExchange(DutyExchangeListView.Duty.DutyID, oldEmployeeID);
+            DutyExchangeRepository.RemoveDutyExchange(DutyExchangeListView.Duty.DutyID, oldEmployeeID);
+            ExchangeDutyWindow.ExchangeDutyWindowInstance.UpdateDutyList2();
+            ExchangeDutyWindow.ExchangeDutyWindowInstance.Show();
             this.Close();
+        }
+
+        private void Regret_Btn_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+            ExchangeDutyWindow.ExchangeDutyWindowInstance.Show();
         }
     }
 }

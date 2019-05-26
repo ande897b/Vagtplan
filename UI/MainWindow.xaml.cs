@@ -8,9 +8,11 @@ namespace UI
 {
 	public partial class MainWindow : Window
 	{
+		public static MainWindow MainWindowInstance { get; set; }
 		public MainWindow()
 		{
 			InitializeComponent();
+			MainWindowInstance = this;
 			DBDateController.LoadDates();
 			DBRosterController.LoadRosters();
 			DBEmployeeController.LoadEmployees();

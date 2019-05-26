@@ -47,6 +47,19 @@ namespace Application.Repositories
 			return tempEmp;
 		}
 
+        public static string GetEmployeeName(int employeeID)
+        {
+            string employeeName = null;
+            foreach(Employee employee in employees)
+            {
+                if(employee.EmployeeID == employeeID)
+                {
+                    employeeName = employee.FirstName;
+                }
+            }
+            return employeeName;
+        }
+
 		public static int GetEmployeeID(string firstName)
 		{
 			int id = 0;

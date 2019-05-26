@@ -13,10 +13,12 @@ namespace UI.Views
     public partial class ShowRosterWindow : Window
     {
         public Shop Shop { get; set; }
+        public static ShowRosterWindow ShowRosterWindowInstance { get; set; }
 
-        public ShowRosterWindow(string boxResult)
+        public ShowRosterWindow(string boxResult, MenuWindow menuWindow)
         {
             InitializeComponent();
+            ShowRosterWindowInstance = this;
             if (boxResult.ToLower() == "kongensgade")
             {
                 Shop = Shop.kongensgade;
@@ -32,6 +34,7 @@ namespace UI.Views
         {
             e.Cancel = true;
             DBDutyController.LoadDuties();
+            MenuWindow.MenuWindowInstance.Show();
             e.Cancel = false;
         }
 

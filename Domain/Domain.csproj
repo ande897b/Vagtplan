@@ -48,6 +48,8 @@
     <Compile Include="Models\Duty.cs" />
     <Compile Include="Models\WishForDayOff.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\DutyExchangeListView.cs" />
+    <Compile Include="ViewModels\DutyListView.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
