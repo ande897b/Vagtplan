@@ -12,18 +12,19 @@ namespace UI.Views
 {
     public partial class PopupExchangeDutyWindow : Window
     {
-        DutyExchangeListView DutyExchangeListView { get; set; }
+        DutyListView DutyExchangeListView { get; set; }
         public static PopupExchangeDutyWindow PopupExchangeDutyWindowInstance { get; set; }
 
-        public PopupExchangeDutyWindow(List<string> employeeList, DutyExchangeListView dutyExchangeListView)
+        public PopupExchangeDutyWindow(List<string> employeeList, DutyListView dutyListView)
         {
             InitializeComponent();
             PopupExchangeDutyWindowInstance = this;
-            DutyExchangeListView = dutyExchangeListView;
+            DutyExchangeListView = dutyListView;
             EmployeeCB.ItemsSource = employeeList;
             DutyIDLabel.Content = DutyExchangeListView.Duty.DutyID;
             EmployeeLabel.Content = EmployeeRepository.GetEmployeeName(DutyExchangeListView.Duty.EmployeeID);
             StartTimeLabel.Content = DutyExchangeListView.Duty.StartTime;
+            EndTimeLabel.Content = DutyExchangeListView.Duty.EndTime;
             this.Closing += WindowClosed;
         }
 
@@ -53,6 +54,7 @@ namespace UI.Views
             DBDutyExchangeController.DeleteDutyExchange(DutyExchangeListView.Duty.DutyID, oldEmployeeID);
             DutyExchangeRepository.RemoveDutyExchange(DutyExchangeListView.Duty.DutyID, oldEmployeeID);
             ExchangeDutyWindow.ExchangeDutyWindowInstance.UpdateDutyList2();
+            ExchangeDutyWindow.ExchangeDutyWindowInstance.UpdateDutyList();
             ExchangeDutyWindow.ExchangeDutyWindowInstance.Show();
             this.Close();
         }
@@ -60,6 +62,8 @@ namespace UI.Views
         private void Regret_Btn_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+            ExchangeDutyWindow.ExchangeDutyWindowInstance.DutyExchangeListView.SelectedIndex = -1;
+            ExchangeDutyWindow.ExchangeDutyWindowInstance.DutyListView.SelectedIndex = -1;
             ExchangeDutyWindow.ExchangeDutyWindowInstance.Show();
         }
     }

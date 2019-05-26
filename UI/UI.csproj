@@ -62,6 +62,9 @@
     <Compile Include="Views\PopupExchangeDutyWindow.xaml.cs">
       <DependentUpon>PopupExchangeDutyWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\ShowMyDutiesWindow.xaml.cs">
+      <DependentUpon>ShowMyDutiesWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ShowRosterWindow.xaml.cs">
       <DependentUpon>ShowRosterWindow.xaml</DependentUpon>
     </Compile>
@@ -96,6 +99,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\PopupExchangeDutyWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ShowMyDutiesWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

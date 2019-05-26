@@ -12,6 +12,8 @@ namespace UI.Views
     public partial class MenuWindow : Window
     {
         public static MenuWindow MenuWindowInstance { get; set; }
+        public List<string> EmployeesProp { get; set; }
+
         public MenuWindow()
         {
             InitializeComponent();
@@ -21,6 +23,20 @@ namespace UI.Views
                 ShowRostersBtn.IsEnabled = false;
             }
             this.Closing += WindowClosed;
+            if (EmployeeCombobox.SelectedIndex == -1)
+            {
+                ShowMyDutiesBtn.IsEnabled = false;
+            }
+            List<string> newEmployees = new List<string>();
+            List<Employee> employees = EmployeeRepository.GetEmployees();
+            foreach (Employee employee in employees)
+            {
+                string newEmployee = employee.FirstName;
+                newEmployees.Add(newEmployee);
+            }
+            EmployeesProp = newEmployees;
+            EmployeeCombobox.ItemsSource = newEmployees;
+
         }
 
         private void WindowClosed(object sender, CancelEventArgs e)
@@ -133,6 +149,18 @@ namespace UI.Views
             ExchangeDutyWindow exchangeDutyWindow = new ExchangeDutyWindow();
             exchangeDutyWindow.Show();
             this.Hide();
+        }
+
+        private void ShowMyDuties_Click(object sender, RoutedEventArgs e)
+        {
+            ShowMyDutiesWindow showMyDutiesWindow = new ShowMyDutiesWindow(EmployeeRepository.GetEmployeeID(EmployeeCombobox.SelectedValue.ToString()));
+            showMyDutiesWindow.Show();
+            this.Hide();
+        }
+
+        private void EmployeeCombobox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ShowMyDutiesBtn.IsEnabled = true;
         }
     }
 }

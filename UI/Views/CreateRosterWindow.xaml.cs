@@ -28,8 +28,15 @@ namespace UI.Views
 
         private void CreateRosterBtn_Click(object sender, RoutedEventArgs e)
         {
-            RosterRepository.CreateRoster(DatePickerStart.SelectedDate.Value, DatePickerEnd.SelectedDate.Value, comboBoxShop.Text.ToString().ToLower());
-            MessageBox.Show("Vagtplan med " + " i "+ comboBoxShop.Text +" oprettet. Du kan nu indsætte vagter", "Success");
+            try
+            {
+                RosterRepository.CreateRoster(DatePickerStart.SelectedDate.Value, DatePickerEnd.SelectedDate.Value, comboBoxShop.Text.ToString().ToLower());
+                MessageBox.Show("Vagtplan i " + comboBoxShop.Text + " oprettet. Du kan nu indsætte vagter", "Success");
+            }
+            catch(Exception r)
+            {
+                MessageBox.Show($"{r.Message}\nDu skal udfylde alle felter");
+            }
             this.Close();
         }
 

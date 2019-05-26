@@ -385,10 +385,21 @@
             </TabItem>
 
         </TabControl>
-        <ComboBox x:Name="weekday1combobox" HorizontalAlignment="Left" Margin="20,140,0,0" VerticalAlignment="Top" Width="100" SelectionChanged="weekday1combobox_SelectionChanged">
-
+        <ComboBox  x:Name="weekday1combobox" HorizontalAlignment="Left" Margin="20,140,0,0" VerticalAlignment="Top" Width="100" SelectionChanged="weekday1combobox_SelectionChanged" >
+            <ComboBox.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="Black" Offset="1"/>
+                </LinearGradientBrush>
+            </ComboBox.Foreground>
         </ComboBox>
         <ComboBox x:Name="weekday2combobox" HorizontalAlignment="Left" Margin="149,140,0,0" VerticalAlignment="Top" Width="100" SelectionChanged="weekday2combobox_SelectionChanged">
+            <ComboBox.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="Black" Offset="1"/>
+                </LinearGradientBrush>
+            </ComboBox.Foreground>
 
         </ComboBox>
         <ComboBox x:Name="weekday3combobox" HorizontalAlignment="Left" Margin="277,140,0,0" VerticalAlignment="Top" Width="100" SelectionChanged="weekday3combobox_SelectionChanged">

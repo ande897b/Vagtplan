@@ -5,18 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UI.Views"
         mc:Ignorable="d"
-        Title="Menu" Height="220.538" Width="815.297" Background="#FF0C9368">
+        Title="Menu" Height="220.538" Width="984.51" Background="#FF0C9368">
     <Grid>
         <Button x:Name="CreateRosterBtn" Content="Opret Vagtplan" HorizontalAlignment="Left" Margin="224,84,0,0" VerticalAlignment="Top" Width="144" Height="55" Click="CreateRosterBtn_Click"/>
         <Button x:Name="ShowRostersBtn" Content="Se Vagtplan" HorizontalAlignment="Left" VerticalAlignment="Top" Width="144" Margin="25,84,0,0" Height="55" Click="ShowRostersBtn_Click"/>
-        <Button x:Name="LogOutBtn" Content="Log Ud" HorizontalAlignment="Left" Margin="663,23,0,0" VerticalAlignment="Top" Width="101" Height="26" Click="LogOutBtn_Click"/>
+        <Button x:Name="LogOutBtn" Content="Log Ud" HorizontalAlignment="Left" Margin="850,28,0,0" VerticalAlignment="Top" Width="101" Height="26" Click="LogOutBtn_Click"/>
         <Label x:Name="label" Content="Vælg Butiksafdeling" HorizontalAlignment="Left" Margin="25,15,0,0" VerticalAlignment="Top" Width="144"/>
         <ComboBox  x:Name="departmentcombobox" HorizontalAlignment="Left" Margin="25,46,0,0" VerticalAlignment="Top" Width="144" SelectionChanged="departmentcombobox_SelectionChanged">
             <ComboBoxItem Content="Skibhusvej" />
             <ComboBoxItem Content="Kongensgade" />
         </ComboBox>
         <Button x:Name="WishForDayOffBtn" Content="Ønsk fridag" HorizontalAlignment="Left" Margin="425,84,0,0" VerticalAlignment="Top" Width="144" Height="55" Click="WishForDayOff_Click"/>
-        <Button x:Name="ExchangeDuty" Content="byt vagt" HorizontalAlignment="Left" Margin="620,84,0,0" VerticalAlignment="Top" Width="144" Height="55" Click="ExchangeDuty_Click" />
+        <Button x:Name="ExchangeDuty" Content="byt vagt" HorizontalAlignment="Left" Margin="807,84,0,0" VerticalAlignment="Top" Width="144" Height="55" Click="ExchangeDuty_Click" />
+        <Button x:Name="ShowMyDutiesBtn" Content="vis mine vagter" HorizontalAlignment="Left" Margin="616,84,0,0" VerticalAlignment="Top" Width="144" Height="55" Click="ShowMyDuties_Click" />
+        <ComboBox x:Name="EmployeeCombobox" HorizontalAlignment="Left" Margin="616,46,0,0" VerticalAlignment="Top" Width="144" SelectionChanged="EmployeeCombobox_SelectionChanged" />
+        <Label x:Name="EmployeeLabel" Content="vælg medarbejder" HorizontalAlignment="Left" Margin="616,15,0,0" VerticalAlignment="Top" Width="144"/>
 
     </Grid>
 </Window>

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UI.Views"
         mc:Ignorable="d"
-        Title="Byt vagt" Height="593.83" Width="953.901" Background="#FF0C9368">
+        Title="Byt vagt" Height="593.83" Width="989.901" Background="#FF0C9368">
     <Grid>
         <ComboBox x:Name="EmployeeCB" HorizontalAlignment="Left" Margin="44,55,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="EmployeeCB_SelectionChanged" Height="34"/>
         <Label Content="Vælg for at se &#xD;&#xA;medarbejders vagter" HorizontalAlignment="Left" Margin="44,10,0,0" VerticalAlignment="Top" Width="120" Height="45"/>
@@ -21,12 +21,12 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <ListView x:Name="DutyExchangeListView" HorizontalAlignment="Left" Height="416" Margin="527,94,0,0" VerticalAlignment="Top" Width="371" SelectionChanged="DutyExchangeListView_SelectionChanged">
+        <ListView x:Name="DutyExchangeListView" HorizontalAlignment="Left" Height="416" Margin="527,94,0,0" VerticalAlignment="Top" Width="409" SelectionChanged="DutyExchangeListView_SelectionChanged">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn x:Name="DutyIDColumn2" Header="Vagt ID" Width="65" DisplayMemberBinding="{Binding Duty.DutyID}"/>
-                    <GridViewColumn x:Name="StartTimeColumn2" Header="Start" Width="150" DisplayMemberBinding="{Binding Duty.StartTime}" />
-                    <GridViewColumn x:Name="EndTimeColumn2" Header="Slut" Width="150" DisplayMemberBinding="{Binding Duty.EndTime}"/>
+                    <GridViewColumn x:Name="DutyIDColumn2" Header="Navn" Width="100" DisplayMemberBinding="{Binding Path=EmployeeName}"/>
+                    <GridViewColumn x:Name="StartTimeColumn2" Header="Start" Width="150" DisplayMemberBinding="{Binding Path=Duty.StartTime}" />
+                    <GridViewColumn x:Name="EndTimeColumn2" Header="Slut" Width="150" DisplayMemberBinding="{Binding Path=Duty.EndTime}"/>
                 </GridView>
             </ListView.View>
         </ListView>
