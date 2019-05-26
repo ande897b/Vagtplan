@@ -19,6 +19,7 @@ namespace UI.Views
         {
             e.Cancel = true;
             DBRosterController.LoadRosters();
+            DBDateController.LoadDates();
             e.Cancel = false;
         }
 

@@ -258,22 +258,21 @@ namespace UI.Views
 
         private void weekday1combobox2_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            List<Date> dates = DateRepository.GetDates(Shop.ToString());
             weekday1textbox3.Text = weekday1textbox2.Text.Substring(8, 5) + " - 17:00";
             weekday1textbox3.Visibility = Visibility.Visible;
         }
 
-        private void weekday1textbox1_TextChanged(object sender, TextChangedEventArgs e)
+        private void weekday1textbox2_TextChanged(object sender, TextChangedEventArgs e)
         {
             if (weekday1textbox2.Text != "10:00 - 17:00")
             {
-                weekday1combobox2.Visibility = Visibility.Visible;
+                    weekday1combobox2.Visibility = Visibility.Visible;
             }
         }
 
         private void weekday1textbox3_TextChanged(object sender, TextChangedEventArgs e)
         {
-            weekday1combobox3.Visibility = Visibility.Visible;
+                weekday1combobox3.Visibility = Visibility.Visible;
             if (weekday1textbox3.Text.Substring(8, 2) == "17")
             {
                 weekday1combobox3.Visibility = Visibility.Hidden;
@@ -295,7 +294,7 @@ namespace UI.Views
         {
             if (weekday2textbox2.Text != "10:00 - 17:00")
             {
-                weekday2combobox2.Visibility = Visibility.Visible;
+                    weekday2combobox2.Visibility = Visibility.Visible;
             }
         }
 
@@ -712,74 +711,58 @@ namespace UI.Views
         private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             DateTime[] dates = GetDates(2019, tabControl.SelectedIndex + 1).ToArray();
-            if (tabControl.SelectedIndex == 0) // januar
+            switch (tabControl.SelectedIndex)
             {
+                case 0:
                     UpdateSchedule(dates, JanuaryTabControl.SelectedIndex);
                     ManageComboboxes();
-            }
-            if (tabControl.SelectedIndex == 1) // Februar
-            {
+                    break;
+                case 1:
                     UpdateSchedule(dates, FebruaryTabControl.SelectedIndex);
                     ManageComboboxes();
-            }
-            if (tabControl.SelectedIndex == 2) // Marts
-            {
+                    break;
+                case 2:
                     UpdateSchedule(dates, MarchTabControl.SelectedIndex);
                     ManageComboboxes();
-            }
-
-            if (tabControl.SelectedIndex == 3) // April
-            {
+                    break;
+                case 3:
                     UpdateSchedule(dates, AprilTabControl.SelectedIndex);
                     ManageComboboxes();
-            }
-
-            if (tabControl.SelectedIndex == 4) // Maj
-            {
+                    break;
+                case 4:
                     UpdateSchedule(dates, MayTabControl.SelectedIndex);
                     ManageComboboxes();
-            }
-
-            if (tabControl.SelectedIndex == 5) // Juni
-            {
+                    break;
+                case 5:
                     UpdateSchedule(dates, JuneTabControl.SelectedIndex);
                     ManageComboboxes();
-            }
-
-            if (tabControl.SelectedIndex == 6) // juli
-            {
+                    break;
+                case 6:
                     UpdateSchedule(dates, JulyTabControl.SelectedIndex);
                     ManageComboboxes();
-            }
-
-            if (tabControl.SelectedIndex == 7) // August
-            {
+                    break;
+                case 7:
                     UpdateSchedule(dates, AugustTabControl.SelectedIndex);
                     ManageComboboxes();
-            }
-
-            if (tabControl.SelectedIndex == 8) // September
-            {
+                    break;
+                case 8:
                     UpdateSchedule(dates, SeptemberTabControl.SelectedIndex);
                     ManageComboboxes();
-            }
-
-            if (tabControl.SelectedIndex == 9) // Oktober
-            {
+                    break;
+                case 9:
                     UpdateSchedule(dates, OctoberTabControl.SelectedIndex);
                     ManageComboboxes();
-            }
-
-            if (tabControl.SelectedIndex == 10) // November
-            {
+                    break;
+                case 10:
                     UpdateSchedule(dates, NovemberTabControl.SelectedIndex);
                     ManageComboboxes();
-            }
-
-            if (tabControl.SelectedIndex == 11) // December
-            {
+                    break;
+                case 11:
                     UpdateSchedule(dates, DecemberTabControl.SelectedIndex);
                     ManageComboboxes();
+                    break;
+                default:
+                    break;
             }
         }
 
