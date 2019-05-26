@@ -11,7 +11,7 @@
             <ColumnDefinition/>
             <ColumnDefinition Width="0*"/>
         </Grid.ColumnDefinitions>
-        <ComboBox x:Name="EmployeeCB" HorizontalAlignment="Left" Margin="39,217,0,0" VerticalAlignment="Top" Width="120" Height="22"/>
+        <ComboBox x:Name="EmployeeCB" HorizontalAlignment="Left" Margin="39,217,0,0" VerticalAlignment="Top" Width="120" Height="22" SelectionChanged="EmployeeCB_SelectionChanged" />
         <Label x:Name="DutyIDLabel" Content="Vagt" HorizontalAlignment="Left" Margin="84,31,0,0" VerticalAlignment="Top" Width="100" Height="30" />
         <Button x:Name="Confirm_Btn" Content="Byt vagt" HorizontalAlignment="Left" Margin="39,256,0,0" VerticalAlignment="Top" Width="120" Height="22" Click="Confirm_Click"/>
         <Label  Content="Vælg medarbejder som vil tage vagten:" HorizontalAlignment="Left" Margin="39,182,0,0" VerticalAlignment="Top" Width="261" Height="30"/>

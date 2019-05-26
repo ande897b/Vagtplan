@@ -26,6 +26,11 @@ namespace UI.Views
             StartTimeLabel.Content = DutyExchangeListView.Duty.StartTime;
             EndTimeLabel.Content = DutyExchangeListView.Duty.EndTime;
             this.Closing += WindowClosed;
+
+            if(EmployeeCB.SelectedIndex == -1)
+            {
+                Confirm_Btn.IsEnabled = false;
+            }
         }
 
         private void WindowClosed(object sender, CancelEventArgs e)
@@ -65,6 +70,11 @@ namespace UI.Views
             ExchangeDutyWindow.ExchangeDutyWindowInstance.DutyExchangeListView.SelectedIndex = -1;
             ExchangeDutyWindow.ExchangeDutyWindowInstance.DutyListView.SelectedIndex = -1;
             ExchangeDutyWindow.ExchangeDutyWindowInstance.Show();
+        }
+
+        private void EmployeeCB_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        {
+            Confirm_Btn.IsEnabled = true;
         }
     }
 }

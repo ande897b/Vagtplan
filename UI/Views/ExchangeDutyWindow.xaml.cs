@@ -59,6 +59,7 @@ namespace UI.Views
                 }
             }
             DutyListView.ItemsSource = dutyListViews;
+            DutyListView.SelectedIndex = -1;
         }
 
         public void UpdateDutyList2()
