@@ -9,8 +9,8 @@
     <Grid>
         <ComboBox x:Name="EmployeeCB" HorizontalAlignment="Left" Margin="44,55,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="EmployeeCB_SelectionChanged" Height="34"/>
         <Label Content="Vælg for at se &#xD;&#xA;medarbejders vagter" HorizontalAlignment="Left" Margin="44,10,0,0" VerticalAlignment="Top" Width="120" Height="45"/>
-        <Label Content="Vælg vagt at bytte" HorizontalAlignment="Left" Margin="229,55,0,0" VerticalAlignment="Top" Width="120" Height="34"/>
-        <Label Content="Byt vagt" HorizontalAlignment="Left" Margin="686,55,0,0" VerticalAlignment="Top" Width="57" Height="34"/>
+        <Label Content="Vælg vagt som medarbejder vil bytte" HorizontalAlignment="Left" Margin="193,55,0,0" VerticalAlignment="Top" Width="215" Height="34"/>
+        <Label Content="Vagter der vil byttes" HorizontalAlignment="Left" Margin="670,55,0,0" VerticalAlignment="Top" Width="122" Height="34"/>
         <ListView x:Name="DutyListView" HorizontalAlignment="Left" Height="416" Margin="44,94,0,0" VerticalAlignment="Top" Width="471" SelectionChanged="DutyListView_SelectionChanged">
             <ListView.View>
                 <GridView>

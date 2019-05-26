@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UI.Views"
         mc:Ignorable="d"
-        Title="ShowMyDutiesWindow" Height="594.051" Width="585.836">
+        Title="Vis mine vagter" Height="594.051" Width="585.836">
     <Grid Margin="0,0,2,2">
         <ListView x:Name="DutyListView" HorizontalAlignment="Left" Height="514" Margin="22,24,0,0" VerticalAlignment="Top" Width="534" >
             <ListView.View>

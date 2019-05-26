@@ -14,36 +14,36 @@ namespace UI
 		{
 			InitializeComponent();
 			MainWindowInstance = this;
-            bool connecting = true;
-            while (connecting)
-            {
-                try
-                {
-                    DBDateController.LoadDates();
-                    DBRosterController.LoadRosters();
-                    DBEmployeeController.LoadEmployees();
-                    DBWishForDayOffController.LoadWishForDayOffs();
-                    DBDutyController.LoadDuties();
-                    DBDutyExchangeController.LoadDutyExchanges();
-                    connecting = false;
-                }
-                catch (Exception e)
-                {
-                    MessageBoxButton btn = MessageBoxButton.OKCancel;
-                    MessageBoxImage image = MessageBoxImage.Exclamation;
-                    MessageBoxResult result = MessageBox.Show($"{e.Message}\n\ntryk OK hvis du er klar, ellers cancel for at slutte!", "Husk at logge på databasen!", btn, image);
-                    if (result == MessageBoxResult.Cancel)
-                    {
-                        connecting = false;
-                        this.Close();
-                    }
-                }
-            }
+			bool connecting = true;
+			while (connecting)
+			{
+				try
+				{
+					DBDateController.LoadDates();
+					DBRosterController.LoadRosters();
+					DBEmployeeController.LoadEmployees();
+					DBWishForDayOffController.LoadWishForDayOffs();
+					DBDutyController.LoadDuties();
+					DBDutyExchangeController.LoadDutyExchanges();
+					connecting = false;
+				}
+				catch (Exception e)
+				{
+					MessageBoxButton btn = MessageBoxButton.OKCancel;
+					MessageBoxImage image = MessageBoxImage.Exclamation;
+					MessageBoxResult result = MessageBox.Show($"{e.Message}\n\ntryk OK hvis du er logget på vpn.eal.dk, ellers cancel for at afslutte!", "Husk at bruge vpn.eal.dk!", btn, image);
+					if (result == MessageBoxResult.Cancel)
+					{
+						connecting = false;
+						this.Close();
+					}
+				}
+			}
 		}
 
 		private void LoginBtn_Click(object sender, RoutedEventArgs e)
 		{
-			//if (userNameTxtBox.Text.ToUpper() == "USER" && passwordBox.Password.ToUpper() == "USER")
+			//if (userNameTxtBox.Text.ToUpper() == "USER" && passwordBox.Password.ToUpper() == "USER")    
 			//{
 				//MenuWindow menuWindow = new MenuWindow();
 				//menuWindow.Show();
@@ -52,7 +52,7 @@ namespace UI
 			//}
 		 //  else if (userNameTxtBox.Text.ToUpper() == "ADMIN" && passwordBox.Password.ToUpper() == "ADMIN")
 			//{
-				MenuWindow menuWindow = new MenuWindow();
+				MenuWindow menuWindow = new MenuWindow(); //-------- VI HACKER OS IND! xD
 				menuWindow.Show();
 				this.Hide();
 			//}
