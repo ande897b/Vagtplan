@@ -21,23 +21,23 @@ namespace UI
 
 		private void LoginBtn_Click(object sender, RoutedEventArgs e)
 		{
-			if (userNameTxtBox.Text.ToUpper() == "USER" && passwordBox.Password.ToUpper() == "USER")
-			{
+			//if (userNameTxtBox.Text.ToUpper() == "USER" && passwordBox.Password.ToUpper() == "USER")
+			//{
+				//MenuWindow menuWindow = new MenuWindow();
+				//menuWindow.Show();
+				//menuWindow.CreateRosterBtn.IsEnabled = false;
+				//this.Hide();
+			//}
+		 //  else if (userNameTxtBox.Text.ToUpper() == "ADMIN" && passwordBox.Password.ToUpper() == "ADMIN")
+			//{
 				MenuWindow menuWindow = new MenuWindow();
 				menuWindow.Show();
-				menuWindow.CreateRosterBtn.IsEnabled = false;
 				this.Hide();
-			}
-		   else if (userNameTxtBox.Text.ToUpper() == "ADMIN" && passwordBox.Password.ToUpper() == "ADMIN")
-			{
-				MenuWindow menuWindow = new MenuWindow();
-				menuWindow.Show();
-				this.Hide();
-			}
-			else
-			{
-				MessageBox.Show("Forkert Brugernavn eller Password");
-			}
+			//}
+			//else
+			//{
+			//	MessageBox.Show("Forkert Brugernavn eller Password");
+			//}
 		}
 
 		private void Textbox_GetFocus(object sender, RoutedEventArgs e)
