@@ -75,7 +75,6 @@ namespace Application.Repositories
 			int rosterID = DBRosterController.GetRosterID(roster);
 			roster.RosterID = rosterID;
 			DBDateController.CreateDates(roster);
-			AddRoster(roster);
 		}
 
 		public static bool CheckIfDateExists(string date, string shop)
