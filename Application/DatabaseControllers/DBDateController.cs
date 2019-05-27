@@ -45,7 +45,7 @@ namespace Application.DatabaseControllers
         public static void CreateDates(Roster roster)
         {
             DBConnection.DatabaseName = "CANE";
-            string query = "Create_Date";
+            string query = "Create_Dates";
             int daysDiff = ((TimeSpan)(roster.EndDate.Date - roster.StartDate.Date)).Days;
             Shop newShop;
             if (roster.Shop.ToString().ToLower() == "kongensgade")
