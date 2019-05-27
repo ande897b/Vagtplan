@@ -114,6 +114,7 @@ namespace UI.Views
             {
                 DutyListView dutyExchange = (DutyListView)DutyExchangeListView.SelectedItem;
                 PopupExchangeDutyWindow popupExchangeDutyWindow = new PopupExchangeDutyWindow(dutyExchange);
+                this.Hide();
                 popupExchangeDutyWindow.Show();
             }
         }

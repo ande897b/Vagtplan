@@ -37,6 +37,7 @@ namespace UI.Views
             DBDutyExchangeController.LoadDutyExchanges();
             ExchangeDutyWindow.ExchangeDutyWindowInstance.DutyExchangeListView.ItemsSource = null;
             ExchangeDutyWindow.ExchangeDutyWindowInstance.UpdateDutyExchangeList();
+            ExchangeDutyWindow.ExchangeDutyWindowInstance.Show();
             e.Cancel = false;
         }
 
