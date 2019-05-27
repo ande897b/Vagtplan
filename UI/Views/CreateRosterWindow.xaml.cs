@@ -14,7 +14,20 @@ namespace UI.Views
         {
             InitializeComponent();
             CreateRosterWindowInstance = this;
+            CreatRosterbtn.IsEnabled = false;
+            DatePickerEnd.IsEnabled = false;
             this.Closing += WindowClosed;
+            DatePickerEnd.SelectedDateChanged += SelectedDateChanged;
+        }
+
+        private void SelectedDateChanged(object sender, SelectionChangedEventArgs e)
+        {
+            int dateCompare = DateTime.Compare((DateTime)DatePickerEnd.SelectedDate, DateTime.Now);
+            int dateCompare2 = DateTime.Compare((DateTime)DatePickerEnd.SelectedDate, (DateTime)DatePickerStart.SelectedDate);
+            if(dateCompare > 0 && dateCompare2 > 0)
+            {
+                CreatRosterbtn.IsEnabled = true;
+            }
         }
 
         private void WindowClosed(object sender, CancelEventArgs e)
@@ -52,6 +65,7 @@ namespace UI.Views
             {
                 startDate = RosterRepository.GetEndDate(shop);
             }
+            DatePickerEnd.IsEnabled = true;
             DatePickerStart.SelectedDate = startDate;
             DatePickerEnd.SelectedDate = DatePickerStart.SelectedDate;
         }

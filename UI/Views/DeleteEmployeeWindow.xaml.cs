@@ -1,9 +1,11 @@
 ﻿using Application.DatabaseControllers;
 using Application.Repositories;
 using Domain.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Windows;
+using System.Windows.Controls;
 
 namespace UI.Views
 {
@@ -17,6 +19,13 @@ namespace UI.Views
             DeleteEmployeeWindowInstance = this;
             EmployeeListView.ItemsSource = EmployeeRepository.GetEmployees();
             this.Closing += WindowClosed;
+            EmployeeListView.SelectionChanged += ListViewSelectionChanged;
+        }
+
+        private void ListViewSelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            EmployeeListView.ItemsSource = null;
+            EmployeeListView.ItemsSource = EmployeeRepository.GetEmployees();
         }
 
         private void WindowClosed(object sender, CancelEventArgs e)
@@ -37,7 +46,7 @@ namespace UI.Views
                 if (result == MessageBoxResult.Yes)
                 {
                     DBEmployeeController.DeleteEmployee(((Employee)EmployeeListView.SelectedItem).EmployeeID);
-                    this.Close();
+                    EmployeeListView.SelectedIndex = -1;
                 }
                 else if (result == MessageBoxResult.No)
                 {

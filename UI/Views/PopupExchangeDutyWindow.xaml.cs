@@ -35,6 +35,8 @@ namespace UI.Views
             e.Cancel = true;
             DBDutyController.LoadDuties();
             DBDutyExchangeController.LoadDutyExchanges();
+            ExchangeDutyWindow.ExchangeDutyWindowInstance.DutyExchangeListView.ItemsSource = null;
+            ExchangeDutyWindow.ExchangeDutyWindowInstance.UpdateDutyExchangeList();
             e.Cancel = false;
         }
 
@@ -54,11 +56,9 @@ namespace UI.Views
         {
             int newEmployeeID = EmployeeRepository.GetEmployeeID(EmployeeCB.SelectedValue.ToString());
             int oldEmployeeID = EmployeeRepository.GetEmployeeID(EmployeeRepository.GetEmployeeName(DutyExchangeListView.Duty.EmployeeID));
-
             try
             {
                 DBDutyController.UpdateDuty(newEmployeeID, DutyExchangeListView.Duty.DutyID);
-                MessageBox.Show("Vagt er opdateret");
             }
             catch(Exception t)
             {
@@ -66,9 +66,6 @@ namespace UI.Views
             }
             DBDutyExchangeController.DeleteDutyExchange(DutyExchangeListView.Duty.DutyID, oldEmployeeID);
             DutyExchangeRepository.RemoveDutyExchange(DutyExchangeListView.Duty.DutyID, oldEmployeeID);
-            ExchangeDutyWindow.ExchangeDutyWindowInstance.UpdateDutyExchangeList();
-            ExchangeDutyWindow.ExchangeDutyWindowInstance.UpdateDutyList();
-            ExchangeDutyWindow.ExchangeDutyWindowInstance.Show();
             this.Close();
         }
 

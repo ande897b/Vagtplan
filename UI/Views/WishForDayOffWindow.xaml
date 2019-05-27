@@ -16,7 +16,7 @@
             </TransformGroup>
         </Grid.RenderTransform>
         <DatePicker x:Name="WishForDayOffDP" HorizontalAlignment="Left" Margin="77,119,0,0" VerticalAlignment="Top" Height="28" Width="104"/>
-        <ComboBox x:Name="WishForDayOffCB" HorizontalAlignment="Left" Margin="77,54,0,0" VerticalAlignment="Top" Width="104" />
+        <ComboBox x:Name="WishForDayOffCB" HorizontalAlignment="Left" Margin="77,54,0,0" VerticalAlignment="Top" Width="104" SelectionChanged="WishForDayOffCB_SelectionChanged" />
         <Button x:Name="WishForDayOffBtn" Content="Ønsk Fridag" HorizontalAlignment="Left" Margin="77,157,0,0" VerticalAlignment="Top" Width="104" Height="22" Click="WishForDayOffBtn_Click"/>
         <Label Content="Hvem ønsker fri?" HorizontalAlignment="Left" Margin="77,23,0,0" VerticalAlignment="Top" Width="104"/>
         <Label Content="Hvornår?" Margin="77,88,77,0" VerticalAlignment="Top"/>
