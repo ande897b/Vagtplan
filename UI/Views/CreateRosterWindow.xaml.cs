@@ -20,6 +20,15 @@ namespace UI.Views
             DatePickerEnd.SelectedDateChanged += SelectedDateChanged;
         }
 
+        private void WindowClosed(object sender, CancelEventArgs e)
+        {
+            e.Cancel = true;
+            DBRosterController.LoadRosters();
+            DBDateController.LoadDates();
+            MenuWindow.MenuWindowInstance.Show();
+            e.Cancel = false;
+        }
+
         private void SelectedDateChanged(object sender, SelectionChangedEventArgs e)
         {
             int dateCompare = DateTime.Compare((DateTime)DatePickerEnd.SelectedDate, DateTime.Now);
@@ -28,15 +37,6 @@ namespace UI.Views
             {
                 CreatRosterbtn.IsEnabled = true;
             }
-        }
-
-        private void WindowClosed(object sender, CancelEventArgs e)
-        {
-            e.Cancel = true;
-            DBRosterController.LoadRosters();
-            DBDateController.LoadDates();
-            MenuWindow.MenuWindowInstance.Show();
-            e.Cancel = false;
         }
 
         private void CreateRosterBtn_Click(object sender, RoutedEventArgs e)

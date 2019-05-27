@@ -27,17 +27,6 @@ namespace UI.Views
             this.Closing += WindowClosed;
         }
 
-        private void LastNameTBGotFocus(object sender, RoutedEventArgs e)
-        {
-            LastNameTB.Clear();
-
-        }
-
-        private void FirstNameTBGotFocus(object sender, RoutedEventArgs e)
-        {
-            FirstNameTB.Clear();
-        }
-
         private void WindowClosed(object sender, CancelEventArgs e)
         {
             e.Cancel = true;
@@ -45,6 +34,16 @@ namespace UI.Views
             MenuWindow.MenuWindowInstance.UpdateEmployeeCB();
             MenuWindow.MenuWindowInstance.Show();
             e.Cancel = false;
+        }
+
+        private void LastNameTBGotFocus(object sender, RoutedEventArgs e)
+        {
+            LastNameTB.Clear();
+        }
+
+        private void FirstNameTBGotFocus(object sender, RoutedEventArgs e)
+        {
+            FirstNameTB.Clear();
         }
 
         private bool isCreateBtnActivated()
