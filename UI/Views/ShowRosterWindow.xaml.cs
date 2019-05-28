@@ -79,7 +79,7 @@ namespace UI.Views
         }
         private void ManageComboboxes()
         {
-            if (RosterRepository.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
+            if (DateRepository.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
             {
                 int dateID = DateRepository.GetDateID(weekday1label.Content.ToString(), Shop);
                 DateTime date = DateRepository.GetDate(weekday1label.Content.ToString());
@@ -92,7 +92,7 @@ namespace UI.Views
                 UpdateComboboxes(false, dateID, 1, date);
             }
 
-            if (RosterRepository.CheckIfDateExists(weekday2label.Content.ToString(), Shop.ToString()))
+            if (DateRepository.CheckIfDateExists(weekday2label.Content.ToString(), Shop.ToString()))
             {
                 int dateID = DateRepository.GetDateID(weekday2label.Content.ToString(), Shop);
                 DateTime date = DateRepository.GetDate(weekday2label.Content.ToString());
@@ -105,7 +105,7 @@ namespace UI.Views
                 UpdateComboboxes(false, dateID, 2, date);
             }
 
-            if (RosterRepository.CheckIfDateExists(weekday3label.Content.ToString(), Shop.ToString()))
+            if (DateRepository.CheckIfDateExists(weekday3label.Content.ToString(), Shop.ToString()))
             {
                 int dateID = DateRepository.GetDateID(weekday3label.Content.ToString(), Shop);
                 DateTime date = DateRepository.GetDate(weekday3label.Content.ToString());
@@ -118,7 +118,7 @@ namespace UI.Views
                 UpdateComboboxes(false, dateID, 3, date);
             }
 
-            if (RosterRepository.CheckIfDateExists(weekday4label.Content.ToString(), Shop.ToString()))
+            if (DateRepository.CheckIfDateExists(weekday4label.Content.ToString(), Shop.ToString()))
             {
                 int dateID = DateRepository.GetDateID(weekday4label.Content.ToString(), Shop);
                 DateTime date = DateRepository.GetDate(weekday4label.Content.ToString());
@@ -131,7 +131,7 @@ namespace UI.Views
                 UpdateComboboxes(false, dateID, 4, date);
             }
 
-            if (RosterRepository.CheckIfDateExists(weekday5label.Content.ToString(), Shop.ToString()))
+            if (DateRepository.CheckIfDateExists(weekday5label.Content.ToString(), Shop.ToString()))
             {
                 int dateID = DateRepository.GetDateID(weekday5label.Content.ToString(), Shop);
                 DateTime date = DateRepository.GetDate(weekday5label.Content.ToString());
@@ -144,7 +144,7 @@ namespace UI.Views
                 UpdateComboboxes(false, dateID, 5, date);
             }
 
-            if (RosterRepository.CheckIfDateExists(weekday6label.Content.ToString(), Shop.ToString()))
+            if (DateRepository.CheckIfDateExists(weekday6label.Content.ToString(), Shop.ToString()))
             {
                 int dateID = DateRepository.GetDateID(weekday6label.Content.ToString(), Shop);
                 DateTime date = DateRepository.GetDate(weekday6label.Content.ToString());
@@ -157,7 +157,7 @@ namespace UI.Views
                 UpdateComboboxes(false, dateID, 6, date);
             }
 
-            if (RosterRepository.CheckIfDateExists(weekday7label.Content.ToString(), Shop.ToString()))
+            if (DateRepository.CheckIfDateExists(weekday7label.Content.ToString(), Shop.ToString()))
             {
                 int dateID = DateRepository.GetDateID(weekday7label.Content.ToString(), Shop);
                 DateTime date = DateRepository.GetDate(weekday7label.Content.ToString());
