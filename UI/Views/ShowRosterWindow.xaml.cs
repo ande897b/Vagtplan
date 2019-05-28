@@ -15,7 +15,7 @@ namespace UI.Views
         public Shop Shop { get; set; }
         public static ShowRosterWindow ShowRosterWindowInstance { get; set; }
 
-        public ShowRosterWindow(string boxResult, MenuWindow menuWindow)
+        public ShowRosterWindow(string boxResult)
         {
             InitializeComponent();
             ShowRosterWindowInstance = this;
@@ -58,12 +58,6 @@ namespace UI.Views
             {
                 DBDutyController.CreateDuty(duty);
             }
-        }
-    
-        private void DeleteDuties(int dateID)
-        {
-            
-            DBDutyController.DeleteDuties(dateID);
         }
 
         private void UpdateSchedule(DateTime[] dates, int i)
@@ -513,7 +507,7 @@ namespace UI.Views
 
         private void SaveBtn_Click(object sender, RoutedEventArgs e)
         {
-            DeleteDuties(DateRepository.GetDateID(weekday1label.Content.ToString(), Shop));
+            DBDutyController.DeleteDuties(DateRepository.GetDateID(weekday1label.Content.ToString(), Shop));
             if (weekday1combobox.SelectedItem != null) // 1
             {
                 if (weekday1textbox2.Text != null)
@@ -536,7 +530,7 @@ namespace UI.Views
                 }
             }
 
-            DeleteDuties(DateRepository.GetDateID(weekday2label.Content.ToString(), Shop));
+            DBDutyController.DeleteDuties(DateRepository.GetDateID(weekday1label.Content.ToString(), Shop));
             if (weekday2combobox.SelectedItem != null) // 2
             {
                 if (weekday2textbox2.Text != null)
@@ -559,7 +553,7 @@ namespace UI.Views
                 }
             }
 
-            DeleteDuties(DateRepository.GetDateID(weekday3label.Content.ToString(), Shop));
+            DBDutyController.DeleteDuties(DateRepository.GetDateID(weekday1label.Content.ToString(), Shop));
             if (weekday3combobox.SelectedItem != null) // 3
             {
                 if (weekday3textbox2.Text != null)
@@ -582,7 +576,7 @@ namespace UI.Views
                 }
             }
 
-            DeleteDuties(DateRepository.GetDateID(weekday4label.Content.ToString(), Shop));
+            DBDutyController.DeleteDuties(DateRepository.GetDateID(weekday1label.Content.ToString(), Shop));
             if (weekday4combobox.SelectedItem != null) // 4
             {
                 if (weekday4textbox2.Text != null)
@@ -605,7 +599,7 @@ namespace UI.Views
                 }
             }
 
-            DeleteDuties(DateRepository.GetDateID(weekday5label.Content.ToString(), Shop));
+            DBDutyController.DeleteDuties(DateRepository.GetDateID(weekday1label.Content.ToString(), Shop));
             if (weekday5combobox.SelectedItem != null) // 5
             {
                 if (weekday5textbox2.Text != null)
@@ -628,7 +622,7 @@ namespace UI.Views
                 }
             }
 
-            DeleteDuties(DateRepository.GetDateID(weekday6label.Content.ToString(), Shop));
+            DBDutyController.DeleteDuties(DateRepository.GetDateID(weekday1label.Content.ToString(), Shop));
             if (weekday6combobox.SelectedItem != null) // 6
             {
                 if (weekday6textbox2.Text != null)
@@ -651,7 +645,7 @@ namespace UI.Views
                 }
             }
 
-            DeleteDuties(DateRepository.GetDateID(weekday7label.Content.ToString(), Shop));
+            DBDutyController.DeleteDuties(DateRepository.GetDateID(weekday1label.Content.ToString(), Shop));
             if (weekday7combobox.SelectedItem != null) // 7
             {
                 if (weekday7textbox2.Text != null)
