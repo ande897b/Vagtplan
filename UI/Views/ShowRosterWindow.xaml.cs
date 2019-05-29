@@ -45,14 +45,21 @@ namespace UI.Views
                              .ToList(); // Load dates into a list
         }
 
-        private void ManageDuty(string labelContent, string textboxContent, string employeeName)
+        private void ManageDuty(string date, string timeInterval, string employeeName)
         {
-            string start = textboxContent.Substring(0, 5);
-            string end = textboxContent.Substring(8, 5);
-            DateTime startdateTime = new DateTime(int.Parse(labelContent.ToString().Substring(6, 4)), int.Parse(labelContent.ToString().Substring(3, 2)), int.Parse(labelContent.ToString().Substring(0, 2)), int.Parse(start.Substring(0, 2)), int.Parse(start.Substring(3, 2)), 0);
-            DateTime enddateTime = new DateTime(int.Parse(labelContent.ToString().Substring(6, 4)), int.Parse(labelContent.ToString().Substring(3, 2)), int.Parse(labelContent.ToString().Substring(0, 2)), int.Parse(end.Substring(0, 2)), int.Parse(end.Substring(3, 2)), 0);
+            string start = timeInterval.Substring(0, 5);
+            string end = timeInterval.Substring(8, 5);
+            int year = int.Parse(date.ToString().Substring(6, 4));
+            int month = int.Parse(date.ToString().Substring(3, 2));
+            int day = int.Parse(date.ToString().Substring(0, 2));
+            int startHour = int.Parse(start.Substring(0, 2));
+            int startMinute = int.Parse(start.Substring(3, 2));
+            int endHour = int.Parse(end.Substring(0, 2));
+            int endMinute = int.Parse(end.Substring(3, 2));
+            DateTime startdateTime = new DateTime(year, month, day, startHour, startMinute, 0);
+            DateTime enddateTime = new DateTime(year, month, day, endHour, endMinute, 0);
             int employeeID = EmployeeRepository.GetEmployeeID(employeeName);
-            int dateID = DateRepository.GetDateID(labelContent, Shop);
+            int dateID = DateRepository.GetDateID(date, Shop);
             Duty duty = new Duty(employeeID, dateID, startdateTime, enddateTime);
             if (!DutyRepository.DutyExist(duty))
             {
