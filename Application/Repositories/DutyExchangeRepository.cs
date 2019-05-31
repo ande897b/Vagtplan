@@ -7,11 +7,29 @@ namespace Application.Repositories
     public static class DutyExchangeRepository
     {
         private static List<DutyExchange> dutyExchanges = new List<DutyExchange>();
+        private static List<DutyExchange> tempDutyExchanges = new List<DutyExchange>();
         public static void AddDutyExchange(DutyExchange dutyExchange)
         {
             if (!DutyExchangeExist(dutyExchange))
                 dutyExchanges.Add(dutyExchange);
         }
+
+        public static void AddTempDutyExchanges(DutyExchange dutyExchange)
+        {
+                tempDutyExchanges.Add(dutyExchange);
+        }
+
+        public static List<DutyExchange> GetTempDutyExchanges()
+        {
+            return tempDutyExchanges;
+        }
+
+        public static void ClearTempDutyExchanges()
+        {
+            tempDutyExchanges.Clear();
+        }
+
+
 
         public static bool DutyExchangeExist(DutyExchange dutyExchange)
         {

@@ -29,10 +29,10 @@ namespace UI
 				}
 				catch (Exception e)
 				{
-					MessageBoxButton btn = MessageBoxButton.OKCancel;
+					MessageBoxButton btn = MessageBoxButton.OK;
 					MessageBoxImage image = MessageBoxImage.Exclamation;
-					MessageBoxResult result = MessageBox.Show($"{e.Message}\n\ntryk OK hvis du er logget på vpn.eal.dk, ellers cancel for at afslutte!", "Husk at bruge vpn.eal.dk!", btn, image);
-					if (result == MessageBoxResult.Cancel)
+					MessageBoxResult result = MessageBox.Show($"{e.Message}\n\nDu er ikke tilsuttet vpn.eal.dk, tilslut først, og prøv igen.", "Husk at bruge vpn.eal.dk!", btn, image);
+					if (result == MessageBoxResult.OK)
 					{
 						connecting = false;
 						this.Close();

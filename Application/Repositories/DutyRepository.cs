@@ -71,11 +71,13 @@ namespace Application.Repositories
 
         public static void Removeduties(int dateID)
         {
+            List<DutyExchange> dutyExchanges = DutyExchangeRepository.GetDutyExchanges();
             foreach (Duty duty in duties.ToList()) 
             {
                 if (duty.DateID == dateID)
                 {
                     duties.Remove(duty);
+                    DBDutyExchange
                 }
             }
         }
