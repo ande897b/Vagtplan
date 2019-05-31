@@ -1,4 +1,5 @@
-﻿using Domain.Models;
+﻿using Application.DatabaseControllers;
+using Domain.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -69,22 +70,27 @@ namespace Application.Repositories
             return newDuties;
         }
 
-        public static void Removeduties(int dateID)
+        public static void RemoveDuties(int dateID)
         {
-            List<DutyExchange> tempDutyExchanges = DutyExchangeRepository.GetDutyExchanges();
+            List<DutyExchange> tempDutyExchanges = new List<DutyExchange>();
             foreach (Duty duty in duties.ToList()) 
             {
                 if (duty.DateID == dateID)
                 {
-                    DutyExchangeRepository.ClearDutyExchanges();
+                    DutyExchange dutyExchange = DutyExchangeRepository.GetDutyExchange(duty.DutyID, duty.EmployeeID);
+                    if(dutyExchange != null)
+                    tempDutyExchanges.Add(dutyExchange);
+                    DutyExchangeRepository.RemoveDutyExchange(duty.DutyID, duty.EmployeeID);
                     duties.Remove(duty);
-                    foreach (DutyExchange duti in tempDutyExchanges)
-                    {
-                        DutyExchangeRepository.AddDutyExchange(duti);
-                    }
-                                       
+                    DBDutyExchangeController.DeleteDutyExchange(duty.DutyID, duty.EmployeeID);
                 }
             }
+            foreach (DutyExchange dutyExchange in tempDutyExchanges)
+            {
+                DutyExchangeRepository.AddDutyExchange(dutyExchange);
+                DBDutyExchangeController.CreateDutyExchange(dutyExchange);
+            }
+            DBDutyController.DeleteDuties(dateID);
         }
 
         public static void Removeduties_EmpID(int employeeID)

@@ -66,7 +66,6 @@ namespace Application.DatabaseControllers
                 cmd.ExecuteReader();
                 DBConnection.Close();
             }
-            DutyRepository.Removeduties(dateID);
         }
 
         public static void DeleteDuties_EmpID(int employeeID)

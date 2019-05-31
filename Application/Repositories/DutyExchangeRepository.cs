@@ -7,29 +7,40 @@ namespace Application.Repositories
     public static class DutyExchangeRepository
     {
         private static List<DutyExchange> dutyExchanges = new List<DutyExchange>();
-        private static List<DutyExchange> tempDutyExchanges = new List<DutyExchange>();
+        //private static List<DutyExchange> tempDutyExchanges = new List<DutyExchange>();
         public static void AddDutyExchange(DutyExchange dutyExchange)
         {
             if (!DutyExchangeExist(dutyExchange))
                 dutyExchanges.Add(dutyExchange);
         }
 
-        public static void AddTempDutyExchanges(DutyExchange dutyExchange)
+        //public static void AddTempDutyExchanges(DutyExchange dutyExchange)
+        //{
+        //        tempDutyExchanges.Add(dutyExchange);
+        //}
+
+        //public static List<DutyExchange> GetTempDutyExchanges()
+        //{
+        //    return tempDutyExchanges;
+        //}
+
+        //public static void ClearDutyExchanges()
+        //{
+        //    dutyExchanges.Clear();
+        //}
+
+        public static DutyExchange GetDutyExchange(int dutyID, int employeeID)
         {
-                tempDutyExchanges.Add(dutyExchange);
+            DutyExchange tempDutyExchange = null;
+            foreach(DutyExchange dutyExchange in dutyExchanges)
+            {
+                if(dutyExchange.DutyID == dutyID && dutyExchange.EmployeeID == employeeID)
+                {
+                    tempDutyExchange = dutyExchange;
+                }
+            }
+            return tempDutyExchange;
         }
-
-        public static List<DutyExchange> GetTempDutyExchanges()
-        {
-            return tempDutyExchanges;
-        }
-
-        public static void ClearDutyExchanges()
-        {
-            dutyExchanges.Clear();
-        }
-
-
 
         public static bool DutyExchangeExist(DutyExchange dutyExchange)
         {

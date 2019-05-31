@@ -514,7 +514,8 @@ namespace UI.Views
 
         private void SaveBtn_Click(object sender, RoutedEventArgs e)
         {
-            DBDutyController.DeleteDuties(DateRepository.GetDateID(weekday1label.Content.ToString(), Shop));
+
+            DutyRepository.RemoveDuties(DateRepository.GetDateID(weekday1label.Content.ToString(), Shop));
             if (weekday1combobox.SelectedItem != null) // 1
             {
                 if (weekday1textbox2.Text != null)
@@ -537,7 +538,7 @@ namespace UI.Views
                 }
             }
 
-            DBDutyController.DeleteDuties(DateRepository.GetDateID(weekday2label.Content.ToString(), Shop));
+            DutyRepository.RemoveDuties(DateRepository.GetDateID(weekday2label.Content.ToString(), Shop));
             if (weekday2combobox.SelectedItem != null) // 2
             {
                 if (weekday2textbox2.Text != null)
@@ -560,7 +561,7 @@ namespace UI.Views
                 }
             }
 
-            DBDutyController.DeleteDuties(DateRepository.GetDateID(weekday3label.Content.ToString(), Shop));
+            DutyRepository.RemoveDuties(DateRepository.GetDateID(weekday3label.Content.ToString(), Shop));
             if (weekday3combobox.SelectedItem != null) // 3
             {
                 if (weekday3textbox2.Text != null)
@@ -583,7 +584,7 @@ namespace UI.Views
                 }
             }
 
-            DBDutyController.DeleteDuties(DateRepository.GetDateID(weekday4label.Content.ToString(), Shop));
+            DutyRepository.RemoveDuties(DateRepository.GetDateID(weekday4label.Content.ToString(), Shop));
             if (weekday4combobox.SelectedItem != null) // 4
             {
                 if (weekday4textbox2.Text != null)
@@ -606,7 +607,7 @@ namespace UI.Views
                 }
             }
 
-            DBDutyController.DeleteDuties(DateRepository.GetDateID(weekday5label.Content.ToString(), Shop));
+            DutyRepository.RemoveDuties(DateRepository.GetDateID(weekday5label.Content.ToString(), Shop));
             if (weekday5combobox.SelectedItem != null) // 5
             {
                 if (weekday5textbox2.Text != null)
@@ -629,7 +630,7 @@ namespace UI.Views
                 }
             }
 
-            DBDutyController.DeleteDuties(DateRepository.GetDateID(weekday6label.Content.ToString(), Shop));
+            DutyRepository.RemoveDuties(DateRepository.GetDateID(weekday6label.Content.ToString(), Shop));
             if (weekday6combobox.SelectedItem != null) // 6
             {
                 if (weekday6textbox2.Text != null)
@@ -652,7 +653,7 @@ namespace UI.Views
                 }
             }
 
-            DBDutyController.DeleteDuties(DateRepository.GetDateID(weekday7label.Content.ToString(), Shop));
+            DutyRepository.RemoveDuties(DateRepository.GetDateID(weekday7label.Content.ToString(), Shop));
             if (weekday7combobox.SelectedItem != null) // 7
             {
                 if (weekday7textbox2.Text != null)
