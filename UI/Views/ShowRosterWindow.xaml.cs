@@ -15,7 +15,7 @@ namespace UI.Views
         public Shop Shop { get; set; }
         public static ShowRosterWindow ShowRosterWindowInstance { get; set; }
 
-        public ShowRosterWindow(string boxResult, MenuWindow menuWindow)
+        public ShowRosterWindow(string boxResult)
         {
             InitializeComponent();
             ShowRosterWindowInstance = this;
@@ -45,25 +45,26 @@ namespace UI.Views
                              .ToList(); // Load dates into a list
         }
 
-        private void ManageDuty(string labelContent, string textboxContent, string employeeName)
+        private void ManageDuty(string date, string timeInterval, string employeeName)
         {
-            string start = textboxContent.Substring(0, 5);
-            string end = textboxContent.Substring(8, 5);
-            DateTime startdateTime = new DateTime(int.Parse(labelContent.ToString().Substring(6, 4)), int.Parse(labelContent.ToString().Substring(3, 2)), int.Parse(labelContent.ToString().Substring(0, 2)), int.Parse(start.Substring(0, 2)), int.Parse(start.Substring(3, 2)), 0);
-            DateTime enddateTime = new DateTime(int.Parse(labelContent.ToString().Substring(6, 4)), int.Parse(labelContent.ToString().Substring(3, 2)), int.Parse(labelContent.ToString().Substring(0, 2)), int.Parse(end.Substring(0, 2)), int.Parse(end.Substring(3, 2)), 0);
+            string start = timeInterval.Substring(0, 5);
+            string end = timeInterval.Substring(8, 5);
+            int year = int.Parse(date.ToString().Substring(6, 4));
+            int month = int.Parse(date.ToString().Substring(3, 2));
+            int day = int.Parse(date.ToString().Substring(0, 2));
+            int startHour = int.Parse(start.Substring(0, 2));
+            int startMinute = int.Parse(start.Substring(3, 2));
+            int endHour = int.Parse(end.Substring(0, 2));
+            int endMinute = int.Parse(end.Substring(3, 2));
+            DateTime startdateTime = new DateTime(year, month, day, startHour, startMinute, 0);
+            DateTime enddateTime = new DateTime(year, month, day, endHour, endMinute, 0);
             int employeeID = EmployeeRepository.GetEmployeeID(employeeName);
-            int dateID = DateRepository.GetDateID(labelContent, Shop);
+            int dateID = DateRepository.GetDateID(date, Shop);
             Duty duty = new Duty(employeeID, dateID, startdateTime, enddateTime);
             if (!DutyRepository.DutyExist(duty))
             {
                 DBDutyController.CreateDuty(duty);
             }
-        }
-    
-        private void DeleteDuties(int dateID)
-        {
-            
-            DBDutyController.DeleteDuties(dateID);
         }
 
         private void UpdateSchedule(DateTime[] dates, int i)
@@ -85,7 +86,7 @@ namespace UI.Views
         }
         private void ManageComboboxes()
         {
-            if (RosterRepository.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
+            if (DateRepository.CheckIfDateExists(weekday1label.Content.ToString(), Shop.ToString()))
             {
                 int dateID = DateRepository.GetDateID(weekday1label.Content.ToString(), Shop);
                 DateTime date = DateRepository.GetDate(weekday1label.Content.ToString());
@@ -98,7 +99,7 @@ namespace UI.Views
                 UpdateComboboxes(false, dateID, 1, date);
             }
 
-            if (RosterRepository.CheckIfDateExists(weekday2label.Content.ToString(), Shop.ToString()))
+            if (DateRepository.CheckIfDateExists(weekday2label.Content.ToString(), Shop.ToString()))
             {
                 int dateID = DateRepository.GetDateID(weekday2label.Content.ToString(), Shop);
                 DateTime date = DateRepository.GetDate(weekday2label.Content.ToString());
@@ -111,7 +112,7 @@ namespace UI.Views
                 UpdateComboboxes(false, dateID, 2, date);
             }
 
-            if (RosterRepository.CheckIfDateExists(weekday3label.Content.ToString(), Shop.ToString()))
+            if (DateRepository.CheckIfDateExists(weekday3label.Content.ToString(), Shop.ToString()))
             {
                 int dateID = DateRepository.GetDateID(weekday3label.Content.ToString(), Shop);
                 DateTime date = DateRepository.GetDate(weekday3label.Content.ToString());
@@ -124,7 +125,7 @@ namespace UI.Views
                 UpdateComboboxes(false, dateID, 3, date);
             }
 
-            if (RosterRepository.CheckIfDateExists(weekday4label.Content.ToString(), Shop.ToString()))
+            if (DateRepository.CheckIfDateExists(weekday4label.Content.ToString(), Shop.ToString()))
             {
                 int dateID = DateRepository.GetDateID(weekday4label.Content.ToString(), Shop);
                 DateTime date = DateRepository.GetDate(weekday4label.Content.ToString());
@@ -137,7 +138,7 @@ namespace UI.Views
                 UpdateComboboxes(false, dateID, 4, date);
             }
 
-            if (RosterRepository.CheckIfDateExists(weekday5label.Content.ToString(), Shop.ToString()))
+            if (DateRepository.CheckIfDateExists(weekday5label.Content.ToString(), Shop.ToString()))
             {
                 int dateID = DateRepository.GetDateID(weekday5label.Content.ToString(), Shop);
                 DateTime date = DateRepository.GetDate(weekday5label.Content.ToString());
@@ -150,7 +151,7 @@ namespace UI.Views
                 UpdateComboboxes(false, dateID, 5, date);
             }
 
-            if (RosterRepository.CheckIfDateExists(weekday6label.Content.ToString(), Shop.ToString()))
+            if (DateRepository.CheckIfDateExists(weekday6label.Content.ToString(), Shop.ToString()))
             {
                 int dateID = DateRepository.GetDateID(weekday6label.Content.ToString(), Shop);
                 DateTime date = DateRepository.GetDate(weekday6label.Content.ToString());
@@ -163,7 +164,7 @@ namespace UI.Views
                 UpdateComboboxes(false, dateID, 6, date);
             }
 
-            if (RosterRepository.CheckIfDateExists(weekday7label.Content.ToString(), Shop.ToString()))
+            if (DateRepository.CheckIfDateExists(weekday7label.Content.ToString(), Shop.ToString()))
             {
                 int dateID = DateRepository.GetDateID(weekday7label.Content.ToString(), Shop);
                 DateTime date = DateRepository.GetDate(weekday7label.Content.ToString());
@@ -513,7 +514,7 @@ namespace UI.Views
 
         private void SaveBtn_Click(object sender, RoutedEventArgs e)
         {
-            DeleteDuties(DateRepository.GetDateID(weekday1label.Content.ToString(), Shop));
+            DBDutyController.DeleteDuties(DateRepository.GetDateID(weekday1label.Content.ToString(), Shop));
             if (weekday1combobox.SelectedItem != null) // 1
             {
                 if (weekday1textbox2.Text != null)
@@ -536,7 +537,7 @@ namespace UI.Views
                 }
             }
 
-            DeleteDuties(DateRepository.GetDateID(weekday2label.Content.ToString(), Shop));
+            DBDutyController.DeleteDuties(DateRepository.GetDateID(weekday1label.Content.ToString(), Shop));
             if (weekday2combobox.SelectedItem != null) // 2
             {
                 if (weekday2textbox2.Text != null)
@@ -559,7 +560,7 @@ namespace UI.Views
                 }
             }
 
-            DeleteDuties(DateRepository.GetDateID(weekday3label.Content.ToString(), Shop));
+            DBDutyController.DeleteDuties(DateRepository.GetDateID(weekday1label.Content.ToString(), Shop));
             if (weekday3combobox.SelectedItem != null) // 3
             {
                 if (weekday3textbox2.Text != null)
@@ -582,7 +583,7 @@ namespace UI.Views
                 }
             }
 
-            DeleteDuties(DateRepository.GetDateID(weekday4label.Content.ToString(), Shop));
+            DBDutyController.DeleteDuties(DateRepository.GetDateID(weekday1label.Content.ToString(), Shop));
             if (weekday4combobox.SelectedItem != null) // 4
             {
                 if (weekday4textbox2.Text != null)
@@ -605,7 +606,7 @@ namespace UI.Views
                 }
             }
 
-            DeleteDuties(DateRepository.GetDateID(weekday5label.Content.ToString(), Shop));
+            DBDutyController.DeleteDuties(DateRepository.GetDateID(weekday1label.Content.ToString(), Shop));
             if (weekday5combobox.SelectedItem != null) // 5
             {
                 if (weekday5textbox2.Text != null)
@@ -628,7 +629,7 @@ namespace UI.Views
                 }
             }
 
-            DeleteDuties(DateRepository.GetDateID(weekday6label.Content.ToString(), Shop));
+            DBDutyController.DeleteDuties(DateRepository.GetDateID(weekday1label.Content.ToString(), Shop));
             if (weekday6combobox.SelectedItem != null) // 6
             {
                 if (weekday6textbox2.Text != null)
@@ -651,7 +652,7 @@ namespace UI.Views
                 }
             }
 
-            DeleteDuties(DateRepository.GetDateID(weekday7label.Content.ToString(), Shop));
+            DBDutyController.DeleteDuties(DateRepository.GetDateID(weekday1label.Content.ToString(), Shop));
             if (weekday7combobox.SelectedItem != null) // 7
             {
                 if (weekday7textbox2.Text != null)

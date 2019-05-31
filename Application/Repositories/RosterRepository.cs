@@ -75,21 +75,8 @@ namespace Application.Repositories
 			int rosterID = DBRosterController.GetRosterID(roster);
 			roster.RosterID = rosterID;
 			DBDateController.CreateDates(roster);
-			AddRoster(roster);
 		}
 
-		public static bool CheckIfDateExists(string date, string shop)
-		{
-			List<Date> dates = DateRepository.GetDates(shop.ToLower());
-			bool checkIfTrue = false;
-			foreach (var day in dates)
-			{
-				if (day.Day.ToString().Substring(0,10) == date.Substring(0,10) && day.Shop.ToString() == shop.ToLower())
-				{
-					checkIfTrue = true;
-				}
-			}
-			return checkIfTrue;
-		}
+
 	}
 }

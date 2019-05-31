@@ -17,7 +17,7 @@ namespace UI.Views
         {
             InitializeComponent();
             MenuWindowInstance = this;
-            if (departmentcombobox.SelectedIndex == -1)
+            if (ShopCB.SelectedIndex == -1)
             {
                 ShowRostersBtn.IsEnabled = false;
             }
@@ -71,7 +71,7 @@ namespace UI.Views
                 week = 3;
             if (day >= 30)
                 week = 4;
-            ShowRosterWindow showRosterWindow = new ShowRosterWindow(departmentcombobox.Text, this);
+            ShowRosterWindow showRosterWindow = new ShowRosterWindow(ShopCB.Text);
             showRosterWindow.tabControl.SelectedIndex = month - 1;
             switch (month)
             {
@@ -123,9 +123,9 @@ namespace UI.Views
             mainWindow.Show();
         }
 
-        private void departmentcombobox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void ShopCB_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (departmentcombobox.SelectedIndex != -1)
+            if (ShopCB.SelectedIndex != -1)
             {
                 ShowRostersBtn.IsEnabled = true;
             }
