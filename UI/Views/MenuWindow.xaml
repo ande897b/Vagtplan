@@ -8,7 +8,7 @@
         Title="Menu" Height="275.873" Width="1176.98" Background="#FF0C9368">
     <Grid Margin="0,0,2,0">
         <Button x:Name="CreateRosterBtn" Content="Opret Vagtplan" HorizontalAlignment="Left" Margin="221,155,0,0" VerticalAlignment="Top" Width="144" Height="55" Click="CreateRosterBtn_Click"/>
-        <Button x:Name="ShowRostersBtn" Content="Se Vagtplan" HorizontalAlignment="Left" VerticalAlignment="Top" Width="144" Margin="27,155,0,0" Height="55" Click="ShowRostersBtn_Click"/>
+        <Button x:Name="ShowRostersBtn" Content="Se Vagtplan / Tilføj vagter" HorizontalAlignment="Left" VerticalAlignment="Top" Width="144" Margin="27,155,0,0" Height="55" Click="ShowRostersBtn_Click"/>
         <Button x:Name="LogOutBtn" Content="Log Ud" HorizontalAlignment="Left" Margin="1037,27,0,0" VerticalAlignment="Top" Width="101" Height="26" Click="LogOutBtn_Click"/>
         <Label x:Name="label" Content="Vælg Butiksafdeling" HorizontalAlignment="Left" Margin="27,86,0,0" VerticalAlignment="Top" Width="144"/>
         <ComboBox  x:Name="departmentcombobox" HorizontalAlignment="Left" Margin="27,117,0,0" VerticalAlignment="Top" Width="144" SelectionChanged="departmentcombobox_SelectionChanged">
