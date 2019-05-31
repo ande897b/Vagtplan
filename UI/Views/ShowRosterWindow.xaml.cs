@@ -45,8 +45,9 @@ namespace UI.Views
                              .ToList(); // Load dates into a list
         }
 
-        private void ManageDuty(string date, string timeInterval, string employeeName)
+        private int ManageDuty(string date, string timeInterval, string employeeName)
         {
+            int dutyID = 0;
             string start = timeInterval.Substring(0, 5);
             string end = timeInterval.Substring(8, 5);
             int year = int.Parse(date.ToString().Substring(6, 4));
@@ -64,7 +65,9 @@ namespace UI.Views
             if (!DutyRepository.DutyExist(duty))
             {
                 DBDutyController.CreateDuty(duty);
+                dutyID = DBDutyController.GetDutyID(employeeID, dateID, startdateTime, enddateTime);
             }
+            return dutyID;
         }
 
         private void UpdateSchedule(DateTime[] dates, int i)
@@ -520,14 +523,15 @@ namespace UI.Views
             {
                 if (duty.DateID == dateID)
                 {
-                    DutyExchange dutyExchange = DutyExchangeRepository.GetDutyExchange(duty.DutyID, duty.EmployeeID);
-                    if (dutyExchange != null)
-                        tempDutyExchanges.Add(dutyExchange);
-                    DutyExchangeRepository.RemoveDutyExchange(duty.DutyID, duty.EmployeeID);
-                    DBDutyExchangeController.DeleteDutyExchange(duty.DutyID, duty.EmployeeID);
+                    DutyExchange dutyExchange = DutyExchangeRepository.GetDutyExchange(duty.DutyID);
+                    if(dutyExchange != null)
+                    tempDutyExchanges.Add(dutyExchange);
                 }
+                DutyExchangeRepository.RemoveDutyExchange(duty.DutyID);
+                DBDutyExchangeController.DeleteDutyExchange(duty.DutyID);
             }
-            DutyRepository.RemoveDuties(DateRepository.GetDateID(weekday1label.Content.ToString(), Shop));
+            
+            DutyRepository.RemoveDuties(dateID);
             DBDutyController.DeleteDuties(dateID);
 
             return tempDutyExchanges;
@@ -536,29 +540,48 @@ namespace UI.Views
         private void SaveBtn_Click(object sender, RoutedEventArgs e)
         {
             List<DutyExchange> dutyExchanges = DoItForAllTheDaysChristian(DateRepository.GetDateID(weekday1label.Content.ToString(), Shop));
-            foreach (DutyExchange dutyExchange in dutyExchanges)
-            {
-                
-                DutyExchangeRepository.AddDutyExchange(dutyExchange);
-                DBDutyExchangeController.CreateDutyExchange(dutyExchange);
-            }
             if (weekday1combobox.SelectedItem != null) // 1
             {
                 if (weekday1textbox2.Text != null)
                 {
-                    ManageDuty(weekday1label.Content.ToString(), weekday1textbox2.Text, weekday1combobox.SelectedItem.ToString());
+                    int dutyID = ManageDuty(weekday1label.Content.ToString(), weekday1textbox2.Text, weekday1combobox.SelectedItem.ToString());
+                    foreach (DutyExchange dutyExchange in dutyExchanges)
+                    {
+                        if(dutyExchange != null)
+                        {
+                            dutyExchange.DutyID = dutyID;
+                            DBDutyExchangeController.CreateDutyExchange(dutyExchange);
+                        }
+                    }
                 }
                 if (weekday1combobox2.SelectedItem != null)
                 {
                     if (weekday1textbox3.Text != null)
                     {
-                        ManageDuty(weekday1label.Content.ToString(), weekday1textbox3.Text, weekday1combobox2.SelectedItem.ToString());
+                        int dutyID = ManageDuty(weekday1label.Content.ToString(), weekday1textbox3.Text, weekday1combobox2.SelectedItem.ToString());
+                        foreach (DutyExchange dutyExchange in dutyExchanges)
+                        {
+                            if (dutyExchange != null)
+                            {
+                                dutyExchange.DutyID = dutyID;
+                                DBDutyExchangeController.CreateDutyExchange(dutyExchange);
+                            }
+
+                        }
                     }
                     if (weekday1combobox3.SelectedItem != null)
                     {
                         if (weekday1textbox4.Text != null)
                         {
-                            ManageDuty(weekday1label.Content.ToString(), weekday1textbox4.Text, weekday1combobox3.SelectedItem.ToString());
+                            int dutyID = ManageDuty(weekday1label.Content.ToString(), weekday1textbox4.Text, weekday1combobox3.SelectedItem.ToString());
+                            foreach (DutyExchange dutyExchange in dutyExchanges)
+                            {
+                                if (dutyExchange != null)
+                                {
+                                    dutyExchange.DutyID = dutyID;
+                                    DBDutyExchangeController.CreateDutyExchange(dutyExchange);
+                                }
+                            }
                         }
                     }
                 }
@@ -566,29 +589,48 @@ namespace UI.Views
 
 
             dutyExchanges = DoItForAllTheDaysChristian(DateRepository.GetDateID(weekday2label.Content.ToString(), Shop));
-            foreach (DutyExchange dutyExchange in dutyExchanges)
-            {
-                DutyExchangeRepository.AddDutyExchange(dutyExchange);
-                DBDutyExchangeController.CreateDutyExchange(dutyExchange);
-                
-            }
+
             if (weekday2combobox.SelectedItem != null) // 2
             {
                 if (weekday2textbox2.Text != null)
                 {
-                    ManageDuty(weekday2label.Content.ToString(), weekday2textbox2.Text, weekday2combobox.SelectedItem.ToString());
+                    int dutyID = ManageDuty(weekday2label.Content.ToString(), weekday2textbox2.Text, weekday2combobox.SelectedItem.ToString());
+                    foreach (DutyExchange dutyExchange in dutyExchanges)
+                    {
+                        if (dutyExchange != null)
+                        {
+                            dutyExchange.DutyID = dutyID;
+                            DBDutyExchangeController.CreateDutyExchange(dutyExchange);
+                        }
+                    }
                 }
                 if (weekday2combobox2.SelectedItem != null)
                 {
                     if (weekday2textbox3.Text != null)
                     {
-                        ManageDuty(weekday2label.Content.ToString(), weekday2textbox3.Text, weekday2combobox2.SelectedItem.ToString());
+                        int dutyID = ManageDuty(weekday2label.Content.ToString(), weekday2textbox3.Text, weekday2combobox2.SelectedItem.ToString());
+                        foreach (DutyExchange dutyExchange in dutyExchanges)
+                        {
+                            if (dutyExchange != null)
+                            {
+                                dutyExchange.DutyID = dutyID;
+                                DBDutyExchangeController.CreateDutyExchange(dutyExchange);
+                            }
+                        }
                     }
                     if (weekday2combobox3.SelectedItem != null)
                     {
                         if (weekday2textbox4.Text != null)
                         {
-                            ManageDuty(weekday2label.Content.ToString(), weekday2textbox4.Text, weekday2combobox3.SelectedItem.ToString());
+                            int dutyID = ManageDuty(weekday2label.Content.ToString(), weekday2textbox4.Text, weekday2combobox3.SelectedItem.ToString());
+                            foreach (DutyExchange dutyExchange in dutyExchanges)
+                            {
+                                if (dutyExchange != null)
+                                {
+                                    dutyExchange.DutyID = dutyID;
+                                    DBDutyExchangeController.CreateDutyExchange(dutyExchange);
+                                }
+                            }
                         }
                     }
                 }
@@ -596,29 +638,48 @@ namespace UI.Views
 
 
             dutyExchanges = DoItForAllTheDaysChristian(DateRepository.GetDateID(weekday3label.Content.ToString(), Shop));
-            foreach (DutyExchange dutyExchange in dutyExchanges)
-            {
-                DutyExchangeRepository.AddDutyExchange(dutyExchange);
-                DBDutyExchangeController.CreateDutyExchange(dutyExchange);
-                
-            }
+
             if (weekday3combobox.SelectedItem != null) // 3
             {
                 if (weekday3textbox2.Text != null)
                 {
-                    ManageDuty(weekday3label.Content.ToString(), weekday3textbox2.Text, weekday3combobox.SelectedItem.ToString());
+                    int dutyID = ManageDuty(weekday3label.Content.ToString(), weekday3textbox2.Text, weekday3combobox.SelectedItem.ToString());
+                    foreach (DutyExchange dutyExchange in dutyExchanges)
+                    {
+                        if (dutyExchange != null)
+                        {
+                            dutyExchange.DutyID = dutyID;
+                            DBDutyExchangeController.CreateDutyExchange(dutyExchange);
+                        }
+                    }
                 }
                 if (weekday3combobox2.SelectedItem != null)
                 {
                     if (weekday3textbox3.Text != null)
                     {
-                        ManageDuty(weekday3label.Content.ToString(), weekday3textbox3.Text, weekday3combobox2.SelectedItem.ToString());
+                        int dutyID = ManageDuty(weekday3label.Content.ToString(), weekday3textbox3.Text, weekday3combobox2.SelectedItem.ToString());
+                        foreach (DutyExchange dutyExchange in dutyExchanges)
+                        {
+                            if (dutyExchange != null)
+                            {
+                                dutyExchange.DutyID = dutyID;
+                                DBDutyExchangeController.CreateDutyExchange(dutyExchange);
+                            }
+                        }
                     }
                     if (weekday3combobox3.SelectedItem != null)
                     {
                         if (weekday3textbox4.Text != null)
                         {
-                            ManageDuty(weekday3label.Content.ToString(), weekday3textbox4.Text, weekday3combobox3.SelectedItem.ToString());
+                            int dutyID = ManageDuty(weekday3label.Content.ToString(), weekday3textbox4.Text, weekday3combobox3.SelectedItem.ToString());
+                            foreach (DutyExchange dutyExchange in dutyExchanges)
+                            {
+                                if (dutyExchange != null)
+                                {
+                                    dutyExchange.DutyID = dutyID;
+                                    DBDutyExchangeController.CreateDutyExchange(dutyExchange);
+                                }
+                            }
                         }
                     }
                 }
@@ -626,29 +687,48 @@ namespace UI.Views
 
 
             dutyExchanges = DoItForAllTheDaysChristian(DateRepository.GetDateID(weekday4label.Content.ToString(), Shop));
-            foreach (DutyExchange dutyExchange in dutyExchanges)
-            {
-                DutyExchangeRepository.AddDutyExchange(dutyExchange);
-                DBDutyExchangeController.CreateDutyExchange(dutyExchange);
-                
-            }
+
             if (weekday4combobox.SelectedItem != null) // 4
             {
                 if (weekday4textbox2.Text != null)
                 {
-                    ManageDuty(weekday4label.Content.ToString(), weekday4textbox2.Text, weekday4combobox.SelectedItem.ToString());
+                    int dutyID = ManageDuty(weekday4label.Content.ToString(), weekday4textbox2.Text, weekday4combobox.SelectedItem.ToString());
+                    foreach (DutyExchange dutyExchange in dutyExchanges)
+                    {
+                        if (dutyExchange != null)
+                        {
+                            dutyExchange.DutyID = dutyID;
+                            DBDutyExchangeController.CreateDutyExchange(dutyExchange);
+                        }
+                    }
                 }
                 if (weekday4combobox2.SelectedItem != null)
                 {
                     if (weekday4textbox3.Text != null)
                     {
-                        ManageDuty(weekday4label.Content.ToString(), weekday4textbox3.Text, weekday4combobox2.SelectedItem.ToString());
+                        int dutyID = ManageDuty(weekday4label.Content.ToString(), weekday4textbox3.Text, weekday4combobox2.SelectedItem.ToString());
+                        foreach (DutyExchange dutyExchange in dutyExchanges)
+                        {
+                            if (dutyExchange != null)
+                            {
+                                dutyExchange.DutyID = dutyID;
+                                DBDutyExchangeController.CreateDutyExchange(dutyExchange);
+                            }
+                        }
                     }
                     if (weekday4combobox3.SelectedItem != null)
                     {
                         if (weekday4textbox4.Text != null)
                         {
-                            ManageDuty(weekday4label.Content.ToString(), weekday4textbox4.Text, weekday4combobox3.SelectedItem.ToString());
+                            int dutyID = ManageDuty(weekday4label.Content.ToString(), weekday4textbox4.Text, weekday4combobox3.SelectedItem.ToString());
+                            foreach (DutyExchange dutyExchange in dutyExchanges)
+                            {
+                                if (dutyExchange != null)
+                                {
+                                    dutyExchange.DutyID = dutyID;
+                                    DBDutyExchangeController.CreateDutyExchange(dutyExchange);
+                                }
+                            }
                         }
                     }
                 }
@@ -656,29 +736,47 @@ namespace UI.Views
 
 
             dutyExchanges = DoItForAllTheDaysChristian(DateRepository.GetDateID(weekday5label.Content.ToString(), Shop));
-            foreach (DutyExchange dutyExchange in dutyExchanges)
-            {
-                DutyExchangeRepository.AddDutyExchange(dutyExchange);
-                DBDutyExchangeController.CreateDutyExchange(dutyExchange);
-                
-            }
             if (weekday5combobox.SelectedItem != null) // 5
             {
                 if (weekday5textbox2.Text != null)
                 {
-                    ManageDuty(weekday5label.Content.ToString(), weekday5textbox2.Text, weekday5combobox.SelectedItem.ToString());
+                    int dutyID = ManageDuty(weekday5label.Content.ToString(), weekday5textbox2.Text, weekday5combobox.SelectedItem.ToString());
+                    foreach (DutyExchange dutyExchange in dutyExchanges)
+                    {
+                        if (dutyExchange != null)
+                        {
+                            dutyExchange.DutyID = dutyID;
+                            DBDutyExchangeController.CreateDutyExchange(dutyExchange);
+                        }
+                    }
                 }
                 if (weekday5combobox2.SelectedItem != null)
                 {
                     if (weekday5textbox3.Text != null)
                     {
-                        ManageDuty(weekday5label.Content.ToString(), weekday5textbox3.Text, weekday5combobox2.SelectedItem.ToString());
+                        int dutyID = ManageDuty(weekday5label.Content.ToString(), weekday5textbox3.Text, weekday5combobox2.SelectedItem.ToString());
+                        foreach (DutyExchange dutyExchange in dutyExchanges)
+                        {
+                            if (dutyExchange != null)
+                            {
+                                dutyExchange.DutyID = dutyID;
+                                DBDutyExchangeController.CreateDutyExchange(dutyExchange);
+                            }
+                        }
                     }
                     if (weekday5combobox3.SelectedItem != null)
                     {
                         if (weekday5textbox4.Text != null)
                         {
-                            ManageDuty(weekday5label.Content.ToString(), weekday5textbox4.Text, weekday5combobox3.SelectedItem.ToString());
+                            int dutyID = ManageDuty(weekday5label.Content.ToString(), weekday5textbox4.Text, weekday5combobox3.SelectedItem.ToString());
+                            foreach (DutyExchange dutyExchange in dutyExchanges)
+                            {
+                                if (dutyExchange != null)
+                                {
+                                    dutyExchange.DutyID = dutyID;
+                                    DBDutyExchangeController.CreateDutyExchange(dutyExchange);
+                                }
+                            }
                         }
                     }
                 }
@@ -686,29 +784,48 @@ namespace UI.Views
 
 
             dutyExchanges = DoItForAllTheDaysChristian(DateRepository.GetDateID(weekday6label.Content.ToString(), Shop));
-            foreach (DutyExchange dutyExchange in dutyExchanges)
-            {
-                DutyExchangeRepository.AddDutyExchange(dutyExchange);
-                DBDutyExchangeController.CreateDutyExchange(dutyExchange);
-                
-            }
+
             if (weekday6combobox.SelectedItem != null) // 6
             {
                 if (weekday6textbox2.Text != null)
                 {
-                    ManageDuty(weekday6label.Content.ToString(), weekday6textbox2.Text, weekday6combobox.SelectedItem.ToString());
+                    int dutyID = ManageDuty(weekday6label.Content.ToString(), weekday6textbox2.Text, weekday6combobox.SelectedItem.ToString());
+                    foreach (DutyExchange dutyExchange in dutyExchanges)
+                    {
+                        if (dutyExchange != null)
+                        {
+                            dutyExchange.DutyID = dutyID;
+                            DBDutyExchangeController.CreateDutyExchange(dutyExchange);
+                        }
+                    }
                 }
                 if (weekday6combobox2.SelectedItem != null)
                 {
                     if (weekday6textbox3.Text != null)
                     {
-                        ManageDuty(weekday6label.Content.ToString(), weekday6textbox3.Text, weekday6combobox2.SelectedItem.ToString());
+                        int dutyID = ManageDuty(weekday6label.Content.ToString(), weekday6textbox3.Text, weekday6combobox2.SelectedItem.ToString());
+                        foreach (DutyExchange dutyExchange in dutyExchanges)
+                        {
+                            if (dutyExchange != null)
+                            {
+                                dutyExchange.DutyID = dutyID;
+                                DBDutyExchangeController.CreateDutyExchange(dutyExchange);
+                            }
+                        }
                     }
                     if (weekday6combobox3.SelectedItem != null)
                     {
                         if (weekday6textbox4.Text != null)
                         {
-                            ManageDuty(weekday6label.Content.ToString(), weekday6textbox4.Text, weekday6combobox3.SelectedItem.ToString());
+                            int dutyID = ManageDuty(weekday6label.Content.ToString(), weekday6textbox4.Text, weekday6combobox3.SelectedItem.ToString());
+                            foreach (DutyExchange dutyExchange in dutyExchanges)
+                            {
+                                if (dutyExchange != null)
+                                {
+                                    dutyExchange.DutyID = dutyID;
+                                    DBDutyExchangeController.CreateDutyExchange(dutyExchange);
+                                }
+                            }
                         }
                     }
                 }
@@ -716,29 +833,49 @@ namespace UI.Views
 
 
             dutyExchanges = DoItForAllTheDaysChristian(DateRepository.GetDateID(weekday7label.Content.ToString(), Shop));
-            foreach (DutyExchange dutyExchange in dutyExchanges)
-            {
-                DutyExchangeRepository.AddDutyExchange(dutyExchange);
-                DBDutyExchangeController.CreateDutyExchange(dutyExchange);
-                
-            }
+
             if (weekday7combobox.SelectedItem != null) // 7
             {
                 if (weekday7textbox2.Text != null)
                 {
-                    ManageDuty(weekday7label.Content.ToString(), weekday7textbox2.Text, weekday7combobox.SelectedItem.ToString());
+                    int dutyID = ManageDuty(weekday7label.Content.ToString(), weekday7textbox2.Text, weekday7combobox.SelectedItem.ToString());
+                    foreach (DutyExchange dutyExchange in dutyExchanges)
+                    {
+                        if (dutyExchange != null)
+                        {
+                            dutyExchange.DutyID = dutyID;
+                            DBDutyExchangeController.CreateDutyExchange(dutyExchange);
+                        }
+                    }
                 }
                 if (weekday7combobox2.SelectedItem != null)
                 {
                     if (weekday7textbox3.Text != null)
                     {
-                        ManageDuty(weekday7label.Content.ToString(), weekday7textbox3.Text, weekday7combobox2.SelectedItem.ToString());
+                        int dutyID = ManageDuty(weekday7label.Content.ToString(), weekday7textbox3.Text, weekday7combobox2.SelectedItem.ToString());
+                        foreach (DutyExchange dutyExchange in dutyExchanges)
+                        {
+                            if (dutyExchange != null)
+                            {
+                                dutyExchange.DutyID = dutyID;
+                                DBDutyExchangeController.CreateDutyExchange(dutyExchange);
+                            }
+                        }
                     }
                     if (weekday7combobox3.SelectedItem != null)
                     {
                         if (weekday7textbox4.Text != null)
                         {
-                            ManageDuty(weekday7label.Content.ToString(), weekday7textbox4.Text, weekday7combobox3.SelectedItem.ToString());
+                            int dutyID = ManageDuty(weekday7label.Content.ToString(), weekday7textbox4.Text, weekday7combobox3.SelectedItem.ToString());
+                            foreach (DutyExchange dutyExchange in dutyExchanges)
+                            {
+                                if (dutyExchange != null)
+                                {
+                                    dutyExchange.DutyID = dutyID;
+                                    DBDutyExchangeController.CreateDutyExchange(dutyExchange);
+                                }
+
+                            }
                         }
                     }
                 }

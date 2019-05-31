@@ -51,7 +51,7 @@ namespace Application.DatabaseControllers
             DutyExchangeRepository.AddDutyExchange(dutyExchange);
         }
         
-        public static void DeleteDutyExchange(int dutyID, int employeeID)
+        public static void DeleteDutyExchange(int dutyID)
         {
             DBConnection.DatabaseName = "CANE";
             string query = "Delete_DutyExchanges";
@@ -60,7 +60,6 @@ namespace Application.DatabaseControllers
                 var cmd = new SqlCommand(query, DBConnection.Connection);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Add(new SqlParameter("@DutyID_IN", dutyID));
-                cmd.Parameters.Add(new SqlParameter("@EmployeeID_IN", employeeID));
                 cmd.ExecuteReader();
                 DBConnection.Close();
             }

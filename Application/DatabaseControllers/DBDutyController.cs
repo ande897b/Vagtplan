@@ -1,6 +1,7 @@
 ﻿using Application.Repositories;
 using Domain.Models;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -33,7 +34,31 @@ namespace Application.DatabaseControllers
             }
         }
 
-
+        public static int GetDutyID(int employeeID, int dateID, DateTime startTime, DateTime endTime)
+        {
+            int dutyID = 0;
+            DBConnection.DatabaseName = "CANE";
+            if (DBConnection.IsConnected())
+            {
+                string query = "Get_Duty";
+                SqlCommand cmd = new SqlCommand(query, DBConnection.Connection);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add(new SqlParameter("@EmployeeID_IN", employeeID));
+                cmd.Parameters.Add(new SqlParameter("@DateID_IN", dateID));
+                cmd.Parameters.Add(new SqlParameter("@StartTime_IN", startTime));
+                cmd.Parameters.Add(new SqlParameter("@EndTime_IN", endTime));
+                SqlDataReader reader = cmd.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        dutyID = (int)reader["DutyID"];
+                    }
+                }
+                DBConnection.Close();
+            }
+            return dutyID;
+        }
 
         public static void CreateDuty(Duty duty)
         {
@@ -58,6 +83,8 @@ namespace Application.DatabaseControllers
 
         public static void DeleteDuties(int dateID)
         {
+
+            
             string query = "Delete_Duties";
             DBConnection.DatabaseName = "CANE";
             if (DBConnection.IsConnected())

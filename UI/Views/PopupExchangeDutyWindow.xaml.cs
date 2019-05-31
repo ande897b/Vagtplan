@@ -65,8 +65,8 @@ namespace UI.Views
             {
                 MessageBox.Show(t.Message);
             }
-            DBDutyExchangeController.DeleteDutyExchange(DutyExchangeListView.Duty.DutyID, oldEmployeeID);
-            DutyExchangeRepository.RemoveDutyExchange(DutyExchangeListView.Duty.DutyID, oldEmployeeID);
+            DBDutyExchangeController.DeleteDutyExchange(DutyExchangeListView.Duty.DutyID);
+            DutyExchangeRepository.RemoveDutyExchange(DutyExchangeListView.Duty.DutyID);
             this.Close();
         }
 
