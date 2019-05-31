@@ -24,9 +24,9 @@ namespace Application.Repositories
             return tempDutyExchanges;
         }
 
-        public static void ClearTempDutyExchanges()
+        public static void ClearDutyExchanges()
         {
-            tempDutyExchanges.Clear();
+            dutyExchanges.Clear();
         }
 
 
