@@ -72,25 +72,17 @@ namespace Application.Repositories
 
         public static void RemoveDuties(int dateID)
         {
-            List<DutyExchange> tempDutyExchanges = new List<DutyExchange>();
+            
             foreach (Duty duty in duties.ToList()) 
             {
                 if (duty.DateID == dateID)
                 {
-                    DutyExchange dutyExchange = DutyExchangeRepository.GetDutyExchange(duty.DutyID, duty.EmployeeID);
-                    if(dutyExchange != null)
-                    tempDutyExchanges.Add(dutyExchange);
-                    DutyExchangeRepository.RemoveDutyExchange(duty.DutyID, duty.EmployeeID);
+
                     duties.Remove(duty);
-                    DBDutyExchangeController.DeleteDutyExchange(duty.DutyID, duty.EmployeeID);
                 }
             }
-            foreach (DutyExchange dutyExchange in tempDutyExchanges)
-            {
-                DutyExchangeRepository.AddDutyExchange(dutyExchange);
-                DBDutyExchangeController.CreateDutyExchange(dutyExchange);
-            }
-            DBDutyController.DeleteDuties(dateID);
+            
+            
         }
 
         public static void Removeduties_EmpID(int employeeID)
@@ -113,10 +105,14 @@ namespace Application.Repositories
                 {
                     if (duti.DutyID != duty.DutyID)
                     {
+                        
                         duti.DutyID = duty.DutyID;
+                        
                     }
                     exist = true;
+                    DutyExchangeRepository.UpdateDutyExchange(duti.DutyID, duty.DutyID);
                 }
+
             }
             return exist;
         }

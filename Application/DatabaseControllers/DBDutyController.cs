@@ -33,6 +33,8 @@ namespace Application.DatabaseControllers
             }
         }
 
+
+
         public static void CreateDuty(Duty duty)
         {
             string query = "Create_Duty";

@@ -42,6 +42,17 @@ namespace Application.Repositories
             return tempDutyExchange;
         }
 
+        public static void UpdateDutyExchange(int oldDutyID, int newDutyID)
+        {
+            foreach(DutyExchange dutyExchange in dutyExchanges)
+            {
+                if(dutyExchange.DutyID == oldDutyID)
+                {
+                    dutyExchange.DutyID = newDutyID;
+                }
+            }
+        }
+
         public static bool DutyExchangeExist(DutyExchange dutyExchange)
         {
             bool exist = false;
