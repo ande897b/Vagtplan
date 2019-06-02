@@ -515,7 +515,7 @@ namespace UI.Views
             weekday7textbox4.Text = weekday7textbox3.Text.Substring(8, 5) + " - 17:00";
         }
 
-        private List<DutyExchange> DoItForAllTheDaysChristian(int dateID)
+        private List<DutyExchange> DeleteDutyExchangesAndDuties(int dateID)
         {
             List<DutyExchange> tempDutyExchanges = new List<DutyExchange>();
             List<Duty> duties = DutyRepository.GetDuties(dateID);
@@ -539,7 +539,7 @@ namespace UI.Views
         {
             try
             {
-                List<DutyExchange> dutyExchanges = DoItForAllTheDaysChristian(DateRepository.GetDateID(weekday1label.Content.ToString(), Shop));
+                List<DutyExchange> dutyExchanges = DeleteDutyExchangesAndDuties(DateRepository.GetDateID(weekday1label.Content.ToString(), Shop));
                 if (weekday1combobox.SelectedItem != null) // 1
                 {
                     if (weekday1textbox2.Text != null)
@@ -588,7 +588,7 @@ namespace UI.Views
                 }
 
 
-                dutyExchanges = DoItForAllTheDaysChristian(DateRepository.GetDateID(weekday2label.Content.ToString(), Shop));
+                dutyExchanges = DeleteDutyExchangesAndDuties(DateRepository.GetDateID(weekday2label.Content.ToString(), Shop));
 
                 if (weekday2combobox.SelectedItem != null) // 2
                 {
@@ -637,7 +637,7 @@ namespace UI.Views
                 }
 
 
-                dutyExchanges = DoItForAllTheDaysChristian(DateRepository.GetDateID(weekday3label.Content.ToString(), Shop));
+                dutyExchanges = DeleteDutyExchangesAndDuties(DateRepository.GetDateID(weekday3label.Content.ToString(), Shop));
 
                 if (weekday3combobox.SelectedItem != null) // 3
                 {
@@ -686,7 +686,7 @@ namespace UI.Views
                 }
 
 
-                dutyExchanges = DoItForAllTheDaysChristian(DateRepository.GetDateID(weekday4label.Content.ToString(), Shop));
+                dutyExchanges = DeleteDutyExchangesAndDuties(DateRepository.GetDateID(weekday4label.Content.ToString(), Shop));
 
                 if (weekday4combobox.SelectedItem != null) // 4
                 {
@@ -735,7 +735,7 @@ namespace UI.Views
                 }
 
 
-                dutyExchanges = DoItForAllTheDaysChristian(DateRepository.GetDateID(weekday5label.Content.ToString(), Shop));
+                dutyExchanges = DeleteDutyExchangesAndDuties(DateRepository.GetDateID(weekday5label.Content.ToString(), Shop));
                 if (weekday5combobox.SelectedItem != null) // 5
                 {
                     if (weekday5textbox2.Text != null)
@@ -783,7 +783,7 @@ namespace UI.Views
                 }
 
 
-                dutyExchanges = DoItForAllTheDaysChristian(DateRepository.GetDateID(weekday6label.Content.ToString(), Shop));
+                dutyExchanges = DeleteDutyExchangesAndDuties(DateRepository.GetDateID(weekday6label.Content.ToString(), Shop));
 
                 if (weekday6combobox.SelectedItem != null) // 6
                 {
@@ -832,7 +832,7 @@ namespace UI.Views
                 }
 
 
-                dutyExchanges = DoItForAllTheDaysChristian(DateRepository.GetDateID(weekday7label.Content.ToString(), Shop));
+                dutyExchanges = DeleteDutyExchangesAndDuties(DateRepository.GetDateID(weekday7label.Content.ToString(), Shop));
 
                 if (weekday7combobox.SelectedItem != null) // 7
                 {
